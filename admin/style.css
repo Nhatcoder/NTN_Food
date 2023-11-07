@@ -3,7 +3,8 @@ body {
     height: 100%;
     font-family: roboto, sans-serif;
     font-weight: 400;
-    background: #152036
+    background: #152036;
+    color: #fff;
 }
 
 .floatleft {
@@ -540,7 +541,7 @@ ul.dtl-social li a {
     padding: 18px 10px
 }
 
-.header-right-info {}
+/* .header-right-info {} */
 
 .header-right-info ul.header-right-menu li {
     display: inline-block
@@ -3218,7 +3219,7 @@ ul.tab-review-design li.active a {
 .form-control {
     background-color: #152036;
     background-image: none;
-    border: 1px solid #152036;
+    /* border: 1px solid #152036; */
     border-radius: 1px;
     color: inherit;
     display: block;
@@ -4845,4 +4846,17 @@ th.fc-day-header.fc-widget-header {
     background: #152036;
     border-color: #152036;
     color: #fff
+}
+
+.form_them {
+    padding: 20px;
+    background: #1b2a47;
+}
+
+/* .form-label {
+    color: #fff;
+} */
+
+.form_btn {
+    margin: 15px 0;
 }
