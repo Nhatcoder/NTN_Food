@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Dashboard V.1 | Nalika - Material Admin Template</title>
+    <title>Admin CP</title>
     <meta name="description" content>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -101,7 +101,9 @@
             </div>
             <div class="nalika-profile">
                 <div class="profile-dtl">
-                    <a href="#"><img src="https://colorlib.com/polygon/nalika/img/notification/4.jpg" alt /></a>
+                    <a href="#"><img
+                            src="https://scontent.fhan15-1.fna.fbcdn.net/v/t39.30808-6/292011549_1192119298221484_5096720056686154923_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=ZQ6qPxRemkUAX8YCkgB&_nc_ht=scontent.fhan15-1.fna&oh=00_AfB88fxQeOTtbm02fFZ4ncgK2d6X681NE5CzRNAOsgiGgA&oe=654F95D4"
+                            alt /></a>
                     <h2>Admin <span class="min-dtn"></span></h2>
                 </div>
                 <div class="profile-social-dtl">
@@ -116,7 +118,7 @@
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
                         <li class="active">
-                            <a class="has-arrow" href="#">
+                            <a class="has-arrow" href="index.php">
                                 <i class="fa-solid fa-house"></i>
                                 <span class="mini-click-non">Trang chủ</span>
                             </a>
@@ -134,21 +136,19 @@
                                             mục</span></a>
                                 </li>
                                 <li>
-                                    <a title="Compose Mail"
-                                        href="https://colorlib.com/polygon/nalika/mailbox-compose.html"><span
+                                    <a title="Compose Mail" href="index.php?act=lietkedanhmuc"><span
                                             class="mini-sub-pro">Liệt kê</span></a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="https://colorlib.com/polygon/nalika/mailbox.html"
+                            <a class="has-arrow" href="index.php?act=themmonan"
                                 aria-expanded="false"><i class="fa-solid fa-bowl-food"></i> <span
                                     class="mini-click-non">Món ăn</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a href="https://colorlib.com/polygon/nalika/google-map.html"><span
+                                <li><a href="index.php?act=themmonan"><span
                                             class="mini-sub-pro">Thêm món ăn</span></a></li>
-                                <li><a href="https://colorlib.com/polygon/nalika/data-maps.html"><span
-                                            class="mini-sub-pro">Liệt kê món ăn</span></a></li>
+                                <li><a href="index.php?act=lietkemonan"><span class="mini-sub-pro">Liệt kê món ăn</span></a></li>
                             </ul>
                         </li>
                         <li>
@@ -1166,7 +1166,8 @@
                                             </div>
                                             <div class="breadcomb-ctn">
                                                 <h2>Danh mục</h2>
-                                                <p>Chào mừng bạn đến với <span class="bread-ntd">Trang quản trị danh mục</span></p>
+                                                <p>Chào mừng bạn đến với <span class="bread-ntd">Trang quản trị danh
+                                                        mục</span></p>
                                             </div>
                                         </div>
                                     </div>
