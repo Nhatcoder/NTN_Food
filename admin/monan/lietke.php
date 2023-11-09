@@ -1,3 +1,6 @@
+<?php
+include("monan/title.php");
+?>
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -29,7 +32,7 @@
                                     <?= $ten_monan ?>
                                 </td>
                                 <td>
-                                    <img src="../uploads/<?= $anh_monan ?>" alt="">
+                                    <img src="../uploads/monan/<?= $anh_monan ?>" alt="">
                                 </td>
                                 <td>
                                     <?= number_format($gia_monan, 0, ",", ".") ?> VNĐ

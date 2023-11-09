@@ -61,9 +61,11 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
 
                 $anh_monan = $_FILES['anh_monan']['name'];
                 $anh_monan_tmp = $_FILES['anh_monan']['tmp_name'];
-                $upload = "../uploads/";
+                $upload = "../uploads/monan/";
 
-                $target_file = $upload . basename($anh_monan);
+                $new_anhmonan = time() . "_" . basename($anh_monan);
+                $target_file = $upload . $new_anhmonan;
+
                 if (move_uploaded_file($anh_monan_tmp, $target_file)) {
                     echo "Thêm ảnh thành công";
                 } else {
@@ -71,7 +73,7 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
                 }
 
 
-                insert_monan($ten_monan, $gia_monan, $anh_monan, $id_danhmuc, $mota_monan);
+                insert_monan($ten_monan, $gia_monan, $new_anhmonan, $id_danhmuc, $mota_monan);
                 $thongbao = "Thêm thành công";
             }
 
@@ -83,12 +85,11 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
         case 'xoamonan':
             if (isset($_GET['id_monan']) && $_GET['id_monan'] > 0) {
                 $id_monan = $_GET['id_monan'];
-                // $list_monan_one =  list_monan_One($id_monan);
-                // extract($list_monan_one);
-                // print_r($list_monan_one);
-                // unlink('../uploads/').$anh_monan;
+                $list_monan_one = list_monan_One($id_monan);
+                extract($list_monan_one);
+                $linkanh = '../uploads/monan/' . $anh_monan;
+                unlink($linkanh);
                 delete_monan($id_monan);
-
             }
 
             $listmonan = list_monan_All();
@@ -97,6 +98,52 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
 
         case 'lietkemonan':
             $listmonan = list_monan_All();
+            include('./monan/lietke.php');
+            break;
+
+        case 'suamonan':
+            if (isset($_GET['id_monan']) && $_GET['id_monan'] > 0) {
+                $id_monan = $_GET['id_monan'];
+                $list_monan_one = list_monan_One($id_monan);
+            }
+            $listdanhmuc = loaddanhmucAll();
+            include('./monan/sua.php');
+            break;
+
+
+        case 'capnhatmonan':
+            if (isset($_POST['capnhat']) && $_POST['capnhat']) {
+                $id_sua = $_POST['id_sua'];
+                $ten_monan = $_POST['ten_monan'];
+                $gia_monan = $_POST['gia_monan'];
+                $id_danhmuc = $_POST['id_danhmuc'];
+                $mota_monan = $_POST['mota_monan'];
+
+                $anh_monan = $_FILES['anh_monan']['name'];
+                $anh_monan_tmp = $_FILES['anh_monan']['tmp_name'];
+                $upload = "../uploads/monan/";
+
+                $list_monan_one = list_monan_One($id_sua);
+
+                if ($anh_monan != "") {
+                    $linkanh = '../uploads/monan/' . $list_monan_one['anh_monan'];
+                    unlink($linkanh);
+
+                    $new_anhmonan = time() . "_" . basename($anh_monan);
+
+                    $target_file = $upload . $new_anhmonan;
+                    if (move_uploaded_file($anh_monan_tmp, $target_file)) {
+                        echo "Thêm ảnh thành công";
+                    } else {
+                        echo "Lỗi khi tải lên ảnh mới";
+                    }
+                }
+
+                capnhat_monan($id_sua, $ten_monan, $gia_monan, $id_danhmuc, $mota_monan, $new_anhmonan);
+            }
+
+            $listmonan = list_monan_All();
+
             include('./monan/lietke.php');
             break;
 

@@ -87,8 +87,69 @@
 
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     <meta name="robots" content="noindex, nofollow">
-    <script
-        nonce="d0d43353-1e09-4fa7-9f1f-ffb0f519a722">(function (w, d) { !function (bb, bc, bd, be) { bb[bd] = bb[bd] || {}; bb[bd].executed = []; bb.zaraz = { deferred: [], listeners: [] }; bb.zaraz.q = []; bb.zaraz._f = function (bf) { return async function () { var bg = Array.prototype.slice.call(arguments); bb.zaraz.q.push({ m: bf, a: bg }) } }; for (const bh of ["track", "set", "debug"]) bb.zaraz[bh] = bb.zaraz._f(bh); bb.zaraz.init = () => { var bi = bc.getElementsByTagName(be)[0], bj = bc.createElement(be), bk = bc.getElementsByTagName("title")[0]; bk && (bb[bd].t = bc.getElementsByTagName("title")[0].text); bb[bd].x = Math.random(); bb[bd].w = bb.screen.width; bb[bd].h = bb.screen.height; bb[bd].j = bb.innerHeight; bb[bd].e = bb.innerWidth; bb[bd].l = bb.location.href; bb[bd].r = bc.referrer; bb[bd].k = bb.screen.colorDepth; bb[bd].n = bc.characterSet; bb[bd].o = (new Date).getTimezoneOffset(); if (bb.dataLayer) for (const bo of Object.entries(Object.entries(dataLayer).reduce(((bp, bq) => ({ ...bp[1], ...bq[1] })), {}))) zaraz.set(bo[0], bo[1], { scope: "page" }); bb[bd].q = []; for (; bb.zaraz.q.length;) { const br = bb.zaraz.q.shift(); bb[bd].q.push(br) } bj.defer = !0; for (const bs of [localStorage, sessionStorage]) Object.keys(bs || {}).filter((bu => bu.startsWith("_zaraz_"))).forEach((bt => { try { bb[bd]["z_" + bt.slice(7)] = JSON.parse(bs.getItem(bt)) } catch { bb[bd]["z_" + bt.slice(7)] = bs.getItem(bt) } })); bj.referrerPolicy = "origin"; bj.src = "https://colorlib.com/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(bb[bd]))); bi.parentNode.insertBefore(bj, bi) };["complete", "interactive"].includes(bc.readyState) ? zaraz.init() : bb.addEventListener("DOMContentLoaded", zaraz.init) }(w, d, "zarazData", "script"); })(window, document);</script>
+    <script nonce="d0d43353-1e09-4fa7-9f1f-ffb0f519a722">
+        (function (w, d) {
+            ! function (bb, bc, bd, be) {
+                bb[bd] = bb[bd] || {};
+                bb[bd].executed = [];
+                bb.zaraz = {
+                    deferred: [],
+                    listeners: []
+                };
+                bb.zaraz.q = [];
+                bb.zaraz._f = function (bf) {
+                    return async function () {
+                        var bg = Array.prototype.slice.call(arguments);
+                        bb.zaraz.q.push({
+                            m: bf,
+                            a: bg
+                        })
+                    }
+                };
+                for (const bh of ["track", "set", "debug"]) bb.zaraz[bh] = bb.zaraz._f(bh);
+                bb.zaraz.init = () => {
+                    var bi = bc.getElementsByTagName(be)[0],
+                        bj = bc.createElement(be),
+                        bk = bc.getElementsByTagName("title")[0];
+                    bk && (bb[bd].t = bc.getElementsByTagName("title")[0].text);
+                    bb[bd].x = Math.random();
+                    bb[bd].w = bb.screen.width;
+                    bb[bd].h = bb.screen.height;
+                    bb[bd].j = bb.innerHeight;
+                    bb[bd].e = bb.innerWidth;
+                    bb[bd].l = bb.location.href;
+                    bb[bd].r = bc.referrer;
+                    bb[bd].k = bb.screen.colorDepth;
+                    bb[bd].n = bc.characterSet;
+                    bb[bd].o = (new Date).getTimezoneOffset();
+                    if (bb.dataLayer)
+                        for (const bo of Object.entries(Object.entries(dataLayer).reduce(((bp, bq) => ({
+                            ...bp[1],
+                            ...bq[1]
+                        })), {}))) zaraz.set(bo[0], bo[1], {
+                            scope: "page"
+                        });
+                    bb[bd].q = [];
+                    for (; bb.zaraz.q.length;) {
+                        const br = bb.zaraz.q.shift();
+                        bb[bd].q.push(br)
+                    }
+                    bj.defer = !0;
+                    for (const bs of [localStorage, sessionStorage]) Object.keys(bs || {}).filter((bu => bu.startsWith("_zaraz_"))).forEach((bt => {
+                        try {
+                            bb[bd]["z_" + bt.slice(7)] = JSON.parse(bs.getItem(bt))
+                        } catch {
+                            bb[bd]["z_" + bt.slice(7)] = bs.getItem(bt)
+                        }
+                    }));
+                    bj.referrerPolicy = "origin";
+                    bj.src = "https://colorlib.com/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(bb[bd])));
+                    bi.parentNode.insertBefore(bj, bi)
+                };
+                ["complete", "interactive"].includes(bc.readyState) ? zaraz.init() : bb.addEventListener("DOMContentLoaded", zaraz.init)
+            }(w, d, "zarazData", "script");
+        })(window, document);
+    </script>
 </head>
 
 <body>
@@ -142,13 +203,13 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="index.php?act=themmonan"
-                                aria-expanded="false"><i class="fa-solid fa-bowl-food"></i> <span
-                                    class="mini-click-non">Món ăn</span></a>
+                            <a class="has-arrow" href="index.php?act=themmonan" aria-expanded="false"><i
+                                    class="fa-solid fa-bowl-food"></i> <span class="mini-click-non">Món ăn</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a href="index.php?act=themmonan"><span
-                                            class="mini-sub-pro">Thêm món ăn</span></a></li>
-                                <li><a href="index.php?act=lietkemonan"><span class="mini-sub-pro">Liệt kê món ăn</span></a></li>
+                                <li><a href="index.php?act=themmonan"><span class="mini-sub-pro">Thêm món ăn</span></a>
+                                </li>
+                                <li><a href="index.php?act=lietkemonan"><span class="mini-sub-pro">Liệt kê món
+                                            ăn</span></a></li>
                             </ul>
                         </li>
                         <li>
@@ -1147,37 +1208,6 @@
                                         </li>
                                     </ul>
                                 </nav>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="breadcome-area">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="breadcome-list">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                        <div class="breadcomb-wp">
-                                            <div class="breadcomb-icon">
-                                                <i class="icon nalika-home"></i>
-                                            </div>
-                                            <div class="breadcomb-ctn">
-                                                <h2>Danh mục</h2>
-                                                <p>Chào mừng bạn đến với <span class="bread-ntd">Trang quản trị danh
-                                                        mục</span></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                        <div class="breadcomb-report">
-                                            <button data-toggle="tooltip" data-placement="left" title="Download Report"
-                                                class="btn"><i class="icon nalika-download"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
