@@ -156,7 +156,7 @@
     <div class="left-sidebar-pro">
         <nav id="sidebar" class>
             <div class="sidebar-header">
-                <a href="https://colorlib.com/polygon/nalika/index.html"><img class="main-logo"
+                <a href="http://localhost/NTN_FOOD/admin/index.php"><img class="main-logo"
                         src="https://colorlib.com/polygon/nalika/img/logo/logo.png" alt /></a>
                 <strong><img src="https://colorlib.com/polygon/nalika/img/logo/logosn.png" alt /></strong>
             </div>
