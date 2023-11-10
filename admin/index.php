@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(!$_SESSION["dangnhap_admin"]){
+    header("location: ./login/login.php");
+}
+
 include("../model/pdo.php");
 include("../model/danhmuc.php");
 include("../model/moan.php");
@@ -71,7 +75,6 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
                 } else {
                     echo "Lỗi";
                 }
-
 
                 insert_monan($ten_monan, $gia_monan, $new_anhmonan, $id_danhmuc, $mota_monan);
                 $thongbao = "Thêm thành công";

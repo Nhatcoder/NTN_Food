@@ -289,15 +289,11 @@
                                                                     class="icon nalika-user author-log-ic"></span>
                                                                 Thông tin của tôi</a>
                                                         </li>
-                                                        <li><a href="https://colorlib.com/polygon/nalika/lock.html"><span
+                                                        <li><a href=""><span
                                                                     class="icon nalika-diamond author-log-ic"></span>
                                                                 Khóa</a>
                                                         </li>
-                                                        <!-- <li><a href="#"><span
-                                                                    class="icon nalika-settings author-log-ic"></span>
-                                                                Cài đặt</a>
-                                                        </li> -->
-                                                        <li><a href="https://colorlib.com/polygon/nalika/login.html"><span
+                                                        <li><a href="login/logout.php"><span
                                                                     class="icon nalika-unlocked author-log-ic"></span>
                                                                 Đăng xuất</a>
                                                         </li>

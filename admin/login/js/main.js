@@ -56,6 +56,8 @@
         return true;
     }
 
+    validatePhoneNumber(input);
+
 
     function showValidate(input) {
         var thisAlert = $(input).parent();
