@@ -65,7 +65,7 @@
 
                         <!-- Website Logo -->
                         <div class="logo-header mostion">
-                            <a href="index.html" class="anim-logo"><img src="views/assets/images/logo.png" alt="/"></a>
+                            <a href="index.php" class="anim-logo"><img src="views/assets/images/logo.png" alt="/"></a>
                         </div>
 
                         <!-- Nav Toggle Button -->
@@ -166,12 +166,12 @@
                                         alt="/"></a>
                             </div>
                             <ul class="nav navbar-nav navbar">
-                                <li class="sub-menu-downs"><a href="javascript:void(0);">Trang chủ</a>
+                                <li class="sub-menu-downs"><a href="index.php">Trang chủ</a>
                                 </li>
                                 <li class="has-mega-menu">
                                     <a href="javascript:void(0);">Trang</a>
                                     <ul class="mega-menu">
-                                        <li><a href="javascript:;">Pages</a>
+                                        <li><a href="javascript:;">Trang</a>
                                             <ul>
                                                 <li><a href="about-us.html">About Us</a></li>
                                                 <li><a href="faq.html">FAQ</a></li>
