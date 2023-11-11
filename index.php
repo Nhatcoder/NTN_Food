@@ -26,6 +26,8 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
 
                     $_SESSION["user"] = $userInfo;
                     echo '<script>alert("Thành công")</script>';
+                    echo '<script>window.location.href = "index.php";</script>';
+
                 } else {
                     echo '<script>alert("Lỗi")</script>';
                 }
@@ -46,6 +48,9 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 );
 
                 $_SESSION["user"] = $userInfo;
+                echo '<script>alert("Thành công")</script>';
+                echo '<script>window.location.href = "index.php";</script>';
+
 
             }
             break;
@@ -53,6 +58,8 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
         case "dangxuat":
             if (isset($_SESSION["user"])) {
                 unset($_SESSION["user"]);
+                echo '<script>window.location.href = "index.php";</script>';
+
             }
             break;
 
