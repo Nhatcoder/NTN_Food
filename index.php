@@ -3,6 +3,8 @@ session_start();
 include("./model/pdo.php");
 include("./model/dangnhap.php");
 include("./views/header/header.php");
+
+// print_r($_SESSION["user"]);
 if (isset($_GET["act"]) && $_GET["act"] != "") {
     $act = $_GET["act"];
 
@@ -13,20 +15,16 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 $pass = md5($_POST["pass"]);
 
                 $result = check_tk_one($sodienthoai, $pass);
-                extract($result);
-
-                // foreach ($result as $key => $value) {
-                //     extract($value);
-                // }
                 if ($result) {
+                    extract($result);
                     $userInfo = array(
                         "hoten" => $hoten,
                         "sodienthoai" => $sodienthoai,
                         "email" => $email,
+                        "vaitro" => $vaitro
                     );
 
                     $_SESSION["user"] = $userInfo;
-                    header("Location: index.php");
                     echo '<script>alert("Thành công")</script>';
                 } else {
                     echo '<script>alert("Lỗi")</script>';
@@ -40,27 +38,21 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 $email = $_POST["email"];
                 $pass = md5($_POST["pass"]);
 
-                $result = insert_tk($hoten, $sodienthoai, $email, $pass, 0);
-                if ($result) {
-                    // Nếu thêm thành công, tạo mảng thông tin tài khoản và lưu vào session
-                    $userInfo = array(
-                        "hoten" => $hoten,
-                        "sodienthoai" => $sodienthoai,
-                        "email" => $email,
-                    );
+                insert_tk($hoten, $sodienthoai, $email, $pass, $vaitro = 0);
+                $userInfo = array(
+                    "hoten" => $hoten,
+                    "sodienthoai" => $sodienthoai,
+                    "email" => $email,
+                );
 
-                    $_SESSION["user"] = $userInfo;
-                    echo '<script>alert("Thành công")</script>';
-                } else {
-                    echo '<script>alert("Lỗi")</script>';
-                }
+                $_SESSION["user"] = $userInfo;
+
             }
             break;
 
         case "dangxuat":
             if (isset($_SESSION["user"])) {
                 unset($_SESSION["user"]);
-
             }
             break;
 

@@ -1,5 +1,6 @@
 <?php
 if (isset($_SESSION['user'])) {
+	extract($_SESSION['user']);
 	?>
 	<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasLogin">
 		<form action="index.php?act=dangnhap" method="post">
@@ -11,7 +12,9 @@ if (isset($_SESSION['user'])) {
 							<img style="border-radius: 50%;"
 								src="https://scontent.fhan5-1.fna.fbcdn.net/v/t39.30808-6/292011549_1192119298221484_5096720056686154923_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=jy8MWvk5GC0AX-qWlc2&_nc_ht=scontent.fhan5-1.fna&oh=00_AfBMTtruR0g767zrTa4iSwMpgQ4YJ_VnmnXfODIu_di0wA&oe=65538A54"
 								alt="Avatar" class="img-fluid my-2 mt-4" />
-							<h5>Marie Horwitz</h5>
+							<h5>
+								<?= $hoten ?>
+							</h5>
 						</div>
 						<div class="col-md-8">
 							<div class="card-body p-4">
@@ -20,15 +23,25 @@ if (isset($_SESSION['user'])) {
 								<div class="row pt-1">
 									<div class="col-12 mb-3">
 										<h6>Email</h6>
-										<p class="text-muted">info@example.com</p>
+										<p class="text-black-50">
+											<?= $email ?>
+										</p>
 									</div>
 									<div class="col-12 mb-3">
 										<h6>Số điện thoại</h6>
-										<p class="text-muted">123 456 789</p>
+										<p class="text-black-50">
+											<?= $sodienthoai ?>
+										</p>
 									</div>
-									<div class="col-12 mb-3">
-										<h6><a href="admin/index.php">Đăng nhập Admin</a></h6>
-									</div>
+									<?php
+									if ($vaitro > 0) {
+										?>
+										<div class="col-12 mb-3">
+											<h6><a href="admin/index.php">Đăng nhập Admin</a></h6>
+										</div>
+										<?php
+									}
+									?>
 									<div class="col-12 mb-3">
 										<h6><a href="index.php?act=dangxuat">Đăng xuất</a></h6>
 									</div>
@@ -121,8 +134,7 @@ if (isset($_SESSION['user'])) {
 				<div class="form-group m-b15">
 					<label class="form-label">Email*</label>
 					<div class="input-group">
-						<input name="email" required type="text" class="form-control"
-							placeholder="Nhập email">
+						<input name="email" required type="text" class="form-control" placeholder="Nhập email">
 					</div>
 				</div>
 				<div class="form-group m-b30">
