@@ -49,6 +49,12 @@ if (isset($list_monan_one) && is_array($list_monan_one)) {
                             rows="3" placeholder="Nhập mô tả món ăn"><?= $mota_monan ?></textarea>
                     </div>
 
+                    <div class="mb-3">
+                        <label for="ok20" class="form-label">Nổi bật</label>
+                        <input type="number" name="noibat" class="form-control" value="<?= $noibat ?>" id="ok20"
+                            placeholder="Nhập số" required>
+                    </div>
+
                     <div class="mb-3 form_btn form-check">
                         <input class="btn btn-primary mr-3 text-left" type="submit" name="capnhat" value="CẬP NHẬT MỚI"
                             required>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!$_SESSION["dangnhap_admin"]){
+if (!$_SESSION["dangnhap_admin"]) {
     header("location: ./login/login.php");
 }
 
@@ -62,6 +62,7 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
                 $gia_monan = $_POST['gia_monan'];
                 $id_danhmuc = $_POST['id_danhmuc'];
                 $mota_monan = $_POST['mota_monan'];
+                $noibat = $_POST['noibat'];
 
                 $anh_monan = $_FILES['anh_monan']['name'];
                 $anh_monan_tmp = $_FILES['anh_monan']['tmp_name'];
@@ -76,7 +77,7 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
                     echo "Lỗi";
                 }
 
-                insert_monan($ten_monan, $gia_monan, $new_anhmonan, $id_danhmuc, $mota_monan);
+                insert_monan($ten_monan, $gia_monan, $new_anhmonan, $id_danhmuc, $mota_monan, $noibat);
                 $thongbao = "Thêm thành công";
             }
 
@@ -121,6 +122,7 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
                 $gia_monan = $_POST['gia_monan'];
                 $id_danhmuc = $_POST['id_danhmuc'];
                 $mota_monan = $_POST['mota_monan'];
+                $noibat = $_POST['noibat'];
 
                 $anh_monan = $_FILES['anh_monan']['name'];
                 $anh_monan_tmp = $_FILES['anh_monan']['tmp_name'];
@@ -142,7 +144,7 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
                     }
                 }
 
-                capnhat_monan($id_sua, $ten_monan, $gia_monan, $id_danhmuc, $mota_monan, $new_anhmonan);
+                capnhat_monan($id_sua, $ten_monan, $gia_monan, $id_danhmuc, $mota_monan, $new_anhmonan, $noibat);
             }
 
             $listmonan = list_monan_All();

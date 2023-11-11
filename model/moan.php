@@ -1,8 +1,8 @@
 <?php
-function insert_monan($ten_monan, $gia_monan, $new_anhmonan, $id_danhmuc, $mota_monan)
+function insert_monan($ten_monan, $gia_monan, $new_anhmonan, $id_danhmuc, $mota_monan, $noibat)
 {
-    $sql = "INSERT INTO tbl_monan(ten_monan, gia_monan, anh_monan, id_danhmuc, mota_monan) VALUES (?,?,?,?,?)";
-    pdo_execute($sql, $ten_monan, $gia_monan, $new_anhmonan, $id_danhmuc, $mota_monan);
+    $sql = "INSERT INTO tbl_monan(ten_monan, gia_monan, anh_monan, id_danhmuc, mota_monan, noibat) VALUES (?,?,?,?,?,?)";
+    pdo_execute($sql, $ten_monan, $gia_monan, $new_anhmonan, $id_danhmuc, $mota_monan, $noibat);
 }
 
 function delete_monan($id)
@@ -25,14 +25,14 @@ function list_monan_One($id)
     return $listMonan;
 }
 
-function capnhat_monan($id_sua, $ten_monan, $gia_monan, $id_danhmuc, $mota_monan, $new_anhmonan)
+function capnhat_monan($id_sua, $ten_monan, $gia_monan, $id_danhmuc, $mota_monan, $new_anhmonan, $noibat)
 {
     if ($new_anhmonan != "") {
-        $sql = "UPDATE tbl_monan SET ten_monan= ?,gia_monan= ?,anh_monan= ?,id_danhmuc= ?,mota_monan= ? WHERE id_monan = ?";
-        pdo_execute($sql, $ten_monan, $gia_monan, $new_anhmonan, $id_danhmuc, $mota_monan, $id_sua);
+        $sql = "UPDATE tbl_monan SET ten_monan= ?,gia_monan= ?,anh_monan= ?,id_danhmuc= ?,mota_monan= ?, noibat = ? WHERE id_monan = ?";
+        pdo_execute($sql, $ten_monan, $gia_monan, $new_anhmonan, $id_danhmuc, $mota_monan, $noibat, $id_sua);
     } else {
-        $sql = "UPDATE tbl_monan SET ten_monan= ?,gia_monan= ?,id_danhmuc= ?,mota_monan= ? WHERE id_monan = ?";
-        pdo_execute($sql, $ten_monan, $gia_monan, $id_danhmuc, $mota_monan, $id_sua);
+        $sql = "UPDATE tbl_monan SET ten_monan= ?,gia_monan= ?,id_danhmuc= ?,mota_monan= ? , noibat= ? WHERE id_monan = ?";
+        pdo_execute($sql, $ten_monan, $gia_monan, $id_danhmuc, $mota_monan, $noibat, $id_sua);
     }
 }
 

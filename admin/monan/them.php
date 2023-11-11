@@ -43,6 +43,12 @@ include("monan/title.php");
                             rows="3" placeholder="Nhập mô tả món ăn"></textarea>
                     </div>
 
+                    <div class="mb-3">
+                        <label for="ok2" class="form-label">Nổi bật</label>
+                        <input type="number" name="noibat" class="form-control" id="ok2" placeholder="Nhập số"
+                            required>
+                    </div>
+
                     <div class="mb-3 form_btn form-check">
                         <input class="btn btn-primary mr-3 text-left" type="submit" name="themmoi" value="THÊM MỚI"
                             required>

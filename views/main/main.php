@@ -1,5 +1,3 @@
-
-
 <div class="page-content bg-white">
 	<!-- Banner -->
 	<div class="main-bnr-one">
@@ -16,22 +14,23 @@
 							<div class="row align-items-center">
 								<div class="col-xl-7 col-lg-7 col-md-7">
 									<div class="banner-content">
-										<span class="sub-title wow fadeInUp" data-wow-delay="0.2s">High Quality Test
-											Station </span>
-										<h1 class="title  wow fadeInUp" data-wow-delay="0.4s">Choosing The<br> Best
-											<span class="text-primary">Quality Food</span>
+										<span class="sub-title wow fadeInUp" data-wow-delay="0.2s">Trạm kiểm tra chất
+											lượng cao</span>
+										<h1 class="title  wow fadeInUp" data-wow-delay="0.4s">Lựa chọn thực phẩm <br>
+											chất lượng
+											<span class="text-primary">Tốt nhất</span>
 										</h1>
-										<p class="wow fadeInUp" data-wow-delay="0.6s">Lorem ipsum dolor sit amet,
-											consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-											dolore magna aliqua.</p>
+										<p class="wow fadeInUp" data-wow-delay="0.6s">Thực phẩm tốt làm cho giá trị sức
+											khỏe là một điều quan trọng cho cuộc sống nên vì vậy chúng ta cân phải ăn
+											thức phẩm tốt và nhà hàng chúng tôi là lựa chọn đầu tiên.</p>
 										<div class="banner-btn d-flex align-items-center wow fadeInUp"
 											data-wow-delay="0.8s">
 											<a href="contact-us.html"
-												class="btn btn-primary btn-md shadow-primary m-r30 btn-hover-1"><span>Book
-													a Table</span></a>
+												class="btn btn-primary btn-md shadow-primary m-r30 btn-hover-1"><span>Đặt
+													bàn</span></a>
 											<a href="about-us.html"
-												class="btn btn-outline-primary btn-md shadow-primary btn-hover-1"><span>View
-													More</span></a>
+												class="btn btn-outline-primary btn-md shadow-primary btn-hover-1"><span>Xem
+													thêm</span></a>
 										</div>
 									</div>
 								</div>
@@ -53,21 +52,23 @@
 							<div class="row align-items-center">
 								<div class="col-xl-7 col-lg-7 col-md-7">
 									<div class="banner-content">
-										<span class="sub-title wow fadeInUp" data-wow-delay="0.2s">The Best Food
-											Stations</span>
-										<h1 class="title wow fadeInUp" data-wow-delay="0.4s">Where Food <br> Meets<span
-												class="text-primary"> Best Passion</span></h1>
-										<p class="wow fadeInUp" data-wow-delay="0.6s">Lorem ipsum dolor sit amet,
-											consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-											dolore magna aliqua.</p>
+										<span class="sub-title wow fadeInUp" data-wow-delay="0.2s">Trạm kiểm tra chất
+											lượng cao</span>
+										<h1 class="title wow fadeInUp" data-wow-delay="0.4s">Nơi thực phẩm đáp
+											<br> ứng niềm đam mê<span class="text-primary"> tốt nhất</span>
+										</h1>
+										<p class="wow fadeInUp" data-wow-delay="0.6s">Điều quan trọng là phải chăm sóc
+											bệnh nhân, được bệnh nhân theo dõi, nhưng điều đó sẽ xảy ra vào thời điểm có
+											rất nhiều công sức và đau đớn.</p>
 										<div class="banner-btn d-flex align-items-center wow fadeInUp"
 											data-wow-delay="0.8s">
 											<a href="contact-us.html"
-												class="btn btn-primary btn-md shadow-primary m-r30 btn-hover-1"><span>Book
-													a Table</span></a>
+												class="btn btn-primary btn-md shadow-primary m-r30 btn-hover-1"><span>Đặt
+													bàn
+												</span></a>
 											<a href="about-us.html"
-												class="btn btn-outline-primary btn-md shadow-primary btn-hover-1"><span>View
-													More</span></a>
+												class="btn btn-outline-primary btn-md shadow-primary btn-hover-1"><span>
+													Xem thêm</span></a>
 										</div>
 									</div>
 								</div>
@@ -89,14 +90,14 @@
 							<div class="row align-items-center">
 								<div class="col-xl-7 col-lg-7 col-md-7">
 									<div class="banner-content">
-										<span class="sub-title wow fadeInUp" data-wow-delay="0.2s">Exploring the
-											Delicious World</span>
-										<h1 class="title wow fadeInUp" data-wow-delay="0.4s">Delicious Eats <br> And
-											<span class="text-primary">Tasty Drinks</span>
+										<span class="sub-title wow fadeInUp" data-wow-delay="0.2s">Trạm kiểm tra chất
+											lượng cao</span>
+										<h1 class="title wow fadeInUp" data-wow-delay="0.4s">Đồ ăn ngon <br> và
+											<span class="text-primary">Đồ uống ngon</span>
 										</h1>
-										<p class="wow fadeInUp" data-wow-delay="0.6s">Lorem ipsum dolor sit amet,
-											consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-											dolore magna aliqua.</p>
+										<p class="wow fadeInUp" data-wow-delay="0.6s">Khám phá thế giới hương vị tinh tế
+											tại nhà hàng chúng tôi, nơi hội tụ những món ăn ngon độc đáo và đồ uống thơm
+											ngon, hứa hẹn mang đến cho bạn trải nghiệm ẩm thực đỉnh cao.</p>
 										<div class="banner-btn d-flex align-items-center wow fadeInUp"
 											data-wow-delay="0.8s">
 											<a href="contact-us.html"
@@ -132,8 +133,8 @@
 									<img src="views/assets/images/main-slider/slider1/thumb/pic1.jpg" alt="/">
 								</div>
 								<div class="dz-content">
-									<h5 class="title">BreakFast</h5>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+									<h5 class="title">Bữa sáng</h5>
+									<p>Là bữa tốt nhất chúng ta cân bổ sung rất nhiều năng nượng.</p>
 								</div>
 							</div>
 						</div>
@@ -143,8 +144,8 @@
 									<img src="views/assets/images/main-slider/slider1/thumb/pic2.jpg" alt="/">
 								</div>
 								<div class="dz-content">
-									<h5 class="title">Lunch</h5>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+									<h5 class="title">Bữa trưa</h5>
+									<p>Chúng ta cần ăn một bữa nhanh</p>
 								</div>
 							</div>
 						</div>
@@ -154,8 +155,8 @@
 									<img src="views/assets/images/main-slider/slider1/thumb/pic3.jpg" alt="/">
 								</div>
 								<div class="dz-content">
-									<h5 class="title">Dinner</h5>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+									<h5 class="title">Bữa tối</h5>
+									<p>Là bữa không quan trọng mấy chúng ta ăn đủ chất và ít đồ có chất béo.</p>
 								</div>
 							</div>
 						</div>
@@ -172,23 +173,27 @@
 	<section class="content-inner bg-white section-wrapper-2 overflow-hidden">
 		<div class="container">
 			<div class="section-head text-center">
-				<h2 class="title wow flipInX" data-wow-delay="0.2s">Special Menu</h2>
+				<h2 class="title wow flipInX" data-wow-delay="0.2s">Menu đặc biệt</h2>
 			</div>
 			<div class="row">
-				<div class="col-lg-3 col-md-6 col-sm-6 m-b30 wow fadeInUp" data-wow-delay="0.1s">
-					<div class="dz-img-box style-2 box-hover">
-						<div class="dz-media">
-							<img src="views/assets/images/gallery/small/pic1.jpg" alt="/">
-						</div>
-						<div class="dz-content">
-							<h4 class="dz-title"><a href="product-detail.html">Pizza</a></h4>
-							<p>Lorem ipsum dolor sit amet consectetur adipiscing.</p>
-							<h5 class="dz-price text-primary">$55.00</h5>
-							<a href="shop-cart.html" class="btn btn-primary btn-hover-2">Add To Cart</a>
+				<?php
+				foreach ($list_all_monan as $key => $value) {
+					extract($value);
+					?>
+					<div class="col-lg-3 col-md-6 col-sm-6 m-b30 wow fadeInUp" data-wow-delay="0.1s">
+						<div class="dz-img-box style-2 box-hover">
+							<div class="dz-media">
+								<img src="uploads/monan/<?= $anh_monan?>" alt="/">
+							</div>
+							<div class="dz-content">
+								<h4 class="dz-title"><a href="product-detail.html"><?= $ten_monan?></a></h4>
+								<h5 class="dz-price text-primary"><?= number_format($gia_monan, 0, ",", ".")?> VNĐ</h5>
+								<a href="shop-cart.html" class="btn btn-primary btn-hover-2">Thêm giỏ hàng</a>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6 m-b30 wow fadeInUp" data-wow-delay="0.2s">
+				<?php } ?>
+				<!-- <div class="col-lg-3 col-md-6 col-sm-6 m-b30 wow fadeInUp" data-wow-delay="0.2s">
 					<div class="dz-img-box style-2 box-hover active">
 						<div class="dz-media">
 							<img src="views/assets/images/gallery/small/pic2.jpg" alt="/">
@@ -226,7 +231,7 @@
 							<a href="shop-cart.html" class="btn btn-primary btn-hover-2">Add To Cart</a>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<img class="bg1 dz-move-down" src="views/assets/images/background/pic2.png" alt="/">

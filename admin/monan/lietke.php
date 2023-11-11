@@ -18,6 +18,7 @@ include("monan/title.php");
                             <th>Giá món ăn</th>
                             <th>Danh mục</th>
                             <th>Mô tả món ăn</th>
+                            <th>Nổi bật</th>
                             <th>Thao tác</th>
                         </tr>
                         <?php
@@ -42,6 +43,9 @@ include("monan/title.php");
                                 </td>
                                 <td>
                                     <?= $mota_monan ?>
+                                </td>
+                                <td>
+                                    <?= $noibat ?>
                                 </td>
 
                                 <td>

@@ -2,9 +2,12 @@
 session_start();
 include("./model/pdo.php");
 include("./model/dangnhap.php");
+include("./model/list_monan_home.php");
 include("./views/header/header.php");
 
-// print_r($_SESSION["user"]);
+
+$list_all_monan = list_monan_All();
+
 if (isset($_GET["act"]) && $_GET["act"] != "") {
     $act = $_GET["act"];
 
@@ -51,7 +54,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 echo '<script>alert("Thành công")</script>';
                 echo '<script>window.location.href = "index.php";</script>';
 
-
             }
             break;
 
@@ -59,7 +61,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
             if (isset($_SESSION["user"])) {
                 unset($_SESSION["user"]);
                 echo '<script>window.location.href = "index.php";</script>';
-
             }
             break;
 
