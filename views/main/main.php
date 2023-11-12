@@ -177,17 +177,21 @@
 			</div>
 			<div class="row">
 				<?php
-				foreach ($list_all_monan as $key => $value) {
+				foreach ($list_monan_special as $key => $value) {
 					extract($value);
 					?>
 					<div class="col-lg-3 col-md-6 col-sm-6 m-b30 wow fadeInUp" data-wow-delay="0.1s">
 						<div class="dz-img-box style-2 box-hover">
 							<div class="dz-media">
-								<img src="uploads/monan/<?= $anh_monan?>" alt="/">
+								<img src="uploads/monan/<?= $anh_monan ?>" alt="/">
 							</div>
 							<div class="dz-content">
-								<h4 class="dz-title"><a href="product-detail.html"><?= $ten_monan?></a></h4>
-								<h5 class="dz-price text-primary"><?= number_format($gia_monan, 0, ",", ".")?> VNĐ</h5>
+								<h4 class="dz-title"><a href="product-detail.html">
+										<?= $ten_monan ?>
+									</a></h4>
+								<h5 class="dz-price text-primary">
+									<?= number_format($gia_monan, 0, ",", ".") ?> VNĐ
+								</h5>
 								<a href="shop-cart.html" class="btn btn-primary btn-hover-2">Thêm giỏ hàng</a>
 							</div>
 						</div>
@@ -243,95 +247,48 @@
 	<section class="content-inner-1 section-wrapper-3 overflow-hidden">
 		<div class="container">
 			<div class="section-head text-center">
-				<h2 class="title wow flipInX" data-wow-delay="0.2s">Today's Menu</h2>
+				<h2 class="title wow flipInX" data-wow-delay="0.2s">Thực đơn hôm nay</h2>
 			</div>
 			<div class="row inner-section-wrapper">
-				<div class="col-lg-3 col-md-6 col-sm-6 m-b30 wow fadeInUp" data-wow-delay="0.2s">
-					<div class="dz-img-box style-3 box-hover">
-						<div class="dz-media">
-							<img src="views/assets/images/gallery/grid2/pic2.jpg" alt="/">
-						</div>
-						<span class="dz-tag">TOP SELLER</span>
-						<div class="dz-content">
-							<h5 class="dz-title"><a href="our-menu-1.html">Pasta</a></h5>
-							<p>Lorem ipsum dolor sit amet, dipiscing elit, sed</p>
-						</div>
-						<div class="dz-hover-content">
-							<div class="dz-info">
-								<h5 class="dz-title mb-0"><a href="our-menu-1.html">Pasta</a></h5>
-								<span class="dz-price">$35.00</span>
+				<?php foreach ($list_menu_today as $key => $value) {
+					extract($value);
+					?>
+					<div class="col-lg-3 col-md-6 col-sm-6 m-b30 wow fadeInUp" data-wow-delay="0.2s">
+						<div class="dz-img-box style-3 box-hover">
+							<div class="dz-media">
+								<img src="uploads/monan/<?= $anh_monan ?>" alt="/">
 							</div>
-							<a href="shop-cart.html" class="btn btn-cart btn-white text-primary btn-square"><i
-									class="flaticon-shopping-cart"></i></a>
+							<!-- <span class="dz-tag">Bán chạy</span> -->
+							<div class="dz-content">
+								<h5 class="dz-title"><a href="our-menu-1.html">
+										<?= $ten_monan ?>
+									</a></h5>
+								<p>Phục vụ khách hàng là một niềm vui, ăn ngon mỗi ngày.</p>
+							</div>
+							<div class="dz-hover-content">
+								<div class="dz-info">
+									<h5 class="dz-title mb-0"><a href="our-menu-1.html">
+											<?= $ten_monan ?>
+										</a></h5>
+									<span class="dz-price">
+										<?= number_format($gia_monan, 0, ",", ".") ?> VNĐ
+									</span>
+								</div>
+								<a href="shop-cart.html" class="btn btn-cart btn-white text-primary btn-square"><i
+										class="flaticon-shopping-cart"></i></a>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6 m-b30 wow fadeInUp" data-wow-delay="0.4s">
-					<div class="dz-img-box style-3 box-hover">
-						<div class="dz-media">
-							<img src="views/assets/images/gallery/grid2/pic5.jpg" alt="/">
-						</div>
-						<span class="dz-tag">TOP SELLER</span>
-						<div class="dz-content">
-							<h5 class="dz-title"><a href="our-menu-1.html">Oreo Shake</a></h5>
-							<p>Lorem ipsum dolor sit amet, dipiscing elit, sed</p>
-						</div>
-						<div class="dz-hover-content">
-							<div class="dz-info">
-								<h5 class="dz-title mb-0"><a href="our-menu-1.html">Shake</a></h5>
-								<span class="dz-price">$55.00</span>
-							</div>
-							<a href="shop-cart.html" class="btn btn-cart btn-white text-primary btn-square"><i
-									class="flaticon-shopping-cart"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6 m-b30 wow fadeInUp" data-wow-delay="0.6s">
-					<div class="dz-img-box style-3 box-hover">
-						<div class="dz-media">
-							<img src="views/assets/images/gallery/grid2/pic4.jpg" alt="/">
-						</div>
-						<span class="dz-tag">TOP SELLER</span>
-						<div class="dz-content">
-							<h5 class="dz-title"><a href="our-menu-1.html">Dal Fry</a></h5>
-							<p>Lorem ipsum dolor sit amet, dipiscing elit, sed</p>
-						</div>
-						<div class="dz-hover-content">
-							<div class="dz-info">
-								<h5 class="dz-title mb-0"><a href="our-menu-1.html">Dal</a></h5>
-								<span class="dz-price">$25.00</span>
-							</div>
-							<a href="shop-cart.html" class="btn btn-cart btn-white text-primary btn-square"><i
-									class="flaticon-shopping-cart"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6 m-b30 wow fadeInUp" data-wow-delay="0.8s">
-					<div class="dz-img-box style-3 box-hover">
-						<div class="dz-media">
-							<img src="views/assets/images/gallery/grid2/pic6.jpg" alt="/">
-						</div>
-						<span class="dz-tag">TOP SELLER</span>
-						<div class="dz-content">
-							<h5 class="dz-title"><a href="our-menu-1.html">Pizza</a></h5>
-							<p>Lorem ipsum dolor sit amet, dipiscing elit, sed</p>
-						</div>
-						<div class="dz-hover-content">
-							<div class="dz-info">
-								<h5 class="dz-title mb-0"><a href="our-menu-1.html">Pizza</a></h5>
-								<span class="dz-price">$90.00</span>
-							</div>
-							<a href="shop-cart.html" class="btn btn-cart btn-white text-primary btn-square"><i
-									class="flaticon-shopping-cart"></i></a>
-						</div>
-					</div>
-				</div>
+					<?php
+				}
+				?>
+
 				<div class="col-12 text-center m-t10">
-					<a href="our-menu-2.html" class="btn btn-md btn-primary btn-hover-1"><span>See All Dishes</span></a>
+					<a href="" class="btn btn-md btn-primary btn-hover-1"><span>Xem tất cả</span></a>
 				</div>
 			</div>
 			<div class="section-head text-center">
-				<h2 class="title wow flipInX" data-wow-delay="0.2s">Quality Services</h2>
+				<h2 class="title wow flipInX" data-wow-delay="0.2s">Dịch vụ chất lượng</h2>
 			</div>
 			<!-- Icon Wrapper 1 -->
 			<div class="icon-wrapper1">
@@ -346,8 +303,8 @@
 									</span>
 								</div>
 								<div class="icon-content">
-									<h5 class="dz-title">Restaurant</h5>
-									<p>Lorem ipsum dolor sit amet, dipiscing elit, sed</p>
+									<h5 class="dz-title">Nhà hàng</h5>
+									<p>Nhà hàng mang cho bạn một trải nghiệm tốt.</p>
 								</div>
 							</div>
 						</div>
@@ -363,7 +320,7 @@
 								</div>
 								<div class="icon-content">
 									<h5 class="dz-title">Bar</h5>
-									<p>Lorem ipsum dolor sit amet, dipiscing elit, sed</p>
+									<p>Quán bar là một vui chơi khi vừa ăn trong nhà hàng của chúng tôi ra ngoài.</p>
 								</div>
 							</div>
 						</div>
@@ -380,7 +337,7 @@
 								</div>
 								<div class="icon-content">
 									<h5 class="dz-title">Cafe</h5>
-									<p>Lorem ipsum dolor sit amet, dipiscing elit, sed</p>
+									<p>Cà phê là nơi để giải tỏa stress và thích trò truyện.</p>
 								</div>
 							</div>
 						</div>
@@ -395,8 +352,8 @@
 									</span>
 								</div>
 								<div class="icon-content">
-									<h5 class="dz-title">Dessert</h5>
-									<p>Lorem ipsum dolor sit amet, dipiscing elit, sed</p>
+									<h5 class="dz-title">Món tráng miệng</h5>
+									<p>Giúp khách hàng khi có tới ăn tại nhà hàng sẽ được ăn tráng miệng.</p>
 								</div>
 							</div>
 						</div>
@@ -414,11 +371,84 @@
 	<section class="content-inner-1 bg-white overflow-hidden pt-sm-0">
 		<div class="container">
 			<div class="section-head text-center">
-				<h2 class="title wow flipInX" data-wow-delay="0.2s">From Our Menu</h2>
+				<h2 class="title wow flipInX" data-wow-delay="0.2s">Thực đơn của chúng tôi</h2>
 			</div>
 			<div class="swiper-btn-lr">
 				<div class="swiper portfolio-swiper">
 					<div class="swiper-wrapper">
+						<?php foreach ($list_menu_home as $key => $value) {
+							extract($value);
+							?>
+							<div class="swiper-slide">
+								<div class="dz-img-box style-1 wow fadeInUp" data-wow-delay="0.4s">
+									<div class="dz-media">
+										<img src="uploads/monan/<?= $anh_monan ?>" alt="/">
+									</div>
+									<span class="dz-tag"></span>
+									<div class="dz-content">
+										<div class="dz-info">
+											<h5 class="dz-title mb-0"><a href="">
+													<?= $ten_monan ?>
+												</a></h5>
+											<span class="dz-price">
+												<?= number_format($gia_monan, 0, ",", ".") ?> VNĐ
+											</span>
+										</div>
+										<a href="shop-cart.html" class="btn btn-cart btn-white text-primary btn-square"><i
+												class="flaticon-shopping-cart"></i></a>
+									</div>
+								</div>
+							</div>
+						<?php } ?>
+						<!-- 
+						<div class="swiper-slide">
+							<div class="dz-img-box style-1 wow fadeInUp" data-wow-delay="0.6s">
+								<div class="dz-media">
+									<img src="views/assets/images/gallery/grid2/pic2.jpg" alt="/">
+								</div>
+								<span class="dz-tag">TOP SELLER</span>
+								<div class="dz-content">
+									<div class="dz-info">
+										<h5 class="dz-title mb-0"><a href="our-menu-1.html">Pasta</a></h5>
+										<span class="dz-price">$10.00</span>
+									</div>
+									<a href="shop-cart.html" class="btn btn-cart btn-white text-primary btn-square"><i
+											class="flaticon-shopping-cart"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="dz-img-box style-1 wow fadeInUp" data-wow-delay="0.8s">
+								<div class="dz-media">
+									<img src="views/assets/images/gallery/grid2/pic3.jpg" alt="/">
+								</div>
+								<span class="dz-tag">TOP SELLER</span>
+								<div class="dz-content">
+									<div class="dz-info">
+										<h5 class="dz-title mb-0"><a href="our-menu-1.html">Tandoor</a></h5>
+										<span class="dz-price">$15.00</span>
+									</div>
+									<a href="shop-cart.html" class="btn btn-cart btn-white text-primary btn-square"><i
+											class="flaticon-shopping-cart"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="dz-img-box style-1 wow fadeInUp" data-wow-delay="0.10s">
+								<div class="dz-media">
+									<img src="views/assets/images/gallery/grid2/pic4.jpg" alt="/">
+								</div>
+								<span class="dz-tag">TOP SELLER</span>
+								<div class="dz-content">
+									<div class="dz-info">
+										<h5 class="dz-title mb-0"><a href="our-menu-1.html">Dal Fry</a></h5>
+										<span class="dz-price">$65.00</span>
+									</div>
+									<a href="shop-cart.html" class="btn btn-cart btn-white text-primary btn-square"><i
+											class="flaticon-shopping-cart"></i></a>
+								</div>
+							</div>
+						</div>
 						<div class="swiper-slide">
 							<div class="dz-img-box style-1 wow fadeInUp" data-wow-delay="0.4s">
 								<div class="dz-media">
@@ -482,71 +512,7 @@
 											class="flaticon-shopping-cart"></i></a>
 								</div>
 							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="dz-img-box style-1 wow fadeInUp" data-wow-delay="0.4s">
-								<div class="dz-media">
-									<img src="views/assets/images/gallery/grid2/pic1.jpg" alt="/">
-								</div>
-								<span class="dz-tag">TOP SELLER</span>
-								<div class="dz-content">
-									<div class="dz-info">
-										<h5 class="dz-title mb-0"><a href="our-menu-1.html">Burger</a></h5>
-										<span class="dz-price">$20.00</span>
-									</div>
-									<a href="shop-cart.html" class="btn btn-cart btn-white text-primary btn-square"><i
-											class="flaticon-shopping-cart"></i></a>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="dz-img-box style-1 wow fadeInUp" data-wow-delay="0.6s">
-								<div class="dz-media">
-									<img src="views/assets/images/gallery/grid2/pic2.jpg" alt="/">
-								</div>
-								<span class="dz-tag">TOP SELLER</span>
-								<div class="dz-content">
-									<div class="dz-info">
-										<h5 class="dz-title mb-0"><a href="our-menu-1.html">Pasta</a></h5>
-										<span class="dz-price">$10.00</span>
-									</div>
-									<a href="shop-cart.html" class="btn btn-cart btn-white text-primary btn-square"><i
-											class="flaticon-shopping-cart"></i></a>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="dz-img-box style-1 wow fadeInUp" data-wow-delay="0.8s">
-								<div class="dz-media">
-									<img src="views/assets/images/gallery/grid2/pic3.jpg" alt="/">
-								</div>
-								<span class="dz-tag">TOP SELLER</span>
-								<div class="dz-content">
-									<div class="dz-info">
-										<h5 class="dz-title mb-0"><a href="our-menu-1.html">Tandoor</a></h5>
-										<span class="dz-price">$15.00</span>
-									</div>
-									<a href="shop-cart.html" class="btn btn-cart btn-white text-primary btn-square"><i
-											class="flaticon-shopping-cart"></i></a>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="dz-img-box style-1 wow fadeInUp" data-wow-delay="0.10s">
-								<div class="dz-media">
-									<img src="views/assets/images/gallery/grid2/pic4.jpg" alt="/">
-								</div>
-								<span class="dz-tag">TOP SELLER</span>
-								<div class="dz-content">
-									<div class="dz-info">
-										<h5 class="dz-title mb-0"><a href="our-menu-1.html">Dal Fry</a></h5>
-										<span class="dz-price">$65.00</span>
-									</div>
-									<a href="shop-cart.html" class="btn btn-cart btn-white text-primary btn-square"><i
-											class="flaticon-shopping-cart"></i></a>
-								</div>
-							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 				<div class="pagination mt-xl-0 m-t40">

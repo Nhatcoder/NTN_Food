@@ -6,7 +6,12 @@ include("./model/list_monan_home.php");
 include("./views/header/header.php");
 
 
-$list_all_monan = list_monan_All();
+$list_monan_special = list_monan_special();
+$list_menu_today = list_menu_today();
+$list_menu_home = list_menu_home();
+
+
+
 
 if (isset($_GET["act"]) && $_GET["act"] != "") {
     $act = $_GET["act"];
