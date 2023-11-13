@@ -213,12 +213,22 @@
                             </ul>
                         </li>
                         <li>
+                            <a class="has-arrow" href="index.php?act=themdmtintuc" aria-expanded="false"><i
+                                    class="fa-solid fa-bowl-food"></i> <span class="mini-click-non">Danh mục tin tức</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a href="index.php?act=themtintuc"><span class="mini-sub-pro">Thêm tin tức</span></a>
+                                </li>
+                                <li><a href="index.php?act=lietketintuc"><span class="mini-sub-pro">Liệt kê tin
+                                            tức</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
                             <a class="has-arrow" href="index.php?act=themtintuc" aria-expanded="false"><i
                                     class="fa-solid fa-bowl-food"></i> <span class="mini-click-non">Tin tức</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a href="index.php?act=themdmtintuc"><span class="mini-sub-pro">Thêm tin tức</span></a>
+                                <li><a href="index.php?act=themtintuc"><span class="mini-sub-pro">Thêm tin tức</span></a>
                                 </li>
-                                <li><a href="index.php?act=lietkedmtintuc"><span class="mini-sub-pro">Liệt kê tin
+                                <li><a href="index.php?act=lietketintuc"><span class="mini-sub-pro">Liệt kê tin
                                             tức</span></a></li>
                             </ul>
                         </li>
