@@ -3,20 +3,24 @@ session_start();
 include("./model/pdo.php");
 include("./model/dangnhap.php");
 include("./model/list_monan_home.php");
-include("./views/header/header.php");
 
+
+if (isset($_GET["act"]) && $_GET["act"] != "") {
+    include("./views/header/header_act.php");
+
+} else {
+    include("./views/header/header.php");
+}
 
 $list_monan_special = list_monan_special();
 $list_menu_today = list_menu_today();
 $list_menu_home = list_menu_home();
 
-
-
-
 if (isset($_GET["act"]) && $_GET["act"] != "") {
     $act = $_GET["act"];
 
     switch ($act) {
+        // Tài khoản
         case "dangnhap":
             if (isset($_POST["submit"])) {
                 $sodienthoai = $_POST["sodienthoai"];
@@ -58,7 +62,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 $_SESSION["user"] = $userInfo;
                 echo '<script>alert("Thành công")</script>';
                 echo '<script>window.location.href = "index.php";</script>';
-
             }
             break;
 
@@ -69,14 +72,22 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
             }
             break;
 
+        // Menu
+        case "cuahang":
+            include("./views/main/cuahang.php");
+            break;
+
     }
-
-
-
+} else {
+    include("./views/main/main.php");
 }
 
 
-include("./views/main/main.php");
-include("./views/footer/footer.php");
+
+if (isset($_GET["act"]) && $_GET["act"] != "") {
+    include("./views/footer/footer_act.php");
+} else {
+    include("./views/footer/footer.php");
+}
 
 ?>

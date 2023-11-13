@@ -7,7 +7,7 @@
 
                 <!-- Website Logo -->
                 <div class="logo-header mostion">
-                    <a href="index.php" class="anim-logo"><img src="views/assets/images/logo.png" alt="/"></a>
+                    <a href="index.php" class="anim-logo"><img src="views/assets/images/logo3.png" alt="/"></a>
                 </div>
 
                 <!-- Nav Toggle Button -->
@@ -34,7 +34,7 @@
                                     <i class="flaticon-shopping-bag-1"></i>
                                     <span class="badge">6</span>
                                 </button>
-                                <ul class="dropdown-menu cart-list">
+                                <!-- <ul class="dropdown-menu cart-list">
                                     <li class="cart-item">
                                         <div class="media">
                                             <div class="media-left">
@@ -94,7 +94,7 @@
                                         <a href="our-menu-1.html"
                                             class="btn btn-outline-primary w-100 d-block btn-hover-1"><span>Menu</span></a>
                                     </li>
-                                </ul>
+                                </ul> -->
                             </li>
                         </ul>
                     </div>
@@ -133,14 +133,14 @@
                                 <li><a href="index.php?act=thucdon">Thực đơn của chúng tôi</a>
                                     <ul>
                                         <li><a href="our-menu-1.html">Thực đơn nhà hàng</a></li>
-                                        
+
                                     </ul>
                                 </li>
                                 <li class="header-adv p-0"><img src="views/assets/images/adv-media.jpg" alt="/">
                                 </li>
                             </ul>
                         </li>
-                        <li class="sub-menu-downs"><a href="javascript:void(0);">Cửa hàng</a>
+                        <li class="sub-menu-downs"><a href="index.php?act=cuahang">Cửa hàng</a>
                         </li>
                         <li class="has-mega-menus">
                             <a href="index.php?act=tintuc">Tin tức</a>
