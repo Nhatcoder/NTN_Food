@@ -1,3 +1,5 @@
+
+
 <div class="page-content bg-white">
 	<!-- Banner -->
 	<div class="main-bnr-one">
@@ -192,7 +194,7 @@
 								<h5 class="dz-price text-primary">
 									<?= number_format($gia_monan, 0, ",", ".") ?> VNĐ
 								</h5>
-								<a href="shop-cart.html" class="btn btn-primary btn-hover-2">Thêm giỏ hàng</a>
+								<a href="index.php?act=themgiohang&&id=<?php echo $value['id_monan'] ?>&&idnguoidung=<?php echo $id_nd ?>" class="btn btn-primary btn-hover-2">Thêm giỏ hàng</a>
 							</div>
 						</div>
 					</div>
@@ -274,7 +276,7 @@
 										<?= number_format($gia_monan, 0, ",", ".") ?> VNĐ
 									</span>
 								</div>
-								<a href="shop-cart.html" class="btn btn-cart btn-white text-primary btn-square"><i
+								<a href="index.php?act=themgiohang&&id=<?php echo $value['id_monan'] ?>&&sodienthoai=<?php echo $sodienthoai ?>" class="btn btn-cart btn-white text-primary btn-square"><i
 										class="flaticon-shopping-cart"></i></a>
 							</div>
 						</div>
@@ -394,7 +396,7 @@
 												<?= number_format($gia_monan, 0, ",", ".") ?> VNĐ
 											</span>
 										</div>
-										<a href="shop-cart.html" class="btn btn-cart btn-white text-primary btn-square"><i
+										<a href="index.php?act=themgiohang&&id=<?php echo $value['id_monan'] ?>" class="btn btn-cart btn-white text-primary btn-square"><i
 												class="flaticon-shopping-cart"></i></a>
 									</div>
 								</div>

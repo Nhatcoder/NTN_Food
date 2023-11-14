@@ -29,73 +29,21 @@
                                     <i class="flaticon-user"></i>
                                 </a>
                             </li>
+                            <?php
+        if (isset($_SESSION['user'])) {
+            extract($_SESSION['user']);
+            ?>
                             <li>
-                                <button type="button" class="btn btn-white btn-square btn-shadow cart-btn">
-                                    <i class="flaticon-shopping-bag-1"></i>
-                                    <span class="badge">6</span>
-                                </button>
-                                <ul class="dropdown-menu cart-list">
-                                    <li class="cart-item">
-                                        <div class="media">
-                                            <div class="media-left">
-                                                <a href="product-detail.html">
-                                                    <img alt="/" class="media-object"
-                                                        src="views/assets/images/shop/pic2.jpg">
-                                                </a>
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="dz-title"><a href="product-detail.html"
-                                                        class="media-heading">Double Burger</a></h6>
-                                                <span class="dz-price">$28.00</span>
-                                                <span class="item-close">&times;</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="cart-item">
-                                        <div class="media">
-                                            <div class="media-left">
-                                                <a href="product-detail.html">
-                                                    <img alt="/" class="media-object"
-                                                        src="views/assets/images/shop/pic3.jpg">
-                                                </a>
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="dz-title"><a href="product-detail.html"
-                                                        class="media-heading">Cheese Burger</a></h6>
-                                                <span class="dz-price">$20.00</span>
-                                                <span class="item-close">&times;</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="cart-item">
-                                        <div class="media">
-                                            <div class="media-left">
-                                                <a href="product-detail.html">
-                                                    <img alt="/" class="media-object"
-                                                        src="views/assets/images/shop/pic4.jpg">
-                                                </a>
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="dz-title"><a href="product-detail.html"
-                                                        class="media-heading">Burger</a></h6>
-                                                <span class="dz-price">$15.00</span>
-                                                <span class="item-close">&times;</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="cart-item text-center d-flex justify-content-between">
-                                        <h6 class="text-primary mb-0">Total:</h6>
-                                        <h6 class="text-primary mb-0">$63</h6>
-                                    </li>
-                                    <li class="text-center d-flex">
-                                        <a href="shop-cart.html"
-                                            class="btn btn-primary me-2 w-100 d-block btn-hover-1"><span>View
-                                                Cart</span></a>
-                                        <a href="our-menu-1.html"
-                                            class="btn btn-outline-primary w-100 d-block btn-hover-1"><span>Menu</span></a>
-                                    </li>
-                                </ul>
+                            <a href="./index.php?act=giohang&&sodienthoai=<?php echo $id_nd ?>"
+                            class="btn btn-white btn-square btn-shadow cart-btn"><i class="flaticon-shopping-bag-1"></i>
+                                    <span class="badge">6</span></a>
+                               
+                                
                             </li>
+                            <?php } else { ?>
+
+
+                                <?php } ?>
                         </ul>
                     </div>
                 </div>
