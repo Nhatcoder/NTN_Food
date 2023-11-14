@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="views/assets/vendor/rangeslider/rangeslider.css">
     <link rel="stylesheet" href="views/assets/vendor/switcher/switcher.css">
     <link rel="stylesheet" href="views/assets/css/style.css">
+    <link rel="stylesheet" href="./views/assets/css/index.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">

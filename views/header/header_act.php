@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="views/assets/vendor/nouislider/nouislider.min.css">
     <link rel="stylesheet" href="views/assets/vendor/switcher/switcher.css">
     <link rel="stylesheet" href="views/assets/css/style.css">
+    <link rel="stylesheet" href="./views/assets/css/index.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -105,10 +106,7 @@
                                         alt="/"></a>
                             </div>
                             <ul class="nav navbar-nav navbar white">
-                                <li class="sub-menu-down"><a href="javascript:void(0);"Trang chủ</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="index.html">Home 1</a></li>
-                                    </ul>
+                                <li class="sub-menu-downs"><a href="javascript:void(0);">Trang chủ</a>
                                 </li>
                                 <li class="has-mega-menu">
                                     <a href="javascript:void(0);">Pages</a>

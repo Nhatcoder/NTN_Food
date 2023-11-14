@@ -19,4 +19,28 @@ function list_menu_home()
     return $list_monan;
 }
 
+function list_monan_cart($id)
+{
+    $sql = "SELECT * FROM tbl_monan WHERE tbl_monan.id_monan = ? limit 1";
+    $list_monan = pdo_query($sql, $id);
+    return $list_monan;
+}
+
+
+function list_monan_same_cart($id_dm)
+{
+    $sql = "SELECT * FROM tbl_monan WHERE tbl_monan.id_danhmuc != ?";
+    $list_monan = pdo_query($sql, $id_dm);
+    return $list_monan;
+}
+
+function list_monan_all()
+{
+    $sql = "SELECT * FROM tbl_monan";
+    $list_monan = pdo_query($sql);
+    return $list_monan;
+}
+
+
+
 ?>

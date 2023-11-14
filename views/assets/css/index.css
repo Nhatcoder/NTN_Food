@@ -1,0 +1,19 @@
+.btn-quantity.style-1 {
+    position: relative;
+}
+
+.btn-quantity.style-1 input {
+    height: 31px;
+    width: 100px;
+    padding: 0;
+    text-align: center;
+    z-index: 1 !important;
+    background-color: #EAEAEA;
+    border: 2px solid #EAEAEA;
+    border-radius: var(--border-radius-base) !important;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--title);
+    margin-left: 0 !important;
+}

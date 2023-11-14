@@ -192,12 +192,13 @@
 								<h5 class="dz-price text-primary">
 									<?= number_format($gia_monan, 0, ",", ".") ?> VNĐ
 								</h5>
-								<a href="shop-cart.html" class="btn btn-primary btn-hover-2">Thêm giỏ hàng</a>
+								<a href="index.php?act=themgiohang&id_monan=<?= $id_monan ?>"
+									class="btn btn-primary btn-hover-2">Thêm giỏ hàng</a>
 							</div>
 						</div>
 					</div>
 				<?php } ?>
-				
+
 			</div>
 		</div>
 		<img class="bg1 dz-move-down" src="views/assets/images/background/pic2.png" alt="/">

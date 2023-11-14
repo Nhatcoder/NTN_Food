@@ -4,6 +4,9 @@ include("./model/pdo.php");
 include("./model/dangnhap.php");
 include("./model/list_monan_home.php");
 
+// session_destroy();
+// die();
+
 
 if (isset($_GET["act"]) && $_GET["act"] != "") {
     include("./views/header/header_act.php");
@@ -16,6 +19,13 @@ $list_monan_special = list_monan_special();
 $list_menu_today = list_menu_today();
 $list_menu_home = list_menu_home();
 
+$list_monan_all = list_monan_all();
+if (isset($list_monan_all)) {
+    foreach ($list_monan_all as $value) {
+        extract($value);
+    }
+    $list_monan_same_cart = list_monan_same_cart($id_danhmuc);
+}
 if (isset($_GET["act"]) && $_GET["act"] != "") {
     $act = $_GET["act"];
 
@@ -72,10 +82,79 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
             }
             break;
 
+
+
         // Menu
         case "cuahang":
             include("./views/main/cuahang.php");
             break;
+
+        // Giỏ hàng
+        case "themgiohang":
+            // Thêm món vào giỏ hàng
+            if (isset($_GET["id_monan"])) {
+                $id = $_GET["id_monan"];
+                $list_monan_cart = list_monan_cart($id);
+                $soluong = 1;
+
+                if (is_array($list_monan_cart)) {
+                    foreach ($list_monan_cart as $food) {
+                        $new_food = [
+                            "id_monan" => $food['id_monan'],
+                            "ten_monan" => $food['ten_monan'],
+                            "gia_monan" => $food['gia_monan'],
+                            "anh_monan" => $food['anh_monan'],
+                            "soluong" => $soluong,
+                        ];
+                    }
+                }
+
+                // Kiểm tra session tồn tại hay không nếu chưa thì tăng lên
+                if (isset($_SESSION['cart'])) {
+                    $i = 0;
+                    while ($i < count($_SESSION['cart'])) {
+                        if ($_SESSION['cart'][$i]['id_monan'] == $id) {
+                            $_SESSION['cart'][$i]['soluong'] += $soluong;
+                            break;
+                        }
+                        $i++;
+                    }
+                    if ($i == count($_SESSION['cart'])) {
+                        array_push($_SESSION['cart'], $new_food);
+                    }
+                } else {
+                    $_SESSION['cart'] = array($new_food);
+                }
+                echo "<script>alert('Đã thêm thành công');</script>";
+
+            }
+            include("./views/main/giohang.php");
+            break;
+
+
+        case "xoamonan":
+            if (isset($_SESSION["cart"]) && isset($_GET["id_monan"])) {
+                $id_monan = $_GET["id_monan"];
+            }
+            $updatedCart = [];
+
+            foreach ($_SESSION["cart"] as $item) {
+                if ($item["id_monan"] != $id_monan) {
+                    $updatedCart[] = $item;
+                }
+            }
+
+            // Cập nhật phiên giỏ hàng với danh sách đã lọc
+            $_SESSION["cart"] = $updatedCart;
+
+
+
+            include("./views/main/giohang.php");
+            break;
+
+
+
+
 
     }
 } else {
