@@ -55,6 +55,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                     echo '<script>window.location.href = "index.php";</script>';
 
                 } else {
+                    echo 1234;
                     echo '<script>alert("Lỗi")</script>';
                 }
             }
