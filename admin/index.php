@@ -152,51 +152,51 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
 
             include('./monan/lietke.php');
             break;
-            
 
-            //tintuc
-            case 'themdmtintuc':
-                if (isset($_POST['themmoi'])) {
-                    $ten_danhmuc_tintuc = $_POST['ten_danhmuc_tintuc'];
-                    $phuluc_danhmuc_tintuc = $_POST['phuluc_danhmuc_tintuc'];
-                    themdmtintuc($ten_danhmuc_tintuc,$phuluc_danhmuc_tintuc);
-                    $thongbao = "Thêm thành công";
-                }
-                include('./tintuc/danhmuc/them.php');
-                break;
 
-                case 'lietkedmtintuc':
-                    $listdmtintuc = loaddmtintucAll();
-                    include('./tintuc/danhmuc/lietke.php');
-                    break;
+        //tintuc
+        case 'themdmtintuc':
+            if (isset($_POST['themmoi'])) {
+                $ten_danhmuc_tintuc = $_POST['ten_danhmuc_tintuc'];
+                $phuluc_danhmuc_tintuc = $_POST['phuluc_danhmuc_tintuc'];
+                themdmtintuc($ten_danhmuc_tintuc, $phuluc_danhmuc_tintuc);
+                $thongbao = "Thêm thành công";
+            }
+            include('./tintuc/danhmuc/them.php');
+            break;
 
-                    case 'xoadmtintuc':
-                        $iddmtintuc = $_GET['id_danhmuc_tintuc'];
-                        xoadmtintuc($iddmtintuc);
-                        $listdmtintuc = loaddmtintucAll();
-                        include('./tintuc/danhmuc/lietke.php');
-                        break;
-            
-                    case 'suadmtintuc':
-                        if (isset($_GET["id_danhmuc_tintuc"]) && $_GET["id_danhmuc_tintuc"] > 0) {
-                            $id_danhmuc_tintuc = $_GET['id_danhmuc_tintuc'];
-                            $listdmtintucone =  loaddmtintucone($id_danhmuc_tintuc);
-                        }
-                        include('./tintuc/danhmuc/sua.php');
-                        break;
+        case 'lietkedmtintuc':
+            $listdmtintuc = loaddmtintucAll();
+            include('./tintuc/danhmuc/lietke.php');
+            break;
 
-                        case 'capnhatdmtintuc':
-                            if (isset($_POST["capnhat"])) {
-                                $id_danhmuc_tintuc = $_POST["id_danhmuc_tintuc"];
-                                $ten_danhmuc_tintuc = $_POST["ten_danhmuc_tintuc"];
-                                $phuluc_danhmuc_tintuc = $_POST["phuluc_danhmuc_tintuc"];
-                                capnhatdmtintuc($id_danhmuc_tintuc, $ten_danhmuc_tintuc, $phuluc_danhmuc_tintuc);
-                                $thongbao = "Thêm thành công";
-                            }
-                            $listdmtintuc = loaddmtintucAll();
-                            include('./tintuc/danhmuc/lietke.php');
-                            break;
-            
+        case 'xoadmtintuc':
+            $iddmtintuc = $_GET['id_danhmuc_tintuc'];
+            xoadmtintuc($iddmtintuc);
+            $listdmtintuc = loaddmtintucAll();
+            include('./tintuc/danhmuc/lietke.php');
+            break;
+
+        case 'suadmtintuc':
+            if (isset($_GET["id_danhmuc_tintuc"]) && $_GET["id_danhmuc_tintuc"] > 0) {
+                $id_danhmuc_tintuc = $_GET['id_danhmuc_tintuc'];
+                $listdmtintucone = loaddmtintucone($id_danhmuc_tintuc);
+            }
+            include('./tintuc/danhmuc/sua.php');
+            break;
+
+        case 'capnhatdmtintuc':
+            if (isset($_POST["capnhat"])) {
+                $id_danhmuc_tintuc = $_POST["id_danhmuc_tintuc"];
+                $ten_danhmuc_tintuc = $_POST["ten_danhmuc_tintuc"];
+                $phuluc_danhmuc_tintuc = $_POST["phuluc_danhmuc_tintuc"];
+                capnhatdmtintuc($id_danhmuc_tintuc, $ten_danhmuc_tintuc, $phuluc_danhmuc_tintuc);
+                $thongbao = "Thêm thành công";
+            }
+            $listdmtintuc = loaddmtintucAll();
+            include('./tintuc/danhmuc/lietke.php');
+            break;
+
 
 
 
