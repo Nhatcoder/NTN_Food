@@ -29,11 +29,27 @@
                                     <i class="flaticon-user"></i>
                                 </a>
                             </li>
+                            <?php
+        if (isset($_SESSION['user'])) {
+            extract($_SESSION['user']);
+            ?>
                             <li>
+<<<<<<< HEAD
+                            <a href="./index.php?act=giohang&&sodienthoai=<?php echo $id_nd ?>"
+                            class="btn btn-white btn-square btn-shadow cart-btn"><i class="flaticon-shopping-bag-1"></i>
+                                    <span class="badge">6</span></a>
+                               
+                                
+=======
                                 <a href="index.php?act=themgiohang" class="btn btn-white btn-square btn-shadow cart-btn">
                                     <i class="flaticon-shopping-bag-1"></i>
                                 </a>
+>>>>>>> c45660f1844c3cafaf5601a1fc6fea22d00374fa
                             </li>
+                            <?php } else { ?>
+
+
+                                <?php } ?>
                         </ul>
                     </div>
                 </div>

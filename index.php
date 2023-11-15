@@ -5,6 +5,11 @@ include("./model/dangnhap.php");
 include("./model/addcart.php");
 include("./model/list_monan_home.php");
 
+include("./model/giohang.php");
+include("./views/header/header.php");
+
+
+
 
 // session_destroy();
 // die();
@@ -33,7 +38,9 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
     $act = $_GET["act"];
 
     switch ($act) {
+
         // Tài khoản
+
         case "dangnhap":
             if (isset($_POST["submit"])) {
                 $sodienthoai = $_POST["sodienthoai"];
@@ -47,6 +54,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                         "hoten" => $hoten,
                         "sodienthoai" => $sodienthoai,
                         "email" => $email,
+                        "id_nguoidung"=>$id_nd,
                         "vaitro" => $vaitro
                     );
 
@@ -86,6 +94,18 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 unset($_SESSION["user"]);
                 echo '<script>window.location.href = "index.php";</script>';
             }
+            break;
+        case "themgiohang":
+            
+            $id_monan = $_GET['id'];    
+            
+          
+               
+                themgiohang($id_monan,$id_nguoidung );
+                
+               
+            
+            include('./index.php');
             break;
 
 

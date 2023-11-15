@@ -1,3 +1,5 @@
+
+
 <div class="page-content bg-white">
 	<!-- Banner -->
 	<div class="main-bnr-one">
@@ -192,8 +194,12 @@
 								<h5 class="dz-price text-primary">
 									<?= number_format($gia_monan, 0, ",", ".") ?> VNĐ
 								</h5>
+<<<<<<< HEAD
+								<a href="index.php?act=themgiohang&&id=<?php echo $value['id_monan'] ?>&&idnguoidung=<?php echo $id_nd ?>" class="btn btn-primary btn-hover-2">Thêm giỏ hàng</a>
+=======
 								<a href="index.php?act=themgiohang&id_monan=<?= $id_monan ?>"
 									class="btn btn-primary btn-hover-2">Thêm giỏ hàng</a>
+>>>>>>> c45660f1844c3cafaf5601a1fc6fea22d00374fa
 							</div>
 						</div>
 					</div>
@@ -237,11 +243,16 @@
 										<?= number_format($gia_monan, 0, ",", ".") ?> VNĐ
 									</span>
 								</div>
+<<<<<<< HEAD
+								<a href="index.php?act=themgiohang&&id=<?php echo $value['id_monan'] ?>&&sodienthoai=<?php echo $sodienthoai ?>" class="btn btn-cart btn-white text-primary btn-square"><i
+										class="flaticon-shopping-cart"></i></a>
+=======
 								<a href="index.php?act=themgiohang&id_monan=<?= $id_monan ?>"
 									class="btn btn-cart btn-white text-primary btn-square">
 									<!-- <i class="flaticon-shopping-cart"></i> -->
 									<i class="fa-solid fa-cart-plus"></i>
 								</a>
+>>>>>>> c45660f1844c3cafaf5601a1fc6fea22d00374fa
 							</div>
 						</div>
 					</div>
@@ -360,10 +371,15 @@
 												<?= number_format($gia_monan, 0, ",", ".") ?> VNĐ
 											</span>
 										</div>
+<<<<<<< HEAD
+										<a href="index.php?act=themgiohang&&id=<?php echo $value['id_monan'] ?>" class="btn btn-cart btn-white text-primary btn-square"><i
+												class="flaticon-shopping-cart"></i></a>
+=======
 										<a href="index.php?act=themgiohang&id_monan=<?= $id_monan ?>" class="btn btn-cart btn-white text-primary btn-square">
 										<!-- <i class="flaticon-shopping-cart"></i> -->
 										<i class="fa-solid fa-cart-plus"></i>
 									</a>
+>>>>>>> c45660f1844c3cafaf5601a1fc6fea22d00374fa
 									</div>
 								</div>
 							</div>
@@ -1082,8 +1098,8 @@
 				<div class="col-xl-5 col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.4s">
 					<div class="dz-form-card bg-primary">
 						<div class="section-head">
-							<h4 class="title m-0">Contact us</h4>
-							<p class="m-t10">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+							<h4 class="title m-0">Liên hệ</h4>
+							<p class="m-t10">Hãy liên hệ với chúng tôi để được tư vấn và nhận những dịch vụ tốt nhất từ chúnsg tôi.
 							</p>
 						</div>
 						<form class="dzForm dezPlaceAni" method="POST"
@@ -1095,30 +1111,30 @@
 								<div class="col-lg-12 col-md-12">
 									<div class="input-group input-line">
 										<input name="dzName" required type="text" class="form-control"
-											placeholder="Your Name">
+											placeholder="Nhập họ và tên">
 									</div>
 								</div>
 								<div class="col-lg-12 col-md-12">
 									<div class="input-group input-line">
 										<input name="dzEmail" required type="text" class="form-control"
-											placeholder="Email Address">
+											placeholder="Nhập email của bạn">
 									</div>
 								</div>
 								<div class="col-lg-12 col-md-12">
 									<div class="input-group input-line">
 										<input name="dzOther[Subject]" required type="text" class="form-control"
-											placeholder="Subject">
+											placeholder="Nhập số điện thoại">
 									</div>
 								</div>
 								<div class="col-sm-12 ">
 									<div class="input-group input-line">
 										<textarea name="dzMessage" required class="form-control"
-											placeholder="Message"></textarea>
+											placeholder="Nội dung"></textarea>
 									</div>
 								</div>
 								<div class="col-sm-12">
 									<button type="submit" name="submit" value="submit"
-										class="btn btn-md btn-white btn-hover-1"><span>Send Message</span></button>
+										class="btn btn-md btn-white btn-hover-1"><span>Gửi</span></button>
 								</div>
 							</div>
 						</form>
@@ -1130,17 +1146,17 @@
 						<ul>
 							<li>
 								<i class="flaticon-placeholder"></i>
-								<p>1247/Plot No. 39, 15th Phase, Colony, Kkatpally, Hyderabad</p>
+								<p>Tòa nhà NTN,khu đô thị Đình Thôn, phường Mỹ Đình, quận Nam Từ Liêm, Hà Nội</p>
 							</li>
 							<li>
 								<i class="flaticon-telephone"></i>
-								<p>+91 987-654-3210<br>
-									+91 123-456-7890</p>
+								<p>0362978755<br>
+									0987654321</p>
 							</li>
 							<li>
 								<i class="flaticon-email-1"></i>
-								<p>info@example.com<br>
-									info@example.com</p>
+								<p>NTNfood@gmail.com<br>
+									trumcodedao@gmail.com</p>
 							</li>
 						</ul>
 					</div>
@@ -1177,12 +1193,9 @@
 		<div class="footer-bottom">
 			<div class="row">
 				<div class="col-xl-6 col-md-6 text-md-start">
-					<p>Copyright 2023 All rights reserved.</p>
+					<p>Sản phẩm của công ty NTN Food</p>
 				</div>
-				<div class="col-xl-6 col-md-6 text-md-end">
-					<span class="copyright-text">Crafted With <span class="heart"></span> by <a
-							href="https://dexignzone.com/" target="_blank">DexignZone</a></span>
-				</div>
+				
 			</div>
 		</div>
 	</div>
