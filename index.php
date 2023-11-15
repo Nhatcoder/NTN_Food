@@ -4,11 +4,11 @@ include("./model/pdo.php");
 include("./model/dangnhap.php");
 include("./model/addcart.php");
 include("./model/list_monan_home.php");
-<<<<<<< HEAD
+
 include("./model/giohang.php");
 include("./views/header/header.php");
-=======
->>>>>>> c45660f1844c3cafaf5601a1fc6fea22d00374fa
+
+
 
 
 // session_destroy();
@@ -38,11 +38,9 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
     $act = $_GET["act"];
 
     switch ($act) {
-<<<<<<< HEAD
-        
-=======
+
         // Tài khoản
->>>>>>> c45660f1844c3cafaf5601a1fc6fea22d00374fa
+
         case "dangnhap":
             if (isset($_POST["submit"])) {
                 $sodienthoai = $_POST["sodienthoai"];
