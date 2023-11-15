@@ -54,7 +54,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                         "hoten" => $hoten,
                         "sodienthoai" => $sodienthoai,
                         "email" => $email,
-                        "id_nguoidung"=>$id_nd,
+                        "id_nguoidung"=>$id_nd, //êieieieiieie
                         "vaitro" => $vaitro
                     );
 
