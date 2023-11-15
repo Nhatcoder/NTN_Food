@@ -109,7 +109,7 @@ if (isset($_SESSION["cart"])) {
                                                 </div>
                                                 <div class="dz-body">
                                                     <div class="btn-quantity style-1">
-                                                        <input id="demo_vertical2" type="text" value="<?= $soluong ?>"
+                                                        <input id="demo_vertical2" type="text" value="<?= $soluongmua ?>"
                                                             name="demo_vertical2">
                                                         <span class="input-group-btn-vertical"><button
                                                                 class="btn btn-default bootstrap-touchspin-up" type="button"><i
@@ -141,7 +141,7 @@ if (isset($_SESSION["cart"])) {
                                                     $tongtien = 0;
 
                                                     foreach ($_SESSION['cart'] as $key => $value) {
-                                                        $thanhtien = $value['soluong'] * $value['gia_monan'];
+                                                        $thanhtien = $value['soluongmua'] * $value['gia_monan'];
                                                         $tongtien = $tongtien + $thanhtien;
                                                         $i++;
                                                     }
@@ -167,10 +167,23 @@ if (isset($_SESSION["cart"])) {
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <a href="shop-checkout.html"
-                                        class="btn btn-primary d-block text-center btn-md w-100 btn-hover-1"><span>Thanh
-                                            toán ngay
-                                            <i class="fa-solid fa-arrow-right"></i></span></a>
+                                    <?php
+                                    if (isset($_SESSION["user"])) {
+                                        ?>
+                                        <a href="index.php?act=thanhtoan"
+                                            class="btn btn-primary d-block text-center btn-md w-100 btn-hover-1"><span>Thanh
+                                                toán ngay
+                                                <i class="fa-solid fa-arrow-right"></i></span>
+                                        </a>
+                                    <?php } else { ?>
+                                        <a data-bs-toggle="offcanvas"
+                                            href="#offcanvasLogin" role="button" aria-controls="offcanvasLogin" class="btn btn-primary d-block text-center btn-md w-100
+                                            btn-hover-1"><span>Thanh
+                                                toán ngay
+                                                <i class="fa-solid fa-arrow-right"></i></span>
+                                        </a>
+                                    <?php } ?>
+
                                 </div>
                             </div>
                         </aside>
@@ -193,7 +206,7 @@ if (isset($_SESSION["cart"])) {
                 <div class="inner-content text-center">
                     <h1 class="error-head">Giỏ hàng trống</h1>
                     <h3 class="error-para">Bạn cần thêm một vài món</h3>
-                    <p>Chúng tôi rất vui khi được phục vụ khách hàng, phục vụ khách hàng là một niềm tự hào</p>
+                    <p>Chúng tôi rất vui khi được phục vụ khách hàng, phục vụ khách hàng là niềm tự hào</p>
                     <a href="index.php" class="btn btn-md btn-primary btn-hover-1"><span>Trở về Trang Chủ</span></a>
                 </div>
             </div>

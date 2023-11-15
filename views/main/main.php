@@ -237,8 +237,11 @@
 										<?= number_format($gia_monan, 0, ",", ".") ?> VNĐ
 									</span>
 								</div>
-								<a href="shop-cart.html" class="btn btn-cart btn-white text-primary btn-square"><i
-										class="flaticon-shopping-cart"></i></a>
+								<a href="index.php?act=themgiohang&id_monan=<?= $id_monan ?>"
+									class="btn btn-cart btn-white text-primary btn-square">
+									<!-- <i class="flaticon-shopping-cart"></i> -->
+									<i class="fa-solid fa-cart-plus"></i>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -357,8 +360,10 @@
 												<?= number_format($gia_monan, 0, ",", ".") ?> VNĐ
 											</span>
 										</div>
-										<a href="shop-cart.html" class="btn btn-cart btn-white text-primary btn-square"><i
-												class="flaticon-shopping-cart"></i></a>
+										<a href="index.php?act=themgiohang&id_monan=<?= $id_monan ?>" class="btn btn-cart btn-white text-primary btn-square">
+										<!-- <i class="flaticon-shopping-cart"></i> -->
+										<i class="fa-solid fa-cart-plus"></i>
+									</a>
 									</div>
 								</div>
 							</div>

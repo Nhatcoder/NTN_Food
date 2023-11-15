@@ -2,11 +2,14 @@
 session_start();
 include("./model/pdo.php");
 include("./model/dangnhap.php");
+include("./model/addcart.php");
 include("./model/list_monan_home.php");
+
 
 // session_destroy();
 // die();
 
+// print_r($_SESSION["user"]);
 
 if (isset($_GET["act"]) && $_GET["act"] != "") {
     include("./views/header/header_act.php");
@@ -40,6 +43,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 if ($result) {
                     extract($result);
                     $userInfo = array(
+                        "id_nguoidung" => $id_nguoidung,
                         "hoten" => $hoten,
                         "sodienthoai" => $sodienthoai,
                         "email" => $email,
@@ -62,8 +66,9 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 $email = $_POST["email"];
                 $pass = md5($_POST["pass"]);
 
-                insert_tk($hoten, $sodienthoai, $email, $pass, $vaitro = 0);
+                $id_nguoidung = insert_tk($hoten, $sodienthoai, $email, $pass, $vaitro = 0);
                 $userInfo = array(
+                    "id_nguoidung" => $id_nguoidung,
                     "hoten" => $hoten,
                     "sodienthoai" => $sodienthoai,
                     "email" => $email,
@@ -95,7 +100,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
             if (isset($_GET["id_monan"])) {
                 $id = $_GET["id_monan"];
                 $list_monan_cart = list_monan_cart($id);
-                $soluong = 1;
+                $soluongmua = 1;
 
                 if (is_array($list_monan_cart)) {
                     foreach ($list_monan_cart as $food) {
@@ -104,7 +109,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                             "ten_monan" => $food['ten_monan'],
                             "gia_monan" => $food['gia_monan'],
                             "anh_monan" => $food['anh_monan'],
-                            "soluong" => $soluong,
+                            "soluongmua" => $soluongmua,
                         ];
                     }
                 }
@@ -114,7 +119,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                     $i = 0;
                     while ($i < count($_SESSION['cart'])) {
                         if ($_SESSION['cart'][$i]['id_monan'] == $id) {
-                            $_SESSION['cart'][$i]['soluong'] += $soluong;
+                            $_SESSION['cart'][$i]['soluongmua'] += $soluongmua;
                             break;
                         }
                         $i++;
@@ -146,12 +151,35 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
 
             // Cập nhật phiên giỏ hàng với danh sách đã lọc
             $_SESSION["cart"] = $updatedCart;
-
-
-
             include("./views/main/giohang.php");
             break;
 
+        case "thanhtoan":
+            date_default_timezone_set('Asia/Ho_Chi_Minh');
+            $ngaymua = date("Y-m-d H:i:s");
+
+            if (isset($_SESSION["user"])) {
+                extract($_SESSION["user"]);
+                $id = $id_nguoidung;
+                $ma_donhang = rand(0, 9999);
+
+                insert_cart($id, $ma_donhang, $ngaymua);
+
+                foreach ($_SESSION["cart"] as $key => $value) {
+                    extract($value);
+                    insert_cart_detail($ma_donhang, $id_monan, $soluongmua);
+                }
+
+
+                echo "<script>alert('Đã thêm thành công');</script>";
+
+            }
+
+            unset($_SESSION["cart"]);
+
+
+            include("./views/main/cuahang.php");
+            break;
 
 
 
