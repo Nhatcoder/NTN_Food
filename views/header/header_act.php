@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Mirrored from swigo.dexignzone.com/xhtml/shop-style-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Nov 2023 03:07:55 GMT -->
-
 <head>
 
     <!-- Title -->

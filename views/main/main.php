@@ -1,5 +1,3 @@
-
-
 <div class="page-content bg-white">
 	<!-- Banner -->
 	<div class="main-bnr-one">
@@ -194,12 +192,8 @@
 								<h5 class="dz-price text-primary">
 									<?= number_format($gia_monan, 0, ",", ".") ?> VNĐ
 								</h5>
-<<<<<<< HEAD
-								<a href="index.php?act=themgiohang&&id=<?php echo $value['id_monan'] ?>&&idnguoidung=<?php echo $id_nd ?>" class="btn btn-primary btn-hover-2">Thêm giỏ hàng</a>
-=======
 								<a href="index.php?act=themgiohang&id_monan=<?= $id_monan ?>"
 									class="btn btn-primary btn-hover-2">Thêm giỏ hàng</a>
->>>>>>> c45660f1844c3cafaf5601a1fc6fea22d00374fa
 							</div>
 						</div>
 					</div>
@@ -243,16 +237,13 @@
 										<?= number_format($gia_monan, 0, ",", ".") ?> VNĐ
 									</span>
 								</div>
-<<<<<<< HEAD
-								<a href="index.php?act=themgiohang&&id=<?php echo $value['id_monan'] ?>&&sodienthoai=<?php echo $sodienthoai ?>" class="btn btn-cart btn-white text-primary btn-square"><i
-										class="flaticon-shopping-cart"></i></a>
-=======
+
 								<a href="index.php?act=themgiohang&id_monan=<?= $id_monan ?>"
 									class="btn btn-cart btn-white text-primary btn-square">
 									<!-- <i class="flaticon-shopping-cart"></i> -->
 									<i class="fa-solid fa-cart-plus"></i>
 								</a>
->>>>>>> c45660f1844c3cafaf5601a1fc6fea22d00374fa
+
 							</div>
 						</div>
 					</div>
@@ -371,15 +362,11 @@
 												<?= number_format($gia_monan, 0, ",", ".") ?> VNĐ
 											</span>
 										</div>
-<<<<<<< HEAD
-										<a href="index.php?act=themgiohang&&id=<?php echo $value['id_monan'] ?>" class="btn btn-cart btn-white text-primary btn-square"><i
-												class="flaticon-shopping-cart"></i></a>
-=======
-										<a href="index.php?act=themgiohang&id_monan=<?= $id_monan ?>" class="btn btn-cart btn-white text-primary btn-square">
-										<!-- <i class="flaticon-shopping-cart"></i> -->
-										<i class="fa-solid fa-cart-plus"></i>
-									</a>
->>>>>>> c45660f1844c3cafaf5601a1fc6fea22d00374fa
+										<a href="index.php?act=themgiohang&id_monan=<?= $id_monan ?>"
+											class="btn btn-cart btn-white text-primary btn-square">
+											<!-- <i class="flaticon-shopping-cart"></i> -->
+											<i class="fa-solid fa-cart-plus"></i>
+										</a>
 									</div>
 								</div>
 							</div>
@@ -1099,7 +1086,8 @@
 					<div class="dz-form-card bg-primary">
 						<div class="section-head">
 							<h4 class="title m-0">Liên hệ</h4>
-							<p class="m-t10">Hãy liên hệ với chúng tôi để được tư vấn và nhận những dịch vụ tốt nhất từ chúnsg tôi.
+							<p class="m-t10">Hãy liên hệ với chúng tôi để được tư vấn và nhận những dịch vụ tốt nhất từ
+								chúnsg tôi.
 							</p>
 						</div>
 						<form class="dzForm dezPlaceAni" method="POST"
@@ -1195,7 +1183,7 @@
 				<div class="col-xl-6 col-md-6 text-md-start">
 					<p>Sản phẩm của công ty NTN Food</p>
 				</div>
-				
+
 			</div>
 		</div>
 	</div>
