@@ -28,18 +28,17 @@ function pdo_execute($sql)
     }
 }
 
-function pdo_execute_id($sql){
+function pdo_execute_id($sql)
+{
     $sql_args = array_slice(func_get_args(), 1);
-    try{
+    try {
         $conn = pdo_get_connection();
         $stmt = $conn->prepare($sql);
         $stmt->execute($sql_args);
         return $conn->lastInsertId();
-    }
-    catch(PDOException $e){
+    } catch (PDOException $e) {
         throw $e;
-    }
-    finally{
+    } finally {
         unset($conn);
     }
 }

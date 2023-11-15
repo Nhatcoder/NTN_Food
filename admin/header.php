@@ -187,7 +187,7 @@
                         <li>
                             <a class="has-arrow" href="https://colorlib.com/polygon/nalika/mailbox.html"
                                 aria-expanded="false">
-                                <i class="fa-solid fa-user"></i>
+                                <i class="fa-brands fa-elementor"></i>
                                 <span class="mini-click-non">Danh
                                     mục</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
@@ -213,20 +213,41 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="index.php?act=themdmtintuc" aria-expanded="false"><i
-                                    class="fa-solid fa-bowl-food"></i> <span class="mini-click-non">Danh mục tin tức</span></a>
+                            <a class="has-arrow" href="index.php?act=themdmtintuc" aria-expanded="false">
+                                <i class="fa-brands fa-elementor"></i>
+                                <span class="mini-click-non">Danh mục tin
+                                    tức</span>
+                            </a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a href="index.php?act=themtintuc"><span class="mini-sub-pro">Thêm tin tức</span></a>
+                                <li><a href="index.php?act=themdmtintuc"><span class="mini-sub-pro">Thêm danh mục tin
+                                            tức</span></a>
+                                </li>
+                                <li><a href="index.php?act=lietkedmtintuc"><span class="mini-sub-pro">Liệt kê danh mục
+                                            tin
+                                            tức</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="index.php?act=themtintuc" aria-expanded="false"><i
+                                    class="fa-solid fa-book-open-reader"></i> <span class="mini-click-non">Tin
+                                    tức</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a href="index.php?act=themtintuc"><span class="mini-sub-pro">Thêm tin
+                                            tức</span></a>
                                 </li>
                                 <li><a href="index.php?act=lietketintuc"><span class="mini-sub-pro">Liệt kê tin
                                             tức</span></a></li>
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="index.php?act=themtintuc" aria-expanded="false"><i
-                                    class="fa-solid fa-bowl-food"></i> <span class="mini-click-non">Tin tức</span></a>
+                            <a class="has-arrow" href="index.php?act=themtintuc" aria-expanded="false">
+                                <i class="fa-solid fa-money-bill-wave"></i>
+                                <span class="mini-click-non">
+                                    Quản lý đơn hàng</span>
+                            </a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a href="index.php?act=themtintuc"><span class="mini-sub-pro">Thêm tin tức</span></a>
+                                <li><a href="index.php?act=themtintuc"><span class="mini-sub-pro">Thêm tin
+                                            tức</span></a>
                                 </li>
                                 <li><a href="index.php?act=lietketintuc"><span class="mini-sub-pro">Liệt kê tin
                                             tức</span></a></li>
