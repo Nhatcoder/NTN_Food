@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <!-- Title -->
@@ -87,9 +88,10 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <button type="button" class="btn btn-white btn-square btn-shadow cart-btn">
+                                        <a href="index.php?act=themgiohang"
+                                            class="btn btn-white btn-square btn-shadow cart-btn">
                                             <i class="flaticon-shopping-bag-1"></i>
-                                        </button>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
