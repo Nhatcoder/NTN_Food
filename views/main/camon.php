@@ -6,7 +6,7 @@
                 <h1 class="error-head">Cảm ơn quý khách đã mua hàng của chúng tôi</h1>
                 <h3 class="error-para">Chúng tôi sẽ luôn luôn phục vụ khách hàng</h3>
                 <p>Chúng tôi rất vui khi được phục vụ khách hàng, phục vụ khách hàng là niềm tự hào, Xin cảm ơn !</p>
-                <a href="index.php" class="btn btn-md btn-primary btn-hover-1"><span>Trở về Trang Chủ</span></a>
+                <a href="index.php" class="btn btn-md btn-primary btn-hover-1 mb-5"><span>Trở về Trang Chủ</span></a>
             </div>
         </div>
     </div>

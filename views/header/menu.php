@@ -30,8 +30,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.php?act=themgiohang"
-                                    class="btn btn-white btn-square btn-shadow cart-btn">
+                                <a href="index.php?act=giohang" class="btn btn-white btn-square btn-shadow cart-btn">
                                     <i class="flaticon-shopping-bag-1"></i>
                                 </a>
                             </li>

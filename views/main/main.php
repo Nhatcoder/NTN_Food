@@ -186,7 +186,7 @@
 								<img src="uploads/monan/<?= $anh_monan ?>" alt="/">
 							</div>
 							<div class="dz-content">
-								<h4 class="dz-title"><a href="index.php?act=chitietmonan">
+								<h4 class="dz-title"><a href="index.php?act=chitietmonan&id_monan=<?= $id_monan ?>">
 										<?= $ten_monan ?>
 									</a></h4>
 								<h5 class="dz-price text-primary">
