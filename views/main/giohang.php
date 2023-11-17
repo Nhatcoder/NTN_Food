@@ -1,5 +1,5 @@
 <?php
-if (isset($_SESSION["cart"])) {
+if (isset($_SESSION["cart"]) && count($_SESSION["cart"]) > 0) {
     ?>
     <div class="page-content bg-white">
         <!-- Banner  -->
@@ -124,11 +124,11 @@ if (isset($_SESSION["cart"])) {
                                                 </div>
                                             </div>
                                         </div>
-
                                         <?php
                                     }
                                 }
                                 ?>
+
                                 <div class="order-detail">
                                     <h6>Chi tiết hóa đơn</h6>
                                     <table>
@@ -176,8 +176,8 @@ if (isset($_SESSION["cart"])) {
                                                 <i class="fa-solid fa-arrow-right"></i></span>
                                         </a>
                                     <?php } else { ?>
-                                        <a data-bs-toggle="offcanvas"
-                                            href="#offcanvasLogin" role="button" aria-controls="offcanvasLogin" class="btn btn-primary d-block text-center btn-md w-100
+                                        <a data-bs-toggle="offcanvas" href="#offcanvasLogin" role="button"
+                                            aria-controls="offcanvasLogin" class="btn btn-primary d-block text-center btn-md w-100
                                             btn-hover-1"><span>Thanh
                                                 toán ngay
                                                 <i class="fa-solid fa-arrow-right"></i></span>
@@ -189,28 +189,11 @@ if (isset($_SESSION["cart"])) {
                         </aside>
                     </div>
                 </div>
-
-
             </div>
         </section>
         <!-- cart Section -->
-
     </div>
 
 <?php } else {
-    ?>
-    <div class="page-content bg-white">
-        <div class="content-inner overflow-hidden pt-4 error-page" id="app-banner"
-            style="background-image:url('views/assets/images/background/bg1.jpg'); background-repeat:no-repeat;    background-size: cover;">
-            <div class="container">
-                <div class="inner-content text-center">
-                    <h1 class="error-head">Giỏ hàng trống</h1>
-                    <h3 class="error-para">Bạn cần thêm một vài món</h3>
-                    <p>Chúng tôi rất vui khi được phục vụ khách hàng, phục vụ khách hàng là niềm tự hào</p>
-                    <a href="index.php" class="btn btn-md btn-primary btn-hover-1"><span>Trở về Trang Chủ</span></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <?php
+    include "giohang_null.php";
 } ?>

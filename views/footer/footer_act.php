@@ -207,6 +207,7 @@
 <script src="views/assets/js/dznav-init.js"></script><!-- DZNAV INIT -->
 <script src="views/assets/vendor/rangeslider/rangeslider.js"></script>
 <!-- <script src="views/assets/vendor/switcher/switcher.js"></script> -->
+
 </body>
 
 </html>

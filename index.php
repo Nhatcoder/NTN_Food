@@ -142,19 +142,27 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
         case "xoamonan":
             if (isset($_SESSION["cart"]) && isset($_GET["id_monan"])) {
                 $id_monan = $_GET["id_monan"];
-            }
-            $updatedCart = [];
+                $updatedCart = [];
 
-            foreach ($_SESSION["cart"] as $item) {
-                if ($item["id_monan"] != $id_monan) {
-                    $updatedCart[] = $item;
+                foreach ($_SESSION["cart"] as $item) {
+                    if ($item["id_monan"] != $id_monan) {
+                        $updatedCart[] = $item;
+                    }
+                }
+
+                // Cập nhật phiên giỏ hàng với danh sách đã lọc
+                $_SESSION["cart"] = $updatedCart;
+
+                // Kiểm tra xem giỏ hàng còn sản phẩm không
+                if (count($_SESSION["cart"]) == 0) {
+                    include("./views/main/giohang_null.php");
+                } else {
+                    include("./views/main/giohang.php");
                 }
             }
 
-            // Cập nhật phiên giỏ hàng với danh sách đã lọc
-            $_SESSION["cart"] = $updatedCart;
-            include("./views/main/giohang.php");
             break;
+
 
 
         case "thanhtoan":
@@ -258,25 +266,17 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                         } else {
                             echo json_encode($returnData);
                         }
-
-
                     }
-
                 }
-                // echo "<script>alert('Đã thêm thành công');</script>";
             }
 
-            // unset($_SESSION["cart"]);
-
-
-            // include("./views/main/cuahang.php");
             break;
 
 
         // 
         case "camon":
             if (isset($_GET["vnp_Amount"])) {
-                $vnp_Amount = $_GET["vnp_Amount"];
+                // $vnp_Amount = $_GET["vnp_Amount"];
                 $vnp_BankCode = $_GET["vnp_BankCode"];
                 $vnp_BankTranNo = $_GET["vnp_BankTranNo"];
                 $vnp_CardType = $_GET["vnp_CardType"];
@@ -286,7 +286,19 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 $vnp_TransactionNo = $_GET["vnp_TransactionNo"];
                 $ma_donhang = $_SESSION["madonhang"];
 
-                insert_vnpay($vnp_Amount, $ma_donhang, $vnp_BankCode, $vnp_BankTranNo, $vnp_CardType, $vnp_OrderInfo, $vnp_PayDate, $vnp_TmnCode, $vnp_TransactionNo);
+                $i = 0;
+                $tongtien = 0;
+                foreach ($_SESSION["cart"] as $key => $value) {
+                    extract($value);
+                    $thanhtien = $value['soluongmua'] * $value['gia_monan'];
+                    $tongtien = $tongtien + $thanhtien;
+                    $i++;
+                }
+
+                insert_vnpay($tongtien, $ma_donhang, $vnp_BankCode, $vnp_BankTranNo, $vnp_CardType, $vnp_OrderInfo, $vnp_PayDate, $vnp_TmnCode, $vnp_TransactionNo);
+
+                unset($_SESSION["cart"]);
+
             }
 
 
