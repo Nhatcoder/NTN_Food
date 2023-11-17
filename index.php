@@ -94,6 +94,18 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
         // Menu
         case "cuahang":
             include("./views/main/cuahang.php");
+
+            break;
+
+        //Chi tiết món ăn
+        case "chitietmonan":
+            if (isset($_GET["id_monan"])) {
+                $id_monan = $_GET["id_monan"];
+            }
+
+
+
+            include("./views/main/chitiet_monan.php");
             break;
 
         // Giỏ hàng
@@ -276,7 +288,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
         // 
         case "camon":
             if (isset($_GET["vnp_Amount"])) {
-                // $vnp_Amount = $_GET["vnp_Amount"];
                 $vnp_BankCode = $_GET["vnp_BankCode"];
                 $vnp_BankTranNo = $_GET["vnp_BankTranNo"];
                 $vnp_CardType = $_GET["vnp_CardType"];
