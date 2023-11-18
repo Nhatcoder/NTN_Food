@@ -228,17 +228,21 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="index.php?act=themtintuc" aria-expanded="false"><i
-                                    class="fa-solid fa-book-open-reader"></i> <span class="mini-click-non">Tin
-                                    tức</span></a>
+                            <a class="has-arrow" href="index.php?act=themtintuc" aria-expanded="false">
+                                <i class="fa-brands fa-elementor"></i>
+                                <span class="mini-click-non">Tin
+                                    tức</span>
+                            </a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a href="index.php?act=themtintuc"><span class="mini-sub-pro">Thêm tin
                                             tức</span></a>
                                 </li>
-                                <li><a href="index.php?act=lietketintuc"><span class="mini-sub-pro">Liệt kê tin
+                                <li><a href="index.php?act=lietketintuc"><span class="mini-sub-pro">Liệt kê
+                                            tin
                                             tức</span></a></li>
                             </ul>
                         </li>
+                       
                         <li>
                             <a class="has-arrow" href="index.php?act=quanlydonhang" aria-expanded="false">
                                 <i class="fa-solid fa-money-bill-wave"></i>

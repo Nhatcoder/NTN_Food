@@ -10,9 +10,9 @@
                                     <i class="icon nalika-home"></i>
                                 </div>
                                 <div class="breadcomb-ctn">
-                                    <h2>Danh mục tin tức</h2>
-                                    <p>Chào mừng bạn đến với <span class="bread-ntd">Trang quản trị danh
-                                            mục tin tức</span></p>
+                                    <h2>Tin tức</h2>
+                                    <p>Chào mừng bạn đến với <span class="bread-ntd">Trang quản trị
+                                            tin tức</span></p>
                                 </div>
                             </div>
                         </div>

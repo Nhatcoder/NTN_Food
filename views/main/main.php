@@ -389,7 +389,7 @@
 		style="background-image:url('views/assets/images/background/pic1.png'); background-attachment: fixed;">
 		<div class="container">
 			<div class="section-head text-center">
-				<h2 class="title text-white wow flipInX" data-wow-delay="0.2s">Reservation</h2>
+				<h2 class="title text-white wow flipInX" data-wow-delay="0.2s">Đặt chỗ</h2>
 			</div>
 			<form action="#">
 				<div class="row">
@@ -398,7 +398,7 @@
 							<div class="input-group-prepand">
 								<i class="flaticon-user"></i>
 							</div>
-							<input name="dzName" required type="text" class="form-control" placeholder="Your Name">
+							<input name="dzName" required type="text" class="form-control" placeholder="Tên">
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6 m-b30 m-sm-b50 wow fadeInUp" data-wow-delay="0.2s">
@@ -407,7 +407,7 @@
 								<i class="flaticon-phone-call"></i>
 							</div>
 							<input name="dzPhoneNumber" required type="text" class="form-control dz-number"
-								placeholder="Phone Number">
+								placeholder="Số điện thoại">
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6 m-b30 m-sm-b50 wow fadeInUp" data-wow-delay="0.2s">
@@ -415,7 +415,7 @@
 							<div class="input-group-prepand">
 								<i class="flaticon-email-1"></i>
 							</div>
-							<input name="dzEmail" required type="text" class="form-control" placeholder="Your Email">
+							<input name="dzEmail" required type="text" class="form-control" placeholder="Email">
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6 m-b30 m-sm-b50 wow fadeInUp" data-wow-delay="0.4s">
@@ -424,12 +424,12 @@
 								<i class="flaticon-two-people"></i>
 							</div>
 							<select class="form-select default-select">
-								<option>Number Of People</option>
-								<option>Member 1</option>
-								<option>Member 2</option>
-								<option>Member 3</option>
-								<option>Member 4</option>
-								<option>Member 5</option>
+								<option>Số người</option>
+								<option>1 người</option>
+								<option>2 người</option>
+								<option>3 người</option>
+								<option>4 người</option>
+								<option>5 người</option>
 							</select>
 						</div>
 					</div>
@@ -438,7 +438,7 @@
 							<div class="input-group-prepand">
 								<i class="flaticon-calendar-date"></i>
 							</div>
-							<input required type="text" class="form-control" id="datePickerOnly" placeholder="Date">
+							<input required type="text" class="form-control" id="datePickerOnly" placeholder="Ngày">
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6 m-b30 m-sm-b50 wow fadeInUp" data-wow-delay="0.4s">
@@ -446,12 +446,12 @@
 							<div class="input-group-prepand">
 								<i class="flaticon-clock"></i>
 							</div>
-							<input required type="text" class="form-control" id="timePickerOnly" placeholder="Time">
+							<input required type="text" class="form-control" id="timePickerOnly" placeholder="Giờ">
 						</div>
 					</div>
 					<div class="col-lg-12 col-md-12 text-center">
 						<button type="submit" name="submit" value="submit"
-							class="btn btn-lg btn-white btn-hover-1"><span>Book a Table</span></button>
+							class="btn btn-lg btn-white btn-hover-1"><span>Đặt bàn</span></button>
 					</div>
 				</div>
 			</form>
@@ -463,7 +463,7 @@
 	<section class="content-inner-1 section-wrapper-2 right overflow-hidden">
 		<div class="container">
 			<div class="section-head text-center">
-				<h2 class="title wow flipInX" data-wow-delay="0.2s">Customer's Comment</h2>
+				<h2 class="title wow flipInX" data-wow-delay="0.2s">Bình luận của khách hàng</h2>
 			</div>
 			<div class="row gx-0 wow fadeInUp" data-wow-delay="0.4s">
 				<div class="col-lg-7 col-md-12">
@@ -496,15 +496,12 @@
 							<div class="swiper-slide">
 								<div class="testimonial-1">
 									<div class="testimonial-text">
-										<p>There are many variations of passages of Lorem Ipsum available, but the
-											majority have suffered alteration in some form, by injected humour, or
-											randomised words which don't look even slightly believable. If you are going
-											to use a passage of Lorem Ipsum, you need to be sure there isn't anything
-											embarrassing hidden in the middle of text.</p>
+										<p>Rất thích không gian của quán, các món ăn nhiều sự lựa chọn,
+											 các đồ ăn vặt rất ngon. Sẽ ủng hộ quán nhiều..</p>
 									</div>
 									<div class="testimonial-info">
-										<h5 class="testimonial-name">John Doe</h5>
-										<span class="testimonial-position">Food Expert</span>
+										<h5 class="testimonial-name">John Nguyễn</h5>
+										<span class="testimonial-position">Chuyên gia ẩm thực</span>
 									</div>
 									<i class="flaticon-right-quote quote"></i>
 								</div>
@@ -512,15 +509,13 @@
 							<div class="swiper-slide">
 								<div class="testimonial-1">
 									<div class="testimonial-text">
-										<p>There are many variations of passages of Lorem Ipsum available, but the
-											majority have suffered alteration in some form, by injected humour, or
-											randomised words which don't look even slightly believable. If you are going
-											to use a passage of Lorem Ipsum, you need to be sure there isn't anything
-											embarrassing hidden in the middle of text.</p>
+										<p>mình ăn nhà hàng này nhiều lần vì có nhiều món
+											món ăn bình dân giá cả hơi cao,mong muốn ăn món bình dân,
+											 mà giá cả phù hợp hơn cho những người thường xuyên tới ăn !.</p>
 									</div>
 									<div class="testimonial-info">
-										<h5 class="testimonial-name">Jolly Roy</h5>
-										<span class="testimonial-position">Food Tester</span>
+										<h5 class="testimonial-name">Nguyễn Hằng</h5>
+										<span class="testimonial-position">Khách hàng</span>
 									</div>
 									<i class="flaticon-right-quote quote"></i>
 								</div>
@@ -528,15 +523,13 @@
 							<div class="swiper-slide">
 								<div class="testimonial-1">
 									<div class="testimonial-text">
-										<p>There are many variations of passages of Lorem Ipsum available, but the
-											majority have suffered alteration in some form, by injected humour, or
-											randomised words which don't look even slightly believable. If you are going
-											to use a passage of Lorem Ipsum, you need to be sure there isn't anything
-											embarrassing hidden in the middle of text.</p>
+										<p>Tôi rất thích không khí nhà hàng NTN_Food. Món ăn ở đây cũng rất ngon đặc biệt là món gà và
+											 tráng miệng là hai món sữa chua nếp Cẩm với thạch. Cảm ơn hai bạn nhân viên 
+											 Huyền và Thương Nếu có cơ hội tôi sẽ quay lại..</p>
 									</div>
 									<div class="testimonial-info">
 										<h5 class="testimonial-name">Thomas Hed</h5>
-										<span class="testimonial-position">Food Expert</span>
+										<span class="testimonial-position">Khách hàng</span>
 									</div>
 									<i class="flaticon-right-quote quote"></i>
 								</div>
@@ -544,15 +537,21 @@
 							<div class="swiper-slide">
 								<div class="testimonial-1">
 									<div class="testimonial-text">
-										<p>There are many variations of passages of Lorem Ipsum available, but the
-											majority have suffered alteration in some form, by injected humour, or
-											randomised words which don't look even slightly believable. If you are going
-											to use a passage of Lorem Ipsum, you need to be sure there isn't anything
-											embarrassing hidden in the middle of text.</p>
+										<p>Mình và gia đình có đến ăn tại nhà hàng vào cuối tháng trước là tháng 3 vào ngày 
+											sinh nhật của mình. Do sinh nhật và lại muốn có không gian riêng cùng gia đình nên 
+											mình có đặt bàn trước và đề xuất nhà hàng cho bàn mình 1 góc riêng. Nhà hàng phản 
+											hồi lại do đông khách và các đoàn đến ăn nên sẽ cố gắng sắp xếp theo yêu cầu của mình 
+											nhưng ko hứa trước. Tối hôm đó đến nhà hàng nhận bàn mình đã thực sự bất ngờ vì ko những 
+											được sắp xếp 1 góc riêng mà còn là 1 phòng riêng tư luôn. Không gian ấm cúng nhưng vẫn 
+											rất sang trọng, đó là ấn tượng và điểm cộng đầu tiên mình dành cho nhà hàng. Đồ ăn tại đây hết sức tươi ngon luôn, rất tươi 
+											và chế biến rất ngon, món nào cũng ngon và vừa miệng luôn ý, trẻ con nhà mình bình thường 
+											lười ăn hải sản nhưng mà hôm đấy bụp nhiệt tình. À thêm nữa, nhà hàng hết sức chu đáo chuẩn bị 
+											1 bánh sinh nhật bé xinh xinh tặng mình, rất bất ngờ nhé 😍. Nói chung là rất ưng ý 
+											và lần sau chắc chắn quay lại ăn ở đây..</p>
 									</div>
 									<div class="testimonial-info">
-										<h5 class="testimonial-name">Kally Mint</h5>
-										<span class="testimonial-position">Food Expert</span>
+										<h5 class="testimonial-name">Nguyễn Trần</h5>
+										<span class="testimonial-position">Khách hàng</span>
 									</div>
 									<i class="flaticon-right-quote quote"></i>
 								</div>
@@ -560,15 +559,14 @@
 							<div class="swiper-slide">
 								<div class="testimonial-1">
 									<div class="testimonial-text">
-										<p>There are many variations of passages of Lorem Ipsum available, but the
-											majority have suffered alteration in some form, by injected humour, or
-											randomised words which don't look even slightly believable. If you are going
-											to use a passage of Lorem Ipsum, you need to be sure there isn't anything
-											embarrassing hidden in the middle of text.</p>
+										<p>Sau khi tôi đã trải nghiệm thử ở nhà hàng này thì tôi có cảm nhận là 
+											chất lượng đồ ăn rất tốt ngang với nhà hàng 5 sao, cách 
+											bố trí các họa tiết trong nhà hàng làm cho thực khách thấy thoải mái 
+											khi dùng bữa tại đây và chất lượng của bồi bàn ở đây rất tốt,..</p>
 									</div>
 									<div class="testimonial-info">
-										<h5 class="testimonial-name">Ronny joy</h5>
-										<span class="testimonial-position">Assistant</span>
+										<h5 class="testimonial-name">Trangmeo</h5>
+										<span class="testimonial-position">Khách hàng</span>
 									</div>
 									<i class="flaticon-right-quote quote"></i>
 								</div>
@@ -576,15 +574,13 @@
 							<div class="swiper-slide">
 								<div class="testimonial-1">
 									<div class="testimonial-text">
-										<p>There are many variations of passages of Lorem Ipsum available, but the
-											majority have suffered alteration in some form, by injected humour, or
-											randomised words which don't look even slightly believable. If you are going
-											to use a passage of Lorem Ipsum, you need to be sure there isn't anything
-											embarrassing hidden in the middle of text.</p>
+										<p>Nhà hàng không gian đẹp. Món ăn rất đặc biệt, nhất là món bò nướng, 
+											mùi vị có pha chút Việt Nam và Châu Âu. Chúng tôi sẽ quay lại nhà 
+											hàng một lần nữa!.</p>
 									</div>
 									<div class="testimonial-info">
-										<h5 class="testimonial-name">Dolly kom</h5>
-										<span class="testimonial-position">Food Expert</span>
+										<h5 class="testimonial-name">Dolly</h5>
+										<span class="testimonial-position">Khách hàng</span>
 									</div>
 									<i class="flaticon-right-quote quote"></i>
 								</div>
@@ -603,7 +599,7 @@
 	<section class="content-inner-1 overflow-hidden bg-light">
 		<div class="container">
 			<div class="section-head text-center">
-				<h2 class="title wow flipInX" data-wow-delay="0.2s">Master Chefs</h2>
+				<h2 class="title wow flipInX" data-wow-delay="0.2s">Đầu bếp</h2>
 			</div>
 		</div>
 		<div class="container">
@@ -617,7 +613,7 @@
 							<div class="dz-content">
 								<div class="clearfix">
 									<h6 class="dz-name"><a href="team-detail.html">Sarah Albert</a></h6>
-									<span class="dz-position">Senior Chef</span>
+									<span class="dz-position">Đầu bếp cao cấp</span>
 								</div>
 								<ul class="team-social">
 									<li>
@@ -646,7 +642,7 @@
 							<div class="dz-content">
 								<div class="clearfix">
 									<h6 class="dz-name"><a href="team-detail.html">John Doe</a></h6>
-									<span class="dz-position">Senior Chef</span>
+									<span class="dz-position">Đầu bếp cao cấp</span>
 								</div>
 								<ul class="team-social">
 									<li>
@@ -675,7 +671,7 @@
 							<div class="dz-content">
 								<div class="clearfix">
 									<h6 class="dz-name"><a href="team-detail.html">Jemy Carline</a></h6>
-									<span class="dz-position">Junior Chef</span>
+									<span class="dz-position">Đầu bếp trẻ</span>
 								</div>
 								<ul class="team-social">
 									<li>
@@ -704,7 +700,7 @@
 							<div class="dz-content">
 								<div class="clearfix">
 									<h6 class="dz-name"><a href="team-detail.html">Cotlin Care</a></h6>
-									<span class="dz-position">Senior Chef</span>
+									<span class="dz-position">Đầu bếp trẻ</span>
 								</div>
 								<ul class="team-social">
 									<li>
@@ -733,7 +729,7 @@
 							<div class="dz-content">
 								<div class="clearfix">
 									<h6 class="dz-name"><a href="team-detail.html">Sarah Albert</a></h6>
-									<span class="dz-position">Senior Chef</span>
+									<span class="dz-position">Đầu bếp trẻ</span>
 								</div>
 								<ul class="team-social">
 									<li>
@@ -762,7 +758,7 @@
 							<div class="dz-content">
 								<div class="clearfix">
 									<h6 class="dz-name"><a href="team-detail.html">John Doe</a></h6>
-									<span class="dz-position">Senior Chef</span>
+									<span class="dz-position">Đầu bếp trẻ</span>
 								</div>
 								<ul class="team-social">
 									<li>
@@ -791,7 +787,7 @@
 							<div class="dz-content">
 								<div class="clearfix">
 									<h6 class="dz-name"><a href="team-detail.html">Jemy Carline</a></h6>
-									<span class="dz-position">Junior Chef</span>
+									<span class="dz-position">Đầu bếp trẻ</span>
 								</div>
 								<ul class="team-social">
 									<li>
@@ -820,7 +816,7 @@
 							<div class="dz-content">
 								<div class="clearfix">
 									<h6 class="dz-name"><a href="team-detail.html">Cotlin Care</a></h6>
-									<span class="dz-position">Senior Chef</span>
+									<span class="dz-position">Đầu bếp cao cấp</span>
 								</div>
 								<ul class="team-social">
 									<li>
@@ -855,7 +851,7 @@
 	<section class="content-inner-1 overflow-hidden">
 		<div class="container">
 			<div class="section-head text-center">
-				<h2 class="title wow flipInX" data-wow-delay="0.2s">News & blog</h2>
+				<h2 class="title wow flipInX" data-wow-delay="0.2s">Tin Tức & Blog</h2>
 			</div>
 			<div class="swiper blog-swiper swiper-visible swiper-btn-lr">
 				<div class="swiper-wrapper">
@@ -875,11 +871,10 @@
 													class="flaticon-chat-bubble"></i> 2.5K </a></li>
 									</ul>
 								</div>
-								<h5 class="dz-title"><a href="blog-standard.html">Taste of Paradise Dishes</a></h5>
-								<p>There are many variations of passages of Lorem Ipsum available, but the majority
-									have.</p>
+								<h5 class="dz-title"><a href="blog-standard.html">Món ăn hương vị thiên đường</a></h5>
+								<p>Sự hòa trộn hương vị độc đáo, mùi hương hấp dẫn từ thịt và bí đỏ tạo nên sự hấp dẫn.</p>
 								<div class="read-btn">
-									<a href="blog-standard.html" class="btn btn-primary btn-hover-2">Read More</a>
+									<a href="blog-standard.html" class="btn btn-primary btn-hover-2">Xem thêm</a>
 								</div>
 							</div>
 						</div>
@@ -900,11 +895,10 @@
 													class="flaticon-chat-bubble"></i> 1.5K</a></li>
 									</ul>
 								</div>
-								<h5 class="dz-title"><a href="blog-standard.html">The Spices Route Taste</a></h5>
-								<p>There are many variations of passages of Lorem Ipsum available, but the majority
-									have.</p>
+								<h5 class="dz-title"><a href="blog-standard.html">Cà ri gà</a></h5>
+								<p>Hương vị cà ri gà khoai tây kết hợp vs cơm là một sự kết hợp hoàn hảo cho mùa đông lạnh giá.</p>
 								<div class="read-btn">
-									<a href="blog-standard.html" class="btn btn-primary btn-hover-2">Read More</a>
+									<a href="blog-standard.html" class="btn btn-primary btn-hover-2">Xem thêm</a>
 								</div>
 							</div>
 						</div>
@@ -925,11 +919,10 @@
 													class="flaticon-chat-bubble"></i> 2.0K</a></li>
 									</ul>
 								</div>
-								<h5 class="dz-title"><a href="blog-standard.html">The Fork & Knife</a></h5>
-								<p>There are many variations of passages of Lorem Ipsum available, but the majority
-									have.</p>
+								<h5 class="dz-title"><a href="blog-standard.html">Nui sốt cà chua thịt bằm</a></h5>
+								<p>Món ăn hấp dẫn cho cả người lớn và trẻ em.</p>
 								<div class="read-btn">
-									<a href="blog-standard.html" class="btn btn-primary btn-hover-2">Read More</a>
+									<a href="blog-standard.html" class="btn btn-primary btn-hover-2">Xem thêm</a>
 								</div>
 							</div>
 						</div>
@@ -950,11 +943,10 @@
 													class="flaticon-chat-bubble"></i> 3.5K </a></li>
 									</ul>
 								</div>
-								<h5 class="dz-title"><a href="blog-standard.html">Flavors Of The World</a></h5>
-								<p>There are many variations of passages of Lorem Ipsum available, but the majority
-									have.</p>
+								<h5 class="dz-title"><a href="blog-standard.html">Sandwick</a></h5>
+								<p>Món sandwick đơn giản kết hợp với một chút khoai tây chiên, đơn giản nhưng hấp dẫn.</p>
 								<div class="read-btn">
-									<a href="blog-standard.html" class="btn btn-primary btn-hover-2">Read More</a>
+									<a href="blog-standard.html" class="btn btn-primary btn-hover-2">Xem thêm</a>
 								</div>
 							</div>
 						</div>
@@ -975,11 +967,10 @@
 													class="flaticon-chat-bubble"></i> 2.5K </a></li>
 									</ul>
 								</div>
-								<h5 class="dz-title"><a href="blog-standard.html">Taste of Paradise Dishes</a></h5>
-								<p>There are many variations of passages of Lorem Ipsum available, but the majority
-									have.</p>
+								<h5 class="dz-title"><a href="blog-standard.html">Cháo bí đỏ</a></h5>
+								<p>Bí đỏ mềm mịn hương vị khó cương.</p>
 								<div class="read-btn">
-									<a href="blog-standard.html" class="btn btn-primary btn-hover-2">Read More</a>
+									<a href="blog-standard.html" class="btn btn-primary btn-hover-2">Xem thêm</a>
 								</div>
 							</div>
 						</div>
@@ -1000,11 +991,10 @@
 													class="flaticon-chat-bubble"></i> 1.5K</a></li>
 									</ul>
 								</div>
-								<h5 class="dz-title"><a href="blog-standard.html">The Spices Route Taste</a></h5>
-								<p>There are many variations of passages of Lorem Ipsum available, but the majority
-									have.</p>
+								<h5 class="dz-title"><a href="blog-standard.html">Cà ri gà</a></h5>
+								<p>Hương vị cà ri gà khoai tây kết hợp vs cơm là một sự kết hợp hoàn hảo cho mùa đông lạnh giá.</p>
 								<div class="read-btn">
-									<a href="blog-standard.html" class="btn btn-primary btn-hover-2">Read More</a>
+									<a href="blog-standard.html" class="btn btn-primary btn-hover-2">Xem thêm</a>
 								</div>
 							</div>
 						</div>
@@ -1025,9 +1015,8 @@
 													class="flaticon-chat-bubble"></i> 2.0K</a></li>
 									</ul>
 								</div>
-								<h5 class="dz-title"><a href="blog-standard.html">The Fork & Knife</a></h5>
-								<p>There are many variations of passages of Lorem Ipsum available, but the majority
-									have.</p>
+								<h5 class="dz-title"><a href="blog-standard.html">Nui sốt cà chua thịt bằm</a></h5>
+								<p>Món ăn hấp dẫn cho cả người lớn và trẻ em..</p>
 								<div class="read-btn">
 									<a href="blog-standard.html" class="btn btn-primary btn-hover-2">Read More</a>
 								</div>
@@ -1050,9 +1039,8 @@
 													class="flaticon-chat-bubble"></i> 3.5K </a></li>
 									</ul>
 								</div>
-								<h5 class="dz-title"><a href="blog-standard.html">Flavors Of The World</a></h5>
-								<p>There are many variations of passages of Lorem Ipsum available, but the majority
-									have.</p>
+								<h5 class="dz-title"><a href="blog-standard.html">Sandwick</a></h5>
+								<p>Món sandwick đơn giản kết hợp với một chút khoai tây chiên, đơn giản nhưng hấp dẫn.</p>
 								<div class="read-btn">
 									<a href="blog-standard.html" class="btn btn-primary btn-hover-2">Read More</a>
 								</div>

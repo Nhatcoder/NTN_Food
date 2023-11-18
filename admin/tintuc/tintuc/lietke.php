@@ -1,44 +1,54 @@
 <?php
-include("tintuc/danhmuc/title.php");
+include("tintuc/tintuc/title.php");
 ?>
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="product-status-wrap">
-                <h4>Liệt kê danh mục</h4>
+                <h4>Liệt kê tin tức</h4>
                 <div class="add-product">
-                    <a href="index.php?act=themdmtintuc">Thêm danh mục tin tức</a>
+                    <a href="index.php?act=themtintuc">Thêm tin tức</a>
                 </div>
                 <table>
                     <tbody>
                         <tr>
-                            <th>Id</th>
-                            <th>Tên danh mục tin tức</th>
-                            <th>phụ lục danh mục tin tức</th>
+                            <th>ID</th>
+                            <th>Tên tin tức</th>
+                            <th>Mô tả tin tức</th>
+                            <th>Ảnh tin tức</th>
+                            <th>Danh mục</th>
                             <th>Thao tác</th>
                         </tr>
                         <?php
-                        foreach ($listdmtintuc as $key => $value) {
+                        foreach ($listtintuc as $key => $value) {
                             extract($value);
                             ?>
                             <tr>
                                 <td>
-                                    <?= $id_danhmuc_tintuc ?>
+                                    <?= $id_tintuc ?>
                                 </td>
                                 <td>
-                                    <?=  $ten_danhmuc_tintuc?>
+                                    <?= $ten_tintuc ?>
                                 </td>
                                 <td>
-                                    <?=  $phuluc_danhmuc_tintuc?>
+                                    <?= $mota_tintuc ?>
                                 </td>
                                 <td>
-                                    <a href="index.php?act=suadmtintuc&id_danhmuc_tintuc=<?= $id_danhmuc_tintuc ?>">
+                                    <img src="../uploads/monan/<?= $anh_tintuc ?>" alt="">
+                                </td>
+                                <td>
+                                    <?= $ten_danhmuc_tintuc ?>
+                                </td>
+                 
+
+                                <td>
+                                    <a href="index.php?act=suatintuc&id_tintuc=<?= $id_tintuc ?>">
                                         <button data-toggle="tooltip" title="" class="pd-setting-ed"
                                             data-original-title="Sửa"><i class="fa fa-pencil-square-o"
                                                 aria-hidden="true"></i></button>
                                     </a>
                                     <a onclick="return confirm('Bạn có muốn xóa không?')" ;
-                                        href="index.php?act=xoadmtintuc&id_danhmuc_tintuc=<?= $id_danhmuc_tintuc ?>">
+                                        href="index.php?act=xoatintuc&id_tintuc=<?= $id_tintuc ?>">
                                         <button data-toggle="tooltip" title="" class="pd-setting-ed"
                                             data-original-title="Xóa"><i class="fa fa-trash-o"
                                                 aria-hidden="true"></i></button>
