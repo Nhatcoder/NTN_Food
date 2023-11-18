@@ -6,6 +6,13 @@ function list_monan_special()
     return $list_monan;
 }
 
+function list_monan_special_detail()
+{
+    $sql = "SELECT * FROM tbl_monan, tbl_danhmuc WHERE tbl_monan.id_danhmuc = tbl_danhmuc.id_danhmuc AND tbl_monan.noibat > 5 ORDER BY id_monan DESC";
+    $list_monan = pdo_query($sql);
+    return $list_monan;
+}
+
 function list_menu_today()
 {
     $sql = "SELECT * FROM tbl_monan, tbl_danhmuc WHERE tbl_monan.id_danhmuc = tbl_danhmuc.id_danhmuc AND tbl_monan.noibat = 1 ORDER BY id_monan DESC limit 4";
@@ -26,7 +33,6 @@ function list_monan_cart($id)
     return $list_monan;
 }
 
-
 function list_monan_same_cart($id_dm)
 {
     $sql = "SELECT * FROM tbl_monan WHERE tbl_monan.id_danhmuc != ?";
@@ -40,6 +46,14 @@ function list_monan_all()
     $list_monan = pdo_query($sql);
     return $list_monan;
 }
+function list_monan_One($id)
+{
+    $sql = "SELECT * FROM tbl_monan WHERE id_monan = ?";
+    $listMonan = pdo_query_one($sql, $id);
+    return $listMonan;
+}
+
+
 
 
 

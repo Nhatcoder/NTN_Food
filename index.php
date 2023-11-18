@@ -88,20 +88,21 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 echo '<script>window.location.href = "index.php";</script>';
             }
             break;
-
-
-
         // Menu
         case "cuahang":
             include("./views/main/cuahang.php");
-
             break;
 
-        //Chi tiết món ăn
         case "chitietmonan":
-            if (isset($_GET["id_monan"])) {
-                $id_monan = $_GET["id_monan"];
+            if (isset($_GET["id_monan"]) && $_GET["id_monan"] > 0) {
+                $id = $_GET["id_monan"];
+                $listmonan = list_monan_One($id);
+
+
+
+
             }
+
 
 
 
@@ -109,8 +110,46 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
             break;
 
 
+
+
         // Giỏ hàng
         case "giohang":
+            // Thêm món vào giỏ hàng
+            if (isset($_GET["id_monan"])) {
+                $id = $_GET["id_monan"];
+                $list_monan_cart = list_monan_cart($id);
+                $soluongmua = 1;
+
+                if (is_array($list_monan_cart)) {
+                    foreach ($list_monan_cart as $food) {
+                        $new_food = [
+                            "id_monan" => $food['id_monan'],
+                            "ten_monan" => $food['ten_monan'],
+                            "gia_monan" => $food['gia_monan'],
+                            "anh_monan" => $food['anh_monan'],
+                            "soluongmua" => $soluongmua,
+                        ];
+                    }
+                }
+
+                // Kiểm tra session tồn tại hay không nếu chưa thì tăng lên
+                if (isset($_SESSION['cart'])) {
+                    $i = 0;
+                    while ($i < count($_SESSION['cart'])) {
+                        if ($_SESSION['cart'][$i]['id_monan'] == $id) {
+                            $_SESSION['cart'][$i]['soluongmua'] += $soluongmua;
+                            break;
+                        }
+                        $i++;
+                    }
+                    if ($i == count($_SESSION['cart'])) {
+                        array_push($_SESSION['cart'], $new_food);
+                    }
+                } else {
+                    $_SESSION['cart'] = array($new_food);
+                }
+                // echo "<script>alert('Đã thêm thành công');</script>";
+            }
             include("./views/main/giohang.php");
             break;
 
@@ -150,10 +189,8 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                     $_SESSION['cart'] = array($new_food);
                 }
                 echo "<script>alert('Đã thêm thành công');</script>";
-
+                echo '<script>window.location.href = "index.php";</script>';
             }
-            echo '<script>window.location.href = "index.php"</script>';
-
             break;
 
 
@@ -191,13 +228,13 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
         case "dathang":
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $select_pay = $_POST['phuongthucthanhtoan'];
-                $ma_donhang = rand(0, 9999);
-                $_SESSION["madonhang"] = $ma_donhang;
-
 
                 // Thanh tóan bằng vnpay
                 if ($select_pay == "vnp") {
+                    $ma_donhang = rand(0, 9999);
+                    $_SESSION["madonhang"] = $ma_donhang;
                     $vnp_TxnRef = $ma_donhang; //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
+
                     $i = 0;
                     $tongtien = 0;
                     foreach ($_SESSION["cart"] as $key => $value) {
@@ -272,9 +309,11 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                     }
                 }
             }
+
             break;
 
-        // cảm ơn
+
+        // 
         case "camon":
             if (isset($_GET["vnp_Amount"]) && $_GET['vnp_ResponseCode'] == '00') {
                 date_default_timezone_set('Asia/Ho_Chi_Minh');
@@ -283,7 +322,9 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 if (isset($_SESSION["user"])) {
                     extract($_SESSION["user"]);
                     $id = $id_nguoidung;
+
                     $ma_donhang = $_SESSION["madonhang"];
+
                     insert_cart($id, $ma_donhang, $ngaymua);
                     foreach ($_SESSION["cart"] as $key => $value) {
                         extract($value);
@@ -310,20 +351,18 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 }
 
                 insert_vnpay($tongtien, $ma_donhang, $vnp_BankCode, $vnp_BankTranNo, $vnp_CardType, $vnp_OrderInfo, $vnp_PayDate, $vnp_TmnCode, $vnp_TransactionNo);
-                unset($_SESSION["cart"]);
 
+                unset($_SESSION["cart"]);
+                include("./views/main/camon.php");
             } else {
-                echo '<script>alert("Bạn đã hủy giao dịch")</script>';
+                echo "<script>alert('Đã hủy thanh toán');</script>";
                 echo '<script>window.location.href = "index.php?act=thanhtoan";</script>';
 
             }
 
 
 
-            include("./views/main/camon.php");
             break;
-
-
 
 
     }
