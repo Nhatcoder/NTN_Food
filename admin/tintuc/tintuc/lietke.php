@@ -15,8 +15,8 @@ include("tintuc/tintuc/title.php");
                             <th>ID</th>
                             <th>Tên tin tức</th>
                             <th>Mô tả tin tức</th>
-                            <th>Danh mục</th>
                             <th>Ảnh tin tức</th>
+                            <th>Danh mục</th>
                             <th>Thao tác</th>
                         </tr>
                         <?php
