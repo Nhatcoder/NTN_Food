@@ -186,7 +186,7 @@
 								<img src="uploads/monan/<?= $anh_monan ?>" alt="/">
 							</div>
 							<div class="dz-content">
-								<h4 class="dz-title"><a href="index.php?act=chitietmonan">
+								<h4 class="dz-title"><a href="index.php?act=chitietmonan&id_monan=<?= $id_monan ?>">
 										<?= $ten_monan ?>
 									</a></h4>
 								<h5 class="dz-price text-primary">
@@ -223,14 +223,15 @@
 							</div>
 							<!-- <span class="dz-tag">Bán chạy</span> -->
 							<div class="dz-content">
-								<h5 class="dz-title"><a href="our-menu-1.html">
+								<h5 class="dz-title"><a href="index.php?act=chitietmonan&id_monan=<?= $id_monan ?>">
 										<?= $ten_monan ?>
 									</a></h5>
 								<p>Phục vụ khách hàng là một niềm vui, ăn ngon mỗi ngày.</p>
 							</div>
 							<div class="dz-hover-content">
 								<div class="dz-info">
-									<h5 class="dz-title mb-0"><a href="our-menu-1.html">
+									<h5 class="dz-title mb-0"><a
+											href="index.php?act=chitietmonan&id_monan=<?= $id_monan ?>">
 											<?= $ten_monan ?>
 										</a></h5>
 									<span class="dz-price">
@@ -355,7 +356,8 @@
 									<span class="dz-tag"></span>
 									<div class="dz-content">
 										<div class="dz-info">
-											<h5 class="dz-title mb-0"><a href="">
+											<h5 class="dz-title mb-0"><a
+													href="index.php?act=chitietmonan&id_monan=<?= $id_monan ?>">
 													<?= $ten_monan ?>
 												</a></h5>
 											<span class="dz-price">

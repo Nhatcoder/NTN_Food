@@ -4,7 +4,7 @@
 <head>
 
     <!-- Title -->
-    <title>Restaurant Website Templates | Swigo - Empowering Your Food Business | DexignZone</title>
+    <title>NTN Food</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="views/assets/vendor/rangeslider/rangeslider.css">
     <link rel="stylesheet" href="views/assets/vendor/nouislider/nouislider.min.css">
     <link rel="stylesheet" href="views/assets/vendor/switcher/switcher.css">
+    <link rel="stylesheet" href="views/assets/vendor/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="views/assets/css/style.css">
     <link rel="stylesheet" href="./views/assets/css/index.css">
 
@@ -88,7 +89,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="index.php?act=themgiohang"
+                                        <a href="index.php?act=giohang"
                                             class="btn btn-white btn-square btn-shadow cart-btn">
                                             <i class="flaticon-shopping-bag-1"></i>
                                         </a>
