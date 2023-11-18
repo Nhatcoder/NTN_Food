@@ -16,6 +16,7 @@
                             <th>Địa chỉ</th>
                             <th>Số điện thoại</th>
                             <th>Ngày mua hàng</th>
+                            <th>phương thức thanh toán</th>
                             <th>Trạng thái</th>
                             <th>Thao tác</th>
                            
@@ -44,6 +45,9 @@
                                 </td>
                                 <td>
                                     <?= $ngaymua ?>
+                                </td>
+                                <td>
+                                    <?= $loai_thanhtoan ?>
                                 </td>
                                 <td>
                                     <?= $tentrangthai ?>

@@ -19,6 +19,7 @@
                             <th>Giá</th>
                             <th>Số lượng</th>
                             <th>Tổng tiền</th>
+                            <th>Phương thức thanh toán</th>
                             <th>Ngày mua</th>
                             <th>Trạng thái</th>
                             
@@ -55,6 +56,9 @@
                                 </td>
                                 <td>
                                     <?php echo $chitiet['tong_tien']; ?>
+                                </td>
+                                <td>
+                                    <?php echo $chitiet['loai_thanhtoan']; ?>
                                 </td>
                                 <td>
                                     <?php echo $chitiet['ngaymua']; ?>
