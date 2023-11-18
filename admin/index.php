@@ -8,6 +8,7 @@ include("../model/pdo.php");
 include("../model/danhmuc.php");
 include("../model/moan.php");
 include("../model/dmtintuc.php");
+include("../model/tintuc.php");
 include("../model/trangthaidonhang.php");
 
 
@@ -155,7 +156,7 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
             break;
 
 
-        //tintuc
+        //danh muc tintuc
         case 'themdmtintuc':
             if (isset($_POST['themmoi'])) {
                 $ten_danhmuc_tintuc = $_POST['ten_danhmuc_tintuc'];
@@ -198,7 +199,105 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
             include('./tintuc/danhmuc/lietke.php');
             break;
 
+             
+            //tintuc
+            case 'themtintuc':
+                if (isset($_POST['themmoi']) && $_POST['themmoi']) {
+                    $ten_tintuc = $_POST['ten_tintuc'];
+                    $mota_tintuc = $_POST['mota_tintuc'];
+                    $id_danhmuc_tintuc = $_POST['id_danhmuc_tintuc'];
+    
+                    $anh_tintuc = $_FILES['anh_tintuc']['name'];
+                    $anh_tintuc_tmp = $_FILES['anh_tintuc']['tmp_name'];
+                    $upload = "../uploads/monan/";
+    
+                    $new_anhtintuc = time() . "_" . basename($anh_tintuc);
+                    $target_file = $upload . $new_anhtintuc;
+    
+                    if (move_uploaded_file($anh_tintuc_tmp, $target_file)) {
+                        echo "Thêm ảnh thành công";
+                    } else {
+                        echo "Lỗi";
+                    }
+    
+                    insert_tintuc($ten_tintuc, $mota_tintuc, $new_anhtintuc, $id_danhmuc_tintuc);
+                    $thongbao = "Thêm thành công";
+                }
+    
+                $listdmtintuc = loaddmtintucAll();
+    
+                include('./tintuc/tintuc/them.php');
+                break;
 
+
+                case 'xoatintuc':
+                    if (isset($_GET['id_tintuc']) && $_GET['id_tintuc'] > 0) {
+                        $id_tintuc = $_GET['id_tintuc'];
+                        $list_tintuc_one = list_tintuc_One($id_tintuc);
+                        extract($list_tintuc_one);
+                        $linkanh = '../uploads/monan/' . $anh_tintuc;
+                        unlink($linkanh);
+                        delete_tintuc($id_tintuc);
+                    }
+        
+                    $listtintuc = list_tintuc_All();
+                    include('./tintuc/tintuc/lietke.php');
+                    break;
+        
+                case 'lietketintuc':
+                    $listtintuc = list_tintuc_All();
+                    include('./tintuc/tintuc/lietke.php');
+                    break;
+        
+                case 'suatintuc':
+                    if (isset($_GET['id_tintuc']) && $_GET['id_tintuc'] > 0) {
+                        $id_tintuc = $_GET['id_tintuc'];
+                        $list_tintuc_one = list_tintuc_One($id_tintuc);
+                    }
+                    $listdmtintuc = loaddmtintucAll();
+                    include('./tintuc/tintuc/sua.php');
+                    break;
+        
+        
+                case 'capnhattintuc':
+                    if (isset($_POST['capnhat']) && $_POST['capnhat']) {
+                        $id_sua = $_POST['id_sua'];
+                        $ten_tintuc = $_POST['ten_tintuc'];
+                        $mota_tintuc = $_POST['mota_tintuc'];
+                        $id_danhmuc_tintuc = $_POST['id_danhmuc_tintuc'];
+        
+                        $anh_tintuc = $_FILES['anh_tintuc']['name'];
+                        $anh_tintuc_tmp = $_FILES['anh_tintuc']['tmp_name'];
+                        $upload = "../uploads/monan/";
+        
+                        $list_tintuc_one = list_tintuc_One($id_sua);
+        
+                        if ($anh_tintuc != "") {
+                            $linkanh = '../uploads/monan/' . $list_tintuc_one['anh_tintuc'];
+                            unlink($linkanh);
+        
+                            $new_anhtintuc = time() . "_" . basename($anh_tintuc);
+        
+                            $target_file = $upload . $new_anhtintuc;
+                            if (move_uploaded_file($anh_tintuc_tmp, $target_file)) {
+                                echo "Thêm ảnh thành công";
+                            } else {
+                                echo "Lỗi khi tải lên ảnh mới";
+                            }
+                        }
+        
+                        capnhat_tintuc($id_sua, $ten_tintuc,$mota_tintuc, $id_danhmuc_tintuc,  $new_anhtintuc);
+                    }
+        
+                    $listtintuc = list_tintuc_All();
+        
+                    include('./tintuc/tintuc/lietke.php');
+                    break;
+        
+    
+
+
+                // don hang
             case 'quanlydonhang':
                 $loaddonhang=loaddonhangAll();
               
