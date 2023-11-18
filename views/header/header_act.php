@@ -153,49 +153,8 @@
                                     </ul>
                                 </li>
                                 <li class="has-mega-menu">
-                                    <a href="javascript:void(0);">Blogs</a>
-                                    <ul class="mega-menu">
-                                        <li> <a href="javascript:;">Blog Grid</a>
-                                            <ul>
-                                                <li><a href="blog-grid-2.html">Blog Grid 2</a></li>
-                                                <li><a href="blog-grid-3.html">Blog Grid 3</a></li>
-                                                <li><a href="blog-grid-left-sidebar.html">Blog Grid Left Sidebar</a>
-                                                </li>
-                                                <li><a href="blog-grid-right-sidebar.html">Blog Grid Right Sidebar</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li> <a href="javascript:;">Blog List</a>
-                                            <ul>
-                                                <li><a href="blog-list.html">Blog List</a></li>
-                                                <li><a href="blog-list-left-sidebar.html">Blog List Left Sidebar</a>
-                                                </li>
-                                                <li><a href="blog-list-right-sidebar.html">Blog List Right Sidebar</a>
-                                                </li>
-                                                <li><a href="blog-both-sidebar.html">Blog Both Sidebar</a></li>
-                                            </ul>
-                                        </li>
-                                        <li> <a href="javascript:;">Blog Single</a>
-                                            <ul>
-                                                <li><a href="blog-standard.html">Blog Detail</a></li>
-                                                <li><a href="blog-open-gutenberg.html">Blog Open Gutenberg</a></li>
-                                                <li><a href="blog-detail-left-sidebar.html">Blog Details Left
-                                                        Sidebar</a></li>
-                                                <li><a href="blog-detail-right-sidebar.html">Blog Details Right
-                                                        Sidebar</a></li>
-                                            </ul>
-                                        </li>
-                                        <li> <a href="javascript:;">Blog Masonry</a>
-                                            <ul>
-                                                <li><a href="blog-grid-3-masonary.html">Blog Grid 3 Masonry</a></li>
-                                                <li><a href="blog-grid-4-masonary.html">Blog Grid 4 Masonry</a></li>
-                                                <li><a href="blog-wide-list-sidebar.html">Blog Wide List Sidebar</a>
-                                                </li>
-                                                <li><a href="blog-wide-grid-sidebar.html">Blog Wide Grid Sidebar</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                    <a href="index.php?act=tintuc&&id=null">Blog</a>
+                                    
                                 </li>
                                 <li><a href="contact-us.html">Contact Us</a></li>
                             </ul>
