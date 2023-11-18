@@ -62,7 +62,9 @@
 
         <?php
         if (isset($_SESSION['user'])) {
-            extract($_SESSION['user']);
+            if (is_array($list_tk)) {
+                extract($list_tk);
+            }
             ?>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasLogin">
                 <form action="index.php?act=dangnhap" method="post">
@@ -71,9 +73,8 @@
                         <div class="offcanvas-form">
                             <div class="row g-0">
                                 <div class="col-md-4 gradient-custom text-center text-white">
-                                    <img style="border-radius: 50%;"
-                                        src="https://scontent.fhan5-1.fna.fbcdn.net/v/t39.30808-6/292011549_1192119298221484_5096720056686154923_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=jy8MWvk5GC0AX-qWlc2&_nc_ht=scontent.fhan5-1.fna&oh=00_AfBMTtruR0g767zrTa4iSwMpgQ4YJ_VnmnXfODIu_di0wA&oe=65538A54"
-                                        alt="Avatar" class="img-fluid my-2 mt-4" />
+                                    <img src="uploads/avatar/<?= $anh_taikhoan ?>" alt="Avatar"
+                                        class="img-fluid my-2 mt-4" />
                                     <h5>
                                         <?= $hoten ?>
                                     </h5>
@@ -96,10 +97,15 @@
                                                 </p>
                                             </div>
 
+                                            <div class="col-12 mb-3">
+                                                <h6><a href="index.php?act=suataikhoan&id_nguoidung=<?= $id_nguoidung ?>">Sửa
+                                                        thông tin</a></h6>
+                                            </div>
+
                                             <?php
                                             if (isset($vaitro) && $vaitro > 0) {
                                                 ?>
-                                                <div class="col-12 mb-3">
+                                                <div class=" col-12 mb-3">
                                                     <h6><a href="admin/index.php">Đăng nhập Admin</a></h6>
                                                 </div>
                                                 <?php

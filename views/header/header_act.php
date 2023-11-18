@@ -222,7 +222,9 @@
 
         <?php
         if (isset($_SESSION['user'])) {
-            extract($_SESSION['user']);
+            if (is_array($list_tk)) {
+                extract($list_tk);
+            }
             ?>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasLogin">
                 <form action="index.php?act=dangnhap" method="post">

@@ -11,14 +11,8 @@ include("./model/bankking.php");
 // session_destroy();
 // die();
 
-// print_r($_SESSION["cart"]);
+// print_r($_SESSION["user"]);
 
-if (isset($_GET["act"]) && $_GET["act"] != "") {
-    include("./views/header/header_act.php");
-
-} else {
-    include("./views/header/header.php");
-}
 
 $list_monan_special = list_monan_special();
 $list_menu_today = list_menu_today();
@@ -31,6 +25,21 @@ if (isset($list_monan_all)) {
     }
     $list_monan_same_cart = list_monan_same_cart($id_danhmuc);
 }
+
+if (isset($_SESSION["user"])) {
+    $id_nguoidung = $_SESSION["user"];
+    $list_tk = list_check_tk_id($id_nguoidung);
+}
+
+
+if (isset($_GET["act"]) && $_GET["act"] != "") {
+    include("./views/header/header_act.php");
+
+} else {
+    include("./views/header/header.php");
+}
+
+
 if (isset($_GET["act"]) && $_GET["act"] != "") {
     $act = $_GET["act"];
 
@@ -44,15 +53,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 $result = check_tk_one($sodienthoai, $pass);
                 if ($result) {
                     extract($result);
-                    $userInfo = array(
-                        "id_nguoidung" => $id_nguoidung,
-                        "hoten" => $hoten,
-                        "sodienthoai" => $sodienthoai,
-                        "email" => $email,
-                        "vaitro" => $vaitro
-                    );
-
-                    $_SESSION["user"] = $userInfo;
+                    $_SESSION["user"] = $id_nguoidung;
                     echo '<script>alert("Thành công")</script>';
                     echo '<script>window.location.href = "index.php";</script>';
 
@@ -67,20 +68,62 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 $sodienthoai = $_POST["sodienthoai"];
                 $email = $_POST["email"];
                 $pass = md5($_POST["pass"]);
+                $anh_taikhoan = "avt.jpg";
+                $diachi = "Ở đâu ?";
 
-                $id_nguoidung = insert_tk($hoten, $sodienthoai, $email, $pass, $vaitro = 0);
-                $userInfo = array(
-                    "id_nguoidung" => $id_nguoidung,
-                    "hoten" => $hoten,
-                    "sodienthoai" => $sodienthoai,
-                    "email" => $email,
-                );
-
-                $_SESSION["user"] = $userInfo;
+                $id_nguoidung = insert_tk($hoten, $sodienthoai, $email, $pass, $vaitro = 0, $anh_taikhoan, $diachi);
+                $_SESSION["user"] = $id_nguoidung;
                 echo '<script>alert("Thành công")</script>';
                 echo '<script>window.location.href = "index.php";</script>';
             }
             break;
+
+        case "suataikhoan":
+            if (isset($_GET["id_nguoidung"]) > 0) {
+                $id_nguoidung = $_GET["id_nguoidung"];
+                $user = list_check_tk_id($id_nguoidung);
+            }
+            include("./views/main/capnhat_user.php");
+            break;
+
+        case "capnhattaikhoan":
+            if (isset($_POST["submit"])) {
+                $id_nguoidung = $_POST["id_sua"];
+                $hoten = $_POST["hoten"];
+                $sodienthoai = $_POST["sodienthoai"];
+                $email = $_POST["email"];
+                $diachi = $_POST["diachi"];
+                $matkhau = md5($_POST["pass"]);
+
+                $anh_taikhoan = $_FILES["anh_taikhoan"]["name"];
+                $anh_taikhoan_tmp = $_FILES['anh_taikhoan']['tmp_name'];
+                $upload = "uploads/avatar/";
+
+                $user = list_check_tk_id($id_nguoidung);
+
+                if ($anh_taikhoan != "") {
+                    $linkanh = 'uploads/avatar/' . $user['anh_taikhoan'];
+                    unlink($linkanh);
+
+                    $new_anhtk = time() . "_" . basename($anh_taikhoan);
+
+                    $target_file = $upload . $new_anhtk;
+                    if (move_uploaded_file($anh_taikhoan_tmp, $target_file)) {
+                        echo "Thêm ảnh thành công";
+                    } else {
+                        echo "Lỗi khi tải lên ảnh mới";
+                    }
+                }
+
+                unset($_SESSION["user"]);
+                $_SESSION["user"] = $id_nguoidung;
+                update_taikhoan($hoten, $sodienthoai, $email, $matkhau, $vaitro = 0, $new_anhtk, $diachi, $id_nguoidung);
+                echo '<script>alert("Thành công")</script>';
+                echo '<script>window.location.href = "index.php";</script>';
+            }
+            break;
+
+
 
         case "dangxuat":
             if (isset($_SESSION["user"])) {
@@ -97,20 +140,10 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
             if (isset($_GET["id_monan"]) && $_GET["id_monan"] > 0) {
                 $id = $_GET["id_monan"];
                 $listmonan = list_monan_One($id);
-
-
-
-
             }
-
-
-
 
             include("./views/main/chitiet_monan.php");
             break;
-
-
-
 
         // Giỏ hàng
         case "giohang":
