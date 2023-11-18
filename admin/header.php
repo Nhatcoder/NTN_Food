@@ -154,7 +154,7 @@
 
 <body>
     <div class="left-sidebar-pro">
-        <nav id="sidebar" class>
+        <nav id="sidebar" style="overflow-y: scroll; width: 2px;" class>
             <div class="sidebar-header">
                 <a href="http://localhost/NTN_FOOD/admin/index.php"><img class="main-logo"
                         src="https://colorlib.com/polygon/nalika/img/logo/logo.png" alt /></a>
@@ -240,17 +240,19 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="index.php?act=themtintuc" aria-expanded="false">
+                            <a class="has-arrow" href="index.php?act=quanlydonhang" aria-expanded="false">
                                 <i class="fa-solid fa-money-bill-wave"></i>
                                 <span class="mini-click-non">
                                     Quản lý đơn hàng</span>
                             </a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a href="index.php?act=themtintuc"><span class="mini-sub-pro">Thêm tin
-                                            tức</span></a>
+                                <li><a href="index.php?act=quanlydonhang"><span class="mini-sub-pro">Trạng thái đơn hàng</span></a>
                                 </li>
-                                <li><a href="index.php?act=lietketintuc"><span class="mini-sub-pro">Liệt kê tin
-                                            tức</span></a></li>
+                                <li><a href="index.php?act=giaothanhcong"><span class="mini-sub-pro">Đơn hàng giao thành công</span></a>
+                                </li>
+                                <li><a href="index.php?act=dahuy"><span class="mini-sub-pro">Đơn hàng đã hủy</span></a>
+                                </li>
+                                
                             </ul>
                         </li>
                         <li>
