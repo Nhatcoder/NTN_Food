@@ -19,59 +19,41 @@
     <!-- Banner End -->
 
     <!-- Cart Section -->
+    <?php
+    if (is_array($list_diachi)) {
+        extract($list_diachi);
+    }
+    ?>
     <section class="content-inner">
         <div class="container">
-            <form class="shop-form">
+            <form class="shop-form" action="index.php?act=capnhatdiachi&id_nguoidung=<?= $id_nguoidung ?>"
+                method="post">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="widget">
                             <h4 class="widget-title">Địa chỉ thanh toán & giao hàng</h4>
-                            <div class="row">
-                                <div class="form-group col-md-12 m-b20">
-                                    <input name="dzFirstName" required type="text" class="form-control"
-                                        placeholder="First Name">
-                                </div>
+                            <div class="form-group col-md-12 m-b20">
+                                <label class="form-label" for="hoten">Họ tên</label>
+                                <input name="hoten" required type="text" id="hoten" value="<?= $hoten ?>"
+                                    class="form-control" placeholder="Họ tên">
                             </div>
                             <div class="form-group m-b20">
-                                <input name="dzOther[CompanyType]" required type="text" class="form-control"
-                                    placeholder="Company Name">
+                                <label class="form-label" for="diachi">Địa chỉ nhận hàng</label>
+                                <input name="diachi" required type="text" id="diachi" value="<?= $diachi ?>"
+                                    class="form-control" placeholder="Địa chỉ">
                             </div>
-                            <div class="form-group m-b20">
-                                <input name="dzOther[Address]" required type="text" class="form-control"
-                                    placeholder="Address">
+                            <div class="form-group col-md-12 m-b20">
+                                <label class="form-label" for="email">Email </label>
+                                <input name="email" required type="email" id="email" value="<?= $email ?>"
+                                    class="form-control" placeholder="Email">
                             </div>
-                            <div class="row">
-                                <div class="form-group col-md-12 m-b20">
-                                    <input name="dzOther[Other]" required type="text" class="form-control"
-                                        placeholder="Apartment, suite, unit etc.">
-                                </div>
-                                <div class="form-group col-md-12 m-b20">
-                                    <input name="dzOther[Town/City]" required type="text" class="form-control"
-                                        placeholder="Town / City">
-                                </div>
+                            <div class="form-group col-md-12 m-b20">
+                                <label class="form-label" for="phone">Số điện thoại</label>
+                                <input name="sodienthoai" required type="text" id="phone" value="<?= $sodienthoai ?>"
+                                    class="form-control dz-number" placeholder="Số điện thoại">
                             </div>
-                            <div class="row">
-                                <div class="form-group col-md-12 m-b20">
-                                    <input name="dzOther[State/County]" required type="text" class="form-control"
-                                        placeholder="State / County">
-                                </div>
-                                <div class="form-group col-md-12 m-b20">
-                                    <input name="Postcode/Zip" required type="text" class="form-control"
-                                        placeholder="Postcode / Zip">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-md-12 m-b20">
-                                    <input name="dzEmail" required type="email" class="form-control"
-                                        placeholder="Email">
-                                </div>
-                                <div class="form-group col-md-12 m-b20">
-                                    <input name="dzPhoneNumber" required type="text" class="form-control dz-number"
-                                        placeholder="Phone">
-                                </div>
-                            </div>
-                            <button class="btn btn-gray btnhover mb-3" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#create-an-account">Lưu địa chỉ
+                            <button class="btn btn-gray btnhover mb-3" type="submit" name="capnhat"
+                                data-bs-toggle="collapse" data-bs-target="#create-an-account">Cập nhật địa chỉ
                                 <!-- <i class="fa fa-angle-down m-l10"></i> -->
                             </button>
                             <!-- <div id="create-an-account" class="collapse">
@@ -175,7 +157,7 @@
                         <div class="form-group m-b20">
                             <select class="form-select default-select" name="phuongthucthanhtoan">
                                 <option value="Credit Card Type">Phương thức thanh toán</option>
-                                <option value="nhanhangtrasau">Nhận hàng trả sau</option>
+                                <option value="tienmat">Tiền mặt</option>
                                 <option value="vnp">VNPay</option>
                                 <option value="momo">Momo</option>
                                 <option value="vcb">Vietcombank</option>

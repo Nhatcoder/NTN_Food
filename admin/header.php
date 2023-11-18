@@ -328,9 +328,9 @@
                                                     </a>
                                                     <ul role="menu"
                                                         class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                        <li><a href="#"><span
+                                                        <li><a href="../index.php"><span
                                                                     class="icon nalika-user author-log-ic"></span>
-                                                                Thông tin của tôi</a>
+                                                                Đăng nhập giao diện</a>
                                                         </li>
                                                         <li><a href=""><span
                                                                     class="icon nalika-diamond author-log-ic"></span>

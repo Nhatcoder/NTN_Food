@@ -1,4 +1,4 @@
-<?php 
+<?php
 function loaddonhangAll()
 {
     $sql = "SELECT a.ma_donhang, c.hoten,c.diachi,c.sodienthoai, a.id_trangthai,a.ngaymua,d.tentrangthai  FROM tbl_giohang a  INNER join tbl_taikhoan c ON a.id_nguoidung = c.id_nguoidung INNER JOIN tbl_trangthai d on a.id_trangthai = d.id_trangthai WHERE a.id_trangthai IN (0,1, 2, 3);";
@@ -41,4 +41,16 @@ function list_chitiet_One($id)
     $chitiet = pdo_query_one($sql, $id);
     return $chitiet;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 ?>

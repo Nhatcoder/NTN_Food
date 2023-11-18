@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 include("./model/pdo.php");
 include("./model/connect_vnpay.php");
@@ -7,6 +8,7 @@ include("./model/dangnhap.php");
 include("./model/addcart.php");
 include("./model/list_monan_home.php");
 include("./model/bankking.php");
+
 
 // session_destroy();
 // die();
@@ -17,7 +19,6 @@ include("./model/bankking.php");
 $list_monan_special = list_monan_special();
 $list_menu_today = list_menu_today();
 $list_menu_home = list_menu_home();
-
 $list_monan_all = list_monan_all();
 if (isset($list_monan_all)) {
     foreach ($list_monan_all as $value) {
@@ -29,6 +30,10 @@ if (isset($list_monan_all)) {
 if (isset($_SESSION["user"])) {
     $id_nguoidung = $_SESSION["user"];
     $list_tk = list_check_tk_id($id_nguoidung);
+}
+if (isset($_SESSION["user"])) {
+    $id_nguoidung = $_SESSION["user"];
+    $list_diachi = list_diachi_id($id_nguoidung);
 }
 
 
@@ -118,6 +123,10 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 unset($_SESSION["user"]);
                 $_SESSION["user"] = $id_nguoidung;
                 update_taikhoan($hoten, $sodienthoai, $email, $matkhau, $vaitro = 0, $new_anhtk, $diachi, $id_nguoidung);
+
+                // Thêm luôn địa chỉ
+                insert_diachi_order($hoten, $diachi, $email, $sodienthoai, $id_nguoidung);
+
                 echo '<script>alert("Thành công")</script>';
                 echo '<script>window.location.href = "index.php";</script>';
             }
@@ -257,13 +266,48 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
             include("./views/main/thanhtoan.php");
             break;
 
+        case "capnhatdiachi":
+            if (isset($_GET["id_nguoidung"]) > 0 && isset($_POST["capnhat"])) {
+                $id_nguoidung = $_GET["id_nguoidung"];
+                $hoten = $_POST["hoten"];
+                $diachi = $_POST["diachi"];
+                $email = $_POST["email"];
+                $sodienthoai = $_POST["sodienthoai"];
+
+                update_diachi_order($hoten, $diachi, $email, $sodienthoai, $id_nguoidung);
+
+                echo "<script>alert('Đã thêm thành công');</script>";
+                echo '<script>window.location.href = "index.php?act=thanhtoan";</script>';
+            }
+            break;
+
 
         case "dathang":
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $select_pay = $_POST['phuongthucthanhtoan'];
 
-                // Thanh tóan bằng vnpay
-                if ($select_pay == "vnp") {
+                // thanh toán bằng tiền mặt
+                if ($select_pay == "tienmat") {
+                    date_default_timezone_set('Asia/Ho_Chi_Minh');
+                    $ngaymua = date("Y-m-d H:i:s");
+
+                    if (isset($_SESSION["user"])) {
+                        $id = $_SESSION["user"];
+                        $ma_donhang = $_SESSION["madonhang"];
+                        $loai_thanhtoan = "Tiền mặt";
+
+                        insert_cart($id, $ma_donhang, $ngaymua, $id_trangthai = 1, $loai_thanhtoan);
+                        foreach ($_SESSION["cart"] as $key => $value) {
+                            extract($value);
+                            insert_cart_detail($ma_donhang, $id_monan, $soluongmua);
+                        }
+                    }
+                    unset($_SESSION["cart"]);
+                    echo "<script>alert('Đặt hàng thành công');</script>";
+                    include("./views/main/camon.php");
+
+                    // Thanh tóan bằng vnpay
+                } else if ($select_pay == "vnp") {
                     $ma_donhang = rand(0, 9999);
                     $_SESSION["madonhang"] = $ma_donhang;
                     $vnp_TxnRef = $ma_donhang; //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
@@ -345,7 +389,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
 
             break;
 
-
         // 
         case "camon":
             if (isset($_GET["vnp_Amount"]) && $_GET['vnp_ResponseCode'] == '00') {
@@ -353,12 +396,11 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 $ngaymua = date("Y-m-d H:i:s");
 
                 if (isset($_SESSION["user"])) {
-                    extract($_SESSION["user"]);
-                    $id = $id_nguoidung;
-
+                    $id = $_SESSION["user"];
                     $ma_donhang = $_SESSION["madonhang"];
+                    $loai_thanhtoan = "Vnpay";
 
-                    insert_cart($id, $ma_donhang, $ngaymua);
+                    insert_cart($id, $ma_donhang, $ngaymua, $id_trangthai = 1, $loai_thanhtoan);
                     foreach ($_SESSION["cart"] as $key => $value) {
                         extract($value);
                         insert_cart_detail($ma_donhang, $id_monan, $soluongmua);
@@ -411,4 +453,5 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
     include("./views/footer/footer.php");
 }
 
+ob_end_flush();
 ?>

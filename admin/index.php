@@ -199,45 +199,39 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
             break;
 
 
-            case 'quanlydonhang':
-                $loaddonhang=loaddonhangAll();
-              
-                include('./trangthaidonhang/hienthi.php');
-                break;
-            case 'suatrangthai':
-                $trangthai=loadtrangthaiAll();
-                if (isset($_POST['capnhatdonhang']) && $_POST['capnhatdonhang'] > 0) {
-                    $id = $_GET['iddh'];
-                    $id_trangthai= $_POST['id_trangthai'];
-                     capnhattrangthai($id, $id_trangthai);
-                     echo '<script>window.location.href = "index.php?act=quanlydonhang";</script>';
-                    
-                }
-                $loaddonhang=loaddonhangAll();
-                
-                
-              
-                include('./trangthaidonhang/suatrangthai.php');
-                break;
-            case 'giaothanhcong':
-                $loaddonhangtk=loaddonhangtk();
-              
-                include('./trangthaidonhang/giaothanhcong.php');
-                break;
-            case 'dahuy':
-                $loaddonhanghuy=loaddonhanghuy();
-              
-                include('./trangthaidonhang/huydon.php');
-                break;
-            case 'chitietdonhang':
-               
-                    $id = $_GET['iddh'];
-                    
-                    
-                
-                $chitiet=list_chitiet_One($id);
-                include('./trangthaidonhang/chitietdonhang.php');
-                break;
+        case 'quanlydonhang':
+            $loaddonhang = loaddonhangAll();
+
+            include('./trangthaidonhang/hienthi.php');
+            break;
+        case 'suatrangthai':
+            $trangthai = loadtrangthaiAll();
+            if (isset($_POST['capnhatdonhang']) && $_POST['capnhatdonhang'] > 0) {
+                $id = $_GET['iddh'];
+                $id_trangthai = $_POST['id_trangthai'];
+                capnhattrangthai($id, $id_trangthai);
+                echo '<script>window.location.href = "index.php?act=quanlydonhang";</script>';
+            }
+            $loaddonhang = loaddonhangAll();
+
+
+
+            include('./trangthaidonhang/suatrangthai.php');
+            break;
+        case 'giaothanhcong':
+            $loaddonhangtk = loaddonhangtk();
+
+            include('./trangthaidonhang/giaothanhcong.php');
+            break;
+        case 'dahuy':
+            $loaddonhanghuy = loaddonhanghuy();
+            include('./trangthaidonhang/huydon.php');
+            break;
+        case 'chitietdonhang':
+            $id = $_GET['iddh'];
+            $chitiet = list_chitiet_One($id);
+            include('./trangthaidonhang/chitietdonhang.php');
+            break;
 
 
 

@@ -109,95 +109,42 @@
                                 <li class="sub-menu-downs"><a href="javascript:void(0);">Trang chủ</a>
                                 </li>
                                 <li class="has-mega-menu">
-                                    <a href="javascript:void(0);">Pages</a>
+                                    <a href="javascript:void(0);">Trang</a>
                                     <ul class="mega-menu">
-                                        <li><a href="javascript:;">Pages</a>
+                                        <li><a href="javascript:;">Trang</a>
                                             <ul>
-                                                <li><a href="about-us.html">About Us</a></li>
-                                                <li><a href="faq.html">FAQ</a></li>
-                                                <li><a href="team.html">Team</a></li>
-                                                <li><a href="team-detail.html">Team Detail</a></li>
-                                                <li><a href="testimonial.html">Testimonial</a></li>
+                                                <li><a href="about-us.html">Về chúng tôi</a></li>
+                                                <li><a href="faq.html">Câu hỏi thường gặp</a></li>
+                                                <li><a href="team.html">Đội</a></li>
+                                                <li><a href="team-detail.html">Chi tiết đội</a></li>
+                                                <li><a href="testimonial.html">Lời chúng thực</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="javascript:;">Pages</a>
+                                        <li><a href="javascript:;">Trang</a>
                                             <ul>
-                                                <li><a href="services.html">Services</a></li>
-                                                <li><a href="service-detail.html">Service Detail</a></li>
-                                                <li><a href="error-404.html">Error 404</a></li>
-                                                <li><a href="coming-soon.html">Coming Soon</a></li>
-                                                <li><a href="under-maintenance.html">Under Maintenance</a></li>
+                                                <li><a href="services.html">Dịch vụ</a></li>
+                                                <li><a href="service-detail.html">Chi tiết dịch vụ</a></li>
+                                                <li><a href="error-404.html">Trang lỗi</a></li>
+                                                <li><a href="coming-soon.html">Sắp ra mắt</a></li>
+                                                <li><a href="under-maintenance.html">Đang bảo trì</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="javascript:;">Our Menus</a>
+                                        <li><a href="javascript:;">Thực đơn của chúng toi</a>
                                             <ul>
-                                                <li><a href="our-menu-1.html">Menu Style 1</a></li>
-                                                <li><a href="our-menu-2.html">Menu Style 2</a></li>
-                                                <li><a href="our-menu-3.html">Menu Style 3</a></li>
-                                                <li><a href="our-menu-4.html">Menu Style 4</a></li>
-                                                <li><a href="our-menu-5.html">Menu Style 5</a></li>
+                                                <li><a href="our-menu-2.html">Trang thực đơn</a></li>
                                             </ul>
                                         </li>
                                         <li class="header-adv p-0"><img src="views/assets/images/adv-media.jpg" alt="/">
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="sub-menu-down"><a href="javascript:void(0);">Shop</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="shop-style-1.html">Shop Style 1</a></li>
-                                        <li><a href="shop-style-2.html">Shop Style 2</a></li>
-                                        <li><a href="shop-cart.html">Shop Cart</a></li>
-                                        <li><a href="shop-wishlist.html">Shop Wishlist</a></li>
-                                        <li><a href="shop-checkout.html">Shop Checkout</a></li>
-                                        <li><a href="product-detail.html">Product Detail</a></li>
-                                    </ul>
+                                <li class="sub-menu-downs">
+                                    <a href="javascript:void(0);">Cửa hàng</a>
                                 </li>
-                                <li class="has-mega-menu">
-                                    <a href="javascript:void(0);">Blogs</a>
-                                    <ul class="mega-menu">
-                                        <li> <a href="javascript:;">Blog Grid</a>
-                                            <ul>
-                                                <li><a href="blog-grid-2.html">Blog Grid 2</a></li>
-                                                <li><a href="blog-grid-3.html">Blog Grid 3</a></li>
-                                                <li><a href="blog-grid-left-sidebar.html">Blog Grid Left Sidebar</a>
-                                                </li>
-                                                <li><a href="blog-grid-right-sidebar.html">Blog Grid Right Sidebar</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li> <a href="javascript:;">Blog List</a>
-                                            <ul>
-                                                <li><a href="blog-list.html">Blog List</a></li>
-                                                <li><a href="blog-list-left-sidebar.html">Blog List Left Sidebar</a>
-                                                </li>
-                                                <li><a href="blog-list-right-sidebar.html">Blog List Right Sidebar</a>
-                                                </li>
-                                                <li><a href="blog-both-sidebar.html">Blog Both Sidebar</a></li>
-                                            </ul>
-                                        </li>
-                                        <li> <a href="javascript:;">Blog Single</a>
-                                            <ul>
-                                                <li><a href="blog-standard.html">Blog Detail</a></li>
-                                                <li><a href="blog-open-gutenberg.html">Blog Open Gutenberg</a></li>
-                                                <li><a href="blog-detail-left-sidebar.html">Blog Details Left
-                                                        Sidebar</a></li>
-                                                <li><a href="blog-detail-right-sidebar.html">Blog Details Right
-                                                        Sidebar</a></li>
-                                            </ul>
-                                        </li>
-                                        <li> <a href="javascript:;">Blog Masonry</a>
-                                            <ul>
-                                                <li><a href="blog-grid-3-masonary.html">Blog Grid 3 Masonry</a></li>
-                                                <li><a href="blog-grid-4-masonary.html">Blog Grid 4 Masonry</a></li>
-                                                <li><a href="blog-wide-list-sidebar.html">Blog Wide List Sidebar</a>
-                                                </li>
-                                                <li><a href="blog-wide-grid-sidebar.html">Blog Wide Grid Sidebar</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                <li class="has-mega-menus">
+                                    <a href="">Tin tức</a>
                                 </li>
-                                <li><a href="contact-us.html">Contact Us</a></li>
+                                <li><a href="contact-us.html">Liên hệ chúng tôi</a></li>
                             </ul>
                             <div class="dz-social-icon">
                                 <ul>
@@ -233,9 +180,7 @@
                         <div class="offcanvas-form">
                             <div class="row g-0">
                                 <div class="col-md-4 gradient-custom text-center text-white">
-                                    <img style="border-radius: 50%;"
-                                        src="https://scontent.fhan5-1.fna.fbcdn.net/v/t39.30808-6/292011549_1192119298221484_5096720056686154923_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=jy8MWvk5GC0AX-qWlc2&_nc_ht=scontent.fhan5-1.fna&oh=00_AfBMTtruR0g767zrTa4iSwMpgQ4YJ_VnmnXfODIu_di0wA&oe=65538A54"
-                                        alt="Avatar" class="img-fluid my-2 mt-4" />
+                                    <img src="uploads/avatar/<?= $anh_taikhoan ?>" alt="Avatar" class="img-fluid my-2 mt-4" />
                                     <h5>
                                         <?= $hoten ?>
                                     </h5>
@@ -257,6 +202,13 @@
                                                     <?= $sodienthoai ?>
                                                 </p>
                                             </div>
+
+                                            <div class="col-12 mb-3">
+                                                <h6><a href="index.php?act=suataikhoan&id_nguoidung=<?= $id_nguoidung ?>">Sửa
+                                                        thông tin</a>
+                                                </h6>
+                                            </div>
+
                                             <?php
                                             if (isset($vaitro) && $vaitro > 0) {
                                                 ?>

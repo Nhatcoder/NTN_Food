@@ -99,7 +99,8 @@
 
                                             <div class="col-12 mb-3">
                                                 <h6><a href="index.php?act=suataikhoan&id_nguoidung=<?= $id_nguoidung ?>">Sửa
-                                                        thông tin</a></h6>
+                                                        thông tin</a>
+                                                </h6>
                                             </div>
 
                                             <?php
