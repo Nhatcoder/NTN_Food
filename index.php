@@ -10,6 +10,7 @@ include("./model/list_monan_home.php");
 include("./model/bankking.php");
 include("./model/dmtintuc.php");
 include("./model/tintuc.php");
+include("./model/list_monan_cuahang.php");
 
 
 // session_destroy();
@@ -144,12 +145,43 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
             break;
         // Menu
         case "cuahang":
+            $tukhoa = "";
+            if (isset($_POST['timkiem'])) {
+                $tukhoa = $_POST['tukhoa'];
+                echo $tukhoa;
+            }
+
+            if (isset($_GET['trang'])) {
+                $page = intval($_GET['trang']);
+            } else {
+                $page = 1;
+            }
+
+            if ($page == "" || $page == 1) {
+                $begin = 0;
+            } else {
+                $begin = ($page * 9) - 9;
+            }
+            $list_monan_cuahang_all = list_monan_cuahang_all();
+            $list_monan_in_page = list_monan_in_page($tukhoa, $begin);
+
+
             include("./views/main/cuahang.php");
             break;
+
+        case "timkiem":
+            if (isset($_GET["timkiem"])) {
+
+            }
+
+            include("./views/main/chitiet_monan.php");
+            break;
+
 
         case "chitietmonan":
             if (isset($_GET["id_monan"]) && $_GET["id_monan"] > 0) {
                 $id = $_GET["id_monan"];
+
                 $listmonan = list_monan_One($id);
             }
 
@@ -237,7 +269,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
             }
             break;
 
-
         case "xoamonan":
             if (isset($_SESSION["cart"]) && isset($_GET["id_monan"])) {
                 $id_monan = $_GET["id_monan"];
@@ -259,7 +290,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                     include("./views/main/giohang.php");
                 }
             }
-
             break;
 
 
@@ -292,10 +322,10 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 if ($select_pay == "tienmat") {
                     date_default_timezone_set('Asia/Ho_Chi_Minh');
                     $ngaymua = date("Y-m-d H:i:s");
+                    $ma_donhang = rand(0, 9999);
 
                     if (isset($_SESSION["user"])) {
                         $id = $_SESSION["user"];
-                        $ma_donhang = $_SESSION["madonhang"];
                         $loai_thanhtoan = "Tiền mặt";
 
                         insert_cart($id, $ma_donhang, $ngaymua, $id_trangthai = 1, $loai_thanhtoan);
@@ -430,6 +460,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 insert_vnpay($tongtien, $ma_donhang, $vnp_BankCode, $vnp_BankTranNo, $vnp_CardType, $vnp_OrderInfo, $vnp_PayDate, $vnp_TmnCode, $vnp_TransactionNo);
 
                 unset($_SESSION["cart"]);
+                unset($_SESSION["madonhang"]);
                 include("./views/main/camon.php");
             } else {
                 echo "<script>alert('Đã hủy thanh toán');</script>";
@@ -437,6 +468,11 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
 
             }
             break;
+
+
+
+
+
 
         case "tintuc":
             $id = $_GET["id"];
@@ -462,6 +498,19 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
             $tintucchitiet = list_tintuc_One($id);
             include("./views/tintuc/chitiet.php");
             break;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     }

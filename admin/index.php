@@ -364,9 +364,6 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
         case 'chitietdonhang':
 
             $id = $_GET['iddh'];
-
-
-
             $chitiet = list_chitiet_One($id);
             include('./trangthaidonhang/chitietdonhang.php');
             break;

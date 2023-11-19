@@ -38,7 +38,7 @@ function loadtrangthaiAll()
 function list_chitiet_One($id)
 {
     $sql = "SELECT b.loai_thanhtoan,b.ngaymua, c.hoten,c.sodienthoai,c.diachi,b.ma_donhang,d.ten_monan,d.gia_monan,a.soluongmua,a.soluongmua*d.gia_monan AS tong_tien,e.tentrangthai FROM tbl_giohang_chitiet a INNER JOIN tbl_giohang b ON a.ma_donhang = b.ma_donhang INNER JOIN tbl_taikhoan c on b.id_nguoidung = c.id_nguoidung INNER JOIN tbl_monan d ON a.id_monan = d.id_monan INNER JOIN tbl_trangthai e on b.id_trangthai = e.id_trangthai WHERE b.ma_donhang = ?";
-    $chitiet = pdo_query_one($sql, $id);
+    $chitiet = pdo_query($sql, $id);
     return $chitiet;
 }
 

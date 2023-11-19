@@ -141,16 +141,15 @@
                                 <li class="sub-menu-downs">
                                     <a href="javascript:void(0);">Cửa hàng</a>
                                 </li>
-<<<<<<< HEAD
-                                <li class="has-mega-menus">
+                                <<<<<<< HEAD <li class="has-mega-menus">
                                     <a href="">Tin tức</a>
-=======
-                                <li class="has-mega-menu">
-                                    <a href="index.php?act=tintuc&&id=null">Blog</a>
-                                    
->>>>>>> tuyen
-                                </li>
-                                <li><a href="contact-us.html">Liên hệ chúng tôi</a></li>
+                                    =======
+                                    <li class="has-mega-menu">
+                                        <a href="index.php?act=tintuc&&id=null">Blog</a>
+
+                                        >>>>>>> tuyen
+                                    </li>
+                                    <li><a href="contact-us.html">Liên hệ chúng tôi</a></li>
                             </ul>
                             <div class="dz-social-icon">
                                 <ul>
@@ -186,7 +185,8 @@
                         <div class="offcanvas-form">
                             <div class="row g-0">
                                 <div class="col-md-4 gradient-custom text-center text-white">
-                                    <img src="uploads/avatar/<?= $anh_taikhoan ?>" alt="Avatar" class="img-fluid my-2 mt-4" />
+                                    <img src="uploads/avatar/<?= $anh_taikhoan ?>" alt="Avatar"
+                                        class="img-fluid my-2 mt-4" />
                                     <h5>
                                         <?= $hoten ?>
                                     </h5>

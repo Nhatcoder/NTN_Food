@@ -1,12 +1,12 @@
-<?php 
-  include "trangthaidonhang/title.php"
-?>
+<?php
+include "trangthaidonhang/title.php"
+    ?>
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="product-status-wrap">
                 <h4>Trạng thái đơn hàng</h4>
-                
+
                 <table>
                     <tbody>
                         <tr>
@@ -19,13 +19,13 @@
                             <th>Phương thức thanh toán</th>
                             <th>Trạng thái</th>
                             <th>Thao tác</th>
-                           
+
                         </tr>
                         <?php
                         $rowCount = 0;
                         foreach ($loaddonhang as $key => $value) {
                             extract($value);
-                            $rowCount ++;
+                            $rowCount++;
                             ?>
                             <tr>
                                 <td>
@@ -49,6 +49,7 @@
                                 <td>
                                     <?= $loai_thanhtoan ?>
                                 </td>
+
                                 <td>
                                     <?= $tentrangthai ?>
                                 </td>
@@ -58,20 +59,18 @@
                                             data-original-title="Sửa trạng thái"><i class="fa fa-pencil-square-o"
                                                 aria-hidden="true"></i></button>
                                     </a>
-                                    <a 
-                                        href="index.php?act=chitietdonhang&iddh=<?= $ma_donhang ?>">
+                                    <a href="index.php?act=chitietdonhang&iddh=<?= $ma_donhang ?>">
                                         <button data-toggle="tooltip" title="" class="pd-setting-ed"
-                                            data-original-title="Chi tiết"><i class="fa fa-trash-o"
-                                                aria-hidden="true"></i></button>
+                                            data-original-title="Chi tiết"><i class="fa-solid fa-list"></i></button>
                                     </a>
                                 </td>
                             </tr>
                         <?php } ?>
                     </tbody>
                 </table>
-                <?php if($rowCount == 0){
-                                echo "<h3>Danh sách trống</h3>";
-                            } ?>
+                <?php if ($rowCount == 0) {
+                    echo "<h3>Danh sách trống</h3>";
+                } ?>
             </div>
         </div>
     </div>
