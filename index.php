@@ -8,6 +8,8 @@ include("./model/dangnhap.php");
 include("./model/addcart.php");
 include("./model/list_monan_home.php");
 include("./model/bankking.php");
+include("./model/dmtintuc.php");
+include("./model/tintuc.php");
 
 
 // session_destroy();
@@ -434,7 +436,31 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 echo '<script>window.location.href = "index.php?act=thanhtoan";</script>';
 
             }
+            break;
 
+        case "tintuc":
+            $id = $_GET["id"];
+            if ($id == "null") {
+                $hienthi = loaddmtintucAll();
+                $tintuc = list_tintuc_All();
+                $top3 = list_tintuc_top();
+                include("./views/tintuc/lietke.php");
+            }
+
+            if ($id != "null") {
+                $hienthi = loaddmtintucAll();
+                $tintuc = list_tintuc_cc($id);
+                $top3 = list_tintuc_top();
+                include("./views/tintuc/lietke.php");
+
+            }
+
+
+            break;
+        case "tintucchitiet":
+            $id = $_GET["idttct"];
+            $tintucchitiet = list_tintuc_One($id);
+            include("./views/tintuc/chitiet.php");
             break;
 
 

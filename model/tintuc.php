@@ -14,6 +14,19 @@ function list_tintuc_All()
     $list_tintuc = pdo_query($sql);
     return $list_tintuc;
 }
+function list_tintuc_top()
+{
+    $sql = "SELECT * FROM `tbl_tintuc`ORDER BY id_tintuc DESC
+    LIMIT 3;";
+    $list_tintuc_top = pdo_query($sql);
+    return $list_tintuc_top;
+}
+function list_tintuc_cc($id)
+{
+    $sql = "SELECT * FROM tbl_tintuc WHERE id_danhmuc_tintuc =  ?";
+    $tintuccc = pdo_query($sql,$id);
+    return $tintuccc;
+}
 
 
 function delete_tintuc($id)

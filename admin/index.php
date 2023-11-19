@@ -199,37 +199,36 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
             include('./tintuc/danhmuc/lietke.php');
             break;
 
-             
-            //tintuc
-            case 'themtintuc':
-                if (isset($_POST['themmoi']) && $_POST['themmoi']) {
-                    $ten_tintuc = $_POST['ten_tintuc'];
-                    $mota_tintuc = $_POST['mota_tintuc'];
-                    $id_danhmuc_tintuc = $_POST['id_danhmuc_tintuc'];
-    
-                    $anh_tintuc = $_FILES['anh_tintuc']['name'];
-                    $anh_tintuc_tmp = $_FILES['anh_tintuc']['tmp_name'];
-                    $upload = "../uploads/monan/";
-    
-                    $new_anhtintuc = time() . "_" . basename($anh_tintuc);
-                    $target_file = $upload . $new_anhtintuc;
-    
-                    if (move_uploaded_file($anh_tintuc_tmp, $target_file)) {
-                        echo "Thêm ảnh thành công";
-                    } else {
-                        echo "Lỗi";
-                    }
-    
-                    insert_tintuc($ten_tintuc, $mota_tintuc, $new_anhtintuc, $id_danhmuc_tintuc);
-                    $thongbao = "Thêm thành công";
-                }
-    
-                $listdmtintuc = loaddmtintucAll();
-    
-                include('./tintuc/tintuc/them.php');
-                break;
 
-<<<<<<< HEAD
+        //tintuc
+        case 'themtintuc':
+            if (isset($_POST['themmoi']) && $_POST['themmoi']) {
+                $ten_tintuc = $_POST['ten_tintuc'];
+                $mota_tintuc = $_POST['mota_tintuc'];
+                $id_danhmuc_tintuc = $_POST['id_danhmuc_tintuc'];
+
+                $anh_tintuc = $_FILES['anh_tintuc']['name'];
+                $anh_tintuc_tmp = $_FILES['anh_tintuc']['tmp_name'];
+                $upload = "../uploads/monan/";
+
+                $new_anhtintuc = time() . "_" . basename($anh_tintuc);
+                $target_file = $upload . $new_anhtintuc;
+
+                if (move_uploaded_file($anh_tintuc_tmp, $target_file)) {
+                    echo "Thêm ảnh thành công";
+                } else {
+                    echo "Lỗi";
+                }
+
+                insert_tintuc($ten_tintuc, $mota_tintuc, $new_anhtintuc, $id_danhmuc_tintuc);
+                $thongbao = "Thêm thành công";
+            }
+
+            $listdmtintuc = loaddmtintucAll();
+
+            include('./tintuc/tintuc/them.php');
+            break;
+
         case 'quanlydonhang':
             $loaddonhang = loaddonhangAll();
 
@@ -263,116 +262,114 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
             $chitiet = list_chitiet_One($id);
             include('./trangthaidonhang/chitietdonhang.php');
             break;
-=======
 
-                case 'xoatintuc':
-                    if (isset($_GET['id_tintuc']) && $_GET['id_tintuc'] > 0) {
-                        $id_tintuc = $_GET['id_tintuc'];
-                        $list_tintuc_one = list_tintuc_One($id_tintuc);
-                        extract($list_tintuc_one);
-                        $linkanh = '../uploads/monan/' . $anh_tintuc;
-                        unlink($linkanh);
-                        delete_tintuc($id_tintuc);
-                    }
-        
-                    $listtintuc = list_tintuc_All();
-                    include('./tintuc/tintuc/lietke.php');
-                    break;
-        
-                case 'lietketintuc':
-                    $listtintuc = list_tintuc_All();
-                    include('./tintuc/tintuc/lietke.php');
-                    break;
-        
-                case 'suatintuc':
-                    if (isset($_GET['id_tintuc']) && $_GET['id_tintuc'] > 0) {
-                        $id_tintuc = $_GET['id_tintuc'];
-                        $list_tintuc_one = list_tintuc_One($id_tintuc);
-                    }
-                    $listdmtintuc = loaddmtintucAll();
-                    include('./tintuc/tintuc/sua.php');
-                    break;
-        
-        
-                case 'capnhattintuc':
-                    if (isset($_POST['capnhat']) && $_POST['capnhat']) {
-                        $id_sua = $_POST['id_sua'];
-                        $ten_tintuc = $_POST['ten_tintuc'];
-                        $mota_tintuc = $_POST['mota_tintuc'];
-                        $id_danhmuc_tintuc = $_POST['id_danhmuc_tintuc'];
-        
-                        $anh_tintuc = $_FILES['anh_tintuc']['name'];
-                        $anh_tintuc_tmp = $_FILES['anh_tintuc']['tmp_name'];
-                        $upload = "../uploads/monan/";
-        
-                        $list_tintuc_one = list_tintuc_One($id_sua);
-        
-                        if ($anh_tintuc != "") {
-                            $linkanh = '../uploads/monan/' . $list_tintuc_one['anh_tintuc'];
-                            unlink($linkanh);
-        
-                            $new_anhtintuc = time() . "_" . basename($anh_tintuc);
-        
-                            $target_file = $upload . $new_anhtintuc;
-                            if (move_uploaded_file($anh_tintuc_tmp, $target_file)) {
-                                echo "Thêm ảnh thành công";
-                            } else {
-                                echo "Lỗi khi tải lên ảnh mới";
-                            }
-                        }
-        
-                        capnhat_tintuc($id_sua, $ten_tintuc,$mota_tintuc, $id_danhmuc_tintuc,  $new_anhtintuc);
-                    }
-        
-                    $listtintuc = list_tintuc_All();
-        
-                    include('./tintuc/tintuc/lietke.php');
-                    break;
-        
-    
+        case 'xoatintuc':
+            if (isset($_GET['id_tintuc']) && $_GET['id_tintuc'] > 0) {
+                $id_tintuc = $_GET['id_tintuc'];
+                $list_tintuc_one = list_tintuc_One($id_tintuc);
+                extract($list_tintuc_one);
+                $linkanh = '../uploads/monan/' . $anh_tintuc;
+                unlink($linkanh);
+                delete_tintuc($id_tintuc);
+            }
+
+            $listtintuc = list_tintuc_All();
+            include('./tintuc/tintuc/lietke.php');
+            break;
+
+        case 'lietketintuc':
+            $listtintuc = list_tintuc_All();
+            include('./tintuc/tintuc/lietke.php');
+            break;
+
+        case 'suatintuc':
+            if (isset($_GET['id_tintuc']) && $_GET['id_tintuc'] > 0) {
+                $id_tintuc = $_GET['id_tintuc'];
+                $list_tintuc_one = list_tintuc_One($id_tintuc);
+            }
+            $listdmtintuc = loaddmtintucAll();
+            include('./tintuc/tintuc/sua.php');
+            break;
 
 
-                // don hang
-            case 'quanlydonhang':
-                $loaddonhang=loaddonhangAll();
-              
-                include('./trangthaidonhang/hienthi.php');
-                break;
-            case 'suatrangthai':
-                $trangthai=loadtrangthaiAll();
-                if (isset($_POST['capnhatdonhang']) && $_POST['capnhatdonhang'] > 0) {
-                    $id = $_GET['iddh'];
-                    $id_trangthai= $_POST['id_trangthai'];
-                     capnhattrangthai($id, $id_trangthai);
-                     echo '<script>window.location.href = "index.php?act=quanlydonhang";</script>';
-                    
+        case 'capnhattintuc':
+            if (isset($_POST['capnhat']) && $_POST['capnhat']) {
+                $id_sua = $_POST['id_sua'];
+                $ten_tintuc = $_POST['ten_tintuc'];
+                $mota_tintuc = $_POST['mota_tintuc'];
+                $id_danhmuc_tintuc = $_POST['id_danhmuc_tintuc'];
+
+                $anh_tintuc = $_FILES['anh_tintuc']['name'];
+                $anh_tintuc_tmp = $_FILES['anh_tintuc']['tmp_name'];
+                $upload = "../uploads/monan/";
+
+                $list_tintuc_one = list_tintuc_One($id_sua);
+
+                if ($anh_tintuc != "") {
+                    $linkanh = '../uploads/monan/' . $list_tintuc_one['anh_tintuc'];
+                    unlink($linkanh);
+
+                    $new_anhtintuc = time() . "_" . basename($anh_tintuc);
+
+                    $target_file = $upload . $new_anhtintuc;
+                    if (move_uploaded_file($anh_tintuc_tmp, $target_file)) {
+                        echo "Thêm ảnh thành công";
+                    } else {
+                        echo "Lỗi khi tải lên ảnh mới";
+                    }
                 }
-                $loaddonhang=loaddonhangAll();
-                
-                
-              
-                include('./trangthaidonhang/suatrangthai.php');
-                break;
-            case 'giaothanhcong':
-                $loaddonhangtk=loaddonhangtk();
-              
-                include('./trangthaidonhang/giaothanhcong.php');
-                break;
-            case 'dahuy':
-                $loaddonhanghuy=loaddonhanghuy();
-              
-                include('./trangthaidonhang/huydon.php');
-                break;
-            case 'chitietdonhang':
-               
-                    $id = $_GET['iddh'];
-                    
-                    
-                
-                $chitiet=list_chitiet_One($id);
-                include('./trangthaidonhang/chitietdonhang.php');
-                break;
->>>>>>> 3034eaf7a1bbea2af40b067d49311ba2ebee172c
+
+                capnhat_tintuc($id_sua, $ten_tintuc, $mota_tintuc, $id_danhmuc_tintuc, $new_anhtintuc);
+            }
+
+            $listtintuc = list_tintuc_All();
+
+            include('./tintuc/tintuc/lietke.php');
+            break;
+
+
+
+
+        // don hang
+        case 'quanlydonhang':
+            $loaddonhang = loaddonhangAll();
+
+            include('./trangthaidonhang/hienthi.php');
+            break;
+        case 'suatrangthai':
+            $trangthai = loadtrangthaiAll();
+            if (isset($_POST['capnhatdonhang']) && $_POST['capnhatdonhang'] > 0) {
+                $id = $_GET['iddh'];
+                $id_trangthai = $_POST['id_trangthai'];
+                capnhattrangthai($id, $id_trangthai);
+                echo '<script>window.location.href = "index.php?act=quanlydonhang";</script>';
+
+            }
+            $loaddonhang = loaddonhangAll();
+
+
+
+            include('./trangthaidonhang/suatrangthai.php');
+            break;
+        case 'giaothanhcong':
+            $loaddonhangtk = loaddonhangtk();
+
+            include('./trangthaidonhang/giaothanhcong.php');
+            break;
+        case 'dahuy':
+            $loaddonhanghuy = loaddonhanghuy();
+
+            include('./trangthaidonhang/huydon.php');
+            break;
+        case 'chitietdonhang':
+
+            $id = $_GET['iddh'];
+
+
+
+            $chitiet = list_chitiet_One($id);
+            include('./trangthaidonhang/chitietdonhang.php');
+            break;
 
 
 

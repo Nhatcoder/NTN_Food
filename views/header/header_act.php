@@ -141,8 +141,14 @@
                                 <li class="sub-menu-downs">
                                     <a href="javascript:void(0);">Cửa hàng</a>
                                 </li>
+<<<<<<< HEAD
                                 <li class="has-mega-menus">
                                     <a href="">Tin tức</a>
+=======
+                                <li class="has-mega-menu">
+                                    <a href="index.php?act=tintuc&&id=null">Blog</a>
+                                    
+>>>>>>> tuyen
                                 </li>
                                 <li><a href="contact-us.html">Liên hệ chúng tôi</a></li>
                             </ul>
