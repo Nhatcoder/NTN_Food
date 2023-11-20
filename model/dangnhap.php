@@ -34,11 +34,6 @@ function insert_tk($hoten, $sodienthoai, $email, $pass, $vaitro = 0, $anh_taikho
     return pdo_execute_id($sql, $hoten, $sodienthoai, $email, $pass, $vaitro, $anh_taikhoan, $diachi);
 }
 
-// function update_taikhoan($hoten, $sodienthoai, $email, $matkhau, $vaitro = 0, $new_anhtk, $diachi, $id_nguoidung)
-// {
-//     $sql = "UPDATE tbl_taikhoan SET hoten= ?,sodienthoai= ?,email= ?,matkhau= ?,vaitro= ?,anh_taikhoan= ?,diachi= ? WHERE id_nguoidung = ?";
-//     return pdo_execute($sql, $hoten, $sodienthoai, $email, $matkhau, $vaitro, $new_anhtk, $diachi, $id_nguoidung);
-// }
 
 function update_taikhoan($hoten, $sodienthoai, $email, $matkhau, $vaitro = 0, $new_anhtk, $diachi, $id_nguoidung)
 {

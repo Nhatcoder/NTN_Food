@@ -343,10 +343,8 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
                 $id_trangthai = $_POST['id_trangthai'];
                 capnhattrangthai($id, $id_trangthai);
                 echo '<script>window.location.href = "index.php?act=quanlydonhang";</script>';
-
             }
             $loaddonhang = loaddonhangAll();
-
 
 
             include('./trangthaidonhang/suatrangthai.php');

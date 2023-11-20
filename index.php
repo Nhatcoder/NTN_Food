@@ -34,10 +34,6 @@ if (isset($_SESSION["user"])) {
     $id_nguoidung = $_SESSION["user"];
     $list_tk = list_check_tk_id($id_nguoidung);
 }
-if (isset($_SESSION["user"])) {
-    $id_nguoidung = $_SESSION["user"];
-    $list_diachi = list_diachi_id($id_nguoidung);
-}
 
 
 if (isset($_GET["act"]) && $_GET["act"] != "") {
@@ -46,6 +42,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
 } else {
     include("./views/header/header.php");
 }
+
 
 
 if (isset($_GET["act"]) && $_GET["act"] != "") {
@@ -81,6 +78,11 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
 
                 $id_nguoidung = insert_tk($hoten, $sodienthoai, $email, $pass, $vaitro = 0, $anh_taikhoan, $diachi);
                 $_SESSION["user"] = $id_nguoidung;
+
+                // Thêm luôn địa chỉ mặc định
+                insert_diachi_order($hoten, $diachi, $email, $sodienthoai, $id_nguoidung);
+
+
                 echo '<script>alert("Thành công")</script>';
                 echo '<script>window.location.href = "index.php";</script>';
             }
@@ -165,18 +167,21 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
             $list_monan_cuahang_all = list_monan_cuahang_all();
             $list_monan_in_page = list_monan_in_page($tukhoa, $begin);
 
-
             include("./views/main/cuahang.php");
             break;
 
-        case "timkiem":
-            if (isset($_GET["timkiem"])) {
+
+        case "danhmuc":
+            if (isset($_GET["iddm"])) {
+                $iddm = intval($_GET["iddm"]);
+
+                
+
 
             }
 
-            include("./views/main/chitiet_monan.php");
+            include("./views/main/monan_danhmuc.php");
             break;
-
 
         case "chitietmonan":
             if (isset($_GET["id_monan"]) && $_GET["id_monan"] > 0) {
@@ -295,20 +300,28 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
 
 
         case "thanhtoan":
+            if (isset($_SESSION["user"])) {
+                $id_nguoidung = $_SESSION["user"];
+                $list_diachi = list_diachi_id($id_nguoidung);
+            }
+
             include("./views/main/thanhtoan.php");
             break;
 
         case "capnhatdiachi":
             if (isset($_GET["id_nguoidung"]) > 0 && isset($_POST["capnhat"])) {
                 $id_nguoidung = $_GET["id_nguoidung"];
+
+                $id_diachi = $_POST["id_diachi"];
+
                 $hoten = $_POST["hoten"];
                 $diachi = $_POST["diachi"];
                 $email = $_POST["email"];
                 $sodienthoai = $_POST["sodienthoai"];
 
-                update_diachi_order($hoten, $diachi, $email, $sodienthoai, $id_nguoidung);
+                update_diachi_order($hoten, $diachi, $email, $sodienthoai, $id_nguoidung, $id_diachi);
 
-                echo "<script>alert('Đã thêm thành công');</script>";
+                echo "<script>alert('Đã cập thành công');</script>";
                 echo '<script>window.location.href = "index.php?act=thanhtoan";</script>';
             }
             break;
@@ -328,10 +341,10 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                         $id = $_SESSION["user"];
                         $loai_thanhtoan = "Tiền mặt";
 
-                        insert_cart($id, $ma_donhang, $ngaymua, $id_trangthai = 1, $loai_thanhtoan);
+                        insert_bill($id, $ma_donhang, $ngaymua, $id_trangthai = 1, $loai_thanhtoan);
                         foreach ($_SESSION["cart"] as $key => $value) {
                             extract($value);
-                            insert_cart_detail($ma_donhang, $id_monan, $soluongmua);
+                            insert_bill_detail($ma_donhang, $id_monan, $soluongmua);
                         }
                     }
                     unset($_SESSION["cart"]);
@@ -432,10 +445,10 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                     $ma_donhang = $_SESSION["madonhang"];
                     $loai_thanhtoan = "Vnpay";
 
-                    insert_cart($id, $ma_donhang, $ngaymua, $id_trangthai = 1, $loai_thanhtoan);
+                    insert_bill($id, $ma_donhang, $ngaymua, $id_trangthai = 1, $loai_thanhtoan);
                     foreach ($_SESSION["cart"] as $key => $value) {
                         extract($value);
-                        insert_cart_detail($ma_donhang, $id_monan, $soluongmua);
+                        insert_bill_detail($ma_donhang, $id_monan, $soluongmua);
                     }
                 }
 

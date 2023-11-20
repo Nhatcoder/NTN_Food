@@ -12,6 +12,7 @@ include "trangthaidonhang/title.php"
                         <tr>
 
                             <th>Tên khách hàng</th>
+                            <th>Ảnh món ăn</th>
                             <th>Số điện thoại</th>
                             <th>Địa chỉ</th>
                             <th>Mã đơn hàng</th>
@@ -33,6 +34,9 @@ include "trangthaidonhang/title.php"
 
                                 <td>
                                     <?php echo $chitiet['hoten']; ?>
+                                </td>
+                                <td>
+                                    <img src="../uploads/monan/<?php echo $chitiet['anh_monan']; ?>" alt="">
                                 </td>
                                 <td>
                                     <?php echo $chitiet['sodienthoai']; ?>

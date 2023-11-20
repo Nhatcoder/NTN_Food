@@ -6,7 +6,6 @@ function insert_tintuc($ten_tintuc, $mota_tintuc, $new_anhtintuc, $id_danhmuc_ti
 }
 
 
-
 function list_tintuc_All()
 {
     $sql = "SELECT * FROM tbl_tintuc, tbl_danhmuc_tintuc WHERE tbl_tintuc.id_danhmuc_tintuc = tbl_danhmuc_tintuc.id_danhmuc_tintuc 

@@ -32,6 +32,7 @@
                     <div class="col-lg-12">
                         <div class="widget">
                             <h4 class="widget-title">Địa chỉ thanh toán & giao hàng</h4>
+                            <input type="hidden" name="id_diachi" value="<?= $id_diachi ?>">
                             <div class="form-group col-md-12 m-b20">
                                 <label class="form-label" for="hoten">Họ tên</label>
                                 <input name="hoten" required type="text" id="hoten" value="<?= $hoten ?>"
