@@ -1,31 +1,52 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-    Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
+<div class="dz-body">
+    <div class="btn-quantity style-1">
+        <input id="demo_vertical2" type="text" value="2" name="demo_vertical2">
+        <span class="input-group-btn-vertical">
+            <button class="btn btn-default bootstrap-touchspin-up" type="button"
+                onclick="increaseQuantity('demo_vertical2', 'price1')"><i class="ti-plus" id="plusButton"></i></button>
+            <button class="btn btn-default bootstrap-touchspin-up" type="button"
+                onclick="decreaseQuantity('demo_vertical2', 'price1')"><i class="ti-minus"></i></button>
+        </span>
     </div>
+    <h5 class="price text-primary mb-0" id="price1">
+        80.000VNĐ
+    </h5>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-    integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
-    crossorigin="anonymous"></script>
+
+<script>
+    function increaseQuantity(inputId, priceId) {
+        const inputElement = document.getElementById(inputId);
+        const priceElement = document.getElementById(priceId);
+
+        let currentQuantity = parseInt(inputElement.value);
+        currentQuantity++;
+
+        inputElement.value = currentQuantity;
+
+        updatePrice(priceId, currentQuantity);
+    }
+
+    function decreaseQuantity(inputId, priceId) {
+        const inputElement = document.getElementById(inputId);
+        const priceElement = document.getElementById(priceId);
+
+        let currentQuantity = parseInt(inputElement.value);
+        if (currentQuantity > 0) {
+            currentQuantity--;
+
+            inputElement.value = currentQuantity;
+
+            updatePrice(priceId, currentQuantity);
+        }
+    }
+
+    function updatePrice(priceId, quantity) {
+        const priceElement = document.getElementById(priceId);
+        const basePrice = 80000; // Replace this with the actual base price
+
+        let totalPrice = basePrice * quantity;
+
+        priceElement.textContent = `${totalPrice.toLocaleString('vi-VN')}VNĐ`;
+    }
+
+</script>

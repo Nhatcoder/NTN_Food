@@ -73,7 +73,7 @@
                 <i class="fa fa-circle bg-white text-primary"></i>
             </div>
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-7">
                     <div class="widget">
                         <h4 class="widget-title">Đơn hàng của bạn</h4>
                         <table class="table-bordered check-tbl">
@@ -81,7 +81,8 @@
                                 <tr>
                                     <th>Hình ảnh</th>
                                     <th>Tên món ăn</th>
-                                    <th>Tổng cộng</th>
+                                    <th>Số lượng</th>
+                                    <th>Giá</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -95,6 +96,9 @@
                                         <td class="product-item-name">
                                             <?= $ten_monan ?>
                                         </td>
+                                        <td class="product-item-name">
+                                            <?= $soluongmua ?>
+                                        </td>
                                         <td class="product-price">
                                             <?= number_format($gia_monan, 0, ",", ".") ?> VNĐ
                                         </td>
@@ -104,7 +108,7 @@
                         </table>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-5">
                     <form action="index.php?act=dathang" class="shop-form widget" method="post">
                         <h4 class="widget-title">Tổng số đơn hàng</h4>
                         <table class="table-bordered check-tbl mb-4">

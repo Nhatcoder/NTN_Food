@@ -13,7 +13,11 @@ function loaddonhangtk()
 }
 function loaddonhanghuy()
 {
-    $sql = "SELECT a.loai_thanhtoan,a.ma_donhang, c.hoten,c.diachi,c.sodienthoai, a.id_trangthai,a.ngaymua,d.tentrangthai  FROM tbl_hoadon a  INNER join tbl_diachinhanhang c ON a.id_nguoidung = c.id_nguoidung INNER JOIN tbl_trangthai d on a.id_trangthai = d.id_trangthai WHERE a.id_trangthai IN (5);";
+    $sql = "SELECT a.loai_thanhtoan,a.ma_donhang, c.hoten,c.diachi,c.sodienthoai, a.id_trangthai,a.ngaymua,d.tentrangthai 
+     FROM tbl_hoadon a 
+     INNER join tbl_diachinhanhang c ON a.id_nguoidung = c.id_nguoidung 
+     INNER JOIN tbl_trangthai d on a.id_trangthai = d.id_trangthai 
+     WHERE a.id_trangthai IN (5);";
     $listdhhuy = pdo_query($sql);
     return $listdhhuy;
 }
@@ -37,7 +41,8 @@ function loadtrangthaiAll()
 }
 function list_chitiet_One($id)
 {
-    $sql = "SELECT b.loai_thanhtoan,b.ngaymua, c.hoten,c.sodienthoai,c.diachi,b.ma_donhang,d.ten_monan,d.gia_monan,d.anh_monan,a.soluongmua,a.soluongmua*d.gia_monan AS tong_tien,e.tentrangthai FROM tbl_hoadon_chitiet a INNER JOIN tbl_hoadon b ON a.ma_donhang = b.ma_donhang INNER JOIN tbl_diachinhanhang c on b.id_nguoidung = c.id_nguoidung INNER JOIN tbl_monan d ON a.id_monan = d.id_monan INNER JOIN tbl_trangthai e on b.id_trangthai = e.id_trangthai WHERE b.ma_donhang = ?";
+    $sql = "SELECT b.loai_thanhtoan,b.ngaymua, c.hoten,c.sodienthoai,c.diachi,b.ma_donhang,d.ten_monan,d.gia_monan,d.anh_monan,a.soluongmua,a.soluongmua*d.gia_monan AS tong_tien,e.tentrangthai 
+    FROM tbl_hoadon_chitiet a INNER JOIN tbl_hoadon b ON a.ma_donhang = b.ma_donhang INNER JOIN tbl_diachinhanhang c on b.id_nguoidung = c.id_nguoidung INNER JOIN tbl_monan d ON a.id_monan = d.id_monan INNER JOIN tbl_trangthai e on b.id_trangthai = e.id_trangthai WHERE b.ma_donhang = ?";
     $chitiet = pdo_query($sql, $id);
     return $chitiet;
 }

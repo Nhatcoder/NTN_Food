@@ -175,9 +175,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
             if (isset($_GET["iddm"])) {
                 $iddm = intval($_GET["iddm"]);
 
-                
-
-
             }
 
             include("./views/main/monan_danhmuc.php");
@@ -236,9 +233,10 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
 
         case "themgiohang":
             // Thêm món vào giỏ hàng
-            if (isset($_GET["id_monan"])) {
+            if (isset($_GET["id_monan"]) || $_POST["themgio"]) {
                 $id = $_GET["id_monan"];
                 $list_monan_cart = list_monan_cart($id);
+
                 $soluongmua = 1;
 
                 if (is_array($list_monan_cart)) {
@@ -248,7 +246,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                             "ten_monan" => $food['ten_monan'],
                             "gia_monan" => $food['gia_monan'],
                             "anh_monan" => $food['anh_monan'],
-                            "soluongmua" => $soluongmua,
+                            "soluongmua" => $_POST["soluongmua"] ?? $soluongmua,
                         ];
                     }
                 }
@@ -305,6 +303,12 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 $list_diachi = list_diachi_id($id_nguoidung);
             }
 
+            if (isset($_POST["thanhtoan"])) {
+                foreach ($_POST['soluongmua'] as $key => $soluong) {
+                    $_SESSION['cart'][$key]['soluongmua'] = $soluong;
+                }
+            }
+
             include("./views/main/thanhtoan.php");
             break;
 
@@ -325,7 +329,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 echo '<script>window.location.href = "index.php?act=thanhtoan";</script>';
             }
             break;
-
 
         case "dathang":
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -366,7 +369,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                         $i++;
                     }
 
-                    $vnp_OrderInfo = "Thanh tóa đơn hàng đặt tại NTN Food";
+                    $vnp_OrderInfo = "Thanh tóan đơn hàng đặt tại NTN Food";
                     $vnp_OrderType = "Billpayment";
                     $vnp_Amount = $tongtien * 100; //Giá tiền
                     $vnp_Locale = "VN";
@@ -430,6 +433,10 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                         echo json_encode($returnData);
                     }
                 }
+
+
+
+
             }
 
             break;
@@ -481,10 +488,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
 
             }
             break;
-
-
-
-
 
 
         case "tintuc":

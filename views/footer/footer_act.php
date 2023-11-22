@@ -208,6 +208,80 @@
 <script src="views/assets/vendor/rangeslider/rangeslider.js"></script>
 <!-- <script src="views/assets/vendor/switcher/switcher.js"></script> -->
 
+<script>
+    const cartItems = document.querySelectorAll('.cart-item');
+    let totalPrice = 0;
+
+    // Hàm click_right()
+    function click_right(event) {
+        const cartItem = event.target.closest('.cart-item');
+        const productQuantity = parseInt(cartItem.querySelector('.product_food').value);
+        cartItem.querySelector('.product_food').value = productQuantity + 1;
+
+        // Tính lại tổng giá
+        calculateTotalPrice();
+    }
+
+    // Hàm click_left()
+    function click_left(event) {
+        const cartItem = event.target.closest('.cart-item');
+        const productQuantity = parseInt(cartItem.querySelector('.product_food').value);
+        if (productQuantity > 1) {
+            cartItem.querySelector('.product_food').value = productQuantity - 1;
+
+            // Tính lại tổng giá
+            calculateTotalPrice();
+        }
+    }
+
+    // Hàm tính lại tổng giá
+    function calculateTotalPrice() {
+        totalPrice = 0; // Reset giá trị tổng giá
+
+        for (const cartItem of cartItems) {
+            const idMonan = cartItem.querySelector('.id_monan').value;
+            const productQuantity = parseInt(cartItem.querySelector('.product_food').value);
+            const giaMonan = parseInt(cartItem.querySelector('.gia_monan').value);
+
+            const itemPrice = productQuantity * giaMonan;
+            totalPrice += itemPrice;
+        }
+
+        const format_price = totalPrice.toLocaleString()
+
+        document.getElementById('totalPrice').textContent = format_price + ' VNĐ';
+        document.querySelector(".overallTotal").textContent = format_price + " VNĐ"
+    }
+
+    // Gán sự kiện cho nút click_right()
+    document.querySelectorAll('.click_right').forEach(button => button.addEventListener('click', click_right));
+
+    // Gán sự kiện cho nút click_left()
+    document.querySelectorAll('.click_left').forEach(button => button.addEventListener('click', click_left));
+
+
+
+    // Tăng giảm chi tiết sản phẩm
+    const productFoodInput = document.querySelector('.product_food_ct');
+    const clickRightButton = document.querySelector('.click_ct_right');
+    const clickLeftButton = document.querySelector('.click_ct_left');
+
+    clickRightButton.addEventListener('click', () => {
+        let productQuantity = parseInt(productFoodInput.value);
+        if (productQuantity >= 1) {
+            productFoodInput.value = productQuantity + 1;
+        }
+    });
+
+    clickLeftButton.addEventListener('click', () => {
+        let productQuantity = parseInt(productFoodInput.value);
+        if (productQuantity > 1) {
+            productFoodInput.value = productQuantity - 1;
+        }
+    });
+
+</script>
+
 </body>
 
 </html>

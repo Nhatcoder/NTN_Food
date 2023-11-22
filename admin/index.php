@@ -298,7 +298,6 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
                 $ten_tintuc = $_POST['ten_tintuc'];
                 $mota_tintuc = $_POST['mota_tintuc'];
                 $id_danhmuc_tintuc = $_POST['id_danhmuc_tintuc'];
-
                 $anh_tintuc = $_FILES['anh_tintuc']['name'];
                 $anh_tintuc_tmp = $_FILES['anh_tintuc']['tmp_name'];
                 $upload = "../uploads/monan/";
@@ -366,6 +365,12 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
             include('./trangthaidonhang/chitietdonhang.php');
             break;
 
+        case 'thongkenguoidung':
+
+
+
+            include('');
+            break;
 
 
 

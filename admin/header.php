@@ -242,7 +242,7 @@
                                             tức</span></a></li>
                             </ul>
                         </li>
-                       
+
                         <li>
                             <a class="has-arrow" href="index.php?act=quanlydonhang" aria-expanded="false">
                                 <i class="fa-solid fa-money-bill-wave"></i>
@@ -250,33 +250,20 @@
                                     Quản lý đơn hàng</span>
                             </a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a href="index.php?act=quanlydonhang"><span class="mini-sub-pro">Trạng thái đơn hàng</span></a>
+                                <li><a href="index.php?act=quanlydonhang"><span class="mini-sub-pro">Trạng thái đơn
+                                            hàng</span></a>
                                 </li>
-                                <li><a href="index.php?act=giaothanhcong"><span class="mini-sub-pro">Đơn hàng giao thành công</span></a>
+                                <li><a href="index.php?act=giaothanhcong"><span class="mini-sub-pro">Đơn hàng giao thành
+                                            công</span></a>
                                 </li>
                                 <li><a href="index.php?act=dahuy"><span class="mini-sub-pro">Đơn hàng đã hủy</span></a>
                                 </li>
-                                
+
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="https://colorlib.com/polygon/nalika/mailbox.html"
-                                aria-expanded="false"><i class="fa-solid fa-user"></i> <span
+                            <a class="has-arrow" href="index.php?act=thongkenguoidung" aria-expanded="false"> <span
                                     class="mini-click-non">Người dùng</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="File Manager"
-                                        href="https://colorlib.com/polygon/nalika/file-manager.html"><span
-                                            class="mini-sub-pro">File Manager</span></a></li>
-                                <li><a title="Blog" href="https://colorlib.com/polygon/nalika/blog.html"><span
-                                            class="mini-sub-pro">Blog</span></a></li>
-                                <li><a title="Blog Details"
-                                        href="https://colorlib.com/polygon/nalika/blog-details.html"><span
-                                            class="mini-sub-pro">Blog Details</span></a></li>
-                                <li><a title="404 Page" href="https://colorlib.com/polygon/nalika/404.html"><span
-                                            class="mini-sub-pro">404 Page</span></a></li>
-                                <li><a title="500 Page" href="https://colorlib.com/polygon/nalika/500.html"><span
-                                            class="mini-sub-pro">500 Page</span></a></li>
-                            </ul>
                         </li>
                     </ul>
                 </nav>

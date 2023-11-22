@@ -22,126 +22,142 @@ extract($listmonan);
 	<!-- Banner End -->
 
 	<!-- Product Detail Section -->
-	<section class="content-inner-1 overflow-hidden">
-		<div class="container">
-			<div class="row product-detail">
-				<div class="col-lg-4 col-md-5">
-					<div class="detail-media m-b30">
-						<img src="uploads/monan/<?= $anh_monan ?>" alt="/">
-					</div>
-				</div>
-				<div class="col-lg-8 col-md-7">
-					<div class="detail-info">
-						<span class="badge">
-							<svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-								xmlns="http://www.w3.org/2000/svg">
-								<rect x="0.5" y="0.5" width="16" height="16" stroke="#0F8A65" />
-								<circle cx="8.5" cy="8.5" r="5.5" fill="#0F8A65" />
-							</svg>
-							Chất lượng
-						</span>
-						<div class="dz-head">
-							<h2 class="title">
-								<?= $ten_monan ?>
-							</h2>
-							<div class="rating">
-								<i class="fa-solid fa-star"></i> <span><strong class="text-dark">4.5</strong> - 20
-									Người xem</span>
-							</div>
+	<form action="index.php?act=themgiohang&id_monan=<?= $id_monan ?>" method="post">
+		<section class="content-inner-1 overflow-hidden">
+			<div class="container">
+				<div class="row product-detail">
+					<div class="col-lg-4 col-md-5">
+						<div class="detail-media m-b30">
+							<img src="uploads/monan/<?= $anh_monan ?>" alt="/">
 						</div>
-						<ul class="detail-list">
-							<li>Giá<span class="text-primary m-t5">
-									<?= number_format($gia_monan, 0, ",", ".") ?> VNĐ
-								</span></li>
-							<li>Số lượng
-								<div class="btn-quantity style-1 m-t5">
-									<input id="demo_vertical2" type="number" min="1" value="1" name="demo_vertical2">
+					</div>
+					<div class="col-lg-8 col-md-7">
+						<div class="detail-info">
+							<span class="badge">
+								<svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<rect x="0.5" y="0.5" width="16" height="16" stroke="#0F8A65" />
+									<circle cx="8.5" cy="8.5" r="5.5" fill="#0F8A65" />
+								</svg>
+								Chất lượng
+							</span>
+							<div class="dz-head">
+								<h2 class="title">
+									<?= $ten_monan ?>
+								</h2>
+								<div class="rating">
+									<i class="fa-solid fa-star"></i> <span><strong class="text-dark">4.5</strong> - 20
+										Người xem</span>
 								</div>
-							</li>
-						</ul>
-						<h6 class="title">Thêm cùng</h6>
-						<ul class="add-product">
-							<li>
-								<div class="mini-modal">
-									<div class="dz-media">
-										<img src="views/assets/images/modal/mini/pic1.jpg" alt="/">
-									</div>
-									<div class="dz-content">
-										<p class="title">French Frise</p>
-										<div class="form-check search-content">
-											<input class="form-check-input" type="checkbox" value="">
+							</div>
+							<ul class="detail-list">
+								<li>Giá<span class="text-primary m-t5">
+										<?= number_format($gia_monan, 0, ",", ".") ?> VNĐ
+									</span></li>
+								<li>Số lượng
+									<div class="dz-body">
+										<div class="btn-quantity style-1">
+											<input class="product_food_ct" name="soluongmua" min="1" type="text"
+												value="1" name="demo_vertical2">
+											<span class="input-group-btn-vertical">
+												<button class="btn btn-default bootstrap-touchspin-up click_ct_right"
+													type="button"> <i class="ti-plus"></i> </button>
+												<button class="btn btn-default bootstrap-touchspin-up click_ct_left"
+													type="button"> <i class="ti-minus"></i> </button>
+											</span>
 										</div>
+
 									</div>
-								</div>
-							</li>
-							<li>
-								<div class="mini-modal">
-									<div class="dz-media">
-										<img src="views/assets/images/modal/mini/pic2.jpg" alt="/">
-									</div>
-									<div class="dz-content">
-										<p class="title">Extra Cheese</p>
-										<div class="form-check search-content">
-											<input class="form-check-input" type="checkbox" value="">
-										</div>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="mini-modal">
-									<div class="dz-media">
-										<img src="views/assets/images/modal/mini/pic3.jpg" alt="/">
-									</div>
-									<div class="dz-content">
-										<p class="title">Coca Cola</p>
-										<div class="form-check search-content">
-											<input class="form-check-input" type="checkbox" value="">
-										</div>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="mini-modal">
-									<div class="dz-media">
-										<img src="views/assets/images/modal/mini/pic4.jpg" alt="/">
-									</div>
-									<div class="dz-content">
-										<p class="title">Choco Lava</p>
-										<div class="form-check search-content">
-											<input class="form-check-input" type="checkbox" value="">
-										</div>
-									</div>
-								</div>
-							</li>
-						</ul>
-						<div class="d-lg-flex justify-content-between">
-							<ul class="modal-btn-group">
-								<li><a href="index.php?act=themgiohang&id_monan=<?= $id_monan ?>"
-										class="btn btn-primary btn-hover-1"><span>Thêm vào giỏ
-											hàng<i class="flaticon-shopping-bag-1 m-l10"></i></span></a></li>
-								<li><a href="index.php?act=giohang&id_monan=<?= $id_monan ?>"
-										class="btn btn-outline-secondary btn-hover-1"><span>Mua
-											ngay <i class="flaticon-shopping-cart m-l10"></i></a></span></li>
+								</li>
 							</ul>
-							<ul class="avatar-list avatar-list-stacked">
-								<li class="avatar"><img src="views/assets/images/testimonial/small/pic1.jpg" alt="">
+							<h6 class="title">Thêm cùng</h6>
+							<ul class="add-product">
+								<li>
+									<div class="mini-modal">
+										<div class="dz-media">
+											<img src="views/assets/images/modal/mini/pic1.jpg" alt="/">
+										</div>
+										<div class="dz-content">
+											<p class="title">French Frise</p>
+											<div class="form-check search-content">
+												<input class="form-check-input" type="checkbox" value="">
+											</div>
+										</div>
+									</div>
 								</li>
-								<li class="avatar"><img src="views/assets/images/testimonial/small/pic2.jpg" alt="">
+								<li>
+									<div class="mini-modal">
+										<div class="dz-media">
+											<img src="views/assets/images/modal/mini/pic2.jpg" alt="/">
+										</div>
+										<div class="dz-content">
+											<p class="title">Extra Cheese</p>
+											<div class="form-check search-content">
+												<input class="form-check-input" type="checkbox" value="">
+											</div>
+										</div>
+									</div>
 								</li>
-								<li class="avatar"><img src="views/assets/images/testimonial/small/pic3.jpg" alt="">
+								<li>
+									<div class="mini-modal">
+										<div class="dz-media">
+											<img src="views/assets/images/modal/mini/pic3.jpg" alt="/">
+										</div>
+										<div class="dz-content">
+											<p class="title">Coca Cola</p>
+											<div class="form-check search-content">
+												<input class="form-check-input" type="checkbox" value="">
+											</div>
+										</div>
+									</div>
 								</li>
-								<li class="avatar"><img src="views/assets/images/testimonial/small/pic4.jpg" alt="">
+								<li>
+									<div class="mini-modal">
+										<div class="dz-media">
+											<img src="views/assets/images/modal/mini/pic4.jpg" alt="/">
+										</div>
+										<div class="dz-content">
+											<p class="title">Choco Lava</p>
+											<div class="form-check search-content">
+												<input class="form-check-input" type="checkbox" value="">
+											</div>
+										</div>
+									</div>
 								</li>
-								<li class="avatar"><img src="views/assets/images/testimonial/small/pic5.jpg" alt="">
-								</li>
-								<li class="avatar"><span>150+</span></li>
 							</ul>
+							<div class="d-lg-flex justify-content-between">
+								<ul class="modal-btn-group">
+									<li><button name="themgio" type="submit"
+											class="btn btn-primary btn-hover-1"><span>Thêm vào giỏ
+												hàng<i class="flaticon-shopping-bag-1 m-l10"></i></span></button>
+									</li>
+									<li><a href="index.php?act=giohang&id_monan=<?= $id_monan ?>"
+											class="btn btn-outline-secondary btn-hover-1"><span>Mua
+												ngay <i class="flaticon-shopping-cart m-l10"></i></a>
+										</span>
+									</li>
+								</ul>
+								<ul class="avatar-list avatar-list-stacked">
+									<li class="avatar"><img src="views/assets/images/testimonial/small/pic1.jpg" alt="">
+									</li>
+									<li class="avatar"><img src="views/assets/images/testimonial/small/pic2.jpg" alt="">
+									</li>
+									<li class="avatar"><img src="views/assets/images/testimonial/small/pic3.jpg" alt="">
+									</li>
+									<li class="avatar"><img src="views/assets/images/testimonial/small/pic4.jpg" alt="">
+									</li>
+									<li class="avatar"><img src="views/assets/images/testimonial/small/pic5.jpg" alt="">
+									</li>
+									<li class="avatar"><span>150+</span></li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+	</form>
+
 
 	<div class="content-inner pt-0">
 		<div class="container">
@@ -219,7 +235,8 @@ extract($listmonan);
 												<i class="far fa-star text-secondary"></i>
 											</div>
 											<p>Lorem Ipsum is simply dummy text of the printing and typesetting
-												industry. Lorem Ipsum has been the industry's standard dummy text ever
+												industry. Lorem Ipsum has been the industry's standard dummy text
+												ever
 												since the 1500s, when an unknown printer took a galley of type and
 												scrambled it to make a type specimen book.</p>
 										</div>
@@ -240,7 +257,8 @@ extract($listmonan);
 												<i class="far fa-star text-secondary"></i>
 											</div>
 											<p>Lorem Ipsum is simply dummy text of the printing and typesetting
-												industry. Lorem Ipsum has been the industry's standard dummy text ever
+												industry. Lorem Ipsum has been the industry's standard dummy text
+												ever
 												since the 1500s, when an unknown printer took a galley of type and
 												scrambled it to make a type specimen book.</p>
 										</div>
@@ -260,7 +278,8 @@ extract($listmonan);
 												<i class="far fa-star text-secondary"></i>
 											</div>
 											<p>Lorem Ipsum is simply dummy text of the printing and typesetting
-												industry. Lorem Ipsum has been the industry's standard dummy text ever
+												industry. Lorem Ipsum has been the industry's standard dummy text
+												ever
 												since the 1500s, when an unknown printer took a galley of type and
 												scrambled it to make a type specimen book.</p>
 										</div>
@@ -369,4 +388,3 @@ extract($listmonan);
 	</section>
 	<!-- Image Box-1 -->
 </div>
->>>>>>> nhat
