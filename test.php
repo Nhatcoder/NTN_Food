@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from swigo.dexignzone.com/xhtml/blog-detail-left-sidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Nov 2023 03:08:06 GMT -->
+<!-- Mirrored from swigo.dexignzone.com/xhtml/testimonial.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Nov 2023 03:07:42 GMT -->
 <head>
 	
 	<!-- Title -->
@@ -48,7 +48,7 @@
 <div class="page-wraper">
 	
 	<!-- Header -->
-	<header class="site-header mo-left header style-1">
+	<header class="site-header mo-left header header-transparent style-1">
 		<!-- Main Header -->
 		<div class="sticky-header main-bar-wraper navbar-expand-lg">
 			<div class="main-bar clearfix ">
@@ -57,6 +57,7 @@
 					<!-- Website Logo -->
 					<div class="logo-header mostion">
 						<a href="index.html" class="anim-logo"><img src="assets/images/logo.png" alt="/"></a>
+						<a href="index.html" class="anim-logo-white"><img src="assets/images/logo2.png" alt="/"></a>
 					</div>
 					
 					<!-- Nav Toggle Button -->
@@ -71,12 +72,12 @@
 						<div class="extra-cell">
 							<ul>
 								<li>
-									<a class="btn btn-primary btn-square btn-shadow" data-bs-toggle="offcanvas" href="#offcanvasLogin" role="button" aria-controls="offcanvasLogin">
+									<a class="btn btn-white btn-square btn-shadow" data-bs-toggle="offcanvas" href="#offcanvasLogin" role="button" aria-controls="offcanvasLogin">
 										<i class="flaticon-user"></i>
 									</a>
 								</li>
 								<li>
-									<button type="button" class="btn btn-primary btn-square btn-shadow cart-btn">
+									<button type="button" class="btn btn-white btn-square btn-shadow cart-btn">
 										<i class="flaticon-shopping-bag-1"></i>
 										<span class="badge">6</span>
 									</button>
@@ -143,7 +144,7 @@
 						<div class="logo-header">
 							<a href="index.html" class="anim-logo"><img src="assets/images/logo.png" alt="/"></a>
 						</div>
-						<ul class="nav navbar-nav navbar">
+						<ul class="nav navbar-nav navbar white">
 							<li class="sub-menu-down"><a href="javascript:void(0);">Home</a>
 								<ul class="sub-menu">
 									<li><a href="index.html">Home 1</a></li>
@@ -357,279 +358,103 @@
 	<!-- Offcanvas Form End -->
 	
 	<div class="page-content bg-white">
-		
 		<!-- Banner  -->
-		<div class="dz-breadcrumb-bnr">
+		<div class="dz-bnr-inr style-1 text-center bg-parallax bg-parallax" style="background-image:url('assets/images/banner/bnr5.jpg'); background-size:cover; background-position:center;">
 			<div class="container">
-				<nav aria-label="breadcrumb" class="breadcrumb-row">
-					<ul class="breadcrumb">
-						<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-						<li class="breadcrumb-item">Blog</li>
-						<li class="breadcrumb-item active" aria-current="page">Blog Detail Left Sidebar</li>
-					</ul>
-				</nav>
+				<div class="dz-bnr-inr-entry">
+					<h1>Testimonial</h1>
+					<!-- Breadcrumb Row -->
+					<nav aria-label="breadcrumb" class="breadcrumb-row">
+						<ul class="breadcrumb">
+							<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Customer's Comment</li>
+						</ul>
+					</nav>
+					<!-- Breadcrumb Row End -->
+				</div>
 			</div>
 		</div>
 		<!-- Banner End -->
 		
-		<!-- Blog Detail -->
-		<section class="content-inner">
+		<!-- Testimonials 2-->
+		<section class="content-inner-1 overflow-hidden">
 			<div class="container">
-				<div class="row">
-					<div class="col-xl-4 col-lg-4 order-lg-1 order-2 m-b30">
-						<aside class="side-bar sticky-top left">
-							<div class="widget">
-								<div class="widget-title">
-									<h4 class="title">Search</h4>
-								</div>
-                                <div class="search-bx">
-                                    <form role="search" method="post">
-                                        <div class="input-group">
-                                            <div class="input-side">
-	                                            <input name="text" class="form-control" placeholder="Search" type="text">
-												<div class="input-group-btn">
-													<button type="submit" class="btn btn-primary">
-														<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-														<path d="M9.58366 17.5001C13.9559 17.5001 17.5003 13.9557 17.5003 9.58342C17.5003 5.21116 13.9559 1.66675 9.58366 1.66675C5.21141 1.66675 1.66699 5.21116 1.66699 9.58342C1.66699 13.9557 5.21141 17.5001 9.58366 17.5001Z" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-														<path d="M18.3337 18.3334L16.667 16.6667" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-														</svg>
-													</button>
-												</div>
-											</div>
-										</div>
-                                    </form>
-                                </div>
-                            </div>
-							<div class="widget widget_categories">
-								<div class="widget-title">
-									<h4 class="title">Categories</h4>
-								</div>
-                                <ul>
-									<li class="cat-item"><a href="blog-standard.html">Pepperoni Pizza</a></li>
-                                    <li class="cat-item"><a href="blog-standard.html">Apricot Chicken</a></li>                       
-									<li class="cat-item"><a href="blog-standard.html">Pizza Veronese</a></li>
-									<li class="cat-item"><a href="blog-standard.html">Summer Pizza</a></li>
-									<li class="cat-item"><a href="blog-standard.html">Italian Tuna</a></li> 
-                                </ul>
-                            </div>
-							
-							<div class="widget recent-posts-entry">
-								<div class="widget-title">
-									<h4 class="title">Latest Post</h4>
-								</div>
-								<div class="widget-post-bx">
-									<div class="widget-post clearfix">
-										<div class="dz-media"> 
-											<img src="assets/images/blog/recent-blog/pic1.jpg" alt="/">
-										</div>
-										<div class="dz-info">
-											<h6 class="title"><a href="blog-standard.html">Explore the Food Taste</a></h6>
-											<div class="dz-meta">
-												<ul>
-													<li><a href="javascript:void(0);">
-														<i class="flaticon-calendar-date"></i>
-														16 May, 2023</a>
-													</li>
-													<li><a href="javascript:void(0);">
-														<i class="flaticon-chat-bubble"></i>
-														2.5K</a>
-													</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<div class="widget-post clearfix">
-										<div class="dz-media"> 
-											<img src="assets/images/blog/recent-blog/pic2.jpg" alt="/">
-										</div>
-										<div class="dz-info">
-											<h6 class="title"><a href="blog-standard.html">Secrets of Delicious Food</a></h6>
-											<div class="dz-meta">
-												<ul>
-													<li><a href="javascript:void(0);">
-														<i class="flaticon-calendar-date"></i>
-														20 Jan, 2023</a>
-													</li>
-													<li><a href="javascript:void(0);">
-														<i class="flaticon-chat-bubble"></i>
-														1.5K</a>
-													</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<div class="widget-post clearfix">
-										<div class="dz-media"> 
-											<img src="assets/images/blog/recent-blog/pic3.jpg" alt="/">
-										</div>
-										<div class="dz-info">
-											<h6 class="title"><a href="blog-standard.html"> Inspiration for Food</a></h6>
-											<div class="dz-meta">
-												<ul>
-													<li><a href="javascript:void(0);">
-														<i class="flaticon-calendar-date"></i>
-														10 Dec, 2023</a>
-													</li>
-													<li><a href="javascript:void(0);">
-														<i class="flaticon-chat-bubble"></i>
-														3.5K</a>
-													</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-                            </div>
-							<div class="widget widget_tag_cloud mb-0">
-								<div class="widget-title">
-									<h4 class="title">Popular Tags</h4>
-								</div>
-								<div class="tagcloud"> 
-									<a href="product-detail.html">Pizza</a>
-									<a href="product-detail.html">Chicken</a>
-									<a href="product-detail.html">Pizza Veronese</a>
-									<a href="product-detail.html">Burger</a>
-									<a href="product-detail.html">Sandwich</a>
-								</div>
+				<div class="row loadmore-content">
+					<div class="col-lg-12 m-lg-b60 m-b30">
+						<div class="testimonial-2">
+							<div class="dz-media">
+								<img src="assets/images/testimonial/large/pic1.jpg" alt="/">
 							</div>
-						</aside>
-					</div>
-					<div class="col-xl-8 col-lg-8 order-lg-2 order-1 m-b30">
-						<div class="blog-single dz-card sidebar">
-							<div class="dz-media rounded-md">
-								<img src="assets/images/blog/detail/pic1.jpg" alt="/">
-							</div>
-							<div class="dz-info">
-								<h1 class="title">Restaurant Has The Answer</h1>
-								<div class="dz-meta">
-									<ul>
-										<li class="dz-user"><a href="javascript:void(0);"><i class="flaticon-user"></i> By <span>KK Sharma</span></a></li>
-										<li class="dz-date"><a href="javascript:void(0);"><i class="flaticon-calendar-date"></i> 26 Jan 2023</a></li>
-										<li class="dz-comment"><a href="javascript:void(0);"><i class="flaticon-chat-bubble"></i> 2.5K </a></li>
-									</ul>
+							<div class="testimonial-detail">
+								<div class="testimonial-text">
+									<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
 								</div>
-								<div class="dz-post-text">
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-									<blockquote class="wp-block-quote">
-										<p>Create An Information Architecture That’s Easy To Use Way Precise Usability Considerations For Partially</p>
-										<cite>Ronald M. Spino</cite>
-										<i class="flaticon-right-quote quotes"></i>
-
-									</blockquote>
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-								</div>	
-							</div>
-							
-							<div class="dz-share-post">
-								<div class="post-tags">
-									<h6 class="font-14 m-b0 m-r10 d-inline">Tags:</h6>
-									<a href="product-detail.html">Pizza Veronese</a>
-									<a href="product-detail.html">Chicken</a>
-									<a href="product-detail.html">Pizza</a>
-									<a href="product-detail.html">Burger</a>
-									<a href="product-detail.html">Sandwich</a>
+								<div class="testimonial-info">
+									<h5 class="testimonial-name">John Doe</h5>
+									<span class="testimonial-position">Food Expert</span>
 								</div>
-								<div class="dz-social-icon">
-									<ul>
-										<li><a target="_blank" class="btn-social btn-sm text-primary" href="https://www.facebook.com/">
-											<i class="fab fa-facebook-f"></i>
-										</a></li>
-										<li><a target="_blank" class="btn-social btn-sm text-primary" href="https://twitter.com/">	
-											<i class="fab fa-twitter"></i>
-										</a></li>
-										<li><a target="_blank" class="btn-social btn-sm text-primary" href="https://www.instagram.com/">
-											<i class="fab fa-instagram"></i>
-										</a></li>
-										<li><a target="_blank" class="btn-social btn-sm text-primary" href="https://www.linkedin.com/">
-											<i class="fa-brands fa-linkedin-in"></i>
-										</a></li>
-									</ul>
-								</div>
+								<i class="flaticon-right-quote quote"></i>
 							</div>
 						</div>
-						<div class="clear" id="comment-list">
-                            <div class="comments-area" id="comments">
-								<h4 class="comments-title">Comments (03)</h4>
-								<div class="clearfix">
-                                    <!-- comment list END -->
-                                    <ul class="comment-list">
-                                        <li class="comment">
-                                            <div class="comment-body">
-                                                <div class="comment-author vcard"> 
-													<img  class="avatar photo" src="assets/images/testimonial/mini/pic1.jpg" alt="/"> 
-													<cite class="fn">Monsur Rahman Lito</cite>
-												</div>
-                                                <p class="font-14 mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                                                <div class="reply"> 
-													<a href="javascript:void(0);" class="comment-reply-link">
-													Reply</a> 
-												</div>
-                                            </div>
-                                            <ol class="children">
-                                                <li class="comment odd parent">
-                                                    <div class="comment-body">
-                                                        <div class="comment-author vcard"> 
-															<img  class="avatar photo" src="assets/images/testimonial/mini/pic2.jpg" alt="/"> 
-															<cite class="fn">Jake Johnson</cite>
-														</div>
-                                                       <p class="font-14 mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-														<div class="reply"> 
-															<a href="javascript:void(0);" class="comment-reply-link">
-														     Reply</a> 
-														</div>
-                                                    </div>
-                                                    <!-- list END -->
-                                                </li>
-                                            </ol>
-                                            <!-- list END -->
-                                        </li>
-                                        <li class="comment">
-                                            <div class="comment-body">
-                                                <div class="comment-author vcard"> 
-													<img  class="avatar photo" src="assets/images/testimonial/mini/pic3.jpg" alt="/"> 
-													<cite class="fn">John Doe</cite> 
-												</div>
-                                                <p class="font-14 mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-												<div class="reply"> 
-													<a href="javascript:void(0);" class="comment-reply-link">
-													Reply</a> 
-												</div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <!-- comment list END -->
-                                    <!-- Form -->
-                                    <div class="comment-respond style-1" id="respond">
-                                        <h4 class="comment-reply-title" id="reply-title">Good Comments 
-											<small><a style="display:none;" href="javascript:void(0);" id="cancel-comment-reply-link" rel="nofollow">Cancel reply</a></small>
-										</h4>
-										<form class="comment-form" id="commentform" method="post">
-                                            <p class="comment-form-author">
-                                                <label for="author">Name <span class="required">*</span></label>
-                                                <input type="text" name="Author"  placeholder="Author" id="author">
-                                            </p>
-                                            <p class="comment-form-email">
-                                                <label for="email">Email <span class="required">*</span></label>
-                                                <input type="text" placeholder="Email" name="email" id="email">
-                                            </p>
-                                            <p class="comment-form-comment">
-                                                <label for="comment">Comment</label>
-                                                <textarea rows="8" name="comment" placeholder="Type Comment Here" id="comment"></textarea>
-                                            </p>
-                                            <p class="form-submit">
-												<button type="submit" class="btn btn-primary btn-hover-1" id="submit"><span>Submit Now</span></button>
-                                            </p>
-                                        </form>
-                                    </div>
-                                    <!-- Form -->
-                                </div>
-                            </div>
-                        </div>
-					</div>			
+					</div>
+					<div class="col-lg-12 m-lg-b60 m-b30">
+						<div class="testimonial-2 right">
+							<div class="testimonial-detail">
+								<div class="testimonial-text">
+									<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+								</div>
+								<div class="testimonial-info">
+									<h5 class="testimonial-name">Carry Mint</h5>
+									<span class="testimonial-position">Food Expert</span>
+								</div>
+								<i class="flaticon-right-quote quote"></i>
+							</div>
+							<div class="dz-media">
+								<img src="assets/images/testimonial/large/pic2.jpg" alt="/">
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-12 m-lg-b60 m-b30">
+						<div class="testimonial-2">
+							<div class="dz-media">
+								<img src="assets/images/testimonial/large/pic3.jpg" alt="/">
+							</div>
+							<div class="testimonial-detail">
+								<div class="testimonial-text">
+									<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+								</div>
+								<div class="testimonial-info">
+									<h5 class="testimonial-name">Sarah Albert</h5>
+									<span class="testimonial-position">Food Expert</span>
+								</div>
+								<i class="flaticon-right-quote quote"></i>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-12 m-lg-b60 m-b30">
+						<div class="testimonial-2 right">
+							<div class="testimonial-detail">
+								<div class="testimonial-text">
+									<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+								</div>
+								<div class="testimonial-info">
+									<h5 class="testimonial-name">Stevin Mark</h5>
+									<span class="testimonial-position">Food Expert</span>
+								</div>
+								<i class="flaticon-right-quote quote"></i>
+							</div>
+							<div class="dz-media">
+								<img src="assets/images/testimonial/large/pic1.jpg" alt="/">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="text-center m-t10">
+					<a class="btn btn-primary dz-load-more btn-hover-2" href="javascript:void(0);" rel="assets/ajax/testimonial.html">Load More</a>
 				</div>
 			</div>
 		</section>
-		<!-- Blog Detail End -->
+		<!-- Testimonial 2-->
 	</div>
 	<!--Footer-->
 	<footer class="site-footer style-1 bg-dark" id="footer">
@@ -712,7 +537,7 @@
 		<img class="bg1 dz-move" src="assets/images/background/pic5.png" alt="/">
 		<img class="bg2 dz-move" src="assets/images/background/pic6.png" alt="/">
     </footer>
-	<!--Footer-->
+	<!-- Footer -->
 	
 	<div class="scroltop-progress scroltop-primary">
 		<svg width="100%" height="100%" viewBox="-1 -1 102 102">
@@ -737,5 +562,5 @@
 <script src="assets/vendor/switcher/switcher.js"></script><!-- CUSTOM JS -->
 </body>
 
-<!-- Mirrored from swigo.dexignzone.com/xhtml/blog-detail-left-sidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Nov 2023 03:08:06 GMT -->
+<!-- Mirrored from swigo.dexignzone.com/xhtml/testimonial.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Nov 2023 03:07:42 GMT -->
 </html>
