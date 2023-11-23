@@ -327,8 +327,6 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
             break;
 
 
-
-
         // don hang
         case 'quanlydonhang':
             $loaddonhang = loaddonhangAll();

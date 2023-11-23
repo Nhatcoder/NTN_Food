@@ -50,9 +50,37 @@ include "trangthaidonhang/title.php"
                                     <?= $loai_thanhtoan ?>
                                 </td>
 
-                                <td>
-                                    <?= $tentrangthai ?>
-                                </td>
+
+                                <?php
+                                if ($id_trangthai == 1) {
+                                    ?>
+                                    <td style="color: aqua;">
+                                        <?= $tentrangthai ?>
+                                    </td>
+                                    <?php
+                                } else if ($id_trangthai == 2) {
+                                    ?>
+                                        <td style="color: #FFCCFF;">
+                                        <?= $tentrangthai ?>
+                                        </td>
+                                    <?php
+                                } else if ($id_trangthai == 3) {
+                                    ?>
+                                            <td style="color: #66CC33;">
+                                        <?= $tentrangthai ?>
+                                            </td>
+                                    <?php
+                                } else if ($id_trangthai == 4) {
+                                    ?>
+                                                <td style="color: #9999FF;">
+                                        <?= $tentrangthai ?>
+                                                </td>
+                                    <?php
+                                }
+                                ?>
+
+
+
                                 <td>
                                     <a href="index.php?act=suatrangthai&iddh=<?= $ma_donhang ?>">
                                         <button data-toggle="tooltip" title="" class="pd-setting-ed"

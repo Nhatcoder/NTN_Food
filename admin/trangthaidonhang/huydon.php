@@ -48,7 +48,7 @@
                                     <?= $ngaymua ?>
                                 </td>
                                 <td>
-                                    <?= $loai_thanhyoan ?>
+                                    <?= $loai_thanhtoan ?>
                                 </td>
                                 <td>
                                     <?= $tentrangthai ?>
