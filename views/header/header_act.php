@@ -113,20 +113,20 @@
                                     <ul class="mega-menu">
                                         <li><a href="javascript:;">Trang</a>
                                             <ul>
-                                                <li><a href="about-us.html">Về chúng tôi</a></li>
-                                                <li><a href="faq.html">Câu hỏi thường gặp</a></li>
-                                                <li><a href="team.html">Đội</a></li>
-                                                <li><a href="team-detail.html">Chi tiết đội</a></li>
-                                                <li><a href="testimonial.html">Lời chúng thực</a></li>
+                                                <li><a href="index.php?act=vechungtoi">Về chúng tôi</a></li>
+                                                <li><a href="index.php?act=cauhoithuonggap">Câu hỏi thường gặp</a></li>
+                                                <li><a href="index.php?act=team">Đội ngũ đầu bếp</a></li>
+                                                <li><a href="index.php?act=teamchitiet">Đầu bếp nổi bật nhất</a></li>
+                                                <li><a href="index.php?act=danggia">Đánh giá</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="javascript:;">Trang</a>
                                             <ul>
-                                                <li><a href="services.html">Dịch vụ</a></li>
-                                                <li><a href="service-detail.html">Chi tiết dịch vụ</a></li>
-                                                <li><a href="error-404.html">Trang lỗi</a></li>
-                                                <li><a href="coming-soon.html">Sắp ra mắt</a></li>
-                                                <li><a href="under-maintenance.html">Đang bảo trì</a></li>
+                                                <li><a href="index.php?act=dichvu">Dịch vụ</a></li>
+                                                <li><a href="index.php?act=dichvuchitiet">Chi tiết dịch vụ</a></li>
+                                                <li><a href="index.php?act=trangloi">Trang lỗi</a></li>
+                                                <li><a href="index.php?act=sapramat">Sắp ra mắt</a></li>
+                                                <li><a href="index.php?act=dangbaotri">Đang bảo trì</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="javascript:;">Thực đơn của chúng toi</a>
@@ -141,15 +141,11 @@
                                 <li class="sub-menu-downs">
                                     <a href="javascript:void(0);">Cửa hàng</a>
                                 </li>
-                                <<<<<<< HEAD <li class="has-mega-menus">
+                                <li class="has-mega-menus">
                                     <a href="">Tin tức</a>
-                                    =======
-                                    <li class="has-mega-menu">
-                                        <a href="index.php?act=tintuc&&id=null">Blog</a>
+                                </li>
 
-                                        >>>>>>> tuyen
-                                    </li>
-                                    <li><a href="contact-us.html">Liên hệ chúng tôi</a></li>
+                                <li><a href="index.php?act=lienhe">Liên hệ chúng tôi</a></li>
                             </ul>
                             <div class="dz-social-icon">
                                 <ul>
