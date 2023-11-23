@@ -509,12 +509,60 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
 
 
             break;
+
+
         case "tintucchitiet":
             $id = $_GET["idttct"];
             $tintucchitiet = list_tintuc_One($id);
             include("./views/tintuc/chitiet.php");
             break;
 
+
+        case "lienhe":
+          
+            include("./views/main/lienhe.php");
+            break;
+
+            case "vechungtoi":
+                include("./views/trang/vechungtoi.php");
+                break;
+    
+            case "cauhoithuonggap":
+                include("./views/trang/cauhoithuonggap.php");
+                break;
+    
+            case "team":
+                include("./views/trang/team.php");
+                break;
+    
+            case "teamchitiet":
+                include("./views/trang/teamchitiet.php");
+                break;
+
+            case "danhgia":
+                include("./views/trang/danhgia.php");
+                break;
+
+            case "dichvu":
+                include("./views/trang/dichvu.php");
+                break;
+    
+            case "dichvuchitiet":
+                include("./views/trang/dichvuchitiet.php");
+                break;
+
+            case "trang loi":
+                include("./views/trang/trangloi.php");
+                break;
+
+            case "sapramat":
+                include("./views/trang/sapramat.php");
+                break;
+                
+            case "dangbaotri":
+                include("./views/trang/dangbaotri.php");
+                break;
+    
 
 
 

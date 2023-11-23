@@ -1,14 +1,14 @@
 <div class="page-content bg-white">
 		<!-- Banner  -->
-		<div class="dz-bnr-inr style-1 text-center bg-parallax" style="background-image:url('assets/images/banner/bnr4.jpg'); background-size:cover; background-position:center;">
+		<div class="dz-bnr-inr style-1 text-center bg-parallax" style="background-image:url('views/assets/images/banner/bnr4.jpg'); background-size:cover; background-position:center;">
 			<div class="container">
 				<div class="dz-bnr-inr-entry">
-					<h1>Blog List Left Sidebar</h1>
+					<h1>Danh sách blog</h1>
 					<!-- Breadcrumb Row -->
 					<nav aria-label="breadcrumb" class="breadcrumb-row">
 						<ul class="breadcrumb">
-							<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-							<li class="breadcrumb-item active" aria-current="page">Blog List Left Sidebar</li>
+							<li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Danh sách blog</li>
 						</ul>
 					</nav>
 					<!-- Breadcrumb Row End -->
@@ -54,7 +54,7 @@
 									<div class="widget-post clearfix">
                                    
 										<div class="dz-media"> 
-											<img src="assets/images/blog/recent-blog/pic1.jpg" alt="/">
+											<img src="views/assets/images/blog/recent-blog/pic1.jpg" alt="/">
 										</div>
 										<div class="dz-info">
 											<h6 class="title"><a href="index.php?act=tintucchitiet&&idttct=<?php echo $top3['id_tintuc'] ?>"><?php echo $top3['ten_tintuc'] ?></a></h6>

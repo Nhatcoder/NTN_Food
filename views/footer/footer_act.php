@@ -5,11 +5,11 @@
             <div class="row">
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                     <div class="widget widget_getintuch">
-                        <h5 class="footer-title">Contact</h5>
+                        <h5 class="footer-title">Liên hệ</h5>
                         <ul>
                             <li>
                                 <i class="flaticon-placeholder"></i>
-                                <p>1247/Plot No. 39, 15th Phase, Colony, Kkatpally, Hyderabad</p>
+                                <p>Tòa nhà FPT Polytechnic, đường Trịnh Văn Bô, Phương Canh, Nam Từ Liêm, Hà Nội</p>
                             </li>
                             <li>
                                 <i class="flaticon-telephone"></i>
@@ -18,45 +18,45 @@
                             </li>
                             <li>
                                 <i class="flaticon-email-1"></i>
-                                <p>info@example.com<br>
-                                    info@example.com</p>
+                                <p>ntnfood@example.com<br>
+                                    food123@example.com</p>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-2 col-md-6 col-sm-6">
                     <div class="widget widget_services">
-                        <h5 class="footer-title">Our Links</h5>
+                        <h5 class="footer-title">Liên kết của chúng tôi</h5>
                         <ul>
-                            <li><a href="index.html"><span>Home</span></a></li>
-                            <li><a href="about-us.html"><span>About Us</span></a></li>
-                            <li><a href="services.html"><span>Services</span></a></li>
-                            <li><a href="team.html"><span>Team</span></a></li>
-                            <li><a href="blog-standard.html"><span>Blog</span></a></li>
+                            <li><a href="index.php"><span>Trang chủ</span></a></li>
+                            <li><a href="index.php?act=vechungtoi"><span>Về chúng tôi</span></a></li>
+                            <li><a href="index.php?act=dichvu"><span>Dịch vụ</span></a></li>
+                            <li><a href="index.php?act=team"><span>Đội ngũ nhân viên</span></a></li>
+                            <li><a href="index.php?act=tintuc"><span>Tin tức</span></a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                     <div class="widget widget_services">
-                        <h5 class="footer-title">OUR SERVICES</h5>
+                        <h5 class="footer-title">DỊCH VỤ CỦA CHÚNG TÔI</h5>
                         <ul>
-                            <li><a href="blog-open-gutenberg.html"><span>Strategy & Research</span></a></li>
-                            <li><a href="services.html"><span>Fast Delivery</span></a></li>
-                            <li><a href="contact-us.html"><span>Seat Reservation</span></a></li>
-                            <li><a href="shop-style-1.html"><span>Pickup In Store</span></a></li>
-                            <li><a href="our-menu-1.html"><span>Our Menu</span></a></li>
+                            <li><a href="blog-open-gutenberg.html"><span>Chiến lược & Nghiên cứu</span></a></li>
+                            <li><a href="services.html"><span>Chuyển phát nhanh</span></a></li>
+                            <li><a href="contact-us.html"><span>Đặt chỗ</span></a></li>
+                            <li><a href="shop-style-1.html"><span>Ăn tại nhà hàng</span></a></li>
+                            <li><a href="our-menu-1.html"><span>Thực đơn của chúng tôi</span></a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6	">
                     <div class="widget widget_services">
-                        <h5 class="footer-title">Help Center</h5>
+                        <h5 class="footer-title">Trung tâm trợ giúp</h5>
                         <ul>
-                            <li><a href="faq.html"><span>FAQ</span></a></li>
-                            <li><a href="shop-style-1.html"><span>Shop</span></a></li>
-                            <li><a href="shop-style-2.html"><span>Category Filter</span></a></li>
-                            <li><a href="testimonial.html"><span>Testimonials</span></a></li>
-                            <li><a href="contact-us.html"><span>Contact Us</span></a></li>
+                            <li><a href="faq.html"><span>Câu hỏi thường gặp</span></a></li>
+                            <li><a href="shop-style-1.html"><span>Nhà hàng</span></a></li>
+                            <li><a href="shop-style-2.html"><span>Danh mục</span></a></li>
+                            <li><a href="testimonial.html"><span>Đánh giá</span></a></li>
+                            <li><a href="contact-us.html"><span>Liên hệ chúng tôi</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -68,10 +68,10 @@
         <div class="footer-bottom">
             <div class="row">
                 <div class="col-xl-6 col-md-6 text-md-start">
-                    <p>Copyright 2023 All rights reserved.</p>
+                    <p>Bản quyền 2023.</p>
                 </div>
                 <div class="col-xl-6 col-md-6 text-md-end">
-                    <span class="copyright-text">Crafted With <span class="heart"></span> by <a
+                    <span class="copyright-text">Được viết  <span class="heart"></span>bởi <a
                             href="https://dexignzone.com/" target="_blank">DexignZone</a></span>
                 </div>
             </div>
