@@ -35,7 +35,7 @@ function insert_tk($hoten, $sodienthoai, $email, $pass, $vaitro = 0, $anh_taikho
 }
 
 
-function update_taikhoan($hoten, $sodienthoai, $email, $matkhau, $vaitro = 0, $new_anhtk, $diachi, $id_nguoidung)
+function update_taikhoan($hoten, $sodienthoai, $email, $matkhau, $vaitro, $new_anhtk, $diachi, $id_nguoidung)
 {
     if ($new_anhtk != "") {
         $sql = "UPDATE tbl_taikhoan SET hoten= ?,sodienthoai= ?,email= ?,matkhau= ?,vaitro= ?,anh_taikhoan= ?,diachi= ? WHERE id_nguoidung = ?";
@@ -46,6 +46,14 @@ function update_taikhoan($hoten, $sodienthoai, $email, $matkhau, $vaitro = 0, $n
     }
 }
 
+function list_users()
+{
+    $sql = "SELECT * FROM tbl_taikhoan";
+    return pdo_query($sql);
+}
 
-
-?>
+function  delete_user($id_nguoidung)
+{
+    $sql = "DELETE FROM tbl_taikhoan WHERE id_nguoidung = ?";
+    return pdo_execute($sql, $id_nguoidung);
+}
