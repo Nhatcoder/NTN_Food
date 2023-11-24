@@ -7,13 +7,11 @@
 
                 <!-- Website Logo -->
                 <div class="logo-header mostion">
-                    <a href="index.php" class="anim-logo"><img src="views/assets/images/logo3.png" alt="/"></a>
+                    <a href="index.php" class="anim-logo"><img src="views/assets/images/logo_home.png" alt="/"></a>
                 </div>
 
                 <!-- Nav Toggle Button -->
-                <button class="navbar-toggler collapsed navicon justify-content-end" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler collapsed navicon justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -24,8 +22,7 @@
                     <div class="extra-cell">
                         <ul>
                             <li>
-                                <a class="btn btn-white btn-square btn-shadow" data-bs-toggle="offcanvas"
-                                    href="#offcanvasLogin" role="button" aria-controls="offcanvasLogin">
+                                <a class="btn btn-white btn-square btn-shadow" data-bs-toggle="offcanvas" href="#offcanvasLogin" role="button" aria-controls="offcanvasLogin">
                                     <i class="flaticon-user"></i>
                                 </a>
                             </li>

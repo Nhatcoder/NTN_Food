@@ -393,12 +393,12 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
 
                 $anh_taikhoan = $_FILES["anh_taikhoan"]["name"];
                 $anh_taikhoan_tmp = $_FILES['anh_taikhoan']['tmp_name'];
-                $upload = "uploads/avatar/";
+                $upload = "../uploads/avatar/";
 
                 $user = list_check_tk_id($id_nguoidung);
 
                 if ($anh_taikhoan != "") {
-                    $linkanh = 'uploads/avatar/' . $user['anh_taikhoan'];
+                    $linkanh = '../uploads/avatar/' . $user['anh_taikhoan'];
                     unlink($linkanh);
 
                     $new_anhtk = time() . "_" . basename($anh_taikhoan);

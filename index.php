@@ -312,8 +312,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
             }
             break;
 
-
-
         case "thanhtoan":
             if (isset($_SESSION["user"])) {
                 $id_nguoidung = $_SESSION["user"];

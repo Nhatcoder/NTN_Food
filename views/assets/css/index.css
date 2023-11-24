@@ -765,3 +765,18 @@
 	overflow: hidden;
     border: 1px solid #dddeec;
 }
+
+.anim-logo:after, .anim-logo-white:after {
+    content: "";
+    animation-duration: 1.8s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-name: swigo-logo;
+    background-image: url(../images/pan1.png);
+    height: 12px;
+    width: 38px;
+    position: absolute;
+    top: -3px;
+    left: 58px;
+    background-repeat: no-repeat;
+}
