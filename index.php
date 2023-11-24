@@ -104,6 +104,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 $email = $_POST["email"];
                 $diachi = $_POST["diachi"];
                 $matkhau = md5($_POST["pass"]);
+                $vaitro = 0;
 
                 $anh_taikhoan = $_FILES["anh_taikhoan"]["name"];
                 $anh_taikhoan_tmp = $_FILES['anh_taikhoan']['tmp_name'];
@@ -127,7 +128,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
 
                 unset($_SESSION["user"]);
                 $_SESSION["user"] = $id_nguoidung;
-                update_taikhoan($hoten, $sodienthoai, $email, $matkhau, $vaitro = 0, $new_anhtk, $diachi, $id_nguoidung);
+                update_taikhoan($hoten, $sodienthoai, $email, $matkhau, $vaitro, $new_anhtk, $diachi, $id_nguoidung);
 
                 // Thêm luôn địa chỉ
                 insert_diachi_order($hoten, $diachi, $email, $sodienthoai, $id_nguoidung);
@@ -382,7 +383,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                         "vnp_Amount" => $vnp_Amount,
                         "vnp_Command" => "pay",
                         "vnp_CreateDate" => date('YmdHis'),
-                        "vnp_CurrCode" => "VND",
+                        "vnp_CurrCode" => "VNĐ",
                         "vnp_IpAddr" => $vnp_IpAddr,
                         "vnp_Locale" => $vnp_Locale,
                         "vnp_OrderInfo" => $vnp_OrderInfo,
@@ -519,50 +520,49 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
 
 
         case "lienhe":
-          
             include("./views/main/lienhe.php");
             break;
 
-            case "vechungtoi":
-                include("./views/trang/vechungtoi.php");
-                break;
-    
-            case "cauhoithuonggap":
-                include("./views/trang/cauhoithuonggap.php");
-                break;
-    
-            case "team":
-                include("./views/trang/team.php");
-                break;
-    
-            case "teamchitiet":
-                include("./views/trang/teamchitiet.php");
-                break;
+        case "vechungtoi":
+            include("./views/trang/vechungtoi.php");
+            break;
 
-            case "danhgia":
-                include("./views/trang/danhgia.php");
-                break;
+        case "cauhoithuonggap":
+            include("./views/trang/cauhoithuonggap.php");
+            break;
 
-            case "dichvu":
-                include("./views/trang/dichvu.php");
-                break;
-    
-            case "dichvuchitiet":
-                include("./views/trang/dichvuchitiet.php");
-                break;
+        case "team":
+            include("./views/trang/team.php");
+            break;
 
-            case "trang loi":
-                include("./views/trang/trangloi.php");
-                break;
+        case "teamchitiet":
+            include("./views/trang/teamchitiet.php");
+            break;
 
-            case "sapramat":
-                include("./views/trang/sapramat.php");
-                break;
-                
-            case "dangbaotri":
-                include("./views/trang/dangbaotri.php");
-                break;
-    
+        case "danhgia":
+            include("./views/trang/danhgia.php");
+            break;
+
+        case "dichvu":
+            include("./views/trang/dichvu.php");
+            break;
+
+        case "dichvuchitiet":
+            include("./views/trang/dichvuchitiet.php");
+            break;
+
+        case "trang loi":
+            include("./views/trang/trangloi.php");
+            break;
+
+        case "sapramat":
+            include("./views/trang/sapramat.php");
+            break;
+
+        case "dangbaotri":
+            include("./views/trang/dangbaotri.php");
+            break;
+
 
 
 

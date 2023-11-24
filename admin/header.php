@@ -262,8 +262,8 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="index.php?act=thongkenguoidung" aria-expanded="false"> <span
-                                    class="mini-click-non">Người dùng</span></a>
+                            <a href="index.php?act=thongkenguoidung"> <i class="fa-solid fa-user"></i>
+                                Người dùng</a>
                         </li>
                     </ul>
                 </nav>

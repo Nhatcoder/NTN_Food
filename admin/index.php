@@ -10,6 +10,7 @@ include("../model/moan.php");
 include("../model/dmtintuc.php");
 include("../model/tintuc.php");
 include("../model/trangthaidonhang.php");
+include("../model/dangnhap.php");
 
 
 include("./header.php");
@@ -18,7 +19,7 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
     $act = $_GET['act'];
 
     switch ($act) {
-        // Quản lý danh mục
+            // Quản lý danh mục
         case 'themdanhmuc':
             if (isset($_POST['themmoi'])) {
                 $tendanhmuc = $_POST['tendanhmuc'];
@@ -58,7 +59,7 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
             include('./danhmuc/lietke.php');
             break;
 
-        // Món ăn
+            // Món ăn
         case 'themmonan':
             if (isset($_POST['themmoi']) && $_POST['themmoi']) {
                 $ten_monan = $_POST['ten_monan'];
@@ -156,7 +157,7 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
             break;
 
 
-        //danh muc tintuc
+            //danh muc tintuc
         case 'themdmtintuc':
             if (isset($_POST['themmoi'])) {
                 $ten_danhmuc_tintuc = $_POST['ten_danhmuc_tintuc'];
@@ -200,7 +201,7 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
             break;
 
 
-        //tintuc
+            //tintuc
         case 'themtintuc':
             if (isset($_POST['themmoi']) && $_POST['themmoi']) {
                 $ten_tintuc = $_POST['ten_tintuc'];
@@ -300,12 +301,12 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
                 $id_danhmuc_tintuc = $_POST['id_danhmuc_tintuc'];
                 $anh_tintuc = $_FILES['anh_tintuc']['name'];
                 $anh_tintuc_tmp = $_FILES['anh_tintuc']['tmp_name'];
-                $upload = "../uploads/monan/";
+                $upload = "../uploads/tintuc/";
 
                 $list_tintuc_one = list_tintuc_One($id_sua);
 
                 if ($anh_tintuc != "") {
-                    $linkanh = '../uploads/monan/' . $list_tintuc_one['anh_tintuc'];
+                    $linkanh = '../uploads/tintuc/' . $list_tintuc_one['anh_tintuc'];
                     unlink($linkanh);
 
                     $new_anhtintuc = time() . "_" . basename($anh_tintuc);
@@ -327,7 +328,7 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
             break;
 
 
-        // don hang
+            // don hang
         case 'quanlydonhang':
             $loaddonhang = loaddonhangAll();
 
@@ -363,22 +364,80 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
             include('./trangthaidonhang/chitietdonhang.php');
             break;
 
+
+
+            // Người dùng
         case 'thongkenguoidung':
+            $list_users = list_users();
 
+            include("./nguoidung/lietke.php");
+            break;
 
+        case 'suanguoidung':
+            if (isset($_GET["id_nguoidung"]) > 0) {
+                $id_nguoidung = $_GET["id_nguoidung"];
+                $user = list_check_tk_id($id_nguoidung);
+            }
+            include("./nguoidung/capnhat.php");
+            break;
 
-            include('');
+        case "capnhattaikhoan":
+            if (isset($_POST["capnhat"])) {
+                $id_nguoidung = $_POST["id_sua"];
+                $hoten = $_POST["hoten"];
+                $sodienthoai = $_POST["sodienthoai"];
+                $email = $_POST["email"];
+                $diachi = $_POST["diachi"];
+                $matkhau = md5($_POST["pass"]);
+                $vaitro = $_POST["vaitro"];
+
+                $anh_taikhoan = $_FILES["anh_taikhoan"]["name"];
+                $anh_taikhoan_tmp = $_FILES['anh_taikhoan']['tmp_name'];
+                $upload = "uploads/avatar/";
+
+                $user = list_check_tk_id($id_nguoidung);
+
+                if ($anh_taikhoan != "") {
+                    $linkanh = 'uploads/avatar/' . $user['anh_taikhoan'];
+                    unlink($linkanh);
+
+                    $new_anhtk = time() . "_" . basename($anh_taikhoan);
+
+                    $target_file = $upload . $new_anhtk;
+                    if (move_uploaded_file($anh_taikhoan_tmp, $target_file)) {
+                        echo "Thêm ảnh thành công";
+                    } else {
+                        echo "Lỗi khi tải lên ảnh mới";
+                    }
+                }
+
+                unset($_SESSION["user"]);
+                $_SESSION["user"] = $id_nguoidung;
+                update_taikhoan($hoten, $sodienthoai, $email, $matkhau, $vaitro, $new_anhtk, $diachi, $id_nguoidung);
+
+                echo '<script>alert("Thành công")</script>';
+            }
+
+            $list_users = list_users();
+            include("./nguoidung/lietke.php");
+
             break;
 
 
+        case 'xoanguoidung':
+            if (isset($_GET['id_nguoidung']) && $_GET['id_nguoidung'] > 0) {
+                $id_nguoidung = $_GET['id_nguoidung'];
+                $user = list_check_tk_id($id_nguoidung);
+                extract($user);
+                $linkanh = '../uploads/avatar/' . $anh_taikhoan;
+                unlink($linkanh);
+                delete_user($id_nguoidung);
+                echo '<script>alert("Thành công")</script>';
+            }
 
-
-
-
-
-
-
-
+            $list_users = list_users();
+            include("./nguoidung/lietke.php");
+            break;
     }
 } else {
     include("main.php");
@@ -390,4 +449,3 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
 
 
 include("./footer.php");
-?>
