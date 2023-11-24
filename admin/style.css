@@ -90,7 +90,7 @@ ul {
     clear: both
 }
 
-body {}
+
 
 .mg-tb-30 {
     margin: 30px 0
@@ -4632,6 +4632,7 @@ ul.h-list li:hover a {
 }
 
 .lock-inner .text-success {
+    
     color: #e12503
 }
 
@@ -4694,7 +4695,9 @@ button.fc-listWeek-button.fc-button.fc-state-default.fc-corner-right {
     background: #152036;
     box-shadow: none;
     color: #fff;
-    border: 0 solid #152036
+    border: 0 solid #152036;
+    
+
 }
 
 .fc-center {
@@ -4790,6 +4793,7 @@ th.fc-day-header.fc-widget-header {
     color: #fff;
     border: none;
     box-shadow: none
+    
 }
 
 .mini-navbar .profile-social-dtl,

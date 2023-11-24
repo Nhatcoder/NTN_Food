@@ -81,7 +81,7 @@
                         <li class="sub-menu-downs"><a href="index.php?act=cuahang">Cửa hàng</a>
                         </li>
                         <li class="has-mega-menus">
-                            <a href="index.php?act=tintuc">Tin tức</a>
+                            <a href="index.php?act=tintuc&&id=null">Tin tức</a>
                         </li>
                         <li><a href="index.php?act=lienhe">Liên hệ chúng tôi</a></li>
                     </ul>

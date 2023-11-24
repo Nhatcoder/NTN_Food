@@ -141,7 +141,7 @@
                                     <a href="javascript:void(0);">Cửa hàng</a>
                                 </li>
                                 <li class="has-mega-menus">
-                                    <a href="">Tin tức</a>
+                                    <a href="index.php?act=tintuc&&id=null">Tin tức</a>
                                 </li>
 
                                 <li><a href="index.php?act=lienhe">Liên hệ chúng tôi</a></li>

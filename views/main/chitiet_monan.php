@@ -1,5 +1,6 @@
 <?php
 extract($listmonan);
+
 ?>
 <div class="page-content bg-white">
 	<!-- Banner  -->
@@ -179,7 +180,7 @@ extract($listmonan);
 						<li class="nav-item">
 							<button class="nav-link" data-bs-toggle="tab" href="#developement-1">
 								<i class="icon-settings"></i>
-								<span class="d-none d-md-inline-block m-l10">Xem xét sản phẩm</span>
+								<span class="d-none d-md-inline-block m-l10">Bình luận</span>
 							</button>
 						</li>
 					</ul>
@@ -199,18 +200,7 @@ extract($listmonan);
 									<td>Thành phần</td>
 									<td>Được làm từ rau củ quả chất lượng</td>
 								</tr>
-								<tr>
-									<td>Đánh giá</td>
-									<td>
-										<span class="rating-bx">
-											<i class="fas fa-star text-secondary"></i>
-											<i class="fas fa-star text-secondary"></i>
-											<i class="fas fa-star text-secondary"></i>
-											<i class="fas fa-star text-secondary"></i>
-											<i class="far fa-star text-secondary"></i>
-										</span>
-									</td>
-								</tr>
+								
 								<tr>
 									<td>Chi phí vận chuyển</td>
 									<td>Miễn phí vận chuyển</td>
@@ -220,116 +210,39 @@ extract($listmonan);
 						<div id="developement-1" class="tab-pane">
 							<div class="comments-area" id="comments">
 								<ul class="comment-list">
+									<?php foreach ($listbinhluan as $listbinhluan) {
+										extract($listbinhluan); ?>
 									<li class="comment">
 										<div class="comment-body">
 											<div class="comment-author vcard">
 												<img class="avatar photo"
-													src="views/assets/images/testimonial/mini/pic1.jpg" alt="/">
-												<cite class="fn">Monsur Rahman Lito</cite>
+													src="./uploads/avatar/<?php echo $listbinhluan['anh_taikhoan'] ?>" alt="/">
+												<cite class="fn"><?php echo $listbinhluan['hoten'] ?></cite>
 											</div>
-											<div class="star-rating" data-rating="2">
-												<i class="fas fa-star text-secondary"></i>
-												<i class="fas fa-star text-secondary"></i>
-												<i class="far fa-star text-secondary"></i>
-												<i class="far fa-star text-secondary"></i>
-												<i class="far fa-star text-secondary"></i>
-											</div>
-											<p>Lorem Ipsum is simply dummy text of the printing and typesetting
-												industry. Lorem Ipsum has been the industry's standard dummy text
-												ever
-												since the 1500s, when an unknown printer took a galley of type and
-												scrambled it to make a type specimen book.</p>
+											
+											<p><?php echo $listbinhluan['noidung'] ?></p>
+											<p><?php echo $listbinhluan['ngaybinhluan'] ?></p>
 										</div>
 										<!-- list END -->
 									</li>
-									<li class="comment">
-										<div class="comment-body">
-											<div class="comment-author vcard">
-												<img class="avatar photo"
-													src="views/assets/images/testimonial/mini/pic2.jpg" alt="/">
-												<cite class="fn">Jake Johnson</cite>
-											</div>
-											<div class="star-rating" data-rating="3">
-												<i class="fas fa-star text-secondary"></i>
-												<i class="fas fa-star text-secondary"></i>
-												<i class="fas fa-star text-secondary"></i>
-												<i class="far fa-star text-secondary"></i>
-												<i class="far fa-star text-secondary"></i>
-											</div>
-											<p>Lorem Ipsum is simply dummy text of the printing and typesetting
-												industry. Lorem Ipsum has been the industry's standard dummy text
-												ever
-												since the 1500s, when an unknown printer took a galley of type and
-												scrambled it to make a type specimen book.</p>
-										</div>
-									</li>
-									<li class="comment">
-										<div class="comment-body">
-											<div class="comment-author vcard">
-												<img class="avatar photo"
-													src="views/assets/images/testimonial/mini/pic3.jpg" alt="/">
-												<cite class="fn">John Doe</cite>
-											</div>
-											<div class="star-rating" data-rating="4">
-												<i class="fas fa-star text-secondary"></i>
-												<i class="fas fa-star text-secondary"></i>
-												<i class="fas fa-star text-secondary"></i>
-												<i class="fas fa-star text-secondary"></i>
-												<i class="far fa-star text-secondary"></i>
-											</div>
-											<p>Lorem Ipsum is simply dummy text of the printing and typesetting
-												industry. Lorem Ipsum has been the industry's standard dummy text
-												ever
-												since the 1500s, when an unknown printer took a galley of type and
-												scrambled it to make a type specimen book.</p>
-										</div>
-									</li>
+									<?php } ?>
+									
 								</ul>
 							</div>
 							<div class="comment-respond style-1" id="respond">
-								<h3 class="comment-reply-title mb-4" id="reply-title">Add a review</h3>
+								<h3 class="comment-reply-title mb-4" id="reply-title">Bình luận</h3>
 								<form class="comment-form" id="commentform" method="post">
-									<p class="comment-form-author">
-										<label for="author">Name <span class="required">*</span></label>
-										<input type="text" name="dzName" placeholder="Author" id="author">
-									</p>
-									<p class="comment-form-email">
-										<label for="email">Email <span class="required">*</span></label>
-										<input type="text" placeholder="Email" name="dzEmail" id="email">
-									</p>
-									<div class="comment-form-rating d-flex p-lr10">
-										<label class="pull-left m-r10 m-b20">Your Rating</label>
-										<div class="rating-widget">
-											<!-- Rating Stars Box -->
-											<div class="rating-stars">
-												<ul id="stars">
-													<li class="star" title="Poor" data-value="1">
-														<i class="fas fa-star fa-fw"></i>
-													</li>
-													<li class="star" title="Fair" data-value="2">
-														<i class="fas fa-star fa-fw"></i>
-													</li>
-													<li class="star" title="Good" data-value="3">
-														<i class="fas fa-star fa-fw"></i>
-													</li>
-													<li class="star" title="Excellent" data-value="4">
-														<i class="fas fa-star fa-fw"></i>
-													</li>
-													<li class="star" title="WOW!!!" data-value="5">
-														<i class="fas fa-star fa-fw"></i>
-													</li>
-												</ul>
-											</div>
-										</div>
-									</div>
+									
+														
+									
 									<p class="comment-form-comment">
-										<label for="comment">Comment</label>
-										<textarea rows="10" name="comment" placeholder="Type Review Here"
+										<input type="hidden" name="id_nguoidung" value="<?php $id_nguoidung ?>">
+										<label for="comment">Bình luận</label>
+										<textarea rows="10" name="noidung" placeholder="Nhập bình luận"
 											id="comment"></textarea>
 									</p>
 									<p class="form-submit">
-										<button type="submit" class="btn btn-primary btn-hover-2" id="submit">Submit
-											Now</button>
+										<button type="submit" class="btn btn-primary btn-hover-2" name="guibinhluan" id="submit">Gửi</button>
 									</p>
 								</form>
 							</div>

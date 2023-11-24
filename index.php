@@ -5,6 +5,7 @@ include("./model/pdo.php");
 include("./model/connect_vnpay.php");
 
 include("./model/dangnhap.php");
+include("./model/binhluan.php");
 include("./model/addcart.php");
 include("./model/list_monan_home.php");
 include("./model/bankking.php");
@@ -183,9 +184,27 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
         case "chitietmonan":
             if (isset($_GET["id_monan"]) && $_GET["id_monan"] > 0) {
                 $id = $_GET["id_monan"];
-
+                $listbinhluan = loadbinhluanAll($id);
                 $listmonan = list_monan_One($id);
             }
+            if (isset($_SESSION["user"])) {
+                $id_nguoidung = $_SESSION["user"];
+                $list_tk = list_check_tk_id($id_nguoidung);
+            }
+            if (isset($_POST['guibinhluan'])) {
+                
+                    $id_nguoidung = $_SESSION["user"];
+                    $list_tk = list_check_tk_id($id_nguoidung);
+                
+                date_default_timezone_set('Asia/Ho_Chi_Minh');
+                    $ngaybinhluan = date("Y-m-d");
+               
+                $noidung = $_POST['noidung'];
+               
+                $id_monan = $_GET['id_monan'];
+                thembinhluan($noidung,$id_nguoidung,$id_monan,$ngaybinhluan);
+            }
+            
 
             include("./views/main/chitiet_monan.php");
             break;
@@ -562,6 +581,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
             case "dangbaotri":
                 include("./views/trang/dangbaotri.php");
                 break;
+            
     
 
 

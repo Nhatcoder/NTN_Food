@@ -1,3 +1,4 @@
+
 <div class="page-content bg-white">
 		
 		<!-- Banner  -->
@@ -21,7 +22,7 @@
 					<div class="col-xl-12 col-lg-12">
 						<div class="blog-single dz-card sidebar">
 							<div class="dz-media rounded-md">
-								<img src="assets/images/blog/detail/pic1.jpg" alt="/">
+							<img src="./uploads/monan/<?php echo $tintucchitiet['anh_tintuc'] ?>" alt="">
 							</div>
 							<div class="dz-info">
 								<h1 class="title"><?php echo $tintucchitiet['ten_tintuc']  ?></h1>

@@ -54,7 +54,7 @@
 									<div class="widget-post clearfix">
                                    
 										<div class="dz-media"> 
-											<img src="views/assets/images/blog/recent-blog/pic1.jpg" alt="/">
+										<img src="./uploads/monan/<?php echo $top3['anh_tintuc'] ?>" alt="">
 										</div>
 										<div class="dz-info">
 											<h6 class="title"><a href="index.php?act=tintucchitiet&&idttct=<?php echo $top3['id_tintuc'] ?>"><?php echo $top3['ten_tintuc'] ?></a></h6>
@@ -81,7 +81,7 @@
 							<div class="col-xl-12 col-lg-12">
 								<div class="dz-card style-1 blog-half overlay-shine dz-img-effect zoom m-b30">
 									<div class="dz-media">
-										<a href="index.php?act=tintucchitiet&&idttct=<?php echo $value['id_tintuc'] ?>"><img src="" alt="/"></a>
+										<a href="index.php?act=tintucchitiet&&idttct=<?php echo $value['id_tintuc'] ?>"><img src="./uploads/monan/<?php echo $value['anh_tintuc'] ?>" alt="123"></a>
 									</div>
 									<div class="dz-info">
 										
@@ -101,7 +101,7 @@
 							
 						</div>
 						<div class="text-center m-t10">
-							<a class="btn btn-primary dz-load-more btn-hover-2" href="javascript:void(0);" rel="assets/ajax/blog-list-sidebar.html">Xem thêm</a>
+							<a class="btn btn-primary dz-load-more btn-hover-2" href="index.php?act=tintucchitiet&&idttct=<?php echo $value['id_tintuc'] ?>" >Xem thêm</a>
 						</div>
 					</div>
 				</div>
