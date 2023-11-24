@@ -39,7 +39,6 @@ if (isset($_SESSION["user"])) {
 
 if (isset($_GET["act"]) && $_GET["act"] != "") {
     include("./views/header/header_act.php");
-
 } else {
     include("./views/header/header.php");
 }
@@ -50,7 +49,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
     $act = $_GET["act"];
 
     switch ($act) {
-        // Tài khoản
+            // Tài khoản
         case "dangnhap":
             if (isset($_POST["submit"])) {
                 $sodienthoai = $_POST["sodienthoai"];
@@ -62,7 +61,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                     $_SESSION["user"] = $id_nguoidung;
                     echo '<script>alert("Thành công")</script>';
                     echo '<script>window.location.href = "index.php";</script>';
-
                 } else {
                     echo '<script>alert("Lỗi")</script>';
                 }
@@ -147,7 +145,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 echo '<script>window.location.href = "index.php";</script>';
             }
             break;
-        // Menu
+            // Menu
         case "cuahang":
             $tukhoa = "";
             if (isset($_POST['timkiem'])) {
@@ -176,7 +174,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
         case "danhmuc":
             if (isset($_GET["iddm"])) {
                 $iddm = intval($_GET["iddm"]);
-
             }
 
             include("./views/main/monan_danhmuc.php");
@@ -193,24 +190,24 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 $list_tk = list_check_tk_id($id_nguoidung);
             }
             if (isset($_POST['guibinhluan'])) {
-                
-                    $id_nguoidung = $_SESSION["user"];
-                    $list_tk = list_check_tk_id($id_nguoidung);
-                
+
+                $id_nguoidung = $_SESSION["user"];
+                $list_tk = list_check_tk_id($id_nguoidung);
+
                 date_default_timezone_set('Asia/Ho_Chi_Minh');
-                    $ngaybinhluan = date("Y-m-d");
-               
+                $ngaybinhluan = date("Y-m-d");
+
                 $noidung = $_POST['noidung'];
-               
+
                 $id_monan = $_GET['id_monan'];
-                thembinhluan($noidung,$id_nguoidung,$id_monan,$ngaybinhluan);
+                thembinhluan($noidung, $id_nguoidung, $id_monan, $ngaybinhluan);
             }
-            
+
 
             include("./views/main/chitiet_monan.php");
             break;
 
-        // Giỏ hàng
+            // Giỏ hàng
         case "giohang":
             // Thêm món vào giỏ hàng
             if (isset($_GET["id_monan"])) {
@@ -402,7 +399,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                         "vnp_Amount" => $vnp_Amount,
                         "vnp_Command" => "pay",
                         "vnp_CreateDate" => date('YmdHis'),
-                        "vnp_CurrCode" => "VNĐ",
+                        "vnp_CurrCode" => "VND",
                         "vnp_IpAddr" => $vnp_IpAddr,
                         "vnp_Locale" => $vnp_Locale,
                         "vnp_OrderInfo" => $vnp_OrderInfo,
@@ -439,10 +436,8 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                         $vnp_Url .= 'vnp_SecureHash=' . $vnpSecureHash;
                     }
                     $returnData = array(
-                        'code' => '00'
-                        ,
-                        'message' => 'success'
-                        ,
+                        'code' => '00',
+                        'message' => 'success',
                         'data' => $vnp_Url
                     );
 
@@ -453,15 +448,11 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                         echo json_encode($returnData);
                     }
                 }
-
-
-
-
             }
 
             break;
 
-        // 
+            // 
         case "camon":
             if (isset($_GET["vnp_Amount"]) && $_GET['vnp_ResponseCode'] == '00') {
                 date_default_timezone_set('Asia/Ho_Chi_Minh');
@@ -505,7 +496,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
             } else {
                 echo "<script>alert('Đã hủy thanh toán');</script>";
                 echo '<script>window.location.href = "index.php?act=thanhtoan";</script>';
-
             }
             break;
 
@@ -524,7 +514,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 $tintuc = list_tintuc_cc($id);
                 $top3 = list_tintuc_top();
                 include("./views/tintuc/lietke.php");
-
             }
 
 
@@ -581,33 +570,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
         case "dangbaotri":
             include("./views/trang/dangbaotri.php");
             break;
-
-<<<<<<< HEAD
-            case "sapramat":
-                include("./views/trang/sapramat.php");
-                break;
-                
-            case "dangbaotri":
-                include("./views/trang/dangbaotri.php");
-                break;
-            
-    
-=======
->>>>>>> nhat
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 } else {
     include("./views/main/main.php");
@@ -622,4 +584,3 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
 }
 
 ob_end_flush();
-?>
