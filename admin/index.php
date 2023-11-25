@@ -343,10 +343,9 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
                 echo '<script>window.location.href = "index.php?act=quanlydonhang";</script>';
             }
             $loaddonhang = loaddonhangAll();
-
-
             include('./trangthaidonhang/suatrangthai.php');
             break;
+
         case 'giaothanhcong':
             $loaddonhangtk = loaddonhangtk();
 

@@ -36802,26 +36802,3 @@ pre {
 .btn-quantity.style-1 {
   position: relative;
 }
-
-.anim-logo,
-.anim-logo-white {
-  position: relative;
-  padding-top: 5px;
-  display: inline-block;
-}
-
-.anim-logo:after,
-.anim-logo-white:after {
-  content: "";
-  animation-duration: 1.8s;
-  animation-fill-mode: both;
-  animation-iteration-count: infinite;
-  animation-name: swigo-logo;
-  background-image: url(../images/pan1.png);
-  height: 12px;
-  width: 38px;
-  position: absolute;
-  top: 1px;
-  left: 58px;
-  background-repeat: no-repeat;
-}

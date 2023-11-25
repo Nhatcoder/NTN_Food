@@ -88,8 +88,8 @@
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     <meta name="robots" content="noindex, nofollow">
     <script nonce="d0d43353-1e09-4fa7-9f1f-ffb0f519a722">
-        (function (w, d) {
-            ! function (bb, bc, bd, be) {
+        (function(w, d) {
+            ! function(bb, bc, bd, be) {
                 bb[bd] = bb[bd] || {};
                 bb[bd].executed = [];
                 bb.zaraz = {
@@ -97,8 +97,8 @@
                     listeners: []
                 };
                 bb.zaraz.q = [];
-                bb.zaraz._f = function (bf) {
-                    return async function () {
+                bb.zaraz._f = function(bf) {
+                    return async function() {
                         var bg = Array.prototype.slice.call(arguments);
                         bb.zaraz.q.push({
                             m: bf,
@@ -124,9 +124,9 @@
                     bb[bd].o = (new Date).getTimezoneOffset();
                     if (bb.dataLayer)
                         for (const bo of Object.entries(Object.entries(dataLayer).reduce(((bp, bq) => ({
-                            ...bp[1],
-                            ...bq[1]
-                        })), {}))) zaraz.set(bo[0], bo[1], {
+                                ...bp[1],
+                                ...bq[1]
+                            })), {}))) zaraz.set(bo[0], bo[1], {
                             scope: "page"
                         });
                     bb[bd].q = [];
@@ -156,15 +156,12 @@
     <div class="left-sidebar-pro">
         <nav id="sidebar" style="overflow-y: scroll; width: 2px;" class>
             <div class="sidebar-header">
-                <a href="http://localhost/NTN_FOOD/admin/index.php"><img class="main-logo"
-                        src="https://colorlib.com/polygon/nalika/img/logo/logo.png" alt /></a>
-                <strong><img src="https://colorlib.com/polygon/nalika/img/logo/logosn.png" alt /></strong>
+                <a href="http://localhost/NTN_FOOD/admin/index.php"><img class="main-logo" src="img/logo.png" alt /></a>
+                <strong><img src="img/logosn.png" alt /></strong>
             </div>
             <div class="nalika-profile">
                 <div class="profile-dtl">
-                    <a href="#"><img
-                            src="https://scontent.fhan15-1.fna.fbcdn.net/v/t39.30808-6/292011549_1192119298221484_5096720056686154923_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=ZQ6qPxRemkUAX8YCkgB&_nc_ht=scontent.fhan15-1.fna&oh=00_AfB88fxQeOTtbm02fFZ4ncgK2d6X681NE5CzRNAOsgiGgA&oe=654F95D4"
-                            alt /></a>
+                    <a href="#"><img src="" alt /></a>
                     <h2>Admin <span class="min-dtn"></span></h2>
                 </div>
                 <div class="profile-social-dtl">
@@ -185,8 +182,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="has-arrow" href="https://colorlib.com/polygon/nalika/mailbox.html"
-                                aria-expanded="false">
+                            <a class="has-arrow" href="https://colorlib.com/polygon/nalika/mailbox.html" aria-expanded="false">
                                 <i class="fa-brands fa-elementor"></i>
                                 <span class="mini-click-non">Danh
                                     mục</span></a>
@@ -197,14 +193,12 @@
                                             mục</span></a>
                                 </li>
                                 <li>
-                                    <a title="Compose Mail" href="index.php?act=lietkedanhmuc"><span
-                                            class="mini-sub-pro">Liệt kê</span></a>
+                                    <a title="Compose Mail" href="index.php?act=lietkedanhmuc"><span class="mini-sub-pro">Liệt kê</span></a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="index.php?act=themmonan" aria-expanded="false"><i
-                                    class="fa-solid fa-bowl-food"></i> <span class="mini-click-non">Món ăn</span></a>
+                            <a class="has-arrow" href="index.php?act=themmonan" aria-expanded="false"><i class="fa-solid fa-bowl-food"></i> <span class="mini-click-non">Món ăn</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a href="index.php?act=themmonan"><span class="mini-sub-pro">Thêm món ăn</span></a>
                                 </li>
@@ -276,8 +270,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="logo-pro">
-                        <a href="https://colorlib.com/polygon/nalika/index.html"><img class="main-logo"
-                                src="https://colorlib.com/polygon/nalika/img/logo/logo.png" alt /></a>
+                        <a href="https://colorlib.com/polygon/nalika/index.html"><img class="main-logo" src="https://colorlib.com/polygon/nalika/img/logo/logo.png" alt /></a>
                     </div>
                 </div>
             </div>
@@ -291,8 +284,7 @@
                                 <div class="row">
                                     <div class="col-lg-1 col-md-0 col-sm-1 col-xs-12">
                                         <div class="menu-switcher-pro">
-                                            <button type="button" id="sidebarCollapse"
-                                                class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn">
+                                            <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn">
                                                 <i class="icon nalika-menu-task"></i>
                                             </button>
                                         </div>
@@ -311,37 +303,27 @@
                                         <div class="header-right-info">
                                             <ul class="nav navbar-nav mai-top-nav header-right-menu">
                                                 <li class="nav-item">
-                                                    <a href="#" data-toggle="dropdown" role="button"
-                                                        aria-expanded="false" class="nav-link dropdown-toggle">
+                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
                                                         <i class="icon nalika-user"></i>
                                                         <span class="admin-name">Tài khoản</span>
                                                         <i class="icon nalika-down-arrow nalika-angle-dw"></i>
                                                     </a>
-                                                    <ul role="menu"
-                                                        class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                        <li><a href="../index.php"><span
-                                                                    class="icon nalika-user author-log-ic"></span>
+                                                    <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
+                                                        <li><a href="../index.php"><span class="icon nalika-user author-log-ic"></span>
                                                                 Đăng nhập giao diện</a>
                                                         </li>
-                                                        <li><a href=""><span
-                                                                    class="icon nalika-diamond author-log-ic"></span>
+                                                        <li><a href=""><span class="icon nalika-diamond author-log-ic"></span>
                                                                 Khóa</a>
                                                         </li>
-                                                        <li><a href="login/logout.php"><span
-                                                                    class="icon nalika-unlocked author-log-ic"></span>
+                                                        <li><a href="login/logout.php"><span class="icon nalika-unlocked author-log-ic"></span>
                                                                 Đăng xuất</a>
                                                         </li>
                                                     </ul>
                                                 </li>
-                                                <li class="nav-item nav-setting-open"><a href="#" data-toggle="dropdown"
-                                                        role="button" aria-expanded="false"
-                                                        class="nav-link dropdown-toggle"><i
-                                                            class="icon nalika-menu-task"></i></a>
-                                                    <div role="menu"
-                                                        class="admintab-wrap menu-setting-wrap menu-setting-wrap-bg dropdown-menu animated zoomIn">
+                                                <li class="nav-item nav-setting-open"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="icon nalika-menu-task"></i></a>
+                                                    <div role="menu" class="admintab-wrap menu-setting-wrap menu-setting-wrap-bg dropdown-menu animated zoomIn">
                                                         <ul class="nav nav-tabs custon-set-tab">
-                                                            <li class="active"><a data-toggle="tab"
-                                                                    href="#Notes">News</a>
+                                                            <li class="active"><a data-toggle="tab" href="#Notes">News</a>
                                                             </li>
                                                             <li><a data-toggle="tab" href="#Projects">Activity</a>
                                                             </li>
@@ -362,8 +344,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="https://colorlib.com/polygon/nalika/img/contact/4.jpg"
-                                                                                                alt />
+                                                                                            <img src="https://colorlib.com/polygon/nalika/img/contact/4.jpg" alt />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem
@@ -380,8 +361,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="https://colorlib.com/polygon/nalika/img/contact/1.jpg"
-                                                                                                alt />
+                                                                                            <img src="https://colorlib.com/polygon/nalika/img/contact/1.jpg" alt />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem
@@ -398,8 +378,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="https://colorlib.com/polygon/nalika/img/contact/2.jpg"
-                                                                                                alt />
+                                                                                            <img src="https://colorlib.com/polygon/nalika/img/contact/2.jpg" alt />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem
@@ -416,8 +395,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="https://colorlib.com/polygon/nalika/img/contact/3.jpg"
-                                                                                                alt />
+                                                                                            <img src="https://colorlib.com/polygon/nalika/img/contact/3.jpg" alt />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem
@@ -434,8 +412,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="https://colorlib.com/polygon/nalika/img/contact/4.jpg"
-                                                                                                alt />
+                                                                                            <img src="https://colorlib.com/polygon/nalika/img/contact/4.jpg" alt />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem
@@ -452,8 +429,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="https://colorlib.com/polygon/nalika/img/contact/1.jpg"
-                                                                                                alt />
+                                                                                            <img src="https://colorlib.com/polygon/nalika/img/contact/1.jpg" alt />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem
@@ -470,8 +446,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="https://colorlib.com/polygon/nalika/img/contact/2.jpg"
-                                                                                                alt />
+                                                                                            <img src="https://colorlib.com/polygon/nalika/img/contact/2.jpg" alt />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem
@@ -488,8 +463,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="https://colorlib.com/polygon/nalika/img/contact/1.jpg"
-                                                                                                alt />
+                                                                                            <img src="https://colorlib.com/polygon/nalika/img/contact/1.jpg" alt />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem
@@ -506,8 +480,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="https://colorlib.com/polygon/nalika/img/contact/2.jpg"
-                                                                                                alt />
+                                                                                            <img src="https://colorlib.com/polygon/nalika/img/contact/2.jpg" alt />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem
@@ -524,8 +497,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="https://colorlib.com/polygon/nalika/img/contact/3.jpg"
-                                                                                                alt />
+                                                                                            <img src="https://colorlib.com/polygon/nalika/img/contact/3.jpg" alt />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem
@@ -549,21 +521,18 @@
                                                                             Activity</h2>
                                                                         <p> You have 20 Recent Activity.</p>
                                                                     </div>
-                                                                    <div
-                                                                        class="project-st-list-area project-st-menu-scrollbar">
+                                                                    <div class="project-st-list-area project-st-menu-scrollbar">
                                                                         <ul class="projects-st-menu-list">
                                                                             <li>
                                                                                 <a href="#">
                                                                                     <div class="project-list-flow">
-                                                                                        <div
-                                                                                            class="projects-st-heading">
+                                                                                        <div class="projects-st-heading">
                                                                                             <h2>New User Registered</h2>
                                                                                             <p> The point of using Lorem
                                                                                                 Ipsum is that it has a
                                                                                                 more or less normal.
                                                                                             </p>
-                                                                                            <span
-                                                                                                class="project-st-time">1
+                                                                                            <span class="project-st-time">1
                                                                                                 hours ago</span>
                                                                                         </div>
                                                                                     </div>
@@ -572,15 +541,13 @@
                                                                             <li>
                                                                                 <a href="#">
                                                                                     <div class="project-list-flow">
-                                                                                        <div
-                                                                                            class="projects-st-heading">
+                                                                                        <div class="projects-st-heading">
                                                                                             <h2>New Order Received</h2>
                                                                                             <p> The point of using Lorem
                                                                                                 Ipsum is that it has a
                                                                                                 more or less normal.
                                                                                             </p>
-                                                                                            <span
-                                                                                                class="project-st-time">2
+                                                                                            <span class="project-st-time">2
                                                                                                 hours ago</span>
                                                                                         </div>
                                                                                     </div>
@@ -589,15 +556,13 @@
                                                                             <li>
                                                                                 <a href="#">
                                                                                     <div class="project-list-flow">
-                                                                                        <div
-                                                                                            class="projects-st-heading">
+                                                                                        <div class="projects-st-heading">
                                                                                             <h2>New Order Received</h2>
                                                                                             <p> The point of using Lorem
                                                                                                 Ipsum is that it has a
                                                                                                 more or less normal.
                                                                                             </p>
-                                                                                            <span
-                                                                                                class="project-st-time">3
+                                                                                            <span class="project-st-time">3
                                                                                                 hours ago</span>
                                                                                         </div>
                                                                                     </div>
@@ -606,15 +571,13 @@
                                                                             <li>
                                                                                 <a href="#">
                                                                                     <div class="project-list-flow">
-                                                                                        <div
-                                                                                            class="projects-st-heading">
+                                                                                        <div class="projects-st-heading">
                                                                                             <h2>New Order Received</h2>
                                                                                             <p> The point of using Lorem
                                                                                                 Ipsum is that it has a
                                                                                                 more or less normal.
                                                                                             </p>
-                                                                                            <span
-                                                                                                class="project-st-time">4
+                                                                                            <span class="project-st-time">4
                                                                                                 hours ago</span>
                                                                                         </div>
                                                                                     </div>
@@ -623,15 +586,13 @@
                                                                             <li>
                                                                                 <a href="#">
                                                                                     <div class="project-list-flow">
-                                                                                        <div
-                                                                                            class="projects-st-heading">
+                                                                                        <div class="projects-st-heading">
                                                                                             <h2>New User Registered</h2>
                                                                                             <p> The point of using Lorem
                                                                                                 Ipsum is that it has a
                                                                                                 more or less normal.
                                                                                             </p>
-                                                                                            <span
-                                                                                                class="project-st-time">5
+                                                                                            <span class="project-st-time">5
                                                                                                 hours ago</span>
                                                                                         </div>
                                                                                     </div>
@@ -640,15 +601,13 @@
                                                                             <li>
                                                                                 <a href="#">
                                                                                     <div class="project-list-flow">
-                                                                                        <div
-                                                                                            class="projects-st-heading">
+                                                                                        <div class="projects-st-heading">
                                                                                             <h2>New Order</h2>
                                                                                             <p> The point of using Lorem
                                                                                                 Ipsum is that it has a
                                                                                                 more or less normal.
                                                                                             </p>
-                                                                                            <span
-                                                                                                class="project-st-time">6
+                                                                                            <span class="project-st-time">6
                                                                                                 hours ago</span>
                                                                                         </div>
                                                                                     </div>
@@ -657,15 +616,13 @@
                                                                             <li>
                                                                                 <a href="#">
                                                                                     <div class="project-list-flow">
-                                                                                        <div
-                                                                                            class="projects-st-heading">
+                                                                                        <div class="projects-st-heading">
                                                                                             <h2>New User</h2>
                                                                                             <p> The point of using Lorem
                                                                                                 Ipsum is that it has a
                                                                                                 more or less normal.
                                                                                             </p>
-                                                                                            <span
-                                                                                                class="project-st-time">7
+                                                                                            <span class="project-st-time">7
                                                                                                 hours ago</span>
                                                                                         </div>
                                                                                     </div>
@@ -674,15 +631,13 @@
                                                                             <li>
                                                                                 <a href="#">
                                                                                     <div class="project-list-flow">
-                                                                                        <div
-                                                                                            class="projects-st-heading">
+                                                                                        <div class="projects-st-heading">
                                                                                             <h2>New Order</h2>
                                                                                             <p> The point of using Lorem
                                                                                                 Ipsum is that it has a
                                                                                                 more or less normal.
                                                                                             </p>
-                                                                                            <span
-                                                                                                class="project-st-time">9
+                                                                                            <span class="project-st-time">9
                                                                                                 hours ago</span>
                                                                                         </div>
                                                                                     </div>
@@ -706,17 +661,10 @@
                                                                                     <h2>Show notifications</h2>
                                                                                     <div class="ts-custom-check">
                                                                                         <div class="onoffswitch">
-                                                                                            <input type="checkbox"
-                                                                                                name="collapsemenu"
-                                                                                                class="onoffswitch-checkbox"
-                                                                                                id="example">
-                                                                                            <label
-                                                                                                class="onoffswitch-label"
-                                                                                                for="example">
-                                                                                                <span
-                                                                                                    class="onoffswitch-inner"></span>
-                                                                                                <span
-                                                                                                    class="onoffswitch-switch"></span>
+                                                                                            <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example">
+                                                                                            <label class="onoffswitch-label" for="example">
+                                                                                                <span class="onoffswitch-inner"></span>
+                                                                                                <span class="onoffswitch-switch"></span>
                                                                                             </label>
                                                                                         </div>
                                                                                     </div>
@@ -729,17 +677,10 @@
                                                                                     <h2>Disable Chat</h2>
                                                                                     <div class="ts-custom-check">
                                                                                         <div class="onoffswitch">
-                                                                                            <input type="checkbox"
-                                                                                                name="collapsemenu"
-                                                                                                class="onoffswitch-checkbox"
-                                                                                                id="example3">
-                                                                                            <label
-                                                                                                class="onoffswitch-label"
-                                                                                                for="example3">
-                                                                                                <span
-                                                                                                    class="onoffswitch-inner"></span>
-                                                                                                <span
-                                                                                                    class="onoffswitch-switch"></span>
+                                                                                            <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example3">
+                                                                                            <label class="onoffswitch-label" for="example3">
+                                                                                                <span class="onoffswitch-inner"></span>
+                                                                                                <span class="onoffswitch-switch"></span>
                                                                                             </label>
                                                                                         </div>
                                                                                     </div>
@@ -752,17 +693,10 @@
                                                                                     <h2>Enable history</h2>
                                                                                     <div class="ts-custom-check">
                                                                                         <div class="onoffswitch">
-                                                                                            <input type="checkbox"
-                                                                                                name="collapsemenu"
-                                                                                                class="onoffswitch-checkbox"
-                                                                                                id="example4">
-                                                                                            <label
-                                                                                                class="onoffswitch-label"
-                                                                                                for="example4">
-                                                                                                <span
-                                                                                                    class="onoffswitch-inner"></span>
-                                                                                                <span
-                                                                                                    class="onoffswitch-switch"></span>
+                                                                                            <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example4">
+                                                                                            <label class="onoffswitch-label" for="example4">
+                                                                                                <span class="onoffswitch-inner"></span>
+                                                                                                <span class="onoffswitch-switch"></span>
                                                                                             </label>
                                                                                         </div>
                                                                                     </div>
@@ -775,17 +709,10 @@
                                                                                     <h2>Show charts</h2>
                                                                                     <div class="ts-custom-check">
                                                                                         <div class="onoffswitch">
-                                                                                            <input type="checkbox"
-                                                                                                name="collapsemenu"
-                                                                                                class="onoffswitch-checkbox"
-                                                                                                id="example7">
-                                                                                            <label
-                                                                                                class="onoffswitch-label"
-                                                                                                for="example7">
-                                                                                                <span
-                                                                                                    class="onoffswitch-inner"></span>
-                                                                                                <span
-                                                                                                    class="onoffswitch-switch"></span>
+                                                                                            <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example7">
+                                                                                            <label class="onoffswitch-label" for="example7">
+                                                                                                <span class="onoffswitch-inner"></span>
+                                                                                                <span class="onoffswitch-switch"></span>
                                                                                             </label>
                                                                                         </div>
                                                                                     </div>
@@ -798,18 +725,10 @@
                                                                                     <h2>Update everyday</h2>
                                                                                     <div class="ts-custom-check">
                                                                                         <div class="onoffswitch">
-                                                                                            <input type="checkbox"
-                                                                                                name="collapsemenu"
-                                                                                                checked
-                                                                                                class="onoffswitch-checkbox"
-                                                                                                id="example2">
-                                                                                            <label
-                                                                                                class="onoffswitch-label"
-                                                                                                for="example2">
-                                                                                                <span
-                                                                                                    class="onoffswitch-inner"></span>
-                                                                                                <span
-                                                                                                    class="onoffswitch-switch"></span>
+                                                                                            <input type="checkbox" name="collapsemenu" checked class="onoffswitch-checkbox" id="example2">
+                                                                                            <label class="onoffswitch-label" for="example2">
+                                                                                                <span class="onoffswitch-inner"></span>
+                                                                                                <span class="onoffswitch-switch"></span>
                                                                                             </label>
                                                                                         </div>
                                                                                     </div>
@@ -822,18 +741,10 @@
                                                                                     <h2>Global search</h2>
                                                                                     <div class="ts-custom-check">
                                                                                         <div class="onoffswitch">
-                                                                                            <input type="checkbox"
-                                                                                                name="collapsemenu"
-                                                                                                checked
-                                                                                                class="onoffswitch-checkbox"
-                                                                                                id="example6">
-                                                                                            <label
-                                                                                                class="onoffswitch-label"
-                                                                                                for="example6">
-                                                                                                <span
-                                                                                                    class="onoffswitch-inner"></span>
-                                                                                                <span
-                                                                                                    class="onoffswitch-switch"></span>
+                                                                                            <input type="checkbox" name="collapsemenu" checked class="onoffswitch-checkbox" id="example6">
+                                                                                            <label class="onoffswitch-label" for="example6">
+                                                                                                <span class="onoffswitch-inner"></span>
+                                                                                                <span class="onoffswitch-switch"></span>
                                                                                             </label>
                                                                                         </div>
                                                                                     </div>
@@ -846,18 +757,10 @@
                                                                                     <h2>Offline users</h2>
                                                                                     <div class="ts-custom-check">
                                                                                         <div class="onoffswitch">
-                                                                                            <input type="checkbox"
-                                                                                                name="collapsemenu"
-                                                                                                checked
-                                                                                                class="onoffswitch-checkbox"
-                                                                                                id="example5">
-                                                                                            <label
-                                                                                                class="onoffswitch-label"
-                                                                                                for="example5">
-                                                                                                <span
-                                                                                                    class="onoffswitch-inner"></span>
-                                                                                                <span
-                                                                                                    class="onoffswitch-switch"></span>
+                                                                                            <input type="checkbox" name="collapsemenu" checked class="onoffswitch-checkbox" id="example5">
+                                                                                            <label class="onoffswitch-label" for="example5">
+                                                                                                <span class="onoffswitch-inner"></span>
+                                                                                                <span class="onoffswitch-switch"></span>
                                                                                             </label>
                                                                                         </div>
                                                                                     </div>
@@ -887,8 +790,7 @@
                             <div class="mobile-menu">
                                 <nav id="dropdown">
                                     <ul class="mobile-menu-nav">
-                                        <li><a data-toggle="collapse" data-target="#Charts" href="#">Home <span
-                                                    class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
+                                        <li><a data-toggle="collapse" data-target="#Charts" href="#">Home <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
                                             <ul class="collapse dropdown-header-top">
                                                 <li><a href="https://colorlib.com/polygon/nalika/index.html">Dashboard
                                                         v.1</a></li>
@@ -906,16 +808,13 @@
                                                         Cart</a></li>
                                                 <li><a href="https://colorlib.com/polygon/nalika/product-payment.html">Product
                                                         Payment</a></li>
-                                                <li><a
-                                                        href="https://colorlib.com/polygon/nalika/analytics.html">Analytics</a>
+                                                <li><a href="https://colorlib.com/polygon/nalika/analytics.html">Analytics</a>
                                                 </li>
-                                                <li><a
-                                                        href="https://colorlib.com/polygon/nalika/widgets.html">Widgets</a>
+                                                <li><a href="https://colorlib.com/polygon/nalika/widgets.html">Widgets</a>
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a data-toggle="collapse" data-target="#demo" href="#">Mailbox <span
-                                                    class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
+                                        <li><a data-toggle="collapse" data-target="#demo" href="#">Mailbox <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
                                             <ul id="demo" class="collapse dropdown-header-top">
                                                 <li><a href="https://colorlib.com/polygon/nalika/mailbox.html">Inbox</a>
                                                 </li>
@@ -927,15 +826,13 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a data-toggle="collapse" data-target="#others" href="#">Miscellaneous <span
-                                                    class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
+                                        <li><a data-toggle="collapse" data-target="#others" href="#">Miscellaneous <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
                                             <ul id="others" class="collapse dropdown-header-top">
                                                 <li><a href="https://colorlib.com/polygon/nalika/file-manager.html">File
                                                         Manager</a></li>
                                                 <li><a href="https://colorlib.com/polygon/nalika/contacts.html">Contacts
                                                         Client</a></li>
-                                                <li><a
-                                                        href="https://colorlib.com/polygon/nalika/projects.html">Project</a>
+                                                <li><a href="https://colorlib.com/polygon/nalika/projects.html">Project</a>
                                                 </li>
                                                 <li><a href="https://colorlib.com/polygon/nalika/project-details.html">Project
                                                         Details</a></li>
@@ -950,8 +847,7 @@
                                             </ul>
                                         </li>
                                         <li><a data-toggle="collapse" data-target="#Miscellaneousmob" href="#">Interface
-                                                <span
-                                                    class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
+                                                <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
                                             <ul id="Miscellaneousmob" class="collapse dropdown-header-top">
                                                 <li><a href="https://colorlib.com/polygon/nalika/google-map.html">Google
                                                         Map</a>
@@ -962,8 +858,7 @@
                                                 <li><a href="https://colorlib.com/polygon/nalika/pdf-viewer.html">Pdf
                                                         Viewer</a>
                                                 </li>
-                                                <li><a
-                                                        href="https://colorlib.com/polygon/nalika/x-editable.html">X-Editable</a>
+                                                <li><a href="https://colorlib.com/polygon/nalika/x-editable.html">X-Editable</a>
                                                 </li>
                                                 <li><a href="https://colorlib.com/polygon/nalika/code-editor.html">Code
                                                         Editor</a>
@@ -971,16 +866,14 @@
                                                 <li><a href="https://colorlib.com/polygon/nalika/tree-view.html">Tree
                                                         View</a>
                                                 </li>
-                                                <li><a
-                                                        href="https://colorlib.com/polygon/nalika/preloader.html">Preloader</a>
+                                                <li><a href="https://colorlib.com/polygon/nalika/preloader.html">Preloader</a>
                                                 </li>
                                                 <li><a href="https://colorlib.com/polygon/nalika/images-cropper.html">Images
                                                         Cropper</a>
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a data-toggle="collapse" data-target="#Chartsmob" href="#">Charts <span
-                                                    class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
+                                        <li><a data-toggle="collapse" data-target="#Chartsmob" href="#">Charts <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
                                             <ul id="Chartsmob" class="collapse dropdown-header-top">
                                                 <li><a href="https://colorlib.com/polygon/nalika/bar-charts.html">Bar
                                                         Charts</a>
@@ -1004,8 +897,7 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a data-toggle="collapse" data-target="#Tablesmob" href="#">Tables <span
-                                                    class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
+                                        <li><a data-toggle="collapse" data-target="#Tablesmob" href="#">Tables <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
                                             <ul id="Tablesmob" class="collapse dropdown-header-top">
                                                 <li><a href="https://colorlib.com/polygon/nalika/static-table.html">Static
                                                         Table</a>
@@ -1015,16 +907,13 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a data-toggle="collapse" data-target="#formsmob" href="#">Forms <span
-                                                    class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
+                                        <li><a data-toggle="collapse" data-target="#formsmob" href="#">Forms <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
                                             <ul id="formsmob" class="collapse dropdown-header-top">
-                                                <li><a
-                                                        href="https://colorlib.com/polygon/nalika/basic-form-element.html">Basic
+                                                <li><a href="https://colorlib.com/polygon/nalika/basic-form-element.html">Basic
                                                         Form
                                                         Elements</a>
                                                 </li>
-                                                <li><a
-                                                        href="https://colorlib.com/polygon/nalika/advance-form-element.html">Advanced
+                                                <li><a href="https://colorlib.com/polygon/nalika/advance-form-element.html">Advanced
                                                         Form
                                                         Elements</a>
                                                 </li>
@@ -1043,16 +932,13 @@
                                             </ul>
                                         </li>
                                         <li><a data-toggle="collapse" data-target="#Appviewsmob" href="#">App views
-                                                <span
-                                                    class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
+                                                <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
                                             <ul id="Appviewsmob" class="collapse dropdown-header-top">
-                                                <li><a
-                                                        href="https://colorlib.com/polygon/nalika/basic-form-element.html">Basic
+                                                <li><a href="https://colorlib.com/polygon/nalika/basic-form-element.html">Basic
                                                         Form
                                                         Elements</a>
                                                 </li>
-                                                <li><a
-                                                        href="https://colorlib.com/polygon/nalika/advance-form-element.html">Advanced
+                                                <li><a href="https://colorlib.com/polygon/nalika/advance-form-element.html">Advanced
                                                         Form
                                                         Elements</a>
                                                 </li>
@@ -1070,18 +956,15 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a data-toggle="collapse" data-target="#Pagemob" href="#">Pages <span
-                                                    class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
+                                        <li><a data-toggle="collapse" data-target="#Pagemob" href="#">Pages <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
                                             <ul id="Pagemob" class="collapse dropdown-header-top">
                                                 <li><a href="https://colorlib.com/polygon/nalika/login.html">Login</a>
                                                 </li>
-                                                <li><a
-                                                        href="https://colorlib.com/polygon/nalika/register.html">Register</a>
+                                                <li><a href="https://colorlib.com/polygon/nalika/register.html">Register</a>
                                                 </li>
                                                 <li><a href="https://colorlib.com/polygon/nalika/lock.html">Lock</a>
                                                 </li>
-                                                <li><a
-                                                        href="https://colorlib.com/polygon/nalika/password-recovery.html">Password
+                                                <li><a href="https://colorlib.com/polygon/nalika/password-recovery.html">Password
                                                         Recovery</a>
                                                 </li>
                                             </ul>

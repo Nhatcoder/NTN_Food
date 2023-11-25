@@ -12,6 +12,7 @@ include("./model/bankking.php");
 include("./model/dmtintuc.php");
 include("./model/tintuc.php");
 include("./model/list_monan_cuahang.php");
+include("./model/mail.php");
 
 
 // session_destroy();
@@ -58,6 +59,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 $result = check_tk_one($sodienthoai, $pass);
                 if ($result) {
                     extract($result);
+                    $_SESSION["email"] = $email;
                     $_SESSION["user"] = $id_nguoidung;
                     echo '<script>alert("Thành công")</script>';
                     echo '<script>window.location.href = "index.php";</script>';
@@ -77,6 +79,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
 
                 $id_nguoidung = insert_tk($hoten, $sodienthoai, $email, $pass, $vaitro = 0, $anh_taikhoan, $diachi);
                 $_SESSION["user"] = $id_nguoidung;
+                $_SESSION["email"] = $email;
 
                 // Thêm luôn địa chỉ mặc định
                 insert_diachi_order($hoten, $diachi, $email, $sodienthoai, $id_nguoidung);
@@ -354,6 +357,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                     date_default_timezone_set('Asia/Ho_Chi_Minh');
                     $ngaymua = date("Y-m-d H:i:s");
                     $ma_donhang = rand(0, 9999);
+                    $_SESSION["madonhang"] = $ma_donhang;
 
                     if (isset($_SESSION["user"])) {
                         $id = $_SESSION["user"];
@@ -365,7 +369,12 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                             insert_bill_detail($ma_donhang, $id_monan, $soluongmua);
                         }
                     }
+
+                    //Gửi mail
+                    submitmail();
+
                     unset($_SESSION["cart"]);
+                    unset($_SESSION["madonhang"]);
                     echo "<script>alert('Đặt hàng thành công');</script>";
                     include("./views/main/camon.php");
 
@@ -487,6 +496,10 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 }
 
                 insert_vnpay($tongtien, $ma_donhang, $vnp_BankCode, $vnp_BankTranNo, $vnp_CardType, $vnp_OrderInfo, $vnp_PayDate, $vnp_TmnCode, $vnp_TransactionNo);
+
+
+                //Gửi mail
+                submitmail();
 
                 unset($_SESSION["cart"]);
                 unset($_SESSION["madonhang"]);
