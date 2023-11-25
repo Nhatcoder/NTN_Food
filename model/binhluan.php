@@ -11,6 +11,8 @@ function loadbinhluanAll($id)
     $listbinhluan = pdo_query($sql, $id);
     return $listbinhluan;
 }
+
+
 function delete_binhluan($id)
 {
     $sql = "DELETE FROM tbl_binhluan WHERE id_binhluan = ?";
@@ -21,3 +23,5 @@ function capnhatbinhluan($id, $noidung)
     $sql = "UPDATE tbl_binhluan SET noidung = ? WHERE id_binhluan = ?";
     pdo_execute($sql, $noidung, $id);
 }
+
+

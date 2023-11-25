@@ -71,8 +71,7 @@
                     <p>Bản quyền 2023.</p>
                 </div>
                 <div class="col-xl-6 col-md-6 text-md-end">
-                    <span class="copyright-text">Được viết  <span class="heart"></span>bởi <a
-                            href="https://dexignzone.com/" target="_blank">DexignZone</a></span>
+                    <span class="copyright-text">Được viết <span class="heart"></span>bởi <a href="https://dexignzone.com/" target="_blank">DexignZone</a></span>
                 </div>
             </div>
         </div>
@@ -171,10 +170,8 @@
                         </li>
                     </ul>
                     <ul class="modal-btn-group">
-                        <li><a href="shop-cart.html" class="btn btn-primary">Add To Cart <i
-                                    class="flaticon-shopping-bag-1 m-l10"></i></a></li>
-                        <li><a href="shop-checkout.html" class="btn btn-outline-secondary">Buy Now <i
-                                    class="flaticon-shopping-cart m-l10"></i></a></li>
+                        <li><a href="shop-cart.html" class="btn btn-primary">Add To Cart <i class="flaticon-shopping-bag-1 m-l10"></i></a></li>
+                        <li><a href="shop-checkout.html" class="btn btn-outline-secondary">Buy Now <i class="flaticon-shopping-cart m-l10"></i></a></li>
                     </ul>
                 </div>
 
@@ -207,6 +204,7 @@
 <script src="views/assets/js/dznav-init.js"></script><!-- DZNAV INIT -->
 <script src="views/assets/vendor/rangeslider/rangeslider.js"></script>
 <!-- <script src="views/assets/vendor/switcher/switcher.js"></script> -->
+<script src="views/assets/js/app.js"></script>
 
 <script>
     const cartItems = document.querySelectorAll('.cart-item');
@@ -279,7 +277,6 @@
             productFoodInput.value = productQuantity - 1;
         }
     });
-
 </script>
 
 </body>

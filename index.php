@@ -185,30 +185,19 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
         case "chitietmonan":
             if (isset($_GET["id_monan"]) && $_GET["id_monan"] > 0) {
                 $id = $_GET["id_monan"];
-                $listbinhluan = loadbinhluanAll($id);
                 $listmonan = list_monan_One($id);
-            }
-            if (isset($_SESSION["user"])) {
-                $id_nguoidung = $_SESSION["user"];
-                $list_tk = list_check_tk_id($id_nguoidung);
-            }
-            if (isset($_POST['guibinhluan'])) {
+                $listbinhluan =  loadbinhluanAll($id);
 
-                $id_nguoidung = $_SESSION["user"];
-                $list_tk = list_check_tk_id($id_nguoidung);
-
-                date_default_timezone_set('Asia/Ho_Chi_Minh');
-                $ngaybinhluan = date("Y-m-d");
-
-                $noidung = $_POST['noidung'];
-
-                $id_monan = $_GET['id_monan'];
-                thembinhluan($noidung, $id_nguoidung, $id_monan, $ngaybinhluan);
+                if (isset($_SESSION["user"])) {
+                    $id_nguoidung = $_SESSION["user"];
+                    $list_tk = list_check_tk_id($id_nguoidung);
+                }
+                
+                include("./views/main/chitiet_monan.php");
             }
 
-
-            include("./views/main/chitiet_monan.php");
             break;
+
 
             // Giỏ hàng
         case "giohang":
