@@ -13,6 +13,14 @@ function list_tintuc_All()
     $list_tintuc = pdo_query($sql);
     return $list_tintuc;
 }
+
+function list_all_tintuc_home () {
+    $sql = "SELECT * FROM tbl_tintuc";
+    $list = pdo_query($sql);
+    return $list;
+}
+
+
 function list_tintuc_top()
 {
     $sql = "SELECT * FROM `tbl_tintuc`ORDER BY id_tintuc DESC
@@ -20,13 +28,25 @@ function list_tintuc_top()
     $list_tintuc_top = pdo_query($sql);
     return $list_tintuc_top;
 }
-function list_tintuc_cc($id)
+function list_tintuc_id($id)
 {
     $sql = "SELECT * FROM tbl_tintuc WHERE id_danhmuc_tintuc =  ?";
-    $tintuccc = pdo_query($sql,$id);
-    return $tintuccc;
+    $tintuc = pdo_query($sql, $id);
+    return $tintuc;
 }
 
+function list_page_post($begin)
+{
+    $sql = "SELECT * FROM tbl_tintuc ORDER BY id_tintuc DESC LIMIT $begin, 6";
+    $list = pdo_query($sql);
+    return $list;
+}
+function list_page_post_id($begin, $id)
+{
+    $sql = "SELECT * FROM tbl_tintuc WHERE id_danhmuc_tintuc = ? ORDER BY id_tintuc DESC LIMIT $begin, 6";
+    $list = pdo_query($sql, $id);
+    return $list;
+}
 
 function delete_tintuc($id)
 {
@@ -41,7 +61,7 @@ function list_tintuc_One($id)
     return $listTintuc;
 }
 
-function capnhat_tintuc($id_sua, $ten_tintuc,$mota_tintuc, $id_danhmuc_tintuc,  $new_anhtintuc)
+function capnhat_tintuc($id_sua, $ten_tintuc, $mota_tintuc, $id_danhmuc_tintuc,  $new_anhtintuc)
 {
     if ($new_anhtintuc != "") {
         $sql = "UPDATE tbl_tintuc SET ten_tintuc= ?, mota_tintuc= ?, anh_tintuc= ?, id_danhmuc_tintuc= ? WHERE id_tintuc = ?";
@@ -51,12 +71,3 @@ function capnhat_tintuc($id_sua, $ten_tintuc,$mota_tintuc, $id_danhmuc_tintuc,  
         pdo_execute($sql, $ten_tintuc, $mota_tintuc, $id_danhmuc_tintuc, $id_sua);
     }
 }
-
-
-
-
-
-
-
-
-?>

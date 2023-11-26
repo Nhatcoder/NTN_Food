@@ -1,14 +1,13 @@
 <div class="page-content bg-white">
     <!-- Banner  -->
-    <div class="dz-bnr-inr style-1 text-center bg-parallax"
-        style="background-image:url('views/assets/images/banner/bnr2.jpg'); background-size:cover; background-position:center;">
+    <div class="dz-bnr-inr style-1 text-center bg-parallax" style="background-image:url('views/assets/images/banner/bnr2.jpg'); background-size:cover; background-position:center;">
         <div class="container">
             <div class="dz-bnr-inr-entry">
                 <h1>Cửa hàng</h1>
                 <!-- Breadcrumb Row -->
                 <nav aria-label="breadcrumb" class="breadcrumb-row">
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+                        <li class="breadcrumb-item"><a href="index.php">Trang chủ</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Cửa hàng</li>
                     </ul>
                 </nav>
@@ -25,8 +24,7 @@
                 <div class="col-lg-8 m-auto">
                     <form action="index.php?act=cuahang" method="post">
                         <div class="input-group">
-                            <input required="required" type="text" class="form-control" name="tukhoa"
-                                placeholder="Từ khóa">
+                            <input required="required" type="text" class="form-control" name="tukhoa" placeholder="Từ khóa">
                             <div class="input-group-addon">
                                 <button name="timkiem" value="submit" type="submit" class="btn btn-primary btn-hover-2">
                                     <span>Tìm kiếm</span><i class="icon-search"></i>
@@ -47,11 +45,15 @@
                                         <h4 class="title">Danh mục</h4>
                                     </div>
                                     <ul>
+                                        <li class="cat-item"><a href="index.php?act=cuahang">
+                                                Tất cả sản phẩm
+                                            </a>
+                                        </li>
                                         <?php
-                                        foreach ($list_monan_in_page as $key => $value) {
+                                        foreach ($list_all_dm as $key => $value) {
                                             extract($value);
-                                            ?>
-                                            <li class="cat-item"><a href="index.php?act=danhmuc&iddm=<?= $id_danhmuc ?>">
+                                        ?>
+                                            <li class="cat-item"><a href="index.php?act=monandanhmuc&iddm=<?= $id_danhmuc ?>">
                                                     <?= $tendanhmuc ?>
                                                 </a>
                                             </li>
@@ -64,20 +66,25 @@
                     </aside>
                 </div>
 
+                <?php
+                foreach ($list_monan_dm_in_page as $key => $value) {
+                }
+                ?>
+
                 <div class="col-lg-9">
                     <div class="d-flex justify-content-between align-items-center">
-                        <h5 class="title mb-md-3 mb-lg-4 m-b20 d-none d-lg-block">Tất cả sản phẩm</h5>
+                        <h5 class="title mb-md-3 mb-lg-4 m-b20 d-none d-lg-block">Tất cả sản phẩm danh mục: <?= $value["tendanhmuc"] ?></strong></h5>
                         <a href="javascript:void(0);" class="btn btn-primary panel-btn">Tìm kiếm</a>
                     </div>
                     <ul id="masonry" class="row">
                         <?php
 
-                        if (count($list_monan_in_page) > 0) {
+                        if (count($list_monan_dm_in_page) > 0) {
 
 
-                            foreach ($list_monan_in_page as $key => $value) {
+                            foreach ($list_monan_dm_in_page as $key => $value) {
                                 extract($value);
-                                ?>
+                        ?>
                                 <li class="card-container col-xl-4 col-md-6 m-b30">
                                     <div class="dz-img-box style-7">
                                         <div class="dz-media">
@@ -86,9 +93,9 @@
                                                 <ul>
                                                     <?php
                                                     if ($noibat > 10) {
-                                                        ?>
+                                                    ?>
                                                         <li class="seller">Nổi bật</li>
-                                                        <?php
+                                                    <?php
                                                     }
                                                     ?>
                                                 </ul>
@@ -104,7 +111,7 @@
                                         </div>
                                     </div>
                                 </li>
-                            <?php }
+                        <?php }
                         } ?>
 
 
@@ -112,7 +119,7 @@
 
                     <!-- Phân trang -->
                     <?php
-                    $count = count($list_monan_cuahang_all);
+                    $count = count($list_monan_dm_in_page);
                     $trang = ceil($count / 9);
 
                     if ($count >= 9) {
@@ -121,21 +128,18 @@
                         } else {
                             $page = 1;
                         }
-                        ?>
+                    ?>
                         <div class="text-center m-t10">
                             <ul class="pagination m-b15">
-                                <li class="page-item"><a class="page-link prev"
-                                        href="index.php?act=cuahang&trang=<?= $trang - 1 ?>"><i
-                                            class="fas fa-chevron-left"></i></a>
+                                <li class="page-item"><a class="page-link prev" href="index.php?act=cuahang&trang=<?= $trang - 1 ?>"><i class="fas fa-chevron-left"></i></a>
                                 </li>
 
                                 <?php
                                 for ($i = 1; $i <= $trang; $i++) {
                                     $activeClass = ($i == $page) ? 'active' : '';
-                                    ?>
+                                ?>
 
-                                    <li class="page-item"><a class="page-link <?= $activeClass ?>"
-                                            href="index.php?act=cuahang&trang=<?= $i ?>"><span>
+                                    <li class="page-item"><a class="page-link <?= $activeClass ?>" href="index.php?act=cuahang&trang=<?= $i ?>"><span>
                                                 <?= $i ?>
                                             </span></a>
                                     </li>
@@ -143,7 +147,7 @@
                                 <?php } ?>
 
                                 <li class="page-item">
-                                    <a class="page-link next" href="index.php?act=cuahang&trang=<?= $trang + 1 ?>">
+                                    <a class="page-link next" href="index.php?act=cuahang&trang=<?= $trang - 1 ?>">
                                         <i class="fas fa-chevron-right"></i>
                                     </a>
                                 </li>

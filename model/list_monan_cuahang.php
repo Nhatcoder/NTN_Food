@@ -13,6 +13,20 @@ function list_monan_cuahang_all()
     return $list_monan;
 }
 
+function list_all_dm()
+{
+    $sql = "SELECT * FROM tbl_danhmuc Order by id_danhmuc desc";
+    $listdm = pdo_query($sql);
+    return $listdm;
+}
+
+function list_monan_dm_in_page($tukhoa, $begin, $iddm)
+{
+    $sql = "SELECT * FROM tbl_danhmuc, tbl_monan WHERE tbl_monan.id_danhmuc = tbl_danhmuc.id_danhmuc AND tbl_monan.id_danhmuc = ? AND tbl_monan.ten_monan LIKE '%$tukhoa%' LIMIT $begin,9;";
+    $list_monan = pdo_query($sql, $iddm);
+    return $list_monan;
+}
+
 
 function list_monan_in_page($tukhoa, $begin)
 {
@@ -20,7 +34,3 @@ function list_monan_in_page($tukhoa, $begin)
     $list_monan = pdo_query($sql);
     return $list_monan;
 }
-
-
-
-?>

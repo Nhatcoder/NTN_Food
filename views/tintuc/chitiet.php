@@ -1,60 +1,64 @@
-
 <div class="page-content bg-white">
-		
-		<!-- Banner  -->
-		<div class="dz-breadcrumb-bnr">
-			<div class="container">
+	<!-- Banner  -->
+	<div class="dz-bnr-inr style-1 text-center bg-parallax" style="background-image:url('views/assets/images/banner/bnr2.jpg'); background-size:cover; background-position:center;">
+		<div class="container">
+			<div class="dz-bnr-inr-entry">
+				<h1>Chi tiết tin tức</h1>
+				<!-- Breadcrumb Row -->
 				<nav aria-label="breadcrumb" class="breadcrumb-row">
 					<ul class="breadcrumb">
-						<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-						<li class="breadcrumb-item">Blog</li>
-						<li class="breadcrumb-item active" aria-current="page">Blog Standard</li>
+						<li class="breadcrumb-item"><a href="index.php">Trang chủ</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Tin tức</li>
+						<li class="breadcrumb-item active" aria-current="page">Chi tiết tin tức</li>
 					</ul>
 				</nav>
+				<!-- Breadcrumb Row End -->
 			</div>
 		</div>
-		<!-- Banner End -->
-		
-		<!-- Blog Detail -->
-		<section class="content-inner">
-			<div class="min-container">
-				<div class="row">
-					<div class="col-xl-12 col-lg-12">
-						<div class="blog-single dz-card sidebar">
-							<div class="dz-media rounded-md">
+	</div>
+	<!-- Banner End -->
+
+	<!-- Blog Detail -->
+	<section class="content-inner">
+		<div class="min-container">
+			<div class="row">
+				<div class="col-xl-12 col-lg-12">
+					<div class="blog-single dz-card sidebar">
+						<div class="dz-media rounded-md">
 							<img src="./uploads/monan/<?php echo $tintucchitiet['anh_tintuc'] ?>" alt="">
-							</div>
-							<div class="dz-info">
-								<h1 class="title"><?php echo $tintucchitiet['ten_tintuc']  ?></h1>
-								
-								<div class="dz-post-text">
-									<p><?php echo $tintucchitiet['motangan']  ?></p>
-									<p><?php echo $tintucchitiet['mota_tintuc']  ?></p>
-									
-									</div>	
-							</div>
-							
-							<div class="dz-share-post">
-								
-								<div class="dz-social-icon">
-									<ul>
-										<li><a target="_blank" class="btn-social btn-sm text-primary" href="https://www.facebook.com/">
-											<i class="fab fa-facebook-f"></i>
-										</a></li>
-										<li><a target="_blank" class="btn-social btn-sm text-primary" href="https://twitter.com/">	
-											<i class="fab fa-twitter"></i>
-										</a></li>
-										<li><a target="_blank" class="btn-social btn-sm text-primary" href="https://www.instagram.com/">
-											<i class="fab fa-instagram"></i>
-										</a></li>
-										<li><a target="_blank" class="btn-social btn-sm text-primary" href="https://www.linkedin.com/">
-											<i class="fa-brands fa-linkedin-in"></i>
-										</a></li>
-									</ul>
-								</div>
+						</div>
+						<div class="dz-info">
+							<h1 class="title"><?php echo $tintucchitiet['ten_tintuc']  ?></h1>
+
+							<div class="dz-post-text">
+								<p><?php echo $tintucchitiet['motangan']  ?></p>
+								<p><?php echo $tintucchitiet['mota_tintuc']  ?></p>
+
 							</div>
 						</div>
-						<!-- <div class="clear" id="comment-list">
+
+						<div class="dz-share-post">
+
+							<div class="dz-social-icon">
+								<ul>
+									<li><a target="_blank" class="btn-social btn-sm text-primary" href="https://www.facebook.com/">
+											<i class="fab fa-facebook-f"></i>
+										</a></li>
+									<li><a target="_blank" class="btn-social btn-sm text-primary" href="https://twitter.com/">
+											<i class="fab fa-twitter"></i>
+										</a></li>
+									<li><a target="_blank" class="btn-social btn-sm text-primary" href="https://www.instagram.com/">
+											<i class="fab fa-instagram"></i>
+										</a></li>
+									<li><a target="_blank" class="btn-social btn-sm text-primary" href="https://www.linkedin.com/">
+											<i class="fa-brands fa-linkedin-in"></i>
+										</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<!-- <div class="clear" id="comment-list">
                             <div class="comments-area" id="comments">
 								<h4 class="comments-title">Comments (03)</h4>
                                 <div class="clearfix">
@@ -132,9 +136,9 @@
                                 </div>
                             </div>
                         </div> -->
-					</div>
 				</div>
 			</div>
-		</section>
-		<!-- Blog Detail End -->
-	</div>
+		</div>
+	</section>
+	<!-- Blog Detail End -->
+</div>

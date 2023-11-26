@@ -12,6 +12,8 @@ if (isset($_POST['noidung'])) {
     $ngaybinhluan = $_POST['ngaybinhluan'];
     thembinhluan($noidung, $id_nguoidung, $id, $ngaybinhluan);
 }
+
+
 // ĐỔ dữ liệu ra
 $id = $_SESSION['id_monan'];
 $listbinhluan =  loadbinhluanAll($id);

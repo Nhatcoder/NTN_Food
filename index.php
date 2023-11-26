@@ -45,7 +45,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
 }
 
 
-
 if (isset($_GET["act"]) && $_GET["act"] != "") {
     $act = $_GET["act"];
 
@@ -83,7 +82,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
 
                 // Thêm luôn địa chỉ mặc định
                 insert_diachi_order($hoten, $diachi, $email, $sodienthoai, $id_nguoidung);
-
 
                 echo '<script>alert("Thành công")</script>';
                 echo '<script>window.location.href = "index.php";</script>';
@@ -153,7 +151,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
             $tukhoa = "";
             if (isset($_POST['timkiem'])) {
                 $tukhoa = $_POST['tukhoa'];
-                echo $tukhoa;
+                // echo $tukhoa;
             }
 
             if (isset($_GET['trang'])) {
@@ -167,6 +165,8 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
             } else {
                 $begin = ($page * 9) - 9;
             }
+
+            $list_all_dm = list_all_dm();
             $list_monan_cuahang_all = list_monan_cuahang_all();
             $list_monan_in_page = list_monan_in_page($tukhoa, $begin);
 
@@ -174,11 +174,32 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
             break;
 
 
-        case "danhmuc":
+        case "monandanhmuc":
             if (isset($_GET["iddm"])) {
+                $tukhoa = "";
+                if (isset($_POST['timkiem'])) {
+                    $tukhoa = $_POST['tukhoa'];
+                }
+
+                if (isset($_GET['trang'])) {
+                    $page = intval($_GET['trang']);
+                } else {
+                    $page = 1;
+                }
+
+                if ($page == "" || $page == 1) {
+                    $begin = 0;
+                } else {
+                    $begin = ($page * 9) - 9;
+                }
+
                 $iddm = intval($_GET["iddm"]);
+                $list_monan_dm_in_page = list_monan_dm_in_page($tukhoa, $begin, $iddm);
             }
 
+
+            $list_all_dm = list_all_dm();
+            $list_monan_cuahang_all = list_monan_cuahang_all();
             include("./views/main/monan_danhmuc.php");
             break;
 
@@ -192,7 +213,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                     $id_nguoidung = $_SESSION["user"];
                     $list_tk = list_check_tk_id($id_nguoidung);
                 }
-                
+
                 include("./views/main/chitiet_monan.php");
             }
 
@@ -501,23 +522,55 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
 
 
         case "tintuc":
-            $id = $_GET["id"];
-            if ($id == "null") {
-                $hienthi = loaddmtintucAll();
-                $tintuc = list_tintuc_All();
-                $top3 = list_tintuc_top();
-                include("./views/tintuc/lietke.php");
+            if (isset($_GET['trang'])) {
+                $page = intval($_GET['trang']);
+            } else {
+                $page = 1;
             }
 
-            if ($id != "null") {
-                $hienthi = loaddmtintucAll();
-                $tintuc = list_tintuc_cc($id);
-                $top3 = list_tintuc_top();
-                include("./views/tintuc/lietke.php");
+            if ($page == "" || $page == 1) {
+                $begin = 0;
+            } else {
+                $begin = ($page * 6) - 6;
             }
 
+            $tintuc = list_page_post($begin);
 
+            $dmtintuc = loaddmtintucAll();
+            $list_all_tintuc = list_all_tintuc_home();
+            $top3 = list_tintuc_top();
+            include("./views/tintuc/lietke.php");
             break;
+
+
+        case "danhmuctintuc":
+            if (isset($_GET["id"])) {
+                if (isset($_GET['trang'])) {
+                    $page = intval($_GET['trang']);
+                } else {
+                    $page = 1;
+                }
+
+                if ($page == "" || $page == 1) {
+                    $begin = 0;
+                } else {
+                    $begin = ($page * 6) - 6;
+                }
+
+                $id = intval($_GET['id']);
+                $tintuc_danhmuc = list_page_post_id($begin, $id);
+                $list_tintuc_danhmuc = list_tintuc_id($id); //Này cho đếm trang
+
+
+                // echo "<pre>";
+                // print_r($tintuc_danhmuc);
+            }
+
+            $dmtintuc = loaddmtintucAll();
+            $top3 = list_tintuc_top();
+            include("./views/tintuc/tintuc_danhmuc.php");
+            break;
+
 
 
         case "tintucchitiet":

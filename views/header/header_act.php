@@ -91,10 +91,10 @@
                         <!-- Header Nav -->
                         <div class="header-nav navbar-collapse collapse justify-content-end" id="navbarNavDropdown">
                             <div class="logo-header">
-                                <a href="index.html" class="anim-logo"><img src="views/assets/images/logo.png" alt="/"></a>
+                                <a href="index.php" class="anim-logo"><img src="views/assets/images/logo.png" alt="/"></a>
                             </div>
                             <ul class="nav navbar-nav navbar white">
-                                <li class="sub-menu-downs"><a href="javascript:void(0);">Trang chủ</a>
+                                <li class="sub-menu-downs"><a href="index.php">Trang chủ</a>
                                 </li>
                                 <li class="has-mega-menu">
                                     <a href="javascript:void(0);">Trang</a>
@@ -119,7 +119,7 @@
                                         </li>
                                         <li><a href="javascript:;">Thực đơn của chúng toi</a>
                                             <ul>
-                                                <li><a href="our-menu-2.html">Trang thực đơn</a></li>
+                                                <li><a href="">Trang thực đơn</a></li>
                                             </ul>
                                         </li>
                                         <li class="header-adv p-0"><img src="views/assets/images/adv-media.jpg" alt="/">
@@ -127,10 +127,10 @@
                                     </ul>
                                 </li>
                                 <li class="sub-menu-downs">
-                                    <a href="javascript:void(0);">Cửa hàng</a>
+                                    <a href="index.php?act=cuahang">Cửa hàng</a>
                                 </li>
                                 <li class="has-mega-menus">
-                                    <a href="index.php?act=tintuc&&id=null">Tin tức</a>
+                                    <a href="index.php?act=tintuc">Tin tức</a>
                                 </li>
 
                                 <li><a href="index.php?act=lienhe">Liên hệ chúng tôi</a></li>

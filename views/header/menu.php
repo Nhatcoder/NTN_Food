@@ -39,9 +39,9 @@
                 <!-- Header Nav -->
                 <div class="header-nav navbar-collapse collapse justify-content-end" id="navbarNavDropdown">
                     <div class="logo-header">
-                        <a href="index.html" class="anim-logo"><img src="views/assets/images/logo.png" alt="/"></a>
+                        <a href="index.php" class="anim-logo"><img src="views/assets/images/logo.png" alt="/"></a>
                     </div>
-                    <ul class="nav navbar-nav navbar">
+                    <ul class="nav navbar-nav navbar ">
                         <li class="sub-menu-downs"><a href="index.php">Trang chủ</a>
                         </li>
                         <li class="has-mega-menu">
@@ -78,7 +78,7 @@
                         <li class="sub-menu-downs"><a href="index.php?act=cuahang">Cửa hàng</a>
                         </li>
                         <li class="has-mega-menus">
-                            <a href="index.php?act=tintuc&&id=null">Tin tức</a>
+                            <a href="index.php?act=tintuc">Tin tức</a>
                         </li>
                         <li><a href="index.php?act=lienhe">Liên hệ chúng tôi</a></li>
                     </ul>
