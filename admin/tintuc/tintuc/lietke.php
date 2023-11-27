@@ -34,7 +34,7 @@ include("tintuc/tintuc/title.php");
                                     <?= $mota_tintuc ?>
                                 </td>
                                 <td>
-                                    <img src="./uploads/monan/<?= $anh_tintuc ?>" alt="">
+                                    <img src="../uploads/monan/<?= $anh_tintuc ?>" alt="">
                                 </td>
                                 <td>
                                     <?= $ten_danhmuc_tintuc ?>

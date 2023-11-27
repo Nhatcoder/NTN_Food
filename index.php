@@ -4,6 +4,7 @@ session_start();
 include("./model/pdo.php");
 include("./model/connect_vnpay.php");
 
+include("./model/lienhe.php");
 include("./model/dangnhap.php");
 include("./model/binhluan.php");
 include("./model/addcart.php");
@@ -581,19 +582,30 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
         case "dangbaotri":
             include("./views/trang/dangbaotri.php");
             break;
+        case "main":
+            if (isset($_POST['submit']) && $_POST['submit']) {
+                $ho_ten = $_POST['ho_ten'];
+                $email = $_POST['email'];
+                $sodienthoai = $_POST['sodienthoai'];
+                $noidung = $_POST['noidung'];
+                $trangthai = 0;
 
-<<<<<<< HEAD
-            case "sapramat":
-                include("./views/trang/sapramat.php");
-                break;
-                
-            case "dangbaotri":
-                include("./views/trang/dangbaotri.php");
-                break;
-            
+               
+
+               
+
+                lienhe($ho_ten,$email,$sodienthoai,$noidung,$trangthai);
+                echo "<script>alert('Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất');</script>";
+                echo '<script>window.location.href = "index.php?act=main";</script>';
+            }
+
+           
+            include("./views/main/main.php");
+            break;
+
+
+           
     
-=======
->>>>>>> nhat
 
 
 
