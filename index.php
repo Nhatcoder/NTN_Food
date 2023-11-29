@@ -629,11 +629,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 $sodienthoai = $_POST['sodienthoai'];
                 $noidung = $_POST['noidung'];
                 $trangthai = 0;
-
-               
-
-               
-
+    
                 lienhe($ho_ten,$email,$sodienthoai,$noidung,$trangthai);
                 echo "<script>alert('Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất');</script>";
                 echo '<script>window.location.href = "index.php?act=main";</script>';

@@ -8,14 +8,11 @@ function thong_ke_hoadon()
 
 function doanh_thu_hoadon()
 {
-    $sql = "SELECT SUM(gia_monan * soluongmua) AS doanhthu 
-    FROM tbl_hoadon_chitiet 
-    INNER JOIN tbl_monan ON tbl_hoadon_chitiet.id_monan = tbl_monan.id_monan 
-    INNER JOIN tbl_hoadon ON tbl_hoadon.ma_donhang = tbl_hoadon_chitiet.ma_donhang
-    WHERE id_trangthai = 4;";
+    $sql = "SELECT SUM(doanhthu) as doanhthu FROM tbl_thongke;";
     $list = pdo_query($sql);
     return $list;
 }
+
 
 function thongke_donhang_ma_donhang($id)
 {
@@ -78,6 +75,17 @@ GROUP BY
     tbl_danhmuc.id_danhmuc
 ORDER BY 
     tbl_danhmuc.id_danhmuc DESC;";
+    $list = pdo_query($sql);
+    return $list;
+}
+
+
+function thongke_binhluan()
+{
+    $sql = "SELECT ngaybinhluan, COUNT(*) as comment_count
+    FROM tbl_binhluan
+    GROUP BY ngaybinhluan
+    ORDER BY ngaybinhluan;";
     $list = pdo_query($sql);
     return $list;
 }
