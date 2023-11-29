@@ -12,6 +12,7 @@ include("../model/tintuc.php");
 include("../model/trangthaidonhang.php");
 include("../model/dangnhap.php");
 include("../model/thongke.php");
+include("../model/binhluan.php");
 
 include("../model/carbon_date/autoload.php");
 
@@ -389,43 +390,6 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
             break;
 
 
-            // don hang
-            // case 'quanlydonhang':
-            //     $loaddonhang = loaddonhangAll();
-
-            //     include('./trangthaidonhang/hienthi.php');
-            //     break;
-            // case 'suatrangthai':
-            //     $trangthai = loadtrangthaiAll();
-            //     if (isset($_POST['capnhatdonhang']) && $_POST['capnhatdonhang'] > 0) {
-            //         $id = $_GET['iddh'];
-            //         $id_trangthai = $_POST['id_trangthai'];
-            //         capnhattrangthai($id, $id_trangthai);
-            //         echo '<script>window.location.href = "index.php?act=quanlydonhang";</script>';
-            //     }
-            //     $loaddonhang = loaddonhangAll();
-            //     include('./trangthaidonhang/suatrangthai.php');
-            //     break;
-
-            // case 'giaothanhcong':
-            //     $loaddonhangtk = loaddonhangtk();
-
-            //     include('./trangthaidonhang/giaothanhcong.php');
-            //     break;
-            // case 'dahuy':
-            //     $loaddonhanghuy = loaddonhanghuy();
-
-            //     include('./trangthaidonhang/huydon.php');
-            //     break;
-            // case 'chitietdonhang':
-
-            //     $id = $_GET['iddh'];
-            //     $chitiet = list_chitiet_One($id);
-            //     include('./trangthaidonhang/chitietdonhang.php');
-            //     break;
-
-
-
             // Người dùng
         case 'thongkenguoidung':
             $list_users = list_users();
@@ -497,6 +461,20 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
 
             $list_users = list_users();
             include("./nguoidung/lietke.php");
+            break;
+
+        case 'lietkebinhluan':
+            $list_all_cmt = list_all_cmt();
+            include("./binhluan/lietke.php");
+            break;
+
+
+        case 'chitietbinhluan':
+            if (isset($_GET["id"]) && $_GET["id"] > 0) {
+                $id_nguoidung = $_GET["id"];
+                $list_id_cmt = list_id_cmt($id_nguoidung);
+            }
+            include("./binhluan/chitietbinhluan.php");
             break;
     }
 } else {

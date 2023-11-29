@@ -268,6 +268,12 @@
                             </ul>
                         </li>
                         <li>
+                            <a href="index.php?act=lietkebinhluan">
+                                <i class="fa-brands fa-elementor"></i>
+                                <span class="mini-click-non">Quản lý bình luận</span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="index.php?act=thongkenguoidung"> <i class="fa-solid fa-user"></i>
                                 Người dùng</a>
                         </li>

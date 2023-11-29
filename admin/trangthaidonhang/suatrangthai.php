@@ -1,7 +1,7 @@
 <?php
 include("title.php");
-
 ?>
+
 
 <div class="container-fluid">
     <div class="row">

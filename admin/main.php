@@ -28,13 +28,18 @@
                 <div class="hpanel responsive-mg-b-30">
                     <div class="panel-body">
                         <div class="stats-title pull-left">
-                            <h4>Đơn hàng</h4>
+                            <h4>Đơn hàng mới</h4>
                         </div>
                         <div class="stats-icon pull-right">
                             <i class="fa-regular fa-calendar-check fa-beat"></i>
                         </div>
                         <div class="m-t-xl">
-                            <h1 class="text-info"><?= count($thong_ke_hoadon) ?></h1>
+                            <?php if (is_array($thong_ke_hoadon)) {
+                                foreach ($thong_ke_hoadon as $key => $value) {
+                                    extract($value);
+                                }
+                            } ?>
+                            <h1 class="text-info"><?= $donmoi ?></h1>
 
                         </div>
                     </div>
@@ -143,7 +148,7 @@
                         <h5>Thống kê số lượng sản phẩm theo danh mục</h5>
                         <div class="text-center">
                             <!-- Thống kê số lượng sản phẩm trong danh mục -->
-                            <div id="chart" style="padding-bottom: 81px;"></div>
+                            <div id="chart" style="padding-top: 40px; padding-bottom: 33px; min-height: 235.65px;"></div>
                         </div>
                     </div>
                 </div>
@@ -389,6 +394,4 @@
     var chartArea = new ApexCharts(document.querySelector("#areachart"), optionsArea);
 
     chartArea.render();
-
-  
 </script>

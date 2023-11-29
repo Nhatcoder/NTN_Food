@@ -1,7 +1,7 @@
 <?php
 function thong_ke_hoadon()
 {
-    $sql = "SELECT * FROM tbl_hoadon;";
+    $sql = "SELECT COUNT(*) AS donmoi FROM tbl_hoadon WHERE id_trangthai = 1";
     $list = pdo_query($sql);
     return $list;
 }
