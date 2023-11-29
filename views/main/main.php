@@ -1077,36 +1077,35 @@
 						<div class="section-head">
 							<h4 class="title m-0">Liên hệ</h4>
 							<p class="m-t10">Hãy liên hệ với chúng tôi để được tư vấn và nhận những dịch vụ tốt nhất từ
-								chúnsg tôi.
+								chúng tôi.
 							</p>
 						</div>
-						<form class="dzForm dezPlaceAni" method="POST"
-							action="https://swigo.dexignzone.com/xhtml/script/contact_smtp.php">
-							<input type="hidden" class="form-control" name="dzToDo" value="Contact">
-							<input type="hidden" class="form-control" name="reCaptchaEnable" value="0">
-							<div class="dzFormMsg"></div>
+						<form class=""  method="POST"
+							action="index.php?act=main">
+							
+							
 							<div class="row">
 								<div class="col-lg-12 col-md-12">
 									<div class="input-group input-line">
-										<input name="dzName" required type="text" class="form-control"
+										<input name="ho_ten" required type="text" class="form-control"
 											placeholder="Nhập họ và tên">
 									</div>
 								</div>
 								<div class="col-lg-12 col-md-12">
 									<div class="input-group input-line">
-										<input name="dzEmail" required type="text" class="form-control"
+										<input name="email" required type="text" class="form-control"
 											placeholder="Nhập email của bạn">
 									</div>
 								</div>
 								<div class="col-lg-12 col-md-12">
 									<div class="input-group input-line">
-										<input name="dzOther[Subject]" required type="text" class="form-control"
+										<input name="sodienthoai" required type="number" class="form-control"
 											placeholder="Nhập số điện thoại">
 									</div>
 								</div>
 								<div class="col-sm-12 ">
 									<div class="input-group input-line">
-										<textarea name="dzMessage" required class="form-control"
+										<textarea name="noidung" required class="form-control"
 											placeholder="Nội dung"></textarea>
 									</div>
 								</div>
