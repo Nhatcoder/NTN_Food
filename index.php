@@ -561,9 +561,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 $tintuc_danhmuc = list_page_post_id($begin, $id);
                 $list_tintuc_danhmuc = list_tintuc_id($id); //Này cho đếm trang
 
-
-                // echo "<pre>";
-                // print_r($tintuc_danhmuc);
             }
 
             $dmtintuc = loaddmtintucAll();

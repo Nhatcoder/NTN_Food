@@ -4632,7 +4632,7 @@ ul.h-list li:hover a {
 }
 
 .lock-inner .text-success {
-    
+
     color: #e12503
 }
 
@@ -4696,7 +4696,7 @@ button.fc-listWeek-button.fc-button.fc-state-default.fc-corner-right {
     box-shadow: none;
     color: #fff;
     border: 0 solid #152036;
-    
+
 
 }
 
@@ -4793,7 +4793,6 @@ th.fc-day-header.fc-widget-header {
     color: #fff;
     border: none;
     box-shadow: none
-    
 }
 
 .mini-navbar .profile-social-dtl,
@@ -4878,6 +4877,67 @@ th.fc-day-header.fc-widget-header {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
 }
+
 nav#sidebar {
     overflow-y: scroll;
 }
+
+.profile-dtl img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: 2px solid #48c89f;
+}
+
+.hpanel .panel-body {
+    background: #202947;
+    border-radius: 2px;
+    padding: 15px;
+    position: relative;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+}
+
+/* Thống kê*/
+.content-area {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.box {
+    background-color: #2B2D3E;
+    padding: 25px 20px;
+}
+
+.shadow {
+    box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.08);
+}
+
+.sparkboxes .box {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-shadow: 0 1px 1px 1px #666;
+    box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.08);
+    position: relative;
+    border-radius: 5px;
+}
+
+.sparkboxes .box .details {
+    position: absolute;
+    color: #fff;
+    transform: scale(0.7) translate(-22px, 20px);
+}
+
+.sparkboxes strong {
+    position: relative;
+    z-index: 3;
+    top: -8px;
+    color: #fff;
+}
+
+
+.sparkboxes .box1 {
+    background-image: linear-gradient(135deg, #ABDCFF 10%, #0396FF 100%);
+}
+
+

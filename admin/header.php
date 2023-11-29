@@ -11,6 +11,13 @@
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+
+
     <style id="" media="all">
         @font-face {
             font-family: 'Roboto';
@@ -85,7 +92,12 @@
 
     <link rel="stylesheet" href="css/responsive.css">
 
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- <script src="js/vendor/modernizr-2.8.3.min.js"></script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
     <meta name="robots" content="noindex, nofollow">
     <script nonce="d0d43353-1e09-4fa7-9f1f-ffb0f519a722">
         (function(w, d) {
@@ -156,12 +168,12 @@
     <div class="left-sidebar-pro">
         <nav id="sidebar" style="overflow-y: scroll; width: 2px;" class>
             <div class="sidebar-header">
-                <a href="http://localhost/NTN_FOOD/admin/index.php"><img class="main-logo" src="img/logo.png" alt /></a>
-                <strong><img src="img/logosn.png" alt /></strong>
+                <a href="http://localhost/NTN_FOOD/admin/index.php"><img class="main-logo" src="img/logo.png" alt="Ảnh ấy mà" /></a>
+                <!-- <strong><img src="img/logosn.png" alt /></strong> -->
             </div>
             <div class="nalika-profile">
                 <div class="profile-dtl">
-                    <a href="#"><img src="" alt /></a>
+                    <a href="#"><img src="img/admin-ok.png" alt="Ảnh ấy mà" /></a>
                     <h2>Admin <span class="min-dtn"></span></h2>
                 </div>
                 <div class="profile-social-dtl">
@@ -175,12 +187,12 @@
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
-                        <li class="active">
-                            <a class="has-arrow" href="index.php">
+                        <li>
+                            <a href="index.php">
                                 <i class="fa-solid fa-house"></i>
-                                <span class="mini-click-non">Trang chủ</span>
-                            </a>
+                                Trang chủ</a>
                         </li>
+
                         <li>
                             <a class="has-arrow" href="https://colorlib.com/polygon/nalika/mailbox.html" aria-expanded="false">
                                 <i class="fa-brands fa-elementor"></i>

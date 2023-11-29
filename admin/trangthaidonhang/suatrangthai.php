@@ -11,8 +11,6 @@ include("title.php");
                 <form action="" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="ma_donhang" value="<?= $ma_donhang ?>">
                     
-                    
-
                     <div class="chosen-select-single mg-b-20 mb-3">
                         <label class="form-label">Trạng thái</label>
                         <select name="id_trangthai" class="select2_demo_3 form-control">
