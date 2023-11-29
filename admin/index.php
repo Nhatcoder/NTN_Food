@@ -11,9 +11,26 @@ include("../model/dmtintuc.php");
 include("../model/tintuc.php");
 include("../model/trangthaidonhang.php");
 include("../model/dangnhap.php");
+include("../model/thongke.php");
+
+include("../model/carbon_date/autoload.php");
+
+use Carbon\Carbon;
+// printf("Now: %s", Carbon::now("Asia/Ho_Chi_Minh"));
+
 
 
 include("./header.php");
+
+// Thống kê
+$thong_ke_hoadon = thong_ke_hoadon();
+$doanh_thu_hoadon = doanh_thu_hoadon();
+$don_thanh_cong = don_thanh_cong();
+$don_huy = don_huy();
+
+// $thongke_all = thongke_all();
+
+
 
 if (isset($_GET['act']) && $_GET['act'] != '') {
     $act = $_GET['act'];
@@ -236,16 +253,60 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
             include('./trangthaidonhang/hienthi.php');
             break;
         case 'suatrangthai':
+            include("../model/connect_pdo.php");
+
             $trangthai = loadtrangthaiAll();
+
             if (isset($_POST['capnhatdonhang']) && $_POST['capnhatdonhang'] > 0) {
                 $id = $_GET['iddh'];
                 $id_trangthai = $_POST['id_trangthai'];
                 capnhattrangthai($id, $id_trangthai);
+
+                // Khi thành công update vào biểu đồ to đổ ra
+                if ($id_trangthai == 4) {
+                    $ngaydat = Carbon::now('Asia/Ho_Chi_Minh')->toDateString();
+                    $sql_lietke_dh = "SELECT * FROM tbl_hoadon_chitiet 
+                    INNER JOIN tbl_monan ON tbl_hoadon_chitiet.id_monan = tbl_monan.id_monan 
+                    INNER JOIN tbl_hoadon ON tbl_hoadon.ma_donhang = tbl_hoadon_chitiet.ma_donhang 
+                    WHERE tbl_hoadon.ma_donhang = ?";
+
+                    $stmt_lietke_dh = $conn->prepare($sql_lietke_dh);
+                    $stmt_lietke_dh->execute([$id]);
+
+                    $soluongmua = 0;
+                    $doanhthu = 0;
+
+                    while ($row = $stmt_lietke_dh->fetch(PDO::FETCH_ASSOC)) {
+                        $soluongmua += $row['soluongmua'];
+                        $doanhthu += $row['gia_monan'] * $row['soluongmua'];
+                    }
+
+                    $sql_thongke = "SELECT * FROM tbl_thongke WHERE ngaydat=?";
+                    $stmt_thongke = $conn->prepare($sql_thongke);
+                    $stmt_thongke->execute([$ngaydat]);
+
+                    if ($stmt_thongke->rowCount() == 0) {
+                        $soluongban = $soluongmua;
+                        $donhang = 1;
+
+                        $sql_update_thongke = "INSERT INTO tbl_thongke (ngaydat, soluongban, doanhthu, donhang) VALUES (?, ?, ?, ?)";
+                        $stmt_update_thongke = $conn->prepare($sql_update_thongke);
+                        $stmt_update_thongke->execute([$ngaydat, $soluongban, $doanhthu, $donhang]);
+                    } else {
+                        $row_tk = $stmt_thongke->fetch(PDO::FETCH_ASSOC);
+                        $soluongban = $row_tk['soluongban'] + $soluongmua;
+                        $doanhthu += $row_tk['doanhthu'];
+                        $donhang = $row_tk['donhang'] + 1;
+
+                        $sql_update_thongke = "UPDATE tbl_thongke SET soluongban=?, doanhthu=?, donhang=? WHERE ngaydat=?";
+                        $stmt_update_thongke = $conn->prepare($sql_update_thongke);
+                        $stmt_update_thongke->execute([$soluongban, $doanhthu, $donhang, $ngaydat]);
+                    }
+                }
+
                 echo '<script>window.location.href = "index.php?act=quanlydonhang";</script>';
             }
             $loaddonhang = loaddonhangAll();
-
-
 
             include('./trangthaidonhang/suatrangthai.php');
             break;
@@ -329,39 +390,39 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
 
 
             // don hang
-        case 'quanlydonhang':
-            $loaddonhang = loaddonhangAll();
+            // case 'quanlydonhang':
+            //     $loaddonhang = loaddonhangAll();
 
-            include('./trangthaidonhang/hienthi.php');
-            break;
-        case 'suatrangthai':
-            $trangthai = loadtrangthaiAll();
-            if (isset($_POST['capnhatdonhang']) && $_POST['capnhatdonhang'] > 0) {
-                $id = $_GET['iddh'];
-                $id_trangthai = $_POST['id_trangthai'];
-                capnhattrangthai($id, $id_trangthai);
-                echo '<script>window.location.href = "index.php?act=quanlydonhang";</script>';
-            }
-            $loaddonhang = loaddonhangAll();
-            include('./trangthaidonhang/suatrangthai.php');
-            break;
+            //     include('./trangthaidonhang/hienthi.php');
+            //     break;
+            // case 'suatrangthai':
+            //     $trangthai = loadtrangthaiAll();
+            //     if (isset($_POST['capnhatdonhang']) && $_POST['capnhatdonhang'] > 0) {
+            //         $id = $_GET['iddh'];
+            //         $id_trangthai = $_POST['id_trangthai'];
+            //         capnhattrangthai($id, $id_trangthai);
+            //         echo '<script>window.location.href = "index.php?act=quanlydonhang";</script>';
+            //     }
+            //     $loaddonhang = loaddonhangAll();
+            //     include('./trangthaidonhang/suatrangthai.php');
+            //     break;
 
-        case 'giaothanhcong':
-            $loaddonhangtk = loaddonhangtk();
+            // case 'giaothanhcong':
+            //     $loaddonhangtk = loaddonhangtk();
 
-            include('./trangthaidonhang/giaothanhcong.php');
-            break;
-        case 'dahuy':
-            $loaddonhanghuy = loaddonhanghuy();
+            //     include('./trangthaidonhang/giaothanhcong.php');
+            //     break;
+            // case 'dahuy':
+            //     $loaddonhanghuy = loaddonhanghuy();
 
-            include('./trangthaidonhang/huydon.php');
-            break;
-        case 'chitietdonhang':
+            //     include('./trangthaidonhang/huydon.php');
+            //     break;
+            // case 'chitietdonhang':
 
-            $id = $_GET['iddh'];
-            $chitiet = list_chitiet_One($id);
-            include('./trangthaidonhang/chitietdonhang.php');
-            break;
+            //     $id = $_GET['iddh'];
+            //     $chitiet = list_chitiet_One($id);
+            //     include('./trangthaidonhang/chitietdonhang.php');
+            //     break;
 
 
 
@@ -439,6 +500,8 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
             break;
     }
 } else {
+    $thongke_doanhthu_theo_danhmuc = thongke_doanhthu_theo_danhmuc();
+    // var_dump($thongke_doanhthu_theo_danhmuc);
     include("main.php");
 }
 
