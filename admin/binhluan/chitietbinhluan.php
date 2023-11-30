@@ -5,7 +5,12 @@ include("nguoidung/title.php");
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="product-status-wrap">
-                <h4>Chi tiết bình luận theo người dùng</h4>
+                <?php
+                foreach ($list_id_cmt as $key => $value) {
+                    extract($value);
+                }
+                ?>
+                <h4>Chi tiết bình luận theo người dùng: <b style="color:aqua"><?= $hoten ?></b></h4>
                 <table>
                     <tbody>
                         <tr>
@@ -20,9 +25,14 @@ include("nguoidung/title.php");
                         foreach ($list_id_cmt as $key => $value) {
                             extract($value);
                         ?>
+
                             <tr>
+                                <?php
+                                $startIndex = ($page - 1) * 6;
+                                $continuousIndex = $startIndex + $key + 1;
+                                ?>
                                 <td>
-                                    <?= $key + 1 ?>
+                                    <?= $continuousIndex ?>
                                 </td>
                                 <td>
                                     <img src="../uploads/monan/<?= $anh_monan ?>" alt="">
@@ -37,10 +47,10 @@ include("nguoidung/title.php");
                                     <?= $noidung ?>
                                 </td>
                                 <td>
-                                    <a href="index.php?act=suanguoidung&id_nguoidung=<?= $id_nguoidung ?>">
-                                        <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Sửa"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                    <a href="index.php?act=suabinhluan&id=<?= $id_binhluan ?>&idnd=<?= $id_nguoidung ?>&trang=<?= $page ?>">
+                                        <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Sửa nội dung"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                                     </a>
-                                    <a onclick="return confirm('Bạn có muốn xóa không?')" ; href="index.php?act=xoanguoidung&id_nguoidung=<?= $id_nguoidung ?>">
+                                    <a onclick="return confirm('Bạn có muốn xóa không?')" ; href="index.php?act=xoabinhluan&id=<?= $id_binhluan ?>&idnd=<?= $id_nguoidung ?>">
                                         <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Xóa"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                     </a>
                                 </td>
@@ -48,15 +58,37 @@ include("nguoidung/title.php");
                         <?php } ?>
                     </tbody>
                 </table>
-                <!-- <div class="custom-pagination">
-                    <ul class="pagination">
-                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                    </ul>
-                </div> -->
+                <!-- Phân trang -->
+                <?php
+                $count = count($list_id_cmt_all);
+                $trang = ceil($count / 5);
+
+                if ($count >= 5) {
+                    if (isset($_GET['trang'])) {
+                        $page = intval($_GET['trang']);
+                    } else {
+                        $page = 1;
+                    }
+                ?>
+                    <nav class="text-center" aria-label="...">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a href="index.php?act=chitietbinhluan&id=<?= $id_nguoidung ?>&trang=<?= max(1, $page - 1) ?>" class="page-link">
+                                    <i class="fas fa-chevron-left"></i> </a>
+
+                            </li>
+                            <?php
+                            for ($i = 1; $i <= $trang; $i++) {
+                                $activeClass = ($i == $page) ? 'active' : '';
+                            ?>
+                                <li class="page-item <?= $activeClass ?>"><a class="page-link" href="index.php?act=chitietbinhluan&id=<?= $id_nguoidung ?>&trang=<?= $i ?>"><?= $i ?></a></li>
+                            <?php } ?>
+                            <li class="page-item">
+                                <a href="index.php?act=chitietbinhluan&id=<?= $id_nguoidung ?>&trang=<?= min($trang, $page + 1) ?>" class="page-link">
+                                    <i class="fas fa-chevron-right"></i> </a>
+                        </ul>
+                    </nav>
+                <?php } ?>
             </div>
         </div>
     </div>

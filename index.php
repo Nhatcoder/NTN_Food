@@ -338,6 +338,13 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 }
             }
 
+            $err_pay = "";
+            if (isset($_POST["redirect"])) {
+                if ($select_pay == "0") {
+                    $err_pay .= "Bạn chưa chọn phương thức thanh toán.";
+                }
+            }
+
             include("./views/main/thanhtoan.php");
             break;
 
@@ -353,16 +360,16 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 $sodienthoai = $_POST["sodienthoai"];
 
                 update_diachi_order($hoten, $diachi, $email, $sodienthoai, $id_nguoidung, $id_diachi);
-
                 echo "<script>alert('Đã cập thành công');</script>";
                 echo '<script>window.location.href = "index.php?act=thanhtoan";</script>';
+
             }
             break;
 
         case "dathang":
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $select_pay = $_POST['phuongthucthanhtoan'];
-
+                $err_pay = "";
                 // thanh toán bằng tiền mặt
                 if ($select_pay == "tienmat") {
                     date_default_timezone_set('Asia/Ho_Chi_Minh');
@@ -629,35 +636,18 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 $sodienthoai = $_POST['sodienthoai'];
                 $noidung = $_POST['noidung'];
                 $trangthai = 0;
-    
-                lienhe($ho_ten,$email,$sodienthoai,$noidung,$trangthai);
+
+                lienhe($ho_ten, $email, $sodienthoai, $noidung, $trangthai);
                 echo "<script>alert('Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất');</script>";
                 echo '<script>window.location.href = "index.php?act=main";</script>';
             }
 
-           
+
             include("./views/main/main.php");
             break;
-
-
-           
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 } else {
+    $list_all_post  = list_all_tintuc_home();
     include("./views/main/main.php");
 }
 

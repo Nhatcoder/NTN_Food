@@ -4941,3 +4941,8 @@ nav#sidebar {
 }
 
 
+.form-search-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

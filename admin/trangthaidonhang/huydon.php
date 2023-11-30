@@ -50,9 +50,9 @@
                                 <td>
                                     <?= $loai_thanhtoan ?>
                                 </td>
-                                <td>
-                                    <?= $tentrangthai ?>
-                                </td>
+                               <?php 
+                               
+                               ?>
                                 <td>
                                     
                                     <a 

@@ -10,6 +10,18 @@ function loaddonhangAll()
     $listdh = pdo_query($sql);
     return $listdh;
 }
+function loaddonhangAll_page($begin)
+{
+    $sql = "SELECT a.loai_thanhtoan,a.ma_donhang, c.hoten,c.diachi,c.sodienthoai, a.id_trangthai,a.ngaymua, a.id_giohang, d.id_trangthai, d.tentrangthai  
+    FROM tbl_hoadon a  
+    INNER join tbl_diachinhanhang c ON a.id_nguoidung = c.id_nguoidung 
+    INNER JOIN tbl_trangthai d on a.id_trangthai = d.id_trangthai 
+    WHERE a.id_trangthai IN (0,1, 2, 3)
+    ORDER BY a.id_giohang DESC
+    LIMIT $begin,10";
+    $listdh = pdo_query($sql);
+    return $listdh;
+}
 function loaddonhangtk()
 {
     $sql = "SELECT a.loai_thanhtoan,a.ma_donhang, a.id_giohang,c.hoten,c.diachi,c.sodienthoai, a.id_trangthai,a.ngaymua, d.id_trangthai,d.tentrangthai  
@@ -21,13 +33,27 @@ function loaddonhangtk()
     $listdhtk = pdo_query($sql);
     return $listdhtk;
 }
+function loaddonhangtk_page($begin)
+{
+    $sql = "SELECT a.loai_thanhtoan,a.ma_donhang, a.id_giohang,c.hoten,c.diachi,c.sodienthoai, a.id_trangthai,a.ngaymua, d.id_trangthai,d.tentrangthai  
+    FROM tbl_hoadon a  
+    INNER join tbl_diachinhanhang c ON a.id_nguoidung = c.id_nguoidung 
+    INNER JOIN tbl_trangthai d on a.id_trangthai = d.id_trangthai 
+    WHERE a.id_trangthai IN (4)
+    ORDER BY a.id_giohang DESC
+    LIMIT $begin,10";
+    $listdhtk = pdo_query($sql);
+    return $listdhtk;
+}
+
+
 function loaddonhanghuy()
 {
     $sql = "SELECT a.loai_thanhtoan ,a.ma_donhang, a.id_giohang,c.hoten,c.diachi,c.sodienthoai, a.id_trangthai,a.ngaymua,d.tentrangthai 
     FROM tbl_hoadon a 
     INNER join tbl_diachinhanhang c ON a.id_nguoidung = c.id_nguoidung 
     INNER JOIN tbl_trangthai d on a.id_trangthai = d.id_trangthai 
-    WHERE a.id_trangthai IN (5) 
+    WHERE a.id_trangthai IN (6) 
     ORDER BY a.id_giohang DESC;
     ;";
     $listdhhuy = pdo_query($sql);
@@ -65,14 +91,3 @@ function list_chitiet_One($id)
     $chitiet = pdo_query($sql, $id);
     return $chitiet;
 }
-
-
-
-
-
-
-
-
-
-
-?>

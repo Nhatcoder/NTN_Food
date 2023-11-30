@@ -29,6 +29,16 @@ function list_all_cmt()
     $list = pdo_query($sql);
     return $list;
 }
+
+
+// phân trang
+function list_cmt_page($begin)
+{
+    $sql = "SELECT * FROM tbl_binhluan ORDER BY id_tintuc DESC LIMIT $begin, 6";
+    $list = pdo_query($sql);
+    return $list;
+}
+
 function list_id_cmt($id_nguoidung)
 {
     $sql = "SELECT
@@ -37,6 +47,7 @@ function list_id_cmt($id_nguoidung)
     tbl_binhluan.noidung,
     tbl_binhluan.id_monan,
     tbl_binhluan.ngaybinhluan,
+    tbl_binhluan.id_binhluan,
     tbl_monan.ten_monan,
     tbl_monan.anh_monan
 FROM
@@ -47,8 +58,53 @@ INNER JOIN
     tbl_monan ON tbl_monan.id_monan = tbl_binhluan.id_monan
 WHERE tbl_taikhoan.id_nguoidung = ?
 ORDER BY
-    tbl_binhluan.id_binhluan DESC;
-";
+    tbl_binhluan.id_binhluan DESC;";
     $list = pdo_query($sql, $id_nguoidung);
+    return $list;
+}
+function list_id_cmt_page($id_nguoidung, $begin)
+{
+    $sql = "SELECT
+    tbl_taikhoan.id_nguoidung,
+    tbl_taikhoan.hoten,
+    tbl_binhluan.noidung,
+    tbl_binhluan.id_monan,
+    tbl_binhluan.ngaybinhluan,
+    tbl_binhluan.id_binhluan,
+    tbl_monan.ten_monan,
+    tbl_monan.anh_monan
+FROM
+    tbl_binhluan
+INNER JOIN
+    tbl_taikhoan ON tbl_taikhoan.id_nguoidung = tbl_binhluan.id_nguoidung
+INNER JOIN 
+    tbl_monan ON tbl_monan.id_monan = tbl_binhluan.id_monan
+WHERE tbl_taikhoan.id_nguoidung = ?
+ORDER BY
+    tbl_binhluan.id_binhluan DESC
+LIMIT $begin,5;";
+    $list = pdo_query($sql, $id_nguoidung);
+    return $list;
+}
+
+function list_id_cmt_detail($id_binhluan)
+{
+    $sql = "SELECT
+    tbl_binhluan.noidung,
+    tbl_binhluan.id_binhluan
+    FROM
+        tbl_binhluan
+    WHERE tbl_binhluan.id_binhluan = ?
+    ORDER BY
+        tbl_binhluan.id_binhluan DESC;";
+    $list = pdo_query($sql, $id_binhluan);
+    return $list;
+}
+
+
+function delete_id_cmt_detail($id_binhluan)
+{
+    $sql = "DELETE FROM tbl_binhluan WHERE id_binhluan =  ?";
+    $list = pdo_query($sql, $id_binhluan);
     return $list;
 }
