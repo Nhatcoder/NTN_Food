@@ -98,7 +98,7 @@
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="caption pro-sl-hd">
-                                    <h3 class="caption-subject text-uppercase">Thống Kê Đơn Hàng:
+                                    <h3 class="caption-subject text-uppercase">Thống Kê Doanh Thu:
                                         <b id="text-date">365 Ngày qua</b>
                                     </h3>
 

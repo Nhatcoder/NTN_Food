@@ -3,7 +3,7 @@ ob_start();
 session_start();
 include("./model/pdo.php");
 include("./model/connect_vnpay.php");
-
+include("./model/trangthaidonhang.php");
 include("./model/lienhe.php");
 include("./model/dangnhap.php");
 include("./model/binhluan.php");
@@ -95,6 +95,33 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 $user = list_check_tk_id($id_nguoidung);
             }
             include("./views/main/capnhat_user.php");
+            break;
+        case "theodoidonhang":
+            if (isset($_GET["id_nguoidung"]) > 0) {
+                $id = $_GET["id_nguoidung"];
+                $chitiet = list_chitiet_One_cc($id);
+            }
+            include("./views/main/theodoidonhang.php");
+            break;
+        case "huydonhang":
+            $_SESSION["user"] = $id_nguoidung;
+               
+                $id = $_GET["ma_donhang"];
+                $id_huy = $_GET["id_trangthai"];
+                $id_trangthai = 6;
+                if($id_huy==1){
+                    capnhattrangthai($id, $id_trangthai);
+                    echo '<script>alert("Đơn hàng đã hủy thành công ")</script>';
+                echo '<script>window.location.href = "index.php?act=theodoidonhang&id_nguoidung=' .$id_nguoidung. '";</script>';
+
+                }
+                else{
+                    
+                    echo '<script>alert("Đơn hàng không thể hủy ")</script>';
+                echo '<script>window.location.href = "index.php?act=theodoidonhang&id_nguoidung=' .$id_nguoidung. '";</script>';
+                }
+            
+            
             break;
 
         case "capnhattaikhoan":

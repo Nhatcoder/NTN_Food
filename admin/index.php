@@ -307,6 +307,7 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
             if (isset($_POST['themmoi']) && $_POST['themmoi']) {
                 $ten_tintuc = $_POST['ten_tintuc'];
                 $mota_tintuc = $_POST['mota_tintuc'];
+                $motangan = $_POST['motangan'];
                 $id_danhmuc_tintuc = $_POST['id_danhmuc_tintuc'];
 
                 $anh_tintuc = $_FILES['anh_tintuc']['name'];
@@ -322,7 +323,7 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
                     echo "Lỗi";
                 }
 
-                insert_tintuc($ten_tintuc, $mota_tintuc, $new_anhtintuc, $id_danhmuc_tintuc);
+                insert_tintuc($ten_tintuc,$motangan, $mota_tintuc, $new_anhtintuc, $id_danhmuc_tintuc);
                 $thongbao = "Thêm thành công";
             }
 
@@ -468,7 +469,7 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
             if (isset($_POST['capnhat']) && $_POST['capnhat']) {
                 $id_sua = $_POST['id_sua'];
                 $ten_tintuc = $_POST['ten_tintuc'];
-                $mota_tintuc = $_POST['mota_tintuc'];
+                $motangan = $_POST['motangan'];
                 $id_danhmuc_tintuc = $_POST['id_danhmuc_tintuc'];
                 $anh_tintuc = $_FILES['anh_tintuc']['name'];
                 $anh_tintuc_tmp = $_FILES['anh_tintuc']['tmp_name'];
@@ -490,7 +491,7 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
                     }
                 }
 
-                capnhat_tintuc($id_sua, $ten_tintuc, $mota_tintuc, $id_danhmuc_tintuc, $new_anhtintuc);
+                capnhat_tintuc($id_sua, $ten_tintuc,$motangan, $mota_tintuc, $id_danhmuc_tintuc, $new_anhtintuc);
             }
 
             $listtintuc = list_tintuc_All();

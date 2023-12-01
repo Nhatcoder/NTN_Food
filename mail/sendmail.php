@@ -22,13 +22,15 @@ class Mailer
             $mail->isSMTP(); // Gửi mail SMTP
             $mail->Host = 'smtp.gmail.com'; // Set the SMTP server to send through
             $mail->SMTPAuth = true; // Enable SMTP authentication
-            $mail->Username = 'nhattvph33572@gmail.com'; // SMTP username (your Gmail email)
-            $mail->Password = 'npsjmveacyxbjsjl'; // SMTP password or token (use app password or token for security)
+            $mail->Username = 'hvt910tranvantuyen@gmail.com'; // SMTP username (your Gmail email)
+            // $mail->Username = 'hvt910tranvantuyen@gmail.com'; // SMTP username (your Gmail email)
+            // $mail->Password = 'aoix pira zufs mmmg'; // SMTP password or token (use app password or token for security)
+            $mail->Password = 'aoix pira zufs mmmg'; // SMTP password or token (use app password or token for security)
             $mail->SMTPSecure = 'tls'; // Enable TLS encryption
             $mail->Port = 587; // TCP port to connect to
 
             // Recipients
-            $mail->setFrom('nhattvph33572@gmail.com', 'NTN Food');
+            $mail->setFrom('hvt910tranvantuyen@gmail.com', 'NTN Food');
             $mail->addAddress($maildathang, 'Khách Hàng'); // Add recipient email and name
 
             // Content

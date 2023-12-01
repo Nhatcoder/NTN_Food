@@ -13,6 +13,11 @@ include("tintuc/tintuc/title.php");
                             required>
                     </div>
                     <div class="mb-3">
+                        <label for="ok1" class="form-label">Mô tả ngắn</label>
+                        <input type="text" name="motangan" class="form-control" id="ok1" placeholder="Nhập mô tả tin tức"
+                            required>
+                    </div>
+                    <div class="mb-3">
                         <label for="ok1" class="form-label">Mô tả</label>
                         <input type="text" name="mota_tintuc" class="form-control" id="ok1" placeholder="Nhập mô tả tin tức"
                             required>
