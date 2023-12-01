@@ -157,7 +157,6 @@
                                 <option value="momo">Momo</option>
                                 <option value="vcb">Vietcombank</option>
                             </select>
-                            <p><?php isset($err_pay) ? $err_pay : "" ?></p>
                         </div>
                         <div class="form-group">
                             <input class="btn btn-gray btn-hover-2" type="submit" name="redirect" value="Đặt hàng ngay" id="redirect">

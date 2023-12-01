@@ -53,20 +53,27 @@ if (isset($list_monan_one) && is_array($list_monan_one)) {
 
                     <div class="ok mg-b-20">
                         <h5 class="mg-tb-15">Món ăn kèm</h5>
+
+
                         <?php
-                        foreach ($list_id_bienthe as $key => $value) {
-                        ?>
+
+
+                        // foreach ($list_id_bienthe as $key => $value) {
+                        // ?>
                             <div class="row">
-                                <input type="hidden" name="id_bienthe[]" value="<?= $value["id_bt"]?>">
                                 <div class="form-group col-md-4 mg-b-20">
                                     <div id="anh-container">
                                         <div class="row" style="display: flex;justify-content: space-between; align-items: center;">
-                                            <div class="col-md-2">
-                                                <img width="45px" src="../uploads/monan/<?= $value["anh"] ?>" alt="">
-                                            </div>
-                                            <div class="col-md-10">
+                                           
+                                            <div class="col-md-12">
                                                 <label for="price">Ảnh</label>
-                                                <input type="file" id="anh" name="anh[]" value="<?= $value["anh"] ?>" class="form-control" placeholder="Nhập anh">
+                                                <?php
+                                                foreach ($list_id_bienthe as $key => $value) {
+                                                ?>
+                                                    <input type="file" id="anh" name="anh[]" value="<?= $value["anh"] ?>" class="form-control" placeholder="Nhập anh">
+                                                <?php
+                                                }
+                                                ?>
                                             </div>
                                         </div>
                                     </div>
@@ -74,17 +81,31 @@ if (isset($list_monan_one) && is_array($list_monan_one)) {
                                 <div class="form-group col-md-4 ">
                                     <div id="ten-container">
                                         <label for="price">Tên</label>
-                                        <input type="text" id="ten" name="ten[]" value="<?= $value["ten_bt"] ?>" class="form-control" placeholder="Nhập tên">
+                                        <?php
+                                        foreach ($list_id_bienthe as $key => $value) {
+                                        ?>
+                                            <input type="text" id="ten" name="ten[]" value="<?= $value["ten_bt"] ?>" class="form-control" placeholder="Nhập tên">
+                                        <?php
+                                        }
+                                        ?>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <div id="tien-container">
                                         <label for="price">Giá</label>
-                                        <input type="text" id="tien" name="tien[]" value="<?= $value["gia"] ?>" class="form-control" placeholder="Nhập giá">
+                                        <?php
+                                        foreach ($list_id_bienthe as $key => $value) {
+                                        ?>
+                                            <input type="text" id="tien" name="tien[]" value="<?= $value["gia"] ?>" class="form-control" placeholder="Nhập giá">
+                                        <?php
+                                        }
+                                        ?>
                                     </div>
                                 </div>
                             </div>
-                        <?php } ?>
+                        <?php 
+                        // }
+                        ?>
                         <div class="mb-3">
                             <button type="button" class="btn btn-success ml-5" id="addSizeButton">Thêm món ăn kèm</button>
                         </div>

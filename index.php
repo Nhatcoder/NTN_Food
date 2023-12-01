@@ -362,14 +362,13 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 update_diachi_order($hoten, $diachi, $email, $sodienthoai, $id_nguoidung, $id_diachi);
                 echo "<script>alert('Đã cập thành công');</script>";
                 echo '<script>window.location.href = "index.php?act=thanhtoan";</script>';
-
             }
             break;
 
         case "dathang":
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $select_pay = $_POST['phuongthucthanhtoan'];
-                $err_pay = "";
+
                 // thanh toán bằng tiền mặt
                 if ($select_pay == "tienmat") {
                     date_default_timezone_set('Asia/Ho_Chi_Minh');
@@ -474,7 +473,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                     }
                 }
             }
-
             break;
 
             // 

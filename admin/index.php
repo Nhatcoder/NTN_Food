@@ -196,24 +196,20 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
                     $mota_monan = $_POST['mota_monan'];
                     $noibat = $_POST['noibat'];
 
-                    $anh = $_FILES['anh'];
+                    $anhs = $_FILES['anh'];
                     $ten = $_POST['ten'];
                     $tien = $_POST['tien'];
-                    $id_bienthe = $_POST['id_bienthe'];
+                    // $id_bienthe = $_POST['id_bienthe'];
 
 
                     $list_id_bienthe = list_id_bienthe($id_sua);
+                    $list_monan_one = list_monan_One($id_sua);
+
+
 
                     $anh_monan = $_FILES['anh_monan']['name'];
                     $anh_monan_tmp = $_FILES['anh_monan']['tmp_name'];
                     $upload = "../uploads/monan/";
-
-                    $new_anhmonan = time() . "_" . basename($anh_monan);
-
-                    for ($i = 0; $i < count($anh['name']); $i++) {
-                        $target_file_bienthe = $upload . $anh['name'][$i];
-                        move_uploaded_file($anh['tmp_name'][$i], $target_file_bienthe);
-                    }
 
                     $new_anhmonan = "";
                     if ($anh_monan != "") {
@@ -226,14 +222,33 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
 
                         $target_file = $upload . $new_anhmonan;
                         if (move_uploaded_file($anh_monan_tmp, $target_file)) {
-                            echo "Thêm ảnh thành công";
                         } else {
                             echo "Lỗi khi tải lên ảnh mới";
                         }
                     }
+                    if ($anhs !== []) {
+                        foreach ($list_id_bienthe as $key => $b) {
+                            extract($b);
+                            if ($anhs["name"][$key] != $anh) {
+                                # code...
+                                $img = $upload . $anh;
+                                if (is_file($img)) {
+                                    unlink($img);
+                                }
+                            }
+                        }
+                        for ($i = 0; $i < count($anhs['name']); $i++) {
+                            $target_file = $upload . time() . "_" . $anhs['name'][$i];
+                            move_uploaded_file($anhs['tmp_name'][$i], $target_file);
+                        }
+                    } else {
+                        $imgs = [];
+                    }
+
+
+                    capnhat_monan_bienthe($id_sua, $ten, $tien, $list_id_bienthe, $anhs["name"]);
                     capnhat_monan($id_sua, $ten_monan, $gia_monan, $id_danhmuc, $mota_monan, $new_anhmonan, $noibat);
                     // capnhat_monan_bienthe($ten, $tien, $id_bienthe);
-                    capnhat_monan_bienthe($id_sua, $ten, $tien, $id_bienthe, $anh["name"]);
                 }
             }
 
