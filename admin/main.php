@@ -88,7 +88,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                <div class="product-sales-chart">
+                <div class="product-sales-chart mg-b-30">
                     <div class="portlet-title">
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -111,54 +111,47 @@
 
                         </div>
                     </div>
-                    <!-- Đổ biểu đồ ở đây -->
-                    <?php
-                    // include("thongke.php");
-                    ?>
-                    <div id="myfirstchart"></div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                <div class="analytics-rounded mg-b-30 res-mg-t-30">
-                    <div class="analytics-rounded-content">
-                        <h5>Thống kê số lượng sản phẩm</h5>
-                        <div class="text-center">
-                            <div id="thongkespdm"></div>
-                            <div id="donut"></div>
-                        </div>
+                    <div id="myfirstchart">
+                        <!-- Thống kê doanh thu -->
                     </div>
                 </div>
-                <div class="analytics-rounded">
-                    <div class="analytics-rounded-content">
-                        <h5>Percentage division</h5>
-                        <h2><span class="counter">150</span>/<span class="counter">54</span></h2>
-                        <div class="text-center">
-                            <div id="sparkline52"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-
-<div class="product-sales-area mg-tb-30">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <!-- Biểu đồ thống kê đơn hàng -->
                 <div class="product-sales-chart">
-
                     <div id="line-adwords">
                         <!-- Biểu đồ thống kê doanh thu theo đơn hàng -->
                     </div>
-
                 </div>
+
+
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <!-- Thống kê bình luận -->
+                <div class="analytics-rounded mg-b-30 res-mg-t-30">
+                    <div class="analytics-rounded-content">
+                        <h5>Thống kê bình luận</h5>
+                        <!-- <h2><span class="counter">150</span>/<span class="counter">54</span></h2> -->
+                        <div class="text-center">
+                            <div id="areachart" style="padding-bottom: 33px;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analytics-rounded mg-t-30">
+                    <div class="analytics-rounded-content">
+                        <h5>Thống kê số lượng sản phẩm theo danh mục</h5>
+                        <div class="text-center">
+                            <!-- Thống kê số lượng sản phẩm trong danh mục -->
+                            <div id="chart" style="padding-bottom: 81px;"></div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
 </div>
-
 
 <div class="footer-copyright-area">
     <div class="container-fluid">
@@ -307,34 +300,99 @@
     // end biểu đồ thóng kê giá cả danh mục
 
 
+    // Thống kê biểu đồ số lượng sản phẩm
+    <?php
+    $tendm = "";
+    $countmonan = "";
 
-    new Morris.Donut({
-        element: 'thongkespdm',
-        data: [{
-                year: '2008',
-                value: 20
-            },
-            {
-                year: '2009',
-                value: 10
-            },
-            {
-                year: '2010',
-                value: 5
-            },
-            {
-                year: '2011',
-                value: 5
-            },
-            {
-                year: '2012',
-                value: 20
+    foreach ($thongke_doanhthu_theo_danhmuc as $key => $value) {
+        $tendm .= "'" . $value["tendm"] . "', ";
+        $countmonan .= $value["countmonan"] . ", ";
+    }
+
+    $tendm = rtrim($tendm, ", ");
+    $tendm = "[" . $tendm . "]";
+    $countmonan = rtrim($countmonan, ", ");
+    $countmonan = "[" . $countmonan . "]";
+    ?>
+
+    var options = {
+        series: <?= $countmonan ?>,
+        chart: {
+            width: 380,
+            type: 'pie',
+        },
+        labels: <?= $tendm ?>,
+        responsive: [{
+            breakpoint: 480,
+            options: {
+                chart: {
+                    width: 200
+                },
+                legend: {
+                    position: 'bottom'
+                }
             }
+        }]
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+    chart.render();
+    // End biểu đồ thống kê số hàng trong danh mục
+
+    // Start biểu dồ bình luận
+
+    <?php
+
+    $ngaybinhluan = "";
+    $comment_count = "";
+    foreach ($thongke_binhluan as $key => $value) {
+        $ngaybinhluan .= "" . $value["ngaybinhluan"] . ",";
+        $comment_count .= $value["comment_count"] . ",";
+    }
+
+    $ngaybinhluan = rtrim($ngaybinhluan, ",");
+    $comment_count = rtrim($comment_count, ",");
+
+    $ngaybinhluan = "['" . $ngaybinhluan . "']";
+    $comment_count = "name: 'Số bình luận',data:[" . $comment_count . "]";
+
+    echo $ngaybinhluan;
+    ?>
+
+
+    var optionsArea = {
+        chart: {
+            height: 380,
+            type: 'area',
+            stacked: false,
+        },
+        stroke: {
+            curve: 'straight'
+        },
+        series: [{
+                // name: "Số bình luận:",
+                // data: [11, 15, 26, 20, 33, 27]
+                <?= $comment_count ?>
+            },
+
         ],
-        xkey: 'year',
-        ykeys: ['value'], // Use 'value' instead of 'Số lượng'
-        labels: ['Số lượng'],
-        labelColor: '#ffffff'
-    });
-    
+        xaxis: {
+            categories: <?= $ngaybinhluan ?>,
+        },
+        tooltip: {
+            followCursor: true
+        },
+        fill: {
+            opacity: 1,
+        },
+
+    }
+
+    var chartArea = new ApexCharts(
+        document.querySelector("#areachart"),
+        optionsArea
+    );
+
+    chartArea.render();
 </script>

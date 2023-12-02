@@ -502,6 +502,7 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
 } else {
     $thongke_doanhthu_theo_danhmuc = thongke_doanhthu_theo_danhmuc();
     // var_dump($thongke_doanhthu_theo_danhmuc);
+    $thongke_binhluan = thongke_binhluan();
     include("main.php");
 }
 

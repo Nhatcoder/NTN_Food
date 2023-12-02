@@ -81,3 +81,31 @@ ORDER BY
     $list = pdo_query($sql);
     return $list;
 }
+
+
+function thongke_binhluan()
+{
+    $sql = "SELECT ngaybinhluan, COUNT(*) as comment_count
+    FROM tbl_binhluan
+    GROUP BY ngaybinhluan
+    ORDER BY ngaybinhluan;";
+    $list = pdo_query($sql);
+    return $list;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
