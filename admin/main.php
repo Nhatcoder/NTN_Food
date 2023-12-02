@@ -28,13 +28,18 @@
                 <div class="hpanel responsive-mg-b-30">
                     <div class="panel-body">
                         <div class="stats-title pull-left">
-                            <h4>Đơn hàng</h4>
+                            <h4>Đơn hàng mới</h4>
                         </div>
                         <div class="stats-icon pull-right">
                             <i class="fa-regular fa-calendar-check fa-beat"></i>
                         </div>
                         <div class="m-t-xl">
-                            <h1 class="text-info"><?= count($thong_ke_hoadon) ?></h1>
+                            <?php if (is_array($thong_ke_hoadon)) {
+                                foreach ($thong_ke_hoadon as $key => $value) {
+                                    extract($value);
+                                }
+                            } ?>
+                            <h1 class="text-info"><?= $donmoi ?></h1>
 
                         </div>
                     </div>
@@ -93,7 +98,7 @@
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="caption pro-sl-hd">
-                                    <h3 class="caption-subject text-uppercase">Thống Kê Đơn Hàng:
+                                    <h3 class="caption-subject text-uppercase">Thống Kê Doanh Thu:
                                         <b id="text-date">365 Ngày qua</b>
                                     </h3>
 
@@ -347,19 +352,18 @@
     $ngaybinhluan = "";
     $comment_count = "";
     foreach ($thongke_binhluan as $key => $value) {
-        $ngaybinhluan .= "" . $value["ngaybinhluan"] . ",";
-        $comment_count .= $value["comment_count"] . ",";
+        $ngaybinhluan .= "'" . $value["ngaybinhluan"] . "', ";
+        $comment_count .= $value["comment_count"] . ", ";
     }
 
-    $ngaybinhluan = rtrim($ngaybinhluan, ",");
-    $comment_count = rtrim($comment_count, ",");
+    $ngaybinhluan = rtrim($ngaybinhluan, ", ");
+    $comment_count = rtrim($comment_count, ", ");
 
-    $ngaybinhluan = "['" . $ngaybinhluan . "']";
+    $ngaybinhluan = "[" . $ngaybinhluan . "]";
     $comment_count = "name: 'Số bình luận',data:[" . $comment_count . "]";
 
-    echo $ngaybinhluan;
+    // echo $ngaybinhluan;
     ?>
-
 
     var optionsArea = {
         chart: {
@@ -373,8 +377,8 @@
         series: [{
                 // name: "Số bình luận:",
                 // data: [11, 15, 26, 20, 33, 27]
-                <?= $comment_count ?>
-            },
+                <?= $comment_count ?>,
+            }
 
         ],
         xaxis: {

@@ -14,6 +14,7 @@ include("tintuc/tintuc/title.php");
                         <tr>
                             <th>ID</th>
                             <th>Tên tin tức</th>
+                            <th>Mô tả ngắn</th>
                             <th>Mô tả tin tức</th>
                             <th>Ảnh tin tức</th>
                             <th>Danh mục</th>
@@ -29,6 +30,9 @@ include("tintuc/tintuc/title.php");
                                 </td>
                                 <td>
                                     <?= $ten_tintuc ?>
+                                </td>
+                                <td>
+                                    <?= $motangan ?>
                                 </td>
                                 <td>
                                     <?= $mota_tintuc ?>

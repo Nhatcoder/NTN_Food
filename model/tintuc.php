@@ -1,8 +1,8 @@
 <?php
-function insert_tintuc($ten_tintuc, $mota_tintuc, $new_anhtintuc, $id_danhmuc_tintuc)
+function insert_tintuc($ten_tintuc,$motangan, $mota_tintuc, $new_anhtintuc, $id_danhmuc_tintuc)
 {
-    $sql = "INSERT INTO tbl_tintuc(ten_tintuc, mota_tintuc, anh_tintuc, id_danhmuc_tintuc) VALUES (?,?,?,?)";
-    pdo_execute($sql, $ten_tintuc, $mota_tintuc, $new_anhtintuc, $id_danhmuc_tintuc);
+    $sql = "INSERT INTO tbl_tintuc(ten_tintuc,motangan, mota_tintuc, anh_tintuc, id_danhmuc_tintuc) VALUES (?,?,?,?,?)";
+    pdo_execute($sql, $ten_tintuc,$motangan, $mota_tintuc, $new_anhtintuc, $id_danhmuc_tintuc);
 }
 
 
@@ -61,13 +61,13 @@ function list_tintuc_One($id)
     return $listTintuc;
 }
 
-function capnhat_tintuc($id_sua, $ten_tintuc, $mota_tintuc, $id_danhmuc_tintuc,  $new_anhtintuc)
+function capnhat_tintuc($id_sua, $ten_tintuc,$motangan, $mota_tintuc, $id_danhmuc_tintuc,  $new_anhtintuc)
 {
     if ($new_anhtintuc != "") {
-        $sql = "UPDATE tbl_tintuc SET ten_tintuc= ?, mota_tintuc= ?, anh_tintuc= ?, id_danhmuc_tintuc= ? WHERE id_tintuc = ?";
-        pdo_execute($sql, $ten_tintuc, $mota_tintuc, $new_anhtintuc, $id_danhmuc_tintuc, $id_sua);
+        $sql = "UPDATE tbl_tintuc SET ten_tintuc= ?,motangan=?, mota_tintuc= ?, anh_tintuc= ?, id_danhmuc_tintuc= ? WHERE id_tintuc = ?";
+        pdo_execute($sql, $ten_tintuc,$motangan, $mota_tintuc, $new_anhtintuc, $id_danhmuc_tintuc, $id_sua);
     } else {
-        $sql = "UPDATE tbl_tintuc SET ten_tintuc= ?,mota_tintuc= ?,id_danhmuc_tintuc= ? WHERE id_tintuc = ?";
-        pdo_execute($sql, $ten_tintuc, $mota_tintuc, $id_danhmuc_tintuc, $id_sua);
+        $sql = "UPDATE tbl_tintuc SET ten_tintuc= ?,motangan=?,mota_tintuc= ?,id_danhmuc_tintuc= ? WHERE id_tintuc = ?";
+        pdo_execute($sql, $ten_tintuc,$motangan, $mota_tintuc, $id_danhmuc_tintuc, $id_sua);
     }
 }

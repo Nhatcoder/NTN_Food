@@ -22,7 +22,7 @@ extract($listmonan);
 	<!-- Banner End -->
 
 	<!-- Product Detail Section -->
-	<form action="index.php?act=themgiohang&id_monan=<?= $id_monan ?>" method="post">
+	<form action="index.php?act=themgiohangchitiet&id_monan=<?= $id_monan ?>" method="post">
 		<section class="content-inner-1 overflow-hidden">
 			<div class="container">
 				<div class="row product-detail">
@@ -68,58 +68,25 @@ extract($listmonan);
 							</ul>
 							<h6 class="title">Thêm cùng</h6>
 							<ul class="add-product">
-								<li>
-									<div class="mini-modal">
-										<div class="dz-media">
-											<img src="views/assets/images/modal/mini/pic1.jpg" alt="/">
-										</div>
-										<div class="dz-content">
-											<p class="title">French Frise</p>
-											<div class="form-check search-content">
-												<input class="form-check-input" type="checkbox" value="">
+								<?php
+								foreach ($list_douong as $key => $value) {
+								?>
+									<li>
+										<label class="mini-modal" id="click">
+											<div class="dz-media">
+												<img src="uploads/monan/<?= $value["anh_monan"] ?>" alt="/">
 											</div>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="mini-modal">
-										<div class="dz-media">
-											<img src="views/assets/images/modal/mini/pic2.jpg" alt="/">
-										</div>
-										<div class="dz-content">
-											<p class="title">Extra Cheese</p>
-											<div class="form-check search-content">
-												<input class="form-check-input" type="checkbox" value="">
+											<div class="dz-content">
+												<p class="title"><?= $value["ten_monan"] ?></p>
+												<div class="form-check search-content">
+													<input class="form-check-input" id="click" type="checkbox" name="id_monan[]" value="<?= $value["id_monan"] ?>">
+												</div>
 											</div>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="mini-modal">
-										<div class="dz-media">
-											<img src="views/assets/images/modal/mini/pic3.jpg" alt="/">
-										</div>
-										<div class="dz-content">
-											<p class="title">Coca Cola</p>
-											<div class="form-check search-content">
-												<input class="form-check-input" type="checkbox" value="">
-											</div>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="mini-modal">
-										<div class="dz-media">
-											<img src="views/assets/images/modal/mini/pic4.jpg" alt="/">
-										</div>
-										<div class="dz-content">
-											<p class="title">Choco Lava</p>
-											<div class="form-check search-content">
-												<input class="form-check-input" type="checkbox" value="">
-											</div>
-										</div>
-									</div>
-								</li>
+										</label>
+									</li>
+								<?php
+								}
+								?>
 							</ul>
 							<div class="d-lg-flex justify-content-between">
 								<ul class="modal-btn-group">

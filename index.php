@@ -3,7 +3,7 @@ ob_start();
 session_start();
 include("./model/pdo.php");
 include("./model/connect_vnpay.php");
-
+include("./model/trangthaidonhang.php");
 include("./model/lienhe.php");
 include("./model/dangnhap.php");
 include("./model/binhluan.php");
@@ -95,6 +95,31 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 $user = list_check_tk_id($id_nguoidung);
             }
             include("./views/main/capnhat_user.php");
+            break;
+        case "theodoidonhang":
+            if (isset($_GET["id_nguoidung"]) > 0) {
+                $id = $_GET["id_nguoidung"];
+                $chitiet = list_chitiet_One_cc($id);
+            }
+            include("./views/main/theodoidonhang.php");
+            break;
+        case "huydonhang":
+            $_SESSION["user"] = $id_nguoidung;
+
+            $id = $_GET["ma_donhang"];
+            $id_huy = $_GET["id_trangthai"];
+            $id_trangthai = 6;
+            if ($id_huy == 1) {
+                capnhattrangthai($id, $id_trangthai);
+                echo '<script>alert("Đơn hàng đã hủy thành công ")</script>';
+                echo '<script>window.location.href = "index.php?act=theodoidonhang&id_nguoidung=' . $id_nguoidung . '";</script>';
+            } else {
+
+                echo '<script>alert("Đơn hàng không thể hủy ")</script>';
+                echo '<script>window.location.href = "index.php?act=theodoidonhang&id_nguoidung=' . $id_nguoidung . '";</script>';
+            }
+
+
             break;
 
         case "capnhattaikhoan":
@@ -215,6 +240,8 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                     $list_tk = list_check_tk_id($id_nguoidung);
                 }
 
+                $list_douong = list_douong();
+
                 include("./views/main/chitiet_monan.php");
             }
 
@@ -303,6 +330,62 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
             }
             break;
 
+        case "themgiohangchitiet":
+            if (isset($_POST["themgio"])) {
+                $ids = array();
+
+                // Thêm món ăn từ URL vào mảng nếu tồn tại
+                if (isset($_GET["id_monan"])) {
+                    $ids[] = $_GET["id_monan"];
+                }
+
+                // Thêm món ăn từ checkbox vào mảng nếu tồn tại
+                if (isset($_POST["id_monan"]) && is_array($_POST["id_monan"])) {
+                    $ids = array_merge($ids, $_POST["id_monan"]);
+                }
+
+                foreach ($ids as $key => $value) {
+                    $list_monan_cart = list_monan_cart($value);
+
+                    if (is_array($list_monan_cart)) {
+                        $soluongmua = isset($_GET["id_monan"]) ? ($_POST["soluongmua"] ?? 1) : ($_POST["soluongmua"][$key] ?? 1);
+
+                        $new_food = [
+                            "id_monan" => $list_monan_cart[0]['id_monan'],
+                            "ten_monan" => $list_monan_cart[0]['ten_monan'],
+                            "gia_monan" => $list_monan_cart[0]['gia_monan'],
+                            "anh_monan" => $list_monan_cart[0]['anh_monan'],
+                            "soluongmua" => $soluongmua,
+                        ];
+
+                        if (isset($_SESSION['cart'])) {
+                            $found = false;
+
+                            foreach ($_SESSION['cart'] as $i => $cart_item) {
+                                if ($cart_item['id_monan'] == $value) {
+                                    $_SESSION['cart'][$i]['soluongmua'] += $soluongmua;
+                                    $found = true;
+                                    break;
+                                }
+                            }
+
+                            if (!$found) {
+                                array_push($_SESSION['cart'], $new_food);
+                            }
+                        } else {
+                            $_SESSION['cart'] = array($new_food);
+                        }
+                    }
+                }
+                // echo "<pre>";
+                // print_r($_SESSION['cart']);
+
+                echo "<script>alert('Đã thêm thành công');</script>";
+                echo '<script>window.location.href = "index.php";</script>';
+            }
+            break;
+
+
         case "xoamonan":
             if (isset($_SESSION["cart"]) && isset($_GET["id_monan"])) {
                 $id_monan = $_GET["id_monan"];
@@ -338,6 +421,13 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 }
             }
 
+            $err_pay = "";
+            if (isset($_POST["redirect"])) {
+                if ($select_pay == "0") {
+                    $err_pay .= "Bạn chưa chọn phương thức thanh toán.";
+                }
+            }
+
             include("./views/main/thanhtoan.php");
             break;
 
@@ -353,7 +443,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 $sodienthoai = $_POST["sodienthoai"];
 
                 update_diachi_order($hoten, $diachi, $email, $sodienthoai, $id_nguoidung, $id_diachi);
-
                 echo "<script>alert('Đã cập thành công');</script>";
                 echo '<script>window.location.href = "index.php?act=thanhtoan";</script>';
             }
@@ -467,7 +556,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                     }
                 }
             }
-
             break;
 
             // 
@@ -629,35 +717,18 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 $sodienthoai = $_POST['sodienthoai'];
                 $noidung = $_POST['noidung'];
                 $trangthai = 0;
-    
-                lienhe($ho_ten,$email,$sodienthoai,$noidung,$trangthai);
+
+                lienhe($ho_ten, $email, $sodienthoai, $noidung, $trangthai);
                 echo "<script>alert('Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất');</script>";
                 echo '<script>window.location.href = "index.php?act=main";</script>';
             }
 
-           
+
             include("./views/main/main.php");
             break;
-
-
-           
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 } else {
+    $list_all_post  = list_all_tintuc_home();
     include("./views/main/main.php");
 }
 

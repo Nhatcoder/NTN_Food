@@ -48,7 +48,7 @@ if (isset($_SESSION["cart"]) && count($_SESSION["cart"]) > 0) {
                                                     <rect x="0.5" y="0.5" width="16" height="16" stroke="#0F8A65" />
                                                     <circle cx="8.5" cy="8.5" r="5.5" fill="#0F8A65" />
                                                 </svg>
-                                                <a href="index.php?act=chitietsanpham&id_monan=<?= $value["id_monan"] ?>">
+                                                <a href="index.php?act=chitietmonan&id_monan=<?= $value["id_monan"] ?>">
                                                     <?= $value["ten_monan"] ?>
                                                 </a>
                                             </h6>

@@ -1,7 +1,6 @@
 <div class="page-content bg-white">
     <!-- Banner  -->
-    <div class="dz-bnr-inr style-1 text-center bg-parallax"
-        style="background-image:url('assets/images/banner/bnr3.jpg'); background-size:cover; background-position:center;">
+    <div class="dz-bnr-inr style-1 text-center bg-parallax" style="background-image:url('assets/images/banner/bnr3.jpg'); background-size:cover; background-position:center;">
         <div class="container">
             <div class="dz-bnr-inr-entry">
                 <h1>Thanh toán</h1>
@@ -26,8 +25,7 @@
     ?>
     <section class="content-inner">
         <div class="container">
-            <form class="shop-form" action="index.php?act=capnhatdiachi&id_nguoidung=<?= $id_nguoidung ?>"
-                method="post">
+            <form class="shop-form" action="index.php?act=capnhatdiachi&id_nguoidung=<?= $id_nguoidung ?>" method="post">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="widget">
@@ -35,26 +33,21 @@
                             <input type="hidden" name="id_diachi" value="<?= $id_diachi ?>">
                             <div class="form-group col-md-12 m-b20">
                                 <label class="form-label" for="hoten">Họ tên</label>
-                                <input name="hoten" required type="text" id="hoten" value="<?= $hoten ?>"
-                                    class="form-control" placeholder="Họ tên">
+                                <input name="hoten" required type="text" id="hoten" value="<?= $hoten ?>" class="form-control" placeholder="Họ tên">
                             </div>
                             <div class="form-group m-b20">
                                 <label class="form-label" for="diachi">Địa chỉ nhận hàng</label>
-                                <input name="diachi" required type="text" id="diachi" value="<?= $diachi ?>"
-                                    class="form-control" placeholder="Địa chỉ">
+                                <input name="diachi" required type="text" id="diachi" value="<?= $diachi ?>" class="form-control" placeholder="Địa chỉ">
                             </div>
                             <div class="form-group col-md-12 m-b20">
                                 <label class="form-label" for="email">Email </label>
-                                <input name="email" required type="email" id="email" value="<?= $email ?>"
-                                    class="form-control" placeholder="Email">
+                                <input name="email" required type="email" id="email" value="<?= $email ?>" class="form-control" placeholder="Email">
                             </div>
                             <div class="form-group col-md-12 m-b20">
                                 <label class="form-label" for="phone">Số điện thoại</label>
-                                <input name="sodienthoai" required type="text" id="phone" value="<?= $sodienthoai ?>"
-                                    class="form-control dz-number" placeholder="Số điện thoại">
+                                <input name="sodienthoai" required type="text" id="phone" value="<?= $sodienthoai ?>" class="form-control dz-number" placeholder="Số điện thoại">
                             </div>
-                            <button class="btn btn-gray btnhover mb-3" type="submit" name="capnhat"
-                                data-bs-toggle="collapse" data-bs-target="#create-an-account">Cập nhật địa chỉ
+                            <button class="btn btn-gray btnhover mb-3" type="submit" name="capnhat" data-bs-toggle="collapse" data-bs-target="#create-an-account">Cập nhật địa chỉ
                                 <!-- <i class="fa fa-angle-down m-l10"></i> -->
                             </button>
                             <!-- <div id="create-an-account" class="collapse">
@@ -89,10 +82,9 @@
                                 <?php
                                 foreach ($_SESSION["cart"] as $key => $value) {
                                     extract($value);
-                                    ?>
+                                ?>
                                     <tr>
-                                        <td class="product-item-img"><img src="uploads/monan/<?= $anh_monan ?>"
-                                                alt="Ảnh món ăn"></td>
+                                        <td class="product-item-img"><img src="uploads/monan/<?= $anh_monan ?>" alt="Ảnh món ăn"></td>
                                         <td class="product-item-name">
                                             <?= $ten_monan ?>
                                         </td>
@@ -156,29 +148,18 @@
                             </tbody>
                         </table>
                         <h4 class="widget-title">Phương thức thanh toán</h4>
-                        <!-- <div class="form-group m-b20">
-                            <input type="text" class="form-control" placeholder="Name on Card">
-                        </div> -->
+
                         <div class="form-group m-b20">
                             <select class="form-select default-select" name="phuongthucthanhtoan">
-                                <option value="Credit Card Type">Phương thức thanh toán</option>
+                                <option value="0">Phương thức thanh toán</option>
                                 <option value="tienmat">Tiền mặt</option>
                                 <option value="vnp">VNPay</option>
                                 <option value="momo">Momo</option>
                                 <option value="vcb">Vietcombank</option>
                             </select>
                         </div>
-                        <!-- <div class="form-group m-b20">
-                            <input name="dzOther[CreditCardNumber]" type="text" class="form-control"
-                                placeholder="Credit Card Number">
-                        </div>
-                        <div class="form-group m-b20">
-                            <input name="dzOther[CardVerificationNumber]" type="text" class="form-control"
-                                placeholder="Card Verification Number">
-                        </div> -->
                         <div class="form-group">
-                            <input class="btn btn-gray btn-hover-2" type="submit" name="redirect" value="Đặt hàng ngay"
-                                id="redirect">
+                            <input class="btn btn-gray btn-hover-2" type="submit" name="redirect" value="Đặt hàng ngay" id="redirect">
                         </div>
                     </form>
 

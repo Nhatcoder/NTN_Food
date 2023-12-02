@@ -7,7 +7,7 @@
 				<!-- Breadcrumb Row -->
 				<nav aria-label="breadcrumb" class="breadcrumb-row">
 					<ul class="breadcrumb">
-						<li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+						<li class="breadcrumb-item"><a href="index.php">Trang chủ</a></li>
 						<li class="breadcrumb-item active" aria-current="page">Tin tức</li>
 					</ul>
 				</nav>

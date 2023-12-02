@@ -65,12 +65,6 @@
                                         <li><a href="index.php?act=dangbaotri">Đang bảo trì</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="index.php?act=thucdon">Thực đơn của chúng tôi</a>
-                                    <ul>
-                                        <li><a href="our-menu-1.html">Thực đơn nhà hàng</a></li>
-
-                                    </ul>
-                                </li>
                                 <li class="header-adv p-0"><img src="views/assets/images/adv-media.jpg" alt="/">
                                 </li>
                             </ul>

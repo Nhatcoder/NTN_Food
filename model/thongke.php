@@ -1,21 +1,18 @@
 <?php
 function thong_ke_hoadon()
 {
-    $sql = "SELECT * FROM tbl_hoadon;";
+    $sql = "SELECT COUNT(*) AS donmoi FROM tbl_hoadon WHERE id_trangthai = 1";
     $list = pdo_query($sql);
     return $list;
 }
 
 function doanh_thu_hoadon()
 {
-    $sql = "SELECT SUM(gia_monan * soluongmua) AS doanhthu 
-    FROM tbl_hoadon_chitiet 
-    INNER JOIN tbl_monan ON tbl_hoadon_chitiet.id_monan = tbl_monan.id_monan 
-    INNER JOIN tbl_hoadon ON tbl_hoadon.ma_donhang = tbl_hoadon_chitiet.ma_donhang
-    WHERE id_trangthai = 4;";
+    $sql = "SELECT SUM(doanhthu) as doanhthu FROM tbl_thongke;";
     $list = pdo_query($sql);
     return $list;
 }
+
 
 function thongke_donhang_ma_donhang($id)
 {
@@ -35,7 +32,7 @@ function don_thanh_cong()
 }
 function don_huy()
 {
-    $sql = "SELECT COUNT(*) AS donhuy FROM tbl_hoadon WHERE id_trangthai = 5";
+    $sql = "SELECT COUNT(*) AS donhuy FROM tbl_hoadon WHERE id_trangthai = 6";
     $list = pdo_query($sql);
     return $list;
 }

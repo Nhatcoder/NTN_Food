@@ -190,6 +190,10 @@
                                             </div>
 
                                             <div class="col-12 mb-3">
+                                                <h6><a href="index.php?act=theodoidonhang&id_nguoidung=<?= $id_nguoidung ?>">Theo dõi đơn hàng </a>
+                                                </h6>
+                                            </div>
+                                            <div class="col-12 mb-3">
                                                 <h6><a href="index.php?act=suataikhoan&id_nguoidung=<?= $id_nguoidung ?>">Sửa
                                                         thông tin</a>
                                                 </h6>

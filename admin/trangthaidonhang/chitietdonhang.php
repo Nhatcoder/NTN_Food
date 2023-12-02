@@ -51,13 +51,13 @@ include "trangthaidonhang/title.php"
                                     <?php echo $chitiet['ten_monan']; ?>
                                 </td>
                                 <td>
-                                    <?php echo $chitiet['gia_monan']; ?>
+                                    <?php echo number_format($chitiet['gia_monan'], 0, ",", ".") ?> VNĐ
                                 </td>
                                 <td>
                                     <?php echo $chitiet['soluongmua']; ?>
                                 </td>
                                 <td>
-                                    <?php echo $chitiet['tong_tien']; ?>
+                                    <?php echo number_format($chitiet['tong_tien'], 0, ",", ".") ?> VNĐ
                                 </td>
                                 <td>
                                     <?php echo $chitiet['loai_thanhtoan']; ?>

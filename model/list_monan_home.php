@@ -52,6 +52,12 @@ function list_monan_One($id)
     $listMonan = pdo_query_one($sql, $id);
     return $listMonan;
 }
+function list_douong()
+{
+    $sql = "SELECT * FROM tbl_monan, tbl_danhmuc WHERE tbl_monan.id_danhmuc = tbl_danhmuc.id_danhmuc AND tbl_danhmuc.id_danhmuc = 23 ORDER BY tbl_danhmuc.id_danhmuc DESC LIMIT 4;";
+    $listMonan = pdo_query($sql);
+    return $listMonan;
+}
 
 
 

@@ -18,6 +18,11 @@ if (isset($list_tintuc_one) && is_array($list_tintuc_one)) {
                             required value="<?= $ten_tintuc ?>">
                     </div>
                     <div class="mb-3">
+                        <label for="ok1" class="form-label">Mô tả ngắn</label>
+                        <input type="text" name="motangan" class="form-control" id="ok1" placeholder="Nhập mô tả tin tức"
+                            required value="<?= $motangan ?>">
+                    </div>
+                    <div class="mb-3">
                         <label for="ok1" class="form-label">Mô tả</label>
                         <input type="text" name="mota_tintuc" class="form-control" id="ok1" placeholder="Nhập mô tả tin tức"
                             required value="<?= $mota_tintuc ?>">
