@@ -101,7 +101,7 @@
                     </div>
                 </div>
                 <div class="col-lg-5">
-                    <form action="index.php?act=dathang" class="shop-form widget" method="post">
+                    <form action="index.php?act=dathang" class="shop-form widget" method="post" enctype="application/x-www-form-urlencoded">
                         <h4 class="widget-title">Tổng số đơn hàng</h4>
                         <table class="table-bordered check-tbl mb-4">
                             <tbody>
@@ -154,15 +154,29 @@
                                 <option value="0">Phương thức thanh toán</option>
                                 <option value="tienmat">Tiền mặt</option>
                                 <option value="vnp">VNPay</option>
-                                <option value="momo">Momo</option>
-                                <option value="vcb">Vietcombank</option>
+                                <option value="momo">Momo ATM</option>
                             </select>
                         </div>
                         <div class="form-group">
+                            <?php
+                            $ma_donhang = rand(0, 9999);
+                            $_SESSION["madonhang"] = $ma_donhang;
+
+                            $i = 0;
+                            $tongtien = 0;
+                            foreach ($_SESSION["cart"] as $key => $value) {
+                                extract($value);
+                                $thanhtien = $value['soluongmua'] * $value['gia_monan'];
+                                $tongtien = $tongtien + $thanhtien;
+                                $i++;
+                            }
+                            ?>
+                            <input type="hidden" name="tongtien" value="<?= $tongtien ?>">
+                            <input type="hidden" name="ma_donhang" value="<?= $_SESSION["madonhang"] ?>">
+
                             <input class="btn btn-gray btn-hover-2" type="submit" name="redirect" value="Đặt hàng ngay" id="redirect">
                         </div>
                     </form>
-
                 </div>
             </div>
         </div>
