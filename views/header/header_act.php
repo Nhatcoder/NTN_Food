@@ -22,7 +22,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" href="views/assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="views/assets/images/favicon2.jpg">
+
 
     <!-- Stylesheet -->
     <link href="views/assets/vendor/magnific-popup/magnific-popup.min.css" rel="stylesheet">

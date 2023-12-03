@@ -25,28 +25,24 @@
                     <div class="dz-info">
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <h4>Chi tiết đơn hàng</h4>
                                 <form action="index.php?act=theodoidonhang&id_nguoidung=<?= $_GET["id_nguoidung"] ?>" class="form-inline" id="search_food" method="post">
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="form-group mx-sm-2 mb-2">
-                                                <input type="number" class="form-control" value="<?php if (isset($_POST["ma_donhang"])) {
-                                                                                                        echo  $_POST["ma_donhang"];
-                                                                                                    } else {
-                                                                                                        echo "";
-                                                                                                    } ?>" name="ma_donhang" placeholder="Tìm kiếm theo mã đơn hàng">
+                                                <input type="text" class="form-control" id="ma_donhang" placeholder="Tìm kiếm theo mã đơn hàng">
                                             </div>
                                         </div>
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                             <div class="form-group m-b20">
-                                                <select class="form-select default-select" name="select_trangthai" required>
-                                                    <option value="0" <?php if (isset($_POST["select_trangthai"]) && $_POST["select_trangthai"] == "0") echo "selected"; ?>>Tất cả</option>
-                                                    <option value="1" <?php if (isset($_POST["select_trangthai"]) && $_POST["select_trangthai"] == "1") echo "selected"; ?>>Đơn mới</option>
-                                                    <option value="2" <?php if (isset($_POST["select_trangthai"]) && $_POST["select_trangthai"] == "2") echo "selected"; ?>>Đã xác nhận thực hiện</option>
-                                                    <option value="3" <?php if (isset($_POST["select_trangthai"]) && $_POST["select_trangthai"] == "3") echo "selected"; ?>>Đang giao hàng</option>
-                                                    <option value="4" <?php if (isset($_POST["select_trangthai"]) && $_POST["select_trangthai"] == "4") echo "selected"; ?>>Giao hàng thành công</option>
-                                                    <option value="5" <?php if (isset($_POST["select_trangthai"]) && $_POST["select_trangthai"] == "5") echo "selected"; ?>>Đã hủy</option>
+                                                <select class="form-select default-select" id="select_trangthai" required>
+                                                    <option value="0">Lọc theo trạng thái</option>
+                                                    <option value="1">Đơn mới</option>
+                                                    <option value="2">Đã xác nhận thực hiện</option>
+                                                    <option value="3">Đang giao hàng</option>
+                                                    <option value="4">Giao hàng thành công</option>
+                                                    <option value="5">Đã hủy</option>
                                                 </select>
-
                                             </div>
                                         </div>
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
@@ -114,14 +110,11 @@
                                                     </td>
                                                 <?php }   ?>
 
+
+
                                             </tr>
 
                                         <?php } ?>
-
-                                        <?php
-
-
-                                        ?>
 
                                     </tbody>
                                 </table>

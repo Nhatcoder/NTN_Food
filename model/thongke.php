@@ -32,7 +32,7 @@ function don_thanh_cong()
 }
 function don_huy()
 {
-    $sql = "SELECT COUNT(*) AS donhuy FROM tbl_hoadon WHERE id_trangthai = 6";
+    $sql = "SELECT COUNT(*) AS donhuy FROM tbl_hoadon WHERE id_trangthai = 5";
     $list = pdo_query($sql);
     return $list;
 }

@@ -867,3 +867,19 @@
 	left: 59px;
 	background-repeat: no-repeat;
 }
+
+.custom-container {
+	max-width: 1600px;
+	/* Đặt giá trị max-width mong muốn */
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.team-detail {
+	position: relative;
+	display: flex;
+	overflow: hidden;
+	align-items: center;
+	margin-bottom: 55px;
+	padding: 50px 0;
+}

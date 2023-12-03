@@ -93,8 +93,10 @@ extract($listmonan);
 									<li><button name="themgio" type="submit" class="btn btn-primary btn-hover-1"><span>Thêm vào giỏ
 												hàng<i class="flaticon-shopping-bag-1 m-l10"></i></span></button>
 									</li>
-									<li><a href="index.php?act=giohang&id_monan=<?= $id_monan ?>" class="btn btn-outline-secondary btn-hover-1"><span>Mua
-												ngay <i class="flaticon-shopping-cart m-l10"></i></a>
+									<li>
+										<a href="index.php?act=giohang&id_monan=<?= $id_monan ?>" class="btn btn-outline-secondary btn-hover-1"><span>Mua
+												ngay <i class="flaticon-shopping-cart m-l10"></i>
+										</a>
 										</span>
 									</li>
 								</ul>

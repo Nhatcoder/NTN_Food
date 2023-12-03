@@ -17,9 +17,7 @@
                             <th>Số điện thoại</th>
                             <th>Ngày mua hàng</th>
                             <th>Phương thức thanh toán</th>
-                            <th>Trạng thái</th>
-                            <th>Thao tác</th>
-                           
+                            <th>Chi tiết</th>
                         </tr>
                         <?php
                         $rowCount = 0;
@@ -58,7 +56,7 @@
                                     <a 
                                         href="index.php?act=chitietdonhang&iddh=<?= $ma_donhang ?>">
                                         <button data-toggle="tooltip" title="" class="pd-setting-ed"
-                                            data-original-title="Chi tiết"><i class="fa fa-pencil-square-o"
+                                            data-original-title="Chi tiết"><i class="fa-solid fa-list"
                                                 aria-hidden="true"></i></button>
                                     </a>
                                 </td>

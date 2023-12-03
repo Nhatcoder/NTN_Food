@@ -6,7 +6,7 @@ function loaddonhangAll()
     INNER join tbl_diachinhanhang c ON a.id_nguoidung = c.id_nguoidung 
     INNER JOIN tbl_trangthai d on a.id_trangthai = d.id_trangthai 
     WHERE a.id_trangthai IN (0,1, 2, 3)
-    ORDER BY a.id_trangthai ASC;";
+    ORDER BY a.id_trangthai DESC;";
     $listdh = pdo_query($sql);
     return $listdh;
 }
@@ -53,7 +53,7 @@ function loaddonhanghuy()
     FROM tbl_hoadon a 
     INNER join tbl_diachinhanhang c ON a.id_nguoidung = c.id_nguoidung 
     INNER JOIN tbl_trangthai d on a.id_trangthai = d.id_trangthai 
-    WHERE a.id_trangthai IN (6) 
+    WHERE a.id_trangthai IN (5) 
     ORDER BY a.id_giohang DESC;
     ;";
     $listdhhuy = pdo_query($sql);
@@ -91,16 +91,73 @@ function list_chitiet_One($id)
     $chitiet = pdo_query($sql, $id);
     return $chitiet;
 }
-function list_chitiet_One_cc($id)
+
+function list_chitiet_one_donhang($id)
 {
     $sql = "SELECT b.id_trangthai, a.id_monan,b.loai_thanhtoan,b.ngaymua, c.hoten,c.sodienthoai,c.diachi,b.ma_donhang,d.ten_monan,d.gia_monan,d.anh_monan,a.soluongmua,a.soluongmua*d.gia_monan AS tong_tien, id_giohang ,e.tentrangthai 
+    FROM tbl_hoadon a 
+    INNER JOIN tbl_diachinhanhang c on b.id_nguoidung = c.id_nguoidung 
+    INNER JOIN tbl_monan d ON a.id_monan = d.id_monan 
+    INNER JOIN tbl_trangthai e on b.id_trangthai = e.id_trangthai 
+    WHERE b.id_nguoidung = ?
+    ORDER BY b.id_trangthai DESC;";
+    $chitiet = pdo_query($sql, $id);
+    return $chitiet;
+}
+
+
+
+function list_chitiet_one_donhang_chitiet($id)
+{
+    $sql = "SELECT b.loai_thanhtoan,b.ngaymua, c.hoten,c.sodienthoai,c.diachi,b.ma_donhang,d.ten_monan,d.gia_monan,d.anh_monan,a.soluongmua,a.soluongmua*d.gia_monan AS tong_tien, id_giohang ,e.tentrangthai, e.id_trangthai 
     FROM tbl_hoadon_chitiet a 
     INNER JOIN tbl_hoadon b ON a.ma_donhang = b.ma_donhang 
     INNER JOIN tbl_diachinhanhang c on b.id_nguoidung = c.id_nguoidung 
     INNER JOIN tbl_monan d ON a.id_monan = d.id_monan 
     INNER JOIN tbl_trangthai e on b.id_trangthai = e.id_trangthai 
-    WHERE b.id_nguoidung = ?
-    ORDER BY b.id_trangthai ASC;";
+    WHERE b.ma_donhang = ?
+    ORDER BY id_giohang DESC;";
     $chitiet = pdo_query($sql, $id);
     return $chitiet;
+}
+
+function huydonhang($id, $id_trangthai)
+{
+    $sql = "UPDATE tbl_hoadon SET id_trangthai = ? WHERE ma_donhang = ?";
+    pdo_execute($sql, $id_trangthai, $id);
+}
+
+
+function loaddonhangAll_user($ma_donhang, $select_trangthai, $id)
+{
+    $sql = "SELECT a.loai_thanhtoan,a.ma_donhang, c.hoten,c.diachi,c.sodienthoai, b.ma_donhang, SUM(soluongmua) AS tongluongmua ,a.id_trangthai,a.ngaymua, a.id_giohang, d.id_trangthai, d.tentrangthai  
+    FROM tbl_hoadon a  
+    INNER JOIN tbl_hoadon_chitiet b ON a.ma_donhang = b.ma_donhang
+    INNER join tbl_diachinhanhang c ON a.id_nguoidung = c.id_nguoidung 
+    INNER JOIN tbl_trangthai d on a.id_trangthai = d.id_trangthai 
+    WHERE a.id_trangthai IN (0,1, 2, 3) AND a.id_nguoidung = ?";
+
+    if ($ma_donhang != "") {
+        $sql .= " AND a.ma_donhang = ?";
+    }
+
+    if ($select_trangthai > 0) {
+        $sql .= " AND a.id_trangthai = ?";
+    }
+
+    $sql .= " GROUP BY b.ma_donhang
+    ORDER BY a.id_trangthai DESC;";
+
+    $params = [$id];
+
+    if ($ma_donhang != "") {
+        $params[] = $ma_donhang;
+    }
+
+    if ($select_trangthai > 0) {
+        $params[] = $select_trangthai;
+    }
+
+    $listdh = pdo_query($sql, ...$params);
+    return $listdh;
 }

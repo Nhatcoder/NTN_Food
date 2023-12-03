@@ -16,6 +16,7 @@ include("./model/list_monan_cuahang.php");
 include("./model/mail.php");
 
 
+
 // session_destroy();
 // die();
 
@@ -96,25 +97,51 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
             }
             include("./views/main/capnhat_user.php");
             break;
+
+
         case "theodoidonhang":
             if (isset($_GET["id_nguoidung"]) > 0) {
+                if (isset($_GET['trang'])) {
+                    $page = intval($_GET['trang']);
+                } else {
+                    $page = 1;
+                }
+
+                if ($page == "" || $page == 1) {
+                    $begin = 0;
+                } else {
+                    $begin = ($page * 10) - 10;
+                }
+
+
+                $ma_donhang = $_POST['ma_donhang'] ?? "";
+                $select_trangthai = $_POST['select_trangthai'] ?? "";
+
                 $id = $_GET["id_nguoidung"];
-                $chitiet = list_chitiet_One_cc($id);
+                $chitiet = loaddonhangAll_user($ma_donhang, $select_trangthai, $id);
             }
             include("./views/main/theodoidonhang.php");
+            break;
+        case "xemchitietdonhang":
+            if (isset($_GET["id_nguoidung"]) > 0) {
+
+                $id = $_GET["ma_donhang"];
+                $chitiet = list_chitiet_one_donhang_chitiet($id);
+            }
+            include("./views/main/xemchitietdonhang.php");
             break;
         case "huydonhang":
             $_SESSION["user"] = $id_nguoidung;
 
             $id = $_GET["ma_donhang"];
-            $id_huy = $_GET["id_trangthai"];
-            $id_trangthai = 6;
+            $id_huy = $_GET["id_huy"];
+            $id_trangthai = 5;
+
             if ($id_huy == 1) {
-                capnhattrangthai($id, $id_trangthai);
+                huydonhang($id, $id_trangthai);
                 echo '<script>alert("Đơn hàng đã hủy thành công ")</script>';
                 echo '<script>window.location.href = "index.php?act=theodoidonhang&id_nguoidung=' . $id_nguoidung . '";</script>';
             } else {
-
                 echo '<script>alert("Đơn hàng không thể hủy ")</script>';
                 echo '<script>window.location.href = "index.php?act=theodoidonhang&id_nguoidung=' . $id_nguoidung . '";</script>';
             }
@@ -138,6 +165,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
 
                 $user = list_check_tk_id($id_nguoidung);
 
+                $new_anhtk = "";
                 if ($anh_taikhoan != "") {
                     $linkanh = 'uploads/avatar/' . $user['anh_taikhoan'];
                     unlink($linkanh);
@@ -250,44 +278,52 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
 
             // Giỏ hàng
         case "giohang":
-            // Thêm món vào giỏ hàng
+            $ids = array();
+            // Thêm món ăn từ URL vào mảng nếu tồn tại
             if (isset($_GET["id_monan"])) {
-                $id = $_GET["id_monan"];
-                $list_monan_cart = list_monan_cart($id);
-                $soluongmua = 1;
+                $ids[] = $_GET["id_monan"];
+            }
+
+            // Thêm món ăn từ checkbox vào mảng nếu tồn tại
+            if (isset($_POST["id_monan"]) && is_array($_POST["id_monan"])) {
+                $ids = array_merge($ids, $_POST["id_monan"]);
+            }
+
+            foreach ($ids as $key => $value) {
+                $list_monan_cart = list_monan_cart($value);
 
                 if (is_array($list_monan_cart)) {
-                    foreach ($list_monan_cart as $food) {
-                        $new_food = [
-                            "id_monan" => $food['id_monan'],
-                            "ten_monan" => $food['ten_monan'],
-                            "gia_monan" => $food['gia_monan'],
-                            "anh_monan" => $food['anh_monan'],
-                            "soluongmua" => $soluongmua,
-                        ];
-                    }
-                }
+                    $soluongmua = isset($_GET["id_monan"]) ? ($_POST["soluongmua"] ?? 1) : ($_POST["soluongmua"][$key] ?? 1);
 
-                // Kiểm tra session tồn tại hay không nếu chưa thì tăng lên
-                if (isset($_SESSION['cart'])) {
-                    $i = 0;
-                    while ($i < count($_SESSION['cart'])) {
-                        if ($_SESSION['cart'][$i]['id_monan'] == $id) {
-                            $_SESSION['cart'][$i]['soluongmua'] += $soluongmua;
-                            break;
+                    $new_food = [
+                        "id_monan" => $list_monan_cart[0]['id_monan'],
+                        "ten_monan" => $list_monan_cart[0]['ten_monan'],
+                        "gia_monan" => $list_monan_cart[0]['gia_monan'],
+                        "anh_monan" => $list_monan_cart[0]['anh_monan'],
+                        "soluongmua" => $soluongmua,
+                    ];
+
+                    if (isset($_SESSION['cart'])) {
+                        $found = false;
+                        foreach ($_SESSION['cart'] as $i => $cart_item) {
+                            if ($cart_item['id_monan'] == $value) {
+                                $_SESSION['cart'][$i]['soluongmua'] += $soluongmua;
+                                $found = true;
+                                break;
+                            }
                         }
-                        $i++;
+
+                        if (!$found) {
+                            array_push($_SESSION['cart'], $new_food);
+                        }
+                    } else {
+                        $_SESSION['cart'] = array($new_food);
                     }
-                    if ($i == count($_SESSION['cart'])) {
-                        array_push($_SESSION['cart'], $new_food);
-                    }
-                } else {
-                    $_SESSION['cart'] = array($new_food);
                 }
-                // echo "<script>alert('Đã thêm thành công');</script>";
             }
             include("./views/main/giohang.php");
             break;
+
 
         case "themgiohang":
             // Thêm món vào giỏ hàng
@@ -381,7 +417,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 // print_r($_SESSION['cart']);
 
                 echo "<script>alert('Đã thêm thành công');</script>";
-                echo '<script>window.location.href = "index.php";</script>';
+                echo '<script>window.location.href = "index.php?act=giohang";</script>';
             }
             break;
 

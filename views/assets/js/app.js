@@ -8,7 +8,7 @@ $(document).ready(function () {
                 $("#comments").html(data);
             },
         });
-    } 
+    }
 
     // Chèn dữ liệu
     $("#commentform").submit(function (event) {
@@ -45,3 +45,10 @@ $(document).ready(function () {
         }
     });
 });
+
+
+
+
+
+
+
