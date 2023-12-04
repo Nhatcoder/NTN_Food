@@ -51,66 +51,6 @@ if (isset($list_monan_one) && is_array($list_monan_one)) {
                         <input type="number" name="noibat" class="form-control" value="<?= $noibat ?>" id="ok20" placeholder="Nhập số" required>
                     </div>
 
-                    <div class="ok mg-b-20">
-                        <h5 class="mg-tb-15">Món ăn kèm</h5>
-
-
-                        <?php
-
-
-                        // foreach ($list_id_bienthe as $key => $value) {
-                        // ?>
-                            <div class="row">
-                                <div class="form-group col-md-4 mg-b-20">
-                                    <div id="anh-container">
-                                        <div class="row" style="display: flex;justify-content: space-between; align-items: center;">
-                                           
-                                            <div class="col-md-12">
-                                                <label for="price">Ảnh</label>
-                                                <?php
-                                                foreach ($list_id_bienthe as $key => $value) {
-                                                ?>
-                                                    <input type="file" id="anh" name="anh[]" value="<?= $value["anh"] ?>" class="form-control" placeholder="Nhập anh">
-                                                <?php
-                                                }
-                                                ?>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-4 ">
-                                    <div id="ten-container">
-                                        <label for="price">Tên</label>
-                                        <?php
-                                        foreach ($list_id_bienthe as $key => $value) {
-                                        ?>
-                                            <input type="text" id="ten" name="ten[]" value="<?= $value["ten_bt"] ?>" class="form-control" placeholder="Nhập tên">
-                                        <?php
-                                        }
-                                        ?>
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <div id="tien-container">
-                                        <label for="price">Giá</label>
-                                        <?php
-                                        foreach ($list_id_bienthe as $key => $value) {
-                                        ?>
-                                            <input type="text" id="tien" name="tien[]" value="<?= $value["gia"] ?>" class="form-control" placeholder="Nhập giá">
-                                        <?php
-                                        }
-                                        ?>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php 
-                        // }
-                        ?>
-                        <div class="mb-3">
-                            <button type="button" class="btn btn-success ml-5" id="addSizeButton">Thêm món ăn kèm</button>
-                        </div>
-                    </div>
-
                     <div class="mb-3 form_btn form-check">
                         <input class="btn btn-primary mr-3 text-left" type="submit" name="capnhat" value="CẬP NHẬT MỚI" required>
                         <a href="index.php?act=lietkemonan"><input class="btn btn-success text-left" type="button" value="DANH SÁCH"></a>
@@ -128,37 +68,3 @@ if (isset($list_monan_one) && is_array($list_monan_one)) {
         </div>
     </div>
 </div>
-
-<script>
-    document.getElementById('addSizeButton').addEventListener('click', function() {
-        // Tạo một ô input mới cho mảng size[]
-        var newAnhInput = document.createElement('input');
-        newAnhInput.type = 'file';
-        newAnhInput.name = 'anh[]';
-        newAnhInput.id = 'anh';
-        newAnhInput.className = 'form-control';
-        newAnhInput.placeholder = 'Nhập ảnh';
-
-        // Thêm ô input mới vào container
-        document.getElementById('anh-container').appendChild(newAnhInput);
-
-        var newTenInput = document.createElement('input');
-        newTenInput.type = 'text';
-        newTenInput.name = 'ten[]';
-        newTenInput.id = 'ten';
-        newTenInput.className = 'form-control';
-        newTenInput.placeholder = 'Nhập tên';
-
-        // Thêm ô input mới vào container
-        document.getElementById('ten-container').appendChild(newTenInput);
-        var newTienInput = document.createElement('input');
-        newTienInput.type = 'text';
-        newTienInput.name = 'tien[]';
-        newTienInput.id = 'tien';
-        newTienInput.className = 'form-control';
-        newTienInput.placeholder = 'Nhập giá';
-
-        // Thêm ô input mới vào container
-        document.getElementById('tien-container').appendChild(newTienInput);
-    });
-</script>

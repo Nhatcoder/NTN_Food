@@ -68,7 +68,17 @@
                         <div class="offcanvas-form">
                             <div class="row g-0">
                                 <div class="col-md-4 gradient-custom text-center text-white">
-                                    <img src="uploads/avatar/<?= $anh_taikhoan ?>" alt="Avatar" class="img-fluid my-2 mt-4" />
+                                    <?php
+                                    $avatarFolderPath = 'uploads/avatar/';
+                                    $anh_taikhoan = 'avt.jpg';
+                                    $avtar = $avatarFolderPath.$anh_taikhoan;
+                                    if (file_exists($avatarFolderPath)) {
+                                    ?>
+                                        <img src="uploads/avatar/<?= $anh_taikhoan ?>" alt="Avatar" class="img-fluid my-2 mt-4" />
+                                    <?php } else {
+                                    ?>
+                                        <img src="uploads/<?= $anh_taikhoan ?>" alt="Avatar" class="img-fluid my-2 mt-4" />
+                                    <?php } ?>
                                     <h5>
                                         <?= $hoten ?>
                                     </h5>
@@ -159,7 +169,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button name="submit" value="submit" type="submit" class="btn btn-primary w-100 d-block btn-hover-2"><span>Đăng nhập</span></button>
+                            <button name="submit" id="submitLogin" value="submit" type="submit" class="btn btn-primary w-100 d-block btn-hover-2"><span>Đăng nhập</span></button>
                             <p class="text-center m-t30">Chưa có tài khoản?
                                 <a class="register text-primary font-weight-500" data-bs-toggle="offcanvas" href="#offcanvasRegister" role="button" aria-controls="offcanvasRegister">Đăng ký ở
                                     đây</a>

@@ -18,7 +18,7 @@
     <!-- Banner End -->
 
     <!-- Team Section -->
-    <section class="content-inner custom-container">
+    <section class="custom-container">
         <div class="row">
             <div class="col-12">
                 <div class="team-detail">

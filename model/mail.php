@@ -321,23 +321,6 @@ function submitmail()
                               <table border="0" cellpadding="0" cellspacing="0" role="presentation"
                                 style="vertical-align:top;" width="100%">
                                 <tr>
-                                  <td align="right" vertical-align="middle"
-                                    style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                                    <table border="0" cellpadding="0" cellspacing="0" role="presentation"
-                                      style="border-collapse:separate;line-height:100%;">
-                                      <tr>
-                                        <td align="center" bgcolor="#e6b07e" role="presentation"
-                                          style="border:none;border-radius:3px;cursor:auto;mso-padding-alt:10px 25px;background:#e6b07e;"
-                                          valign="middle">
-                                          <a href="[LINK]"
-                                            style="display: inline-block; background: #e6b07e; color: white; font-family: Muli, Arial, sans-serif; font-size: 13px; font-weight: 700; line-height: 30px; margin: 0; text-decoration: none; text-transform: none; padding: 10px 25px; mso-padding-alt: 0px; border-radius: 3px;"
-                                            target="_blank">   </a>
-                                        </td>
-                                      </tr>
-                                    </table>
-                                  </td>
-                                </tr>
-                                <tr>
                                   <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
                                     <div
                                       style="font-family:Muli, Arial, sans-serif;font-size:16px;font-weight:400;line-height:20px;text-align:left;color:#333333;">

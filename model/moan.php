@@ -1,20 +1,10 @@
 <?php
-// function insert_monan($ten_monan, $gia_monan, $new_anhmonan, $id_danhmuc, $mota_monan, $noibat)
-// {
-//     $sql = "INSERT INTO tbl_monan(ten_monan, gia_monan, anh_monan, id_danhmuc, mota_monan, noibat) VALUES (?,?,?,?,?,?)";
-//     pdo_execute($sql, $ten_monan, $gia_monan, $new_anhmonan, $id_danhmuc, $mota_monan, $noibat);
-// }
-function insert_monan($ten_monan, $gia_monan, $new_anhmonan, $id_danhmuc, $mota_monan, $noibat, $anhs, $ten, $gia)
+function insert_monan($ten_monan, $gia_monan, $new_anhmonan, $id_danhmuc, $mota_monan, $noibat)
 {
-    $i = 0;
     $sql = "INSERT INTO tbl_monan(ten_monan, gia_monan, anh_monan, id_danhmuc, mota_monan, noibat) VALUES (?,?,?,?,?,?)";
-    $id_monan = pdo_execute_id($sql, $ten_monan, $gia_monan, $new_anhmonan, $id_danhmuc, $mota_monan, $noibat);
-    $sql3 = "INSERT INTO tbl_bienthe(id_man, ten_bt, gia,anh) VALUES (?,?,?,?)";
-    foreach ($anhs as $anh) {
-        pdo_execute($sql3, $id_monan, $ten[$i], $gia[$i], $anh);
-        $i++;
-    }
+    pdo_execute($sql, $ten_monan, $gia_monan, $new_anhmonan, $id_danhmuc, $mota_monan, $noibat);
 }
+
 
 function delete_monan($id)
 {
@@ -35,13 +25,6 @@ function list_monan_One($id)
     $listMonan = pdo_query_one($sql, $id);
     return $listMonan;
 }
-function list_id_bienthe($id)
-{
-    $sql = "SELECT * FROM tbl_bienthe WHERE id_man = ?";
-    $listMonan = pdo_query($sql, $id);
-    return $listMonan;
-}
-
 
 
 function capnhat_monan($id_sua, $ten_monan, $gia_monan, $id_danhmuc, $mota_monan, $new_anhmonan, $noibat)
@@ -61,7 +44,7 @@ function capnhat_monan_bienthe($id_sua, $ten, $tien, $id_bienthe, $anh)
     $sql_update = "UPDATE tbl_bienthe SET  ten_bt = ?, gia = ?, anh=? WHERE id_bt = ?";
     $sql_delete = "DELETE FROM tbl_bienthe WHERE id_bt = ?";
     $sql_insert = "INSERT INTO tbl_bienthe(id_man, ten_bt, gia, anh) VALUES (?,?,?,?)";
-  
+
     foreach ($ten as $i => $a) {
         if (!empty($id_bienthe[$i])) {
             pdo_execute(

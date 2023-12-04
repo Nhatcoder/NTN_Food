@@ -52,21 +52,43 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
     switch ($act) {
             // Tài khoản
         case "dangnhap":
+            $sodienthoai = $pass = "";
+            $err_sodienthoai = $err_pass = "";
             if (isset($_POST["submit"])) {
                 $sodienthoai = $_POST["sodienthoai"];
                 $pass = md5($_POST["pass"]);
 
-                $result = check_tk_one($sodienthoai, $pass);
-                if ($result) {
-                    extract($result);
-                    $_SESSION["email"] = $email;
-                    $_SESSION["user"] = $id_nguoidung;
-                    echo '<script>alert("Thành công")</script>';
-                    echo '<script>window.location.href = "index.php";</script>';
+                $check = 0;
+                if (empty(trim($sodienthoai))) {
+                    $err_sodienthoai = "Bạn chưa nhập trường này";
+                    $check++;
                 } else {
-                    echo '<script>alert("Lỗi")</script>';
+                    if (!preg_match("/^0\d{9}$/", $sodienthoai)) {
+                        $check++;
+                        $err_sodienthoai = "Bạn phải nhập đúng định dạng số điện thoại";
+                    }
+                }
+
+                if (empty(trim($pass))) {
+                    $err_pass = "Bạn chưa nhập trường này";
+                    $check++;
+                }
+
+                if ($check == 0) {
+                    $result = check_tk_one($sodienthoai, $pass);
+                    if ($result) {
+                        extract($result);
+                        $_SESSION["email"] = $email;
+                        $_SESSION["user"] = $id_nguoidung;
+                        echo '<script>alert("Thành công")</script>';
+                        echo '<script>window.location.href = "index.php";</script>';
+                    } else {
+                        $err_pass = "Bạn nhập sai số điện thoại hoặc mật khẩu.";
+                        // echo '<script>alert("Bạn nhâp sai mật khẩu hoặc số điện thoại")</script>';
+                    }
                 }
             }
+            include "./views/main/dangnhap.php";
             break;
 
         case "dangki":
