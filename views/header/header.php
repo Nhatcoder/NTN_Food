@@ -70,15 +70,17 @@
                                 <div class="col-md-4 gradient-custom text-center text-white">
                                     <?php
                                     $avatarFolderPath = 'uploads/avatar/';
-                                    $anh_taikhoan = 'avt.jpg';
-                                    $avtar = $avatarFolderPath.$anh_taikhoan;
-                                    if (file_exists($avatarFolderPath)) {
-                                    ?>
-                                        <img src="uploads/avatar/<?= $anh_taikhoan ?>" alt="Avatar" class="img-fluid my-2 mt-4" />
+                                    $anh = 'avt.jpg';
+                                    $avtar = $avatarFolderPath.$anh;
+                                    if (file_exists($avtar)) {
+                                        ?>
+                                        <!-- <img src="uploads/<?= $anh_taikhoan ?>" alt="Avatar" class="img-fluid my-2 mt-4" /> -->
                                     <?php } else {
-                                    ?>
-                                        <img src="uploads/<?= $anh_taikhoan ?>" alt="Avatar" class="img-fluid my-2 mt-4" />
+                                        ?>
+                                        <!-- <img src="uploads/avatar/<?= $anh_taikhoan ?>" alt="Avatar" class="img-fluid my-2 mt-4" /> -->
                                     <?php } ?>
+                                    <img src="uploads/avatar/<?= $anh_taikhoan ?>" alt="Avatar" class="img-fluid my-2 mt-4" />
+
                                     <h5>
                                         <?= $hoten ?>
                                     </h5>
