@@ -151,8 +151,7 @@
 
                         <div class="form-group m-b20">
                             <select class="form-select default-select" name="phuongthucthanhtoan">
-                                <option value="0">Phương thức thanh toán</option>
-                                <option value="tienmat">Tiền mặt</option>
+                                <option selected value="tienmat">Tiền mặt</option>
                                 <option value="vnp">VNPay</option>
                                 <option value="momo">Momo ATM</option>
                             </select>

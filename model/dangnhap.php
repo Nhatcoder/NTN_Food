@@ -1,8 +1,8 @@
 <?php
-function check_tk_one($sodienthoai, $pass)
+function check_tk_one($sodienthoai, $pass, $vaitro = 1)
 {
-    $sql = "SELECT * FROM tbl_taikhoan WHERE sodienthoai = ? AND matkhau = ?";
-    $list_tk = pdo_query_one($sql, $sodienthoai, $pass);
+    $sql = "SELECT * FROM tbl_taikhoan WHERE sodienthoai = ? AND matkhau = ? AND vaitro = ?";
+    $list_tk = pdo_query_one($sql, $sodienthoai, $pass, $vaitro);
 
     return $list_tk;
 }

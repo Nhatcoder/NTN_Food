@@ -9122,8 +9122,8 @@ fieldset:disabled .wp-block-button__link {
 }
 
 .my-5 {
-  margin-top: 2rem !important;
-  margin-bottom: 2rem !important;
+  margin-top: 3rem !important;
+  margin-bottom: 3rem !important;
 }
 
 .my-auto {
@@ -18662,8 +18662,8 @@ section {
   height: 12px;
   width: 38px;
   position: absolute;
-  top: -3px;
-  left: 58px;
+  top: 8px;
+  left: 3px;
   background-repeat: no-repeat;
 }
 
@@ -20275,8 +20275,7 @@ footer .dz-meta ul li a {
   background: #fff;
 }
 
-
-.card-header {
+ .card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36798,7 +36797,3 @@ pre {
 }
 
 /*# sourceMappingURL=style.css.map */
-
-.btn-quantity.style-1 {
-  position: relative;
-}

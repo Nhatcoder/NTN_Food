@@ -71,12 +71,12 @@
                                     <?php
                                     $avatarFolderPath = 'uploads/avatar/';
                                     $anh = 'avt.jpg';
-                                    $avtar = $avatarFolderPath.$anh;
+                                    $avtar = $avatarFolderPath . $anh;
                                     if (file_exists($avtar)) {
-                                        ?>
+                                    ?>
                                         <!-- <img src="uploads/<?= $anh_taikhoan ?>" alt="Avatar" class="img-fluid my-2 mt-4" /> -->
                                     <?php } else {
-                                        ?>
+                                    ?>
                                         <!-- <img src="uploads/avatar/<?= $anh_taikhoan ?>" alt="Avatar" class="img-fluid my-2 mt-4" /> -->
                                     <?php } ?>
                                     <img src="uploads/avatar/<?= $anh_taikhoan ?>" alt="Avatar" class="img-fluid my-2 mt-4" />
@@ -129,7 +129,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </form>
@@ -152,7 +151,7 @@
                             <div class="form-group m-b15">
                                 <label class="form-label">Số điện thoại*</label>
                                 <div class="input-group">
-                                    <input name="sodienthoai" required type="text" class="form-control" placeholder="Nhập số điện thoại của bạn">
+                                    <input name="sodienthoai" type="text" class="form-control" placeholder="Nhập số điện thoại của bạn">
                                 </div>
                             </div>
                             <div class="form-group m-b30">
@@ -183,7 +182,8 @@
         <?php } ?>
 
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRegister">
-            <form action="index.php?act=dangki" method="post">
+            <!-- <form action="index.php?act=dangki" id="form_dangki" method="post"> -->
+            <form id="form_dangki">
                 <div class="offcanvas-body">
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     <div class="offcanvas-form">
@@ -197,25 +197,28 @@
                         <div class="form-group m-b15">
                             <label class="form-label">Họ tên*</label>
                             <div class="input-group">
-                                <input name="hoten" required type="text" class="form-control" placeholder="Nhập họ và tên">
+                                <input name="hoten" type="text" class="form-control check_name" placeholder="Nhập họ và tên">
                             </div>
+                            <p id="err_name" class="text-danger"></p>
                         </div>
                         <div class="form-group m-b15">
                             <label class="form-label">Số điện thoại*</label>
                             <div class="input-group">
-                                <input name="sodienthoai" required type="text" class="form-control" placeholder="Nhập số điện thoại">
+                                <input name="sodienthoai" type="text" class="form-control check_sdt" placeholder="Nhập số điện thoại">
                             </div>
+                            <p id="err_sdt" class="text-danger"></p>
                         </div>
                         <div class="form-group m-b15">
                             <label class="form-label">Email*</label>
                             <div class="input-group">
-                                <input name="email" required type="text" class="form-control" placeholder="Nhập email">
+                                <input name="email" type="text" class="form-control check_email" placeholder="Nhập email">
                             </div>
+                            <p id="err_email" class="text-danger"></p>
                         </div>
                         <div class="form-group m-b30">
                             <label class="form-label">Mật khẩu*</label>
                             <div class="input-group search-input">
-                                <input name="pass" type="password" class="form-control dz-password" placeholder="Nhập mật khẩu mới">
+                                <input name="pass" type="password" class="form-control dz-password check_pass" placeholder="Nhập mật khẩu mới">
                                 <div class="show-pass">
                                     <svg class="eye-close" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#8ea5c8">
                                         <path d="M11 17.188a8.71 8.71 0 0 1-1.576-.147.69.69 0 0 1-.579-.678.7.7 0 0 1 .817-.676 7.33 7.33 0 0 0 1.339.127c4.073 0 7.61-3.566 8.722-4.812a18.51 18.51 0 0 0-2.434-2.274.69.69 0 0 1 .335-1.226.69.69 0 0 1 .268.019c.087.024.169.064.24.12a18.79 18.79 0 0 1 3.036 2.939.69.69 0 0 1 0 .848c-.185.234-4.581 5.763-10.167 5.763zm7.361-13.549a.69.69 0 0 0-.972 0l-2.186 2.186a10.68 10.68 0 0 0-2.606-.864c-.527-.099-1.061-.149-1.597-.149-5.585 0-9.982 5.528-10.166 5.763a.69.69 0 0 0 0 .848c.897 1.09 1.915 2.075 3.033 2.936.529.415 1.083.796 1.66 1.142l-1.888 1.887c-.066.063-.118.139-.154.223a.69.69 0 0 0 .145.757.67.67 0 0 0 .226.15c.085.034.175.052.266.051a.69.69 0 0 0 .265-.056c.084-.036.16-.088.223-.154l13.75-13.75a.69.69 0 0 0 0-.972zm-13.65 9.636A18.51 18.51 0 0 1 2.278 11C3.39 9.754 6.927 6.187 11 6.187a7.31 7.31 0 0 1 1.348.127 8.92 8.92 0 0 1 1.814.55L12.895 8.13c-.661-.437-1.453-.632-2.241-.552a3.44 3.44 0 0 0-2.085.989c-.56.56-.91 1.297-.989 2.085a3.44 3.44 0 0 0 .552 2.241l-1.601 1.604a14.43 14.43 0 0 1-1.82-1.222zm4.432-1.392c-.134-.275-.204-.577-.206-.883a2.07 2.07 0 0 1 .6-1.456 2.12 2.12 0 0 1 2.338-.392l-2.731 2.731z">
@@ -227,8 +230,10 @@
                                     </svg>
                                 </div>
                             </div>
+                            <p id="err_pass" class="text-danger"></p>
+
                         </div>
-                        <button name="submit" value="submit" type="submit" class="btn btn-primary w-100 d-block btn-hover-2">
+                        <button name="submit" value="submit" type="submit" id="btn_dangki" class="btn btn-primary w-100 d-block btn-hover-2">
                             <span>Đăng ký</span>
                         </button>
                         <p class="text-center m-t30">Bạn đã có tài khoản?
@@ -238,3 +243,85 @@
                 </div>
             </form>
         </div>
+
+
+        <script>
+            var btn_dangki = document.querySelector("#btn_dangki");
+            var check_name = document.querySelector(".check_name");
+            var check_sdt = document.querySelector(".check_sdt");
+            var check_email = document.querySelector(".check_email");
+            var check_pass = document.querySelector(".check_pass");
+
+            var err_name = document.querySelector("#err_name");
+            var err_sdt = document.querySelector("#err_sdt");
+            var err_email = document.querySelector("#err_email");
+            var err_pass = document.querySelector("#err_pass");
+
+            btn_dangki.addEventListener("click", function(e) {
+                e.preventDefault();
+
+                // Reset thông báo lỗi
+                err_name.innerHTML = "";
+                err_sdt.innerHTML = "";
+                err_email.innerHTML = "";
+                err_pass.innerHTML = "";
+
+                // Kiểm tra tên
+                if (check_name.value.trim() === "") {
+                    err_name.innerHTML = "Bạn chưa nhập trường này!";
+                }
+
+                if (check_sdt.value.trim() === "") {
+                    err_sdt.innerHTML = "Bạn chưa nhập trường này!";
+                } else {
+                    // Biểu thức chính quy để kiểm tra số điện thoại Việt Nam
+                    var vietnamPhoneRegex = /^(0[2-9][0-9]{8}|1[2-9][0-9]{8})$/;
+
+                    if (!vietnamPhoneRegex.test(check_sdt.value)) {
+                        err_sdt.innerHTML = "Số điện thoại không hợp lệ";
+                    }
+                }
+
+                // Kiểm tra email
+                if (check_email.value.trim() === "") {
+                    err_email.innerHTML = "Bạn chưa nhập trường này!";
+                } else {
+                    var emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailFormat.test(check_email.value)) {
+                        err_email.innerHTML = "Email không hợp lệ";
+                    }
+                }
+
+                // Kiểm tra mật khẩu
+                if (check_pass.value.trim() === "") {
+                    err_pass.innerHTML = "Bạn chưa nhập trường này!";
+                } else {
+                    // Kiểm tra độ dài tối thiểu và các yêu cầu khác
+                    var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+                    if (!passwordRegex.test(check_pass.value)) {
+                        err_pass.innerHTML = "Mật khẩu phải có ít nhất 8 ký tự, bao gồm chữ cái viết thường, chữ cái viết hoa, số và ký tự đặc biệt";
+                    }
+                }
+
+                // Thực hiện đăng ký nếu không có lỗi
+                if (!err_name.innerHTML && !err_sdt.innerHTML && !err_email.innerHTML && !err_pass.innerHTML) {
+                    alert("Đăng kí thành công");
+                    var data = new FormData();
+                    data.append("hoten", check_name.value);
+                    data.append("sodienthoai", check_sdt.value);
+                    data.append("email", check_email.value);
+                    data.append("pass", check_pass.value);
+
+                    // Thực hiện yêu cầu POST bằng Fetch API
+                    fetch("index.php?act=dangki", {
+                            method: "POST",
+                            body: data
+                        })
+                        .then(response => {
+                            // Chuyển đến trang mới nếu cần
+                            window.location.href = "index.php?act=dangnhap";
+                        })
+                        .catch(error => console.error("Lỗi:", error));
+                }
+            });
+        </script>

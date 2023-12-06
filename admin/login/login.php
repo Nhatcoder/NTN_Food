@@ -66,8 +66,8 @@ if (isset($_SESSION["dangnhap_admin"])) {
 		}
 
 		if ($check == 0) {
-			$resut = check_tk_one($sodienthoai, $pass);
-
+			$vaitro = 1;
+			$resut = check_tk_one($sodienthoai, $pass, $vaitro);
 			if ($resut) {
 				$_SESSION["dangnhap_admin"] = $sodienthoai;
 				header("location: ../index.php");
@@ -76,9 +76,6 @@ if (isset($_SESSION["dangnhap_admin"])) {
 				$err_pass_loi = "Bạn sai số điện thoại hoặc mật khẩu";
 			}
 		}
-
-
-
 	}
 
 

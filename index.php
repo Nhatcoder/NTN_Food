@@ -92,7 +92,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
             break;
 
         case "dangki":
-            if (isset($_POST["submit"])) {
+            if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $hoten = $_POST["hoten"];
                 $sodienthoai = $_POST["sodienthoai"];
                 $email = $_POST["email"];
@@ -107,8 +107,8 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 // Thêm luôn địa chỉ mặc định
                 insert_diachi_order($hoten, $diachi, $email, $sodienthoai, $id_nguoidung);
 
-                echo '<script>alert("Thành công")</script>';
-                echo '<script>window.location.href = "index.php";</script>';
+                // echo '<script>alert("Đăng kí thành công")</script>';
+                // echo '<script>window.location.href = "index.php";</script>';
             }
             break;
 
@@ -120,6 +120,59 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
             include("./views/main/capnhat_user.php");
             break;
 
+
+        case "capnhattaikhoan":
+            // if (isset($_POST["submit"])) {
+            if ($_SERVER["REQUEST_METHOD"] === "POST") {
+                $id_nguoidung = $_POST["id_sua"];
+                $hoten = $_POST["hoten"];
+                $sodienthoai = $_POST["sodienthoai"];
+                $email = $_POST["email"];
+                $diachi = $_POST["diachi"];
+                $matkhau = $_POST["pass"];
+                $vaitro = 0;
+
+                $anh_taikhoan = $_FILES["anh_taikhoan"]["name"];
+                $anh_taikhoan_tmp = $_FILES['anh_taikhoan']['tmp_name'];
+                $upload = "uploads/avatar/";
+
+                $user = list_check_tk_id($id_nguoidung);
+
+                $new_anhtk = "";
+                if ($anh_taikhoan != "") {
+                    $linkanh = 'uploads/avatar/' . $user['anh_taikhoan'];
+                    unlink($linkanh);
+
+                    $new_anhtk = time() . "_" . basename($anh_taikhoan);
+
+                    $target_file = $upload . $new_anhtk;
+                    if (move_uploaded_file($anh_taikhoan_tmp, $target_file)) {
+                        echo "Thêm ảnh thành công";
+                    } else {
+                        echo "Lỗi khi tải lên ảnh mới";
+                    }
+                }
+
+                unset($_SESSION["user"]);
+                $_SESSION["user"] = $id_nguoidung;
+                update_taikhoan($hoten, $sodienthoai, $email, $matkhau, $vaitro, $new_anhtk, $diachi, $id_nguoidung);
+
+                // Thêm luôn địa chỉ
+                insert_diachi_order($hoten, $diachi, $email, $sodienthoai, $id_nguoidung);
+
+                echo '<script>alert("Thành công")</script>';
+                echo '<script>window.location.href = "index.php";</script>';
+            }
+            break;
+
+
+
+        case "dangxuat":
+            if (isset($_SESSION["user"])) {
+                unset($_SESSION["user"]);
+                echo '<script>window.location.href = "index.php";</script>';
+            }
+            break;
 
         case "theodoidonhang":
             if (isset($_GET["id_nguoidung"]) > 0) {
@@ -170,57 +223,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
 
             break;
 
-        case "capnhattaikhoan":
-            if (isset($_POST["submit"])) {
-                $id_nguoidung = $_POST["id_sua"];
-                $hoten = $_POST["hoten"];
-                $sodienthoai = $_POST["sodienthoai"];
-                $email = $_POST["email"];
-                $diachi = $_POST["diachi"];
-                $matkhau = md5($_POST["pass"]);
-                $vaitro = 0;
-
-                $anh_taikhoan = $_FILES["anh_taikhoan"]["name"];
-                $anh_taikhoan_tmp = $_FILES['anh_taikhoan']['tmp_name'];
-                $upload = "uploads/avatar/";
-
-                $user = list_check_tk_id($id_nguoidung);
-
-                $new_anhtk = "";
-                if ($anh_taikhoan != "") {
-                    $linkanh = 'uploads/avatar/' . $user['anh_taikhoan'];
-                    unlink($linkanh);
-
-                    $new_anhtk = time() . "_" . basename($anh_taikhoan);
-
-                    $target_file = $upload . $new_anhtk;
-                    if (move_uploaded_file($anh_taikhoan_tmp, $target_file)) {
-                        echo "Thêm ảnh thành công";
-                    } else {
-                        echo "Lỗi khi tải lên ảnh mới";
-                    }
-                }
-
-                unset($_SESSION["user"]);
-                $_SESSION["user"] = $id_nguoidung;
-                update_taikhoan($hoten, $sodienthoai, $email, $matkhau, $vaitro, $new_anhtk, $diachi, $id_nguoidung);
-
-                // Thêm luôn địa chỉ
-                insert_diachi_order($hoten, $diachi, $email, $sodienthoai, $id_nguoidung);
-
-                echo '<script>alert("Thành công")</script>';
-                echo '<script>window.location.href = "index.php";</script>';
-            }
-            break;
-
-
-
-        case "dangxuat":
-            if (isset($_SESSION["user"])) {
-                unset($_SESSION["user"]);
-                echo '<script>window.location.href = "index.php";</script>';
-            }
-            break;
             // Menu
         case "cuahang":
             $tukhoa = "";
@@ -654,8 +656,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                     $redirectUrl = "http://localhost/NTN_Food/index.php?act=camon-momo";
                     $ipnUrl = "http://localhost/NTN_Food/index.php?act=camon-momo";
                     $extraData = "";
-
-
 
                     $requestId = time() . "";
                     $requestType = "payWithATM";
