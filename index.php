@@ -75,7 +75,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 }
 
                 if ($check == 0) {
-                    $result = check_tk_one($sodienthoai, $pass);
+                    $result = check_tk_one_main($sodienthoai, $pass);
                     if ($result) {
                         extract($result);
                         $_SESSION["email"] = $email;
@@ -101,14 +101,9 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 $diachi = "Ở đâu ?";
 
                 $id_nguoidung = insert_tk($hoten, $sodienthoai, $email, $pass, $vaitro = 0, $anh_taikhoan, $diachi);
-                $_SESSION["user"] = $id_nguoidung;
-                $_SESSION["email"] = $email;
 
                 // Thêm luôn địa chỉ mặc định
                 insert_diachi_order($hoten, $diachi, $email, $sodienthoai, $id_nguoidung);
-
-                // echo '<script>alert("Đăng kí thành công")</script>';
-                // echo '<script>window.location.href = "index.php";</script>';
             }
             break;
 

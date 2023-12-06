@@ -7,6 +7,14 @@ function check_tk_one($sodienthoai, $pass, $vaitro = 1)
     return $list_tk;
 }
 
+function check_tk_one_main($sodienthoai, $pass)
+{
+    $sql = "SELECT * FROM tbl_taikhoan WHERE sodienthoai = ? AND matkhau = ?";
+    $list_tk = pdo_query_one($sql, $sodienthoai, $pass);
+
+    return $list_tk;
+}
+
 function list_tk_one()
 {
     $sql = "SELECT * FROM tbl_taikhoan";
