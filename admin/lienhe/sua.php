@@ -46,18 +46,9 @@ if (isset($list_monan_one) && is_array($list_monan_one)) {
                         <textarea name="mota_monan" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Nhập mô tả món ăn"><?= $mota_monan ?></textarea>
                     </div>
 
-                    <!-- <div class="mb-3">
+                    <div class="mb-3">
                         <label for="ok20" class="form-label">Nổi bật</label>
                         <input type="number" name="noibat" class="form-control" value="<?= $noibat ?>" id="ok20" placeholder="Nhập số" required>
-                    </div> -->
-
-                    <div class="chosen-select-single mg-b-20 mb-3">
-                        <label class="form-label">Xuất hiện ở đâu</label>
-                        <select name="noibat" class="select2_demo_3 form-control">
-                            <option <?php if($noibat == 1){echo "selected";}?> value="1">Thực đơn hôm nay</option>
-                            <option <?php if($noibat == 20){echo "selected";}?> value="20">Menu đặc biệt</option>
-                            <option <?php if($noibat == 2){echo "selected";}?> value="2">Tất cả</option>
-                        </select>
                     </div>
 
                     <div class="mb-3 form_btn form-check">

@@ -74,7 +74,7 @@
                         <li class="has-mega-menus">
                             <a href="index.php?act=tintuc">Tin tức</a>
                         </li>
-                        <li><a href="index.php?act=lienhe">Liên hệ chúng tôi</a></li>
+                        <li><a href="index.php?act=lienhechungtoi">Liên hệ chúng tôi</a></li>
                     </ul>
                     <div class="dz-social-icon">
                         <ul>

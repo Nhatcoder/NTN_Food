@@ -65,3 +65,10 @@ function  delete_user($id_nguoidung)
     $sql = "DELETE FROM tbl_taikhoan WHERE id_nguoidung = ?";
     return pdo_execute($sql, $id_nguoidung);
 }
+
+function list_users_in_pass($email)
+{
+    $sql = "SELECT * FROM tbl_taikhoan WHERE email = ?";
+    $list = pdo_query($sql, $email);
+    return $list;
+}

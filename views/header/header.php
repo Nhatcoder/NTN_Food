@@ -171,6 +171,7 @@
                                 </div>
                             </div>
                             <button name="submit" id="submitLogin" value="submit" type="submit" class="btn btn-primary w-100 d-block btn-hover-2"><span>Đăng nhập</span></button>
+                            <p class="text-center m-t20"><a href="index.php?act=quenmatkhau">Quên mật khẩu ?</a></p>
                             <p class="text-center m-t30">Chưa có tài khoản?
                                 <a class="register text-primary font-weight-500" data-bs-toggle="offcanvas" href="#offcanvasRegister" role="button" aria-controls="offcanvasRegister">Đăng ký ở
                                     đây</a>

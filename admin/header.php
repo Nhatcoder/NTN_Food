@@ -193,11 +193,13 @@
                                 Trang chủ</a>
                         </li>
 
-                        <li>
-                            <a class="has-arrow" href="https://colorlib.com/polygon/nalika/mailbox.html" aria-expanded="false">
+                        <li class='<?php if (($_GET["act"] ?? '') == "themdanhmuc" || ($_GET["act"] ?? '') == "lietkedanhmuc") {
+                                        echo "active";
+                                    } ?>'>
+                            <a class="has-arrow" href="" aria-expanded="false">
                                 <i class="fa-brands fa-elementor"></i>
                                 <span class="mini-click-non">Danh
-                                    mục</span></a>
+                                    mục món ăn</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li>
                                     <a title="Inbox" href="index.php?act=themdanhmuc"><span class="mini-sub-pro">Thêm
@@ -209,8 +211,10 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            <a class="has-arrow" href="index.php?act=themmonan" aria-expanded="false"><i class="fa-solid fa-bowl-food"></i> <span class="mini-click-non">Món ăn</span></a>
+                        <li class='<?php if (($_GET["act"] ?? '') == "themmonan" || ($_GET["act"] ?? '') == "lietkemonan") {
+                                        echo "active";
+                                    } ?>'>
+                            <a class="has-arrow" aria-expanded="false"><i class="fa-solid fa-bowl-food"></i> <span class="mini-click-non">Quản lý món ăn</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a href="index.php?act=themmonan"><span class="mini-sub-pro">Thêm món ăn</span></a>
                                 </li>
@@ -218,7 +222,9 @@
                                             ăn</span></a></li>
                             </ul>
                         </li>
-                        <li>
+                        <li class='<?php if (($_GET["act"] ?? '') == "themdmtintuc" || ($_GET["act"] ?? '') == "lietkedmtintuc") {
+                                        echo "active";
+                                    } ?>'>
                             <a class="has-arrow" href="index.php?act=themdmtintuc" aria-expanded="false">
                                 <i class="fa-brands fa-elementor"></i>
                                 <span class="mini-click-non">Danh mục tin
@@ -233,10 +239,13 @@
                                             tức</span></a></li>
                             </ul>
                         </li>
-                        <li>
+
+                        <li class='<?php if (($_GET["act"] ?? '') == "themtintuc" || ($_GET["act"] ?? '') == "lietketintuc") {
+                                        echo "active";
+                                    } ?>'>
                             <a class="has-arrow" href="index.php?act=themtintuc" aria-expanded="false">
                                 <i class="fa-brands fa-elementor"></i>
-                                <span class="mini-click-non">Tin
+                                <span class="mini-click-non">Quản lý Tin
                                     tức</span>
                             </a>
                             <ul class="submenu-angle" aria-expanded="false">
@@ -249,7 +258,9 @@
                             </ul>
                         </li>
 
-                        <li>
+                        <li class='<?php if (($_GET["act"] ?? '') == "quanlydonhang" || ($_GET["act"] ?? '') == "giaothanhcong" || ($_GET["act"] ?? '') == "dahuy") {
+                                        echo "active";
+                                    } ?>'>
                             <a class="has-arrow" href="index.php?act=quanlydonhang" aria-expanded="false">
                                 <i class="fa-solid fa-money-bill-wave"></i>
                                 <span class="mini-click-non">
@@ -274,6 +285,12 @@
                             </a>
                         </li>
                         <li>
+                            <a href="index.php?act=lienhe">
+                                <i class="fa-solid fa-phone"></i>
+                                <span class="mini-click-non">Quản lý liên hệ</span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="index.php?act=thongkenguoidung"> <i class="fa-solid fa-user"></i>
                                 Người dùng</a>
                         </li>
@@ -288,7 +305,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="logo-pro">
-                        <a href="https://colorlib.com/polygon/nalika/index.html"><img class="main-logo" src="https://colorlib.com/polygon/nalika/img/logo/logo.png" alt /></a>
+                        <a "><img class=" main-logo" src="https://colorlib.com/polygon/nalika/img/logo/logo.png" alt /></a>
                     </div>
                 </div>
             </div>
@@ -310,10 +327,10 @@
                                     <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
                                         <div class="header-top-menu tabl-d-n hd-search-rp">
                                             <div class="breadcome-heading">
-                                                <form role="search" class>
+                                                <!-- <form role="search" class>
                                                     <input type="text" placeholder="Search..." class="form-control">
                                                     <a href><i class="fa fa-search"></i></a>
-                                                </form>
+                                                </form> -->
                                             </div>
                                         </div>
                                     </div>
@@ -329,9 +346,6 @@
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
                                                         <li><a href="../index.php"><span class="icon nalika-user author-log-ic"></span>
                                                                 Đăng nhập giao diện</a>
-                                                        </li>
-                                                        <li><a href=""><span class="icon nalika-diamond author-log-ic"></span>
-                                                                Khóa</a>
                                                         </li>
                                                         <li><a href="login/logout.php"><span class="icon nalika-unlocked author-log-ic"></span>
                                                                 Đăng xuất</a>

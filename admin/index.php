@@ -13,6 +13,8 @@ include("../model/trangthaidonhang.php");
 include("../model/dangnhap.php");
 include("../model/thongke.php");
 include("../model/binhluan.php");
+include("../model/lienhe.php");
+
 
 include("../model/carbon_date/autoload.php");
 
@@ -85,13 +87,13 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
                 $id_danhmuc = $_POST['id_danhmuc'];
                 $mota_monan = $_POST['mota_monan'];
                 $noibat = $_POST['noibat'];
-                
+
                 $anh_monan = $_FILES['anh_monan']['name'];
                 $anh_monan_tmp = $_FILES['anh_monan']['tmp_name'];
                 $upload = "../uploads/monan/";
 
                 $new_anhmonan = time() . "_" . basename($anh_monan);
-                
+
                 $target_file = $upload . $new_anhmonan;
 
                 if (move_uploaded_file($anh_monan_tmp, $target_file)) {
@@ -525,7 +527,10 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
 
                 if ($anh_taikhoan != "") {
                     $linkanh = '../uploads/avatar/' . $user['anh_taikhoan'];
-                    unlink($linkanh);
+
+                    if (file_exists($linkanh)) {
+                        unlink($linkanh);
+                    }
 
                     $new_anhtk = time() . "_" . basename($anh_taikhoan);
 
@@ -555,7 +560,9 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
                 $user = list_check_tk_id($id_nguoidung);
                 extract($user);
                 $linkanh = '../uploads/avatar/' . $anh_taikhoan;
-                unlink($linkanh);
+                if (file_exists($linkanh)) {
+                    unlink($linkanh);
+                }
                 delete_user($id_nguoidung);
                 echo '<script>alert("Thành công")</script>';
             }
@@ -628,6 +635,23 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
                 $list_id_cmt = list_id_cmt($id_nguoidung);
             }
             include("./binhluan/chitietbinhluan.php");
+            break;
+
+        case 'lienhe':
+            $list_contact = list_contact();
+            include("./lienhe/lietke.php");
+            break;
+
+        case 'capnhatlienhe':
+            if (isset($_GET["id"]) && $_GET["id"] > 0) {
+                $id = $_GET["id"];
+                $trangthai = 1;
+                update_contact($trangthai, $id);
+            }
+
+
+            $list_contact = list_contact();
+            include("./lienhe/lietke.php");
             break;
     }
 } else {

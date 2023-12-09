@@ -24,7 +24,7 @@ include("monan/title.php");
                         <?php
                         foreach ($listmonan as $key => $value) {
                             extract($value);
-                            ?>
+                        ?>
                             <tr>
                                 <td>
                                     <?= $key + 1 ?>
@@ -45,20 +45,22 @@ include("monan/title.php");
                                     <?= $mota_monan ?>
                                 </td>
                                 <td>
-                                    <?= $noibat ?>
+                                    <?php if ($noibat == 1) {
+                                        echo "Thực đơn hôm nay";
+                                    }elseif ($noibat == 20) {
+                                        echo "Menu đặc biệt";
+                                    }else {
+                                        echo "Tất cả";
+                                    }
+                                    ?>
                                 </td>
 
                                 <td>
                                     <a href="index.php?act=suamonan&id_monan=<?= $id_monan ?>">
-                                        <button data-toggle="tooltip" title="" class="pd-setting-ed"
-                                            data-original-title="Sửa"><i class="fa fa-pencil-square-o"
-                                                aria-hidden="true"></i></button>
+                                        <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Sửa"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                                     </a>
-                                    <a onclick="return confirm('Bạn có muốn xóa không?')" ;
-                                        href="index.php?act=xoamonan&id_monan=<?= $id_monan ?>">
-                                        <button data-toggle="tooltip" title="" class="pd-setting-ed"
-                                            data-original-title="Xóa"><i class="fa fa-trash-o"
-                                                aria-hidden="true"></i></button>
+                                    <a onclick="return confirm('Bạn có muốn xóa không?')" ; href="index.php?act=xoamonan&id_monan=<?= $id_monan ?>">
+                                        <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Xóa"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                     </a>
                                 </td>
                             </tr>

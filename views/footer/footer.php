@@ -11,35 +11,108 @@
                                 chúng tôi.
                             </p>
                         </div>
-                        <form class="" method="POST" action="index.php?act=main">
-
-
+                        <form class="form_lienhe" method="POST" >
                             <div class="row">
                                 <div class="col-lg-12 col-md-12">
-                                    <div class="input-group input-line">
-                                        <input name="ho_ten" required type="text" class="form-control" placeholder="Nhập họ và tên">
+                                    <div class="input-line">
+                                        <input name="ho_ten" type="text" class="form-control ho_ten" placeholder="Nhập họ và tên">
                                     </div>
+                                    <p class="text-danger err_ho_ten_lienhe"></p>
                                 </div>
                                 <div class="col-lg-12 col-md-12">
-                                    <div class="input-group input-line">
-                                        <input name="email" required type="text" class="form-control" placeholder="Nhập email của bạn">
+                                    <div class="input-line">
+                                        <input name="email" type="text" class="form-control email_lienhe" placeholder="Nhập email của bạn">
                                     </div>
+                                    <p class="text-danger err_email_lienhe"></p>
                                 </div>
                                 <div class="col-lg-12 col-md-12">
-                                    <div class="input-group input-line">
-                                        <input name="sodienthoai" required type="number" class="form-control" placeholder="Nhập số điện thoại">
+                                    <div class="input-line">
+                                        <input name="sodienthoai" type="number" class="form-control sdt_lienhe" placeholder="Nhập số điện thoại">
                                     </div>
+                                    <p class="text-danger err_sdt_lienhe"></p>
                                 </div>
                                 <div class="col-sm-12 ">
-                                    <div class="input-group input-line">
-                                        <textarea name="noidung" required class="form-control" placeholder="Nội dung"></textarea>
+                                    <div class="input-line">
+                                        <textarea name="noidung" class="form-control noidung_lienhe" placeholder="Nội dung"></textarea>
                                     </div>
+                                    <p class="text-danger err_noidung_lienhe"></p>
                                 </div>
                                 <div class="col-sm-12">
-                                    <button type="submit" name="submit" value="submit" class="btn btn-md btn-white btn-hover-1"><span>Gửi</span></button>
+                                    <button type="submit" name="submit" value="submit" id="btn_lienhe" class="btn btn-md btn-white btn-hover-1"><span>Gửi lời nhắn</span></button>
                                 </div>
                             </div>
                         </form>
+
+
+                        <script>
+                            var btn_lienhe = document.querySelector("#btn_lienhe");
+                            var ho_ten_lienhe = document.querySelector(".ho_ten");
+                            var email_lienhe = document.querySelector(".email_lienhe");
+                            var sdt_lienhe = document.querySelector(".sdt_lienhe");
+                            var noidung_lienhe = document.querySelector(".noidung_lienhe");
+
+                            var err_ho_ten_lienhe = document.querySelector(".err_ho_ten_lienhe");
+                            var err_email_lienhe = document.querySelector(".err_email_lienhe");
+                            var err_sdt_lienhe = document.querySelector(".err_sdt_lienhe");
+                            var err_noidung_lienhe = document.querySelector(".err_noidung_lienhe");
+
+
+                            btn_lienhe.addEventListener("click", function(e) {
+                                e.preventDefault();
+                                err_ho_ten_lienhe.innerHTML = "";
+                                err_email_lienhe.innerHTML = "";
+                                err_sdt_lienhe.innerHTML = "";
+                                err_noidung_lienhe.innerHTML = "";
+
+                                if (ho_ten_lienhe.value.trim() === "") {
+                                    err_ho_ten_lienhe.innerHTML = "Bạn chưa nhập trường này!";
+                                }
+
+                                if (sdt_lienhe.value.trim() === "") {
+                                    err_sdt_lienhe.innerHTML = "Bạn chưa nhập trường này!";
+                                } else {
+                                    var vietnamPhoneRegex = /^(0[2-9][0-9]{8}|1[2-9][0-9]{8})$/;
+
+                                    if (!vietnamPhoneRegex.test(sdt_lienhe.value)) {
+                                        err_sdt_lienhe.innerHTML = "Số điện thoại không hợp lệ";
+                                    }
+                                }
+
+                                if (email_lienhe.value.trim() === "") {
+                                    err_email_lienhe.innerHTML = "Bạn chưa nhập trường này!";
+                                } else {
+                                    var emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                                    if (!emailFormat.test(email_lienhe.value)) {
+                                        err_email_lienhe.innerHTML = "Email không hợp lệ";
+                                    }
+                                }
+
+                                if (noidung_lienhe.value.trim() === "") {
+                                    err_noidung_lienhe.innerHTML = "Bạn chưa nhập trường này!";
+                                }
+
+
+                                if (!err_ho_ten_lienhe.innerHTML && !err_sdt_lienhe.innerHTML && !err_email_lienhe.innerHTML && !err_noidung_lienhe.innerHTML) {
+                                    alert("Chúng tôi sẽ sớm liên hệ với bạn và giải đáp mọi thắc mắc. Xin cảm ơn !");
+                                    var data = new FormData();
+                                    data.append("ho_ten", ho_ten_lienhe.value);
+                                    data.append("email", email_lienhe.value);
+                                    data.append("sodienthoai", sdt_lienhe.value);
+                                    data.append("noidung", noidung_lienhe.value);
+
+                                    // Thực hiện yêu cầu POST bằng Fetch API
+                                    fetch("index.php?act=lienhe", {
+                                            method: "POST",
+                                            body: data
+                                        })
+                                        .then(response => {
+                                            document.querySelector(".form_lienhe").reset();
+                                            // window.location.href = "index.php";
+                                        })
+                                        .catch(error => console.error("Lỗi:", error));
+                                }
+                            });
+                        </script>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-5 wow fadeInUp" data-wow-delay="0.5s">

@@ -1,5 +1,5 @@
 <?php
-include("nguoidung/title.php");
+include("binhluan/title.php");
 ?>
 <div class="container-fluid">
     <div class="row">

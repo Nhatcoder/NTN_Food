@@ -134,7 +134,7 @@
                                     <a href="index.php?act=tintuc">Tin tức</a>
                                 </li>
 
-                                <li><a href="index.php?act=lienhe">Liên hệ chúng tôi</a></li>
+                                <li><a href="index.php?act=lienhechungtoi">Liên hệ chúng tôi</a></li>
                             </ul>
                             <div class="dz-social-icon">
                                 <ul>
@@ -259,6 +259,7 @@
                                 </div>
                             </div>
                             <button name="submit" value="submit" type="submit" class="btn btn-primary w-100 d-block btn-hover-2"><span>Đăng nhập</span></button>
+                            <p class="text-center m-t20"><a href="index.php?act=quenmatkhau">Quên mật khẩu ?</a></p>
                             <p class="text-center m-t30">Chưa có tài khoản?
                                 <a class="register text-primary font-weight-500" data-bs-toggle="offcanvas" href="#offcanvasRegister" role="button" aria-controls="offcanvasRegister">Đăng ký ở
                                     đây</a>

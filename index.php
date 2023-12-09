@@ -14,7 +14,10 @@ include("./model/dmtintuc.php");
 include("./model/tintuc.php");
 include("./model/list_monan_cuahang.php");
 include("./model/mail.php");
+// include("./model/mail_pass.php");
 
+
+$list_all_post  = list_all_tintuc_home();
 
 // session_destroy();
 // die();
@@ -56,7 +59,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
             $err_sodienthoai = $err_pass = "";
             if (isset($_POST["submit"])) {
                 $sodienthoai = $_POST["sodienthoai"];
-                $pass = md5($_POST["pass"]);
+                $pass = $_POST["pass"];
 
                 $check = 0;
                 if (empty(trim($sodienthoai))) {
@@ -84,7 +87,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                         echo '<script>window.location.href = "index.php";</script>';
                     } else {
                         $err_pass = "Bạn nhập sai số điện thoại hoặc mật khẩu.";
-                        // echo '<script>alert("Bạn nhâp sai mật khẩu hoặc số điện thoại")</script>';
                     }
                 }
             }
@@ -96,7 +98,7 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 $hoten = $_POST["hoten"];
                 $sodienthoai = $_POST["sodienthoai"];
                 $email = $_POST["email"];
-                $pass = md5($_POST["pass"]);
+                $pass = $_POST["pass"];
                 $anh_taikhoan = "avt.jpg";
                 $diachi = "Ở đâu ?";
 
@@ -105,6 +107,33 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 // Thêm luôn địa chỉ mặc định
                 insert_diachi_order($hoten, $diachi, $email, $sodienthoai, $id_nguoidung);
             }
+            break;
+
+        case "quenmatkhau":
+            $email = "";
+            $errEmail = "";
+            if (isset($_POST["submit"])) {
+                $email = $_POST["email"];
+                $check = 0;
+                if (empty(trim($email))) {
+                    $check++;
+                    $errEmail = "Bạn chưa nhập trường này";
+                } elseif (!preg_match("/^[^\s@]+@[^\s@]+\.[^\s@]+$/", $email)) {
+                    $check++;
+                    $errEmail = "Bạn phải nhập đúng định dạng email";
+                }
+
+                if ($check == 0) {
+                    $list = list_users_in_pass($email);
+                    foreach ($list as $key => $value) {
+                        $pass = $value['matkhau'];
+                        submit_mailpass($pass, $email);
+                    }
+                    echo '<script>alert("Chúng tôi đã cấp cho bạn mật khẩu vui lòng check mail của bạn.")</script>';
+                    echo '<script>window.location.href = "index.php?act=dangnhap";</script>';
+                }
+            }
+            include "./views/main/quenmatkhau.php";
             break;
 
         case "suataikhoan":
@@ -816,8 +845,53 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
             break;
 
 
-        case "lienhe":
+        case "lienhechungtoi":
+            $ho_ten = $email = $sodienthoai = $noidung = "";
+            $err_ho_ten = $err_email = $err_sodienthoai = $err_noidung = "";
+
+            if (isset($_POST['submit']) && $_POST['submit']) {
+
+                $ho_ten = $_POST['ho_ten'];
+                $email = $_POST['email'];
+                $sodienthoai = $_POST['sodienthoai'];
+                $noidung = $_POST['noidung'];
+                $trangthai = 0;
+
+                $check = 0;
+                if (empty(trim($ho_ten))) {
+                    $err_ho_ten = "Bạn chưa nhập trường này";
+                    $check++;
+                }
+                if (empty(trim($email))) {
+                    $err_email = "Bạn chưa nhập trường này";
+                    $check++;
+                } elseif (!preg_match("/^[^\s@]+@[^\s@]+\.[^\s@]+$/", $email)) {
+                    $check++;
+                    $err_email = "Bạn phải nhập đúng định dạng email";
+                }
+
+                if (empty(trim($sodienthoai))) {
+                    $err_sodienthoai = "Bạn chưa nhập trường này";
+                    $check++;
+                } elseif (!preg_match("/^0\d{9}$/", $sodienthoai)) {
+                    $check++;
+                    $err_sodienthoai = "Bạn phải nhập đúng định dạng số điện thoại";
+                }
+
+                if (empty(trim($noidung))) {
+                    $err_noidung = "Bạn chưa nhập trường này";
+                    $check++;
+                }
+
+                if ($check == 0) {
+                    insert_lienhe($ho_ten, $email, $sodienthoai, $noidung, $trangthai);
+                    echo "<script>alert('Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất');</script>";
+                }
+            }
+
+
             include("./views/main/lienhe.php");
+
             break;
 
         case "vechungtoi":
@@ -860,25 +934,19 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
             include("./views/trang/dangbaotri.php");
             break;
 
-        case "main":
-            if (isset($_POST['submit']) && $_POST['submit']) {
+        case "lienhe":
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $ho_ten = $_POST['ho_ten'];
                 $email = $_POST['email'];
                 $sodienthoai = $_POST['sodienthoai'];
                 $noidung = $_POST['noidung'];
                 $trangthai = 0;
 
-                lienhe($ho_ten, $email, $sodienthoai, $noidung, $trangthai);
-                echo "<script>alert('Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất');</script>";
-                echo '<script>window.location.href = "index.php?act=main";</script>';
+                insert_lienhe($ho_ten, $email, $sodienthoai, $noidung, $trangthai);
             }
-
-
-            include("./views/main/main.php");
             break;
     }
 } else {
-    $list_all_post  = list_all_tintuc_home();
     include("./views/main/main.php");
 }
 

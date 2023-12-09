@@ -14,7 +14,7 @@ include("tintuc/danhmuc/title.php");
                         <tr>
                             <th>Id</th>
                             <th>Tên danh mục tin tức</th>
-                            <th>phụ lục danh mục tin tức</th>
+                            <th>Phụ lục danh mục tin tức</th>
                             <th>Thao tác</th>
                         </tr>
                         <?php
