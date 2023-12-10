@@ -579,7 +579,7 @@ function submit_mailpass($pass, $mail)
                                 </tr>
                                 <tr>
                                   <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                                    <div style="font-family:Alata;font-size:18px;font-weight:400;line-height:24px;text-align:left;color:#000000;">Không có gì! Chỉ cần coppy cái mật khẩu này bạn có thể đăng nhập. Nếu bạn không thực hiện yêu cầu này, vui lòng bỏ qua email này. Nhất định khôgn cho ai thấy được email này của bạn. <p></p>
+                                    <div style="font-family:Alata;font-size:18px;font-weight:400;line-height:24px;text-align:left;color:#000000;">Không có gì! Chỉ cần coppy cái mật khẩu này bạn có thể đăng nhập. Nếu bạn không thực hiện yêu cầu này, vui lòng bỏ qua email này. Nhất định không cho ai thấy được email này của bạn. <p></p>
                                     </div>
                                   </td>
                                 </tr>
