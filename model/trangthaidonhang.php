@@ -135,7 +135,7 @@ function huydonhang($id, $id_trangthai)
 
 function loaddonhangAll_user($ma_donhang, $select_trangthai, $id)
 {
-    $sql = "SELECT a.loai_thanhtoan,a.ma_donhang, c.hoten,c.diachi,c.sodienthoai, b.ma_donhang, SUM(soluongmua) AS tongluongmua ,a.id_trangthai,a.ngaymua, a.id_giohang, d.id_trangthai, d.tentrangthai  
+    $sql = "SELECT a.id_giohang, a.loai_thanhtoan,a.ma_donhang, c.hoten,c.diachi,c.sodienthoai, b.ma_donhang, SUM(soluongmua) AS tongluongmua ,a.id_trangthai,a.ngaymua, a.id_giohang, d.id_trangthai, d.tentrangthai  
     FROM tbl_hoadon a  
     INNER JOIN tbl_hoadon_chitiet b ON a.ma_donhang = b.ma_donhang
     INNER join tbl_diachinhanhang c ON a.id_nguoidung = c.id_nguoidung 
@@ -151,7 +151,7 @@ function loaddonhangAll_user($ma_donhang, $select_trangthai, $id)
     }
 
     $sql .= " GROUP BY b.ma_donhang
-    ORDER BY a.id_trangthai DESC;";
+    ORDER BY a.id_giohang DESC;";
 
     $params = [$id];
 

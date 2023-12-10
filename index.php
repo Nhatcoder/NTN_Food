@@ -208,7 +208,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                     $begin = ($page * 10) - 10;
                 }
 
-
                 $ma_donhang = $_POST['ma_donhang'] ?? "";
                 $select_trangthai = $_POST['select_trangthai'] ?? "";
 

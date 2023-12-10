@@ -14,13 +14,13 @@ include("title.php");
                         <label class="form-label">Trạng thái</label>
                         <select name="id_trangthai" class="select2_demo_3 form-control">
                             <?php
-                            $id ="";
+                            $id = "";
                             foreach ($list_sua_tt_dh as $key => $tt) {
-                                $id =  $tt["id_trangthai"];
+                                $id = $tt["id_trangthai"];
                             }
                             foreach ($trangthai as $key => $value) {
                                 $selected = ($id == $value['id_trangthai']) ? "selected" : "";
-                            ?>
+                                ?>
                                 <option <?= $selected ?> value="<?= $value["id_trangthai"] ?>">
                                     <?= $value["tentrangthai"] ?>
                                 </option>
@@ -34,8 +34,10 @@ include("title.php");
 
 
                     <div class="mb-3 form_btn form-check">
-                        <input class="btn btn-primary mr-3 text-left" type="submit" name="capnhatdonhang" value="CẬP NHẬT MỚI" required>
-                        <a href="index.php?act=quanlydonhang"><input class="btn btn-success text-left" type="button" value="DANH SÁCH"></a>
+                        <input class="btn btn-primary mr-3 text-left" type="submit" name="capnhatdonhang"
+                            value="CẬP NHẬT MỚI" required>
+                        <a href="index.php?act=quanlydonhang"><input class="btn btn-success text-left" type="button"
+                                value="DANH SÁCH"></a>
                     </div>
                 </form>
 
