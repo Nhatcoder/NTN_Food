@@ -22,7 +22,7 @@
 		<div class="container">
 			<div class="row search-wraper text-center">
 				<div class="col-lg-8 m-auto">
-					<form action="index.php?act=cuahang" method="post">
+					<form action="index.php?act=cuahangloc" method="post">
 						<div class="input-group">
 							<input required="required" type="text" class="form-control" name="tukhoa" value="<?= isset($_POST['tukhoa']) ? $_POST['tukhoa'] : '' ?>" placeholder="Từ khóa">
 							<div class="input-group-addon">
@@ -61,7 +61,19 @@
 									</ul>
 								</div>
 							</div>
-
+							<div class="widget">
+								<div class="widget-title">
+									<h4 class="title">Lọc theo giá</h4>
+								</div>
+								<form action="index.php?act=cuahangloc" method="post">
+									<div class="input-group mb-3">
+										<input type="number" name="gia_start" value="<?= isset($_POST['gia_start']) ? $_POST['gia_start'] : '' ?>" min="0" style="height:50px" class="form-control" placeholder="Từ" aria-label="Username">
+										<span class="input-group-text">-</span>
+										<input type="number" name="gia_end" min="0" value="<?= isset($_POST['gia_end']) ? $_POST['gia_end'] : '' ?>" style="height:50px" class="form-control" placeholder="Đến" aria-label="Server">
+									</div>
+									<button name="loc_gia" type="locgia" class="btn btn-primary">Áp dụng</button>
+								</form>
+							</div>
 						</div>
 					</aside>
 				</div>
@@ -76,7 +88,6 @@
 						</div>
 						<ul id="masonry" class="row">
 							<?php
-
 							foreach ($list_monan_in_page as $key => $value) {
 								extract($value);
 							?>
@@ -108,7 +119,6 @@
 								</li>
 							<?php }
 							?>
-
 						</ul>
 
 						<!-- Phân trang -->
@@ -147,7 +157,6 @@
 									</li>
 								</ul>
 							</div>
-
 						<?php }
 					} else {
 						?>
@@ -157,7 +166,7 @@
 								<h3>Không tìm thấy:
 								</h3>
 								<h2>
-									<p style="color: #7DA640;margin-top: 15px;margin-left: 8px;"><?= $_POST["tukhoa"] ?></p>
+									<p style="color: #7DA640;margin-top: 15px;margin-left: 8px;"><?= $_POST["tukhoa"] ?? "Không có món nào giá như vậy !" ?></p>
 								</h2>
 							</div>
 						<?php
@@ -165,6 +174,11 @@
 						</div>
 
 				</div>
+
+
+
+
+
 			</div>
 	</section>
 	<!-- Search Section -->

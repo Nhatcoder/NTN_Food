@@ -247,7 +247,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
             $tukhoa = "";
             if (isset($_POST['timkiem'])) {
                 $tukhoa = $_POST['tukhoa'];
-                // echo $tukhoa;
             }
 
             if (isset($_GET['trang'])) {
@@ -262,12 +261,55 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 $begin = ($page * 9) - 9;
             }
 
+            $gia_start = "";
+            $gia_end = "";
+
+            if (isset($_POST["loc_gia"])) {
+                $gia_start = $_POST["gia_start"];
+                $gia_end = $_POST["gia_end"];
+            }
+
             $list_all_dm = list_all_dm();
-            $list_monan_cuahang_all = list_monan_cuahang_all();
-            $list_monan_in_page = list_monan_in_page($tukhoa, $begin);
+            $list_monan_cuahang_all = list_monan_cuahang_all(); //Đếm phân trang
+            $list_monan_cuahang_loc = list_monan_cuahang_loc($tukhoa, $gia_start, $gia_end); // Đếm phân trang khi tìm kiếm
+            $list_monan_in_page = list_monan_in_page($tukhoa, $begin, $gia_start, $gia_end);
 
             include("./views/main/cuahang.php");
             break;
+
+            case "cuahangloc":
+                $tukhoa = "";
+                if (isset($_POST['timkiem'])) {
+                    $tukhoa = $_POST['tukhoa'];
+                }
+    
+                if (isset($_GET['trang'])) {
+                    $page = intval($_GET['trang']);
+                } else {
+                    $page = 1;
+                }
+    
+                if ($page == "" || $page == 1) {
+                    $begin = 0;
+                } else {
+                    $begin = ($page * 9) - 9;
+                }
+    
+                $gia_start = "";
+                $gia_end = "";
+    
+                if (isset($_POST["loc_gia"])) {
+                    $gia_start = $_POST["gia_start"];
+                    $gia_end = $_POST["gia_end"];
+                }
+    
+                $list_all_dm = list_all_dm();
+                $list_monan_cuahang_all = list_monan_cuahang_all(); //Đếm phân trang
+                $list_monan_cuahang_loc = list_monan_cuahang_loc($tukhoa, $gia_start, $gia_end); // Đếm phân trang khi tìm kiếm
+                $list_monan_in_page = list_monan_in_page($tukhoa, $begin, $gia_start, $gia_end);
+    
+                include("./views/main/cuahangloc.php");
+                break;
 
 
         case "monandanhmuc":
