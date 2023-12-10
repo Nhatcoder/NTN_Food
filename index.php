@@ -181,9 +181,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
                 $_SESSION["user"] = $id_nguoidung;
                 update_taikhoan($hoten, $sodienthoai, $email, $matkhau, $vaitro, $new_anhtk, $diachi, $id_nguoidung);
 
-                // Thêm luôn địa chỉ
-                insert_diachi_order($hoten, $diachi, $email, $sodienthoai, $id_nguoidung);
-
                 echo '<script>alert("Thành công")</script>';
                 echo '<script>window.location.href = "index.php";</script>';
             }
@@ -223,7 +220,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
             break;
         case "xemchitietdonhang":
             if (isset($_GET["id_nguoidung"]) > 0) {
-
                 $id = $_GET["ma_donhang"];
                 $chitiet = list_chitiet_one_donhang_chitiet($id);
             }

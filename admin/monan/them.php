@@ -9,16 +9,22 @@ include("monan/title.php");
                 <form action="index.php?act=themmonan" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="ok" class="form-label">Tên món ăn</label>
-                        <input type="text" name="ten_monan" class="form-control" id="ok" placeholder="Nhập tên món ăn" required>
+                        <input type="text" name="ten_monan" class="form-control" value="<?php if(isset($_POST["ten_monan"])){echo $_POST["ten_monan"];}echo "";?>" id="ok" placeholder="Nhập tên món ăn">
                     </div>
+                    <p class="text-danger"><?= $err_tenmonan ?></p>
+
                     <div class="mb-3">
                         <label for="ok1" class="form-label">Giá món ăn</label>
-                        <input type="text" name="gia_monan" class="form-control" id="ok1" placeholder="Nhập tên món ăn" required>
+                        <input type="text" name="gia_monan" class="form-control" id="ok1" value="<?php if(isset($_POST["gia_monan"])){echo $_POST["gia_monan"];}echo "";?>"  placeholder="Nhập tên món ăn">
                     </div>
+                    <p class="text-danger"><?= $err_giamonan ?></p>
+
                     <div class="mb-3">
                         <label for="ok2" class="form-label">Hình ảnh món ăn</label>
-                        <input type="file" name="anh_monan" class="form-control" id="ok2" placeholder="Nhập tên món ăn" required>
+                        <input type="file" name="anh_monan" class="form-control" id="ok2" placeholder="Nhập tên món ăn">
                     </div>
+                    <p class="text-danger"><?= $err_anhmoan ?></p>
+
 
                     <div class="chosen-select-single mg-b-20 mb-3">
                         <label class="form-label">Thêm loại danh mục</label>
@@ -36,13 +42,10 @@ include("monan/title.php");
 
                     <div class="form-group shadow-textarea ">
                         <label for="exampleFormControlTextarea6">Mô tả món ăn</label>
-                        <textarea name="mota_monan" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Nhập mô tả món ăn"></textarea>
+                        <textarea name="mota_monan" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Nhập mô tả món ăn"><?php if(isset($_POST["mota_monan"])){echo $_POST["mota_monan"];}echo "";?> </textarea>
                     </div>
+                    <p class="text-danger"><?= $err_motamonan ?></p>
 
-                    <!-- <div class="mb-3">
-                        <label for="ok2" class="form-label">Nổi bật</label>
-                        <input type="number" name="noibat" class="form-control" id="ok2" placeholder="Nhập số" required>
-                    </div> -->
 
                     <div class="chosen-select-single mg-b-20 mb-3">
                         <label class="form-label">Xuất hiện ở đâu</label>

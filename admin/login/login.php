@@ -47,7 +47,7 @@ if (isset($_SESSION["dangnhap_admin"])) {
 
 	if (isset($_POST["submit"])) {
 		$sodienthoai = $_POST["sodienthoai"];
-		$pass = md5($_POST["pass"]);
+		$pass = $_POST["pass"];
 
 		$check = 0;
 		if (empty(trim($sodienthoai))) {
