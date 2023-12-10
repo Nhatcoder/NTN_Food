@@ -25,7 +25,7 @@ function capnhatbinhluan($id, $noidung)
 
 function list_all_cmt()
 {
-    $sql = "SELECT tbl_taikhoan.id_nguoidung, tbl_taikhoan.hoten, tbl_taikhoan.anh_taikhoan, COUNT(tbl_binhluan.id_binhluan) AS total_comments FROM tbl_taikhoan LEFT JOIN tbl_binhluan ON tbl_taikhoan.id_nguoidung = tbl_binhluan.id_nguoidung GROUP BY tbl_taikhoan.id_nguoidung, tbl_taikhoan.hoten, tbl_taikhoan.anh_taikhoan HAVING total_comments > 1 ORDER BY total_comments DESC;";
+    $sql = "SELECT tbl_taikhoan.id_nguoidung, tbl_taikhoan.hoten, tbl_taikhoan.anh_taikhoan, COUNT(tbl_binhluan.id_binhluan) AS total_comments FROM tbl_taikhoan LEFT JOIN tbl_binhluan ON tbl_taikhoan.id_nguoidung = tbl_binhluan.id_nguoidung GROUP BY tbl_taikhoan.id_nguoidung, tbl_taikhoan.hoten, tbl_taikhoan.anh_taikhoan HAVING total_comments > 0 ORDER BY total_comments DESC;";
     $list = pdo_query($sql);
     return $list;
 }

@@ -670,8 +670,8 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
             break;
 
         case 'chitietbinhluan':
-            if (isset($_GET["id"]) && $_GET["id"] > 0) {
-                $id_nguoidung = $_GET["id"];
+            if (isset($_GET["idnd"]) && $_GET["idnd"] > 0) {
+                $id_nguoidung = $_GET["idnd"];
 
                 if (isset($_GET['trang'])) {
                     $page = intval($_GET['trang']);
@@ -693,8 +693,8 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
 
 
         case 'suabinhluan':
-            if (isset($_GET["id"]) && $_GET["id"] > 0) {
-                $id_binhluan = $_GET["id"];
+            if (isset($_GET["idbl"]) && $_GET["idbl"] > 0) {
+                $id_binhluan = $_GET["idbl"];
                 $id_nguoidung = $_GET["idnd"];
 
                 $list_id_cmt_detail = list_id_cmt_detail($id_binhluan);
@@ -714,20 +714,21 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
                 $list_id_cmt = list_id_cmt($id_nguoidung);
 
                 echo '<script>alert("Cập nhật thành công")</script>';
-                echo '<script>window.location.href="index.php?act=chitietbinhluan&id=' . $id_nguoidung . '&trang=' . $trang . '"</script>';
+                echo '<script>window.location.href="index.php?act=chitietbinhluan&idnd=' . $id_nguoidung . '&trang=' . $trang . '"</script>';
             }
-            // include("./binhluan/lietke.php");
             break;
 
         case 'xoabinhluan':
-            if (isset($_GET["id"]) && $_GET["id"] > 0) {
-                $id_binhluan = $_GET["id"];
+            if (isset($_GET["idbl"]) && $_GET["idbl"] > 0) {
+                $id_binhluan = $_GET["idbl"];
                 $delete_id_cmt_detail = delete_id_cmt_detail($id_binhluan);
 
+                $trang = $_GET["trang"];
                 $id_nguoidung = $_GET["idnd"];
                 $list_id_cmt = list_id_cmt($id_nguoidung);
+                echo '<script>alert("Cập nhật thành công")</script>';
+                echo '<script>window.location.href="index.php?act=chitietbinhluan&idnd=' . $id_nguoidung . '&trang=' . $trang . '"</script>';
             }
-            include("./binhluan/chitietbinhluan.php");
             break;
 
         case 'lienhe':

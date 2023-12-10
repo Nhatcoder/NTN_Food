@@ -21,7 +21,7 @@ include("binhluan/title.php");
                     </div>
                     <div class="mb-3 form_btn form-check">
                         <input class="btn btn-primary mr-3 text-left" type="submit" name="capnhat" value="Cập nhật" required>
-                        <a href="index.php?act=lietkedanhmuc"><input class="btn btn-success text-left" type="button" value="DANH SÁCH"></a>
+                        <a href="index.php?act=chitietbinhluan&idnd=<?= $id_nguoidung ?>"><input class="btn btn-success text-left" type="button" value="DANH SÁCH"></a>
                     </div>
                 </form>
 
