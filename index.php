@@ -146,7 +146,6 @@ if (isset($_GET["act"]) && $_GET["act"] != "") {
 
 
         case "capnhattaikhoan":
-            // if (isset($_POST["submit"])) {
             if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $id_nguoidung = $_POST["id_sua"];
                 $hoten = $_POST["hoten"];

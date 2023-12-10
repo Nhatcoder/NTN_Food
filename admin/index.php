@@ -438,12 +438,13 @@ if (isset($_GET['act']) && $_GET['act'] != '') {
             break;
         case 'suatrangthai':
             include("../model/connect_pdo.php");
-
             $trangthai = loadtrangthaiAll();
+            $id = $_GET['iddh'];
+            $list_sua_tt_dh = list_sua_tt_dh($id);
 
             if (isset($_POST['capnhatdonhang']) && $_POST['capnhatdonhang'] > 0) {
-                $id = $_GET['iddh'];
                 $id_trangthai = $_POST['id_trangthai'];
+
                 capnhattrangthai($id, $id_trangthai);
 
                 // Khi thành công update vào biểu đồ to đổ ra
