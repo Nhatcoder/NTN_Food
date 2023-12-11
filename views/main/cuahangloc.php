@@ -45,7 +45,7 @@
                                         <h4 class="title">Danh mục</h4>
                                     </div>
                                     <ul>
-                                        <li class="cat-item"><a href="index.php?act=cuahangloc">
+                                        <li class="cat-item"><a href="index.php?act=cuahang">
                                                 Tất cả sản phẩm
                                             </a>
                                         </li>

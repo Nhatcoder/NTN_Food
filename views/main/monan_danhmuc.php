@@ -22,7 +22,7 @@
         <div class="container">
             <div class="row search-wraper text-center">
                 <div class="col-lg-8 m-auto">
-                    <form action="index.php?act=cuahang" method="post">
+                    <form action="index.php?act=cuahangloc" method="post">
                         <div class="input-group">
                             <input required="required" type="text" class="form-control" name="tukhoa" placeholder="Từ khóa">
                             <div class="input-group-addon">
