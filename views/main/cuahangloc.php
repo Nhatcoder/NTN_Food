@@ -166,7 +166,7 @@
                                 <h3>Không tìm thấy:
                                 </h3>
                                 <h2>
-                                    <p style="color: #7DA640;margin-top: 15px;margin-left: 8px;"><?= $_POST["tukhoa"] ?? "Không có món nào giá như vậy !" ?></p>
+                                    <p style="color: #7DA640;margin-top: 15px;margin-left: 8px;"><?= $_POST["tukhoa"] ?? "Món nào giá như vậy !" ?></p>
                                 </h2>
                             </div>
                         <?php
